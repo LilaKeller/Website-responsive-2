@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt zu Anika Warncke – Innenarchitektur, UX/UI Design und kreative Projekte aus Lüneburg. Jetzt Projekt anfragen!">
+  <title>Kontakt – Anika Warncke</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
+
+  <link rel="canonical" href="https://anika-warncke.de/src/pages/contact.html">
+
+  <!-- JSON-LD Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anika Warncke",
+    "jobTitle": "Innenarchitektin & UX/UI Designerin",
+    "email": "mailto:hallo@anika-warncke.de",
+    "image": "https://anika-warncke.de/img/anika-warncke.jpg",
+    "url": "https://anika-warncke.de/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lüneburg",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/anika-warncke",
+      "https://www.instagram.com/dein_instagram"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="main-header">
+    <nav>
+      <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
+      <ul>
+        <li><a href="projekte.html">Projekte</a></li>
+        <li><a href="about.html">Über mich</a></li>
+        <li><a href="contact.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-left">
+          <h1 class="contact-headline">Lass uns gemeinsam ein Projekt starten!</h1>
+          <form class="contact-form" autocomplete="off">
+            <div class="form-group">
+              <label for="name">01 Wie ist dein Name?</label>
+              <input type="text" id="name" name="name" required placeholder="Alex Urban *">
+            </div>
+            <div class="form-group">
+              <label for="email">02 Wie lautet deine E-Mail-Adresse?</label>
+              <input type="email" id="email" name="email" required placeholder="alex.urban@googlemail.com *">
+            </div>
+            <div class="form-group">
+              <label for="organization">03 Wie heißt dein Unternehmen?</label>
+              <input type="text" id="organization" name="organization" required placeholder="Urban Design Studio *">
+            </div>
+            <div class="form-group">
+              <label for="services">04 An welchen Leistungen bist du interessiert?</label>
+              <input type="text" id="services" name="services" required placeholder="Innenarchitektur Konzept, Mobile App Design, Website Design *">
+            </div>
+            <div class="form-group">
+              <label for="message">05 Deine Nachricht an mich</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Hallo Anika, kannst du mir helfen... *"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" id="contact-submit">Anfrage absenden</button>
+            <span id="form-loader" style="display:none;margin-left:1em;vertical-align:middle;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-opacity="0.2"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+            </span>
+            <span id="form-check" style="display:none;margin-left:1em;vertical-align:middle;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9.5 17 4 11.5"/></svg>
+            </span>
+            <div id="form-feedback" role="status" aria-live="polite" style="margin-top:1.2em;font-size:1.1em;color:#2e7d32;display:none;"></div>
+            <p class="privacy-hint" style="margin-top:1.5em;font-size:0.98em;color:#666;max-width:32em;">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben. Die Übertragung erfolgt verschlüsselt.</p>
+          </form>
+        </div>
+        <div class="contact-right">
+          <div class="profile-block">
+            <img src="../img/anika-warncke.jpg" alt="Porträt von Anika Warncke" class="profile-img" loading="lazy">
+            <a href="about.html" class="btn-secondary">Über mich</a>
+          </div>
+          <div class="all-details-block">
+            <h3>Contact Details</h3>
+            <div class="contact-details">
+              <div><strong>E-Mail:</strong> <a href="mailto:hallo@anika-warncke.de">hallo@anika-warncke.de</a></div>
+              <div><strong>Mobil:</strong> <a href="tel:+491234567890">+49 123 4567890</a></div>
+            </div>
+            <h3>Business Details</h3>
+            <div class="business-details">
+              <div><strong>Name:</strong> Anika Warncke</div>
+              <div><strong>Location:</strong> Lüneburg, Deutschland</div>
+            </div>
+            <h3>Socials</h3>
+            <div class="socials-inline">
+              <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;">
+                <!-- Lucide LinkedIn Icon Outline, corporate orange -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF9900" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;">
+                <!-- Lucide Instagram Icon Outline, corporate orange -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF9900" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="4"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="main-footer">
+    <div class="contact-info contact-info-row">
+      <div class="version">VERSION<br>2025 © Edition</div>
+      <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
+      <div class="socials">SOZIALE NETZWERKE<br>
+        <div class="socials-links">
+          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    <footer class="main-footer">
+      <div class="contact-info contact-info-row">
+        <div class="version">VERSION<br>2025 © Edition</div>
+        <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
+        <div class="socials">SOZIALE NETZWERKE<br>
+          <div class="socials-links">
+            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
+      </div>
+    </footer>
+ <script src="../scripts/main.js"></script>
+<script>
+  // Lokale Zeit immer aktuell anzeigen
+  function updateLocalTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit' };
+    let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+    // MESZ/MEZ je nach Sommerzeit
+    const isDST = now.getTimezoneOffset() < -60;
+    timeString += isDST ? ' MESZ' : ' MEZ';
+    document.getElementById('local-time').textContent = timeString;
+  }
+  updateLocalTime();
+  setInterval(updateLocalTime, 10000);
+
+  // Kontaktformular: Feedback, Button-Disable, Animation
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.contact-form');
+    const submitBtn = document.getElementById('contact-submit');
+    const feedback = document.getElementById('form-feedback');
+    const loader = document.getElementById('form-loader');
+    const check = document.getElementById('form-check');
+    if(form && submitBtn && feedback && loader && check) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        loader.style.display = 'inline-block';
+        feedback.style.display = 'none';
+        check.style.display = 'none';
+        submitBtn.textContent = 'Wird gesendet...';
+        setTimeout(function() {
+          loader.style.display = 'none';
+          check.style.display = 'inline-block';
+          feedback.textContent = 'Danke für deine Nachricht! Ich melde mich zeitnah.';
+          feedback.style.display = 'block';
+          setTimeout(function() {
+            check.style.display = 'none';
+            submitBtn.textContent = 'Anfrage absenden';
+            submitBtn.disabled = false;
+            form.reset();
+          }, 1200);
+        }, 1200);
+      });
+    }
+  });
+  // Loader Animation
+  const style = document.createElement('style');
+  style.innerHTML = `@keyframes spin { 100% { transform: rotate(360deg); } }`;
+  document.head.appendChild(style);
+</script>
+</body>
+</html>

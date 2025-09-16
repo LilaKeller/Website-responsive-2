@@ -1,0 +1,23 @@
+{
+  "name": "webprojekt",
+  "version": "1.0.0",
+  "description": "A web project with a landing page, project overview, case studies, about page, and contact page.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'",
+    "test": "echo 'Test step not defined'"
+  },
+  "keywords": [
+    "web",
+    "project",
+    "landing page",
+    "case studies"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
