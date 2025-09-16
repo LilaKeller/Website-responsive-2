@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <style>
+    .main-header nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kontakt zu Anika Warncke – Innenarchitektur, UX/UI Design und kreative Projekte aus Lüneburg. Jetzt Projekt anfragen!">
@@ -82,7 +88,9 @@
         </div>
         <div class="contact-right">
           <div class="profile-block">
-            <img src="../img/anika-warncke.jpg" alt="Porträt von Anika Warncke" class="profile-img" loading="lazy">
+            <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2em auto;background:#eee;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+              <img src="../../img/anika-warncke.jpg" alt="Porträt von Anika Warncke" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+            </div>
             <a href="about.html" class="btn-secondary">Über mich</a>
           </div>
           <div class="all-details-block">
@@ -115,32 +123,34 @@
     </section>
   </main>
   <footer class="main-footer">
-    <div class="contact-info contact-info-row">
-      <div class="version">VERSION<br>2025 © Edition</div>
-      <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-      <div class="socials">SOZIALE NETZWERKE<br>
-        <div class="socials-links">
-          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+    <div class="footer-row">
+      <div class="footer-block">
+        <div class="footer-title">VERSION</div>
+        <div>2025 © Edition</div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">LOKALE ZEIT</div>
+        <div><span id="local-time"></span></div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">SOZIALE NETZWERKE</div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">
+            Instagram
+          </a>
         </div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">RECHTLICHES</div>
+  <a href="../pages/datenschutz.html">Datenschutz</a>
+  <a href="../pages/impressum.html">Impressum</a>
       </div>
     </div>
   </footer>
-    <footer class="main-footer">
-      <div class="contact-info contact-info-row">
-        <div class="version">VERSION<br>2025 © Edition</div>
-        <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-        <div class="socials">SOZIALE NETZWERKE<br>
-          <div class="socials-links">
-            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
-        <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
-      </div>
-    </footer>
- <script src="../scripts/main.js"></script>
-<script>
+  <script>
   // Lokale Zeit immer aktuell anzeigen
   function updateLocalTime() {
     const now = new Date();
@@ -149,45 +159,11 @@
     // MESZ/MEZ je nach Sommerzeit
     const isDST = now.getTimezoneOffset() < -60;
     timeString += isDST ? ' MESZ' : ' MEZ';
-    document.getElementById('local-time').textContent = timeString;
+    var localTimeElem = document.getElementById('local-time');
+    if(localTimeElem) localTimeElem.textContent = timeString;
   }
   updateLocalTime();
   setInterval(updateLocalTime, 10000);
-
-  // Kontaktformular: Feedback, Button-Disable, Animation
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.contact-form');
-    const submitBtn = document.getElementById('contact-submit');
-    const feedback = document.getElementById('form-feedback');
-    const loader = document.getElementById('form-loader');
-    const check = document.getElementById('form-check');
-    if(form && submitBtn && feedback && loader && check) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        loader.style.display = 'inline-block';
-        feedback.style.display = 'none';
-        check.style.display = 'none';
-        submitBtn.textContent = 'Wird gesendet...';
-        setTimeout(function() {
-          loader.style.display = 'none';
-          check.style.display = 'inline-block';
-          feedback.textContent = 'Danke für deine Nachricht! Ich melde mich zeitnah.';
-          feedback.style.display = 'block';
-          setTimeout(function() {
-            check.style.display = 'none';
-            submitBtn.textContent = 'Anfrage absenden';
-            submitBtn.disabled = false;
-            form.reset();
-          }, 1200);
-        }, 1200);
-      });
-    }
-  });
-  // Loader Animation
-  const style = document.createElement('style');
-  style.innerHTML = `@keyframes spin { 100% { transform: rotate(360deg); } }`;
-  document.head.appendChild(style);
-</script>
+  </script>
 </body>
 </html>

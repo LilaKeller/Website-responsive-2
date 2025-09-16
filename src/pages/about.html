@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <style>
+    .main-header nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Über mich – Anika Warncke</title>
@@ -172,19 +178,6 @@
             </div>
         </section>
     </main>
-  <footer class="main-footer">
-    <div class="contact-info contact-info-row">
-      <div class="version">VERSION<br>2025 © Edition</div>
-      <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-      <div class="socials">SOZIALE NETZWERKE<br>
-        <div class="socials-links">
-          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
-        </div>
-      </div>
-      <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
-    </div>
-  </footer>
   <script src="../scripts/main.js"></script>
   <script src="../scripts/testimonial-carousel.js"></script>
   <script>
@@ -205,18 +198,49 @@
     });
   </script>
   <script>
-    // Lokale Zeit immer aktuell anzeigen
-    function updateLocalTime() {
-      const now = new Date();
-      const options = { hour: '2-digit', minute: '2-digit' };
-      let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
-      // MESZ/MEZ je nach Sommerzeit
-      const isDST = now.getTimezoneOffset() < -60;
-      timeString += isDST ? ' MESZ' : ' MEZ';
-      document.getElementById('local-time').textContent = timeString;
-    }
-    updateLocalTime();
-    setInterval(updateLocalTime, 10000);
+  </script>
+  <footer class="main-footer">
+    <div class="footer-row">
+      <div class="footer-block">
+        <div class="footer-title">VERSION</div>
+        <div>2025 © Edition</div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">LOKALE ZEIT</div>
+        <div><span id="local-time"></span></div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">SOZIALE NETZWERKE</div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">
+            Instagram
+          </a>
+        </div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">RECHTLICHES</div>
+        <a href="../pages/datenschutz.html">Datenschutz</a>
+        <a href="../pages/impressum.html">Impressum</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+  // Lokale Zeit immer aktuell anzeigen
+  function updateLocalTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit' };
+    let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+    // MESZ/MEZ je nach Sommerzeit
+    const isDST = now.getTimezoneOffset() < -60;
+    timeString += isDST ? ' MESZ' : ' MEZ';
+    var localTimeElem = document.getElementById('local-time');
+    if(localTimeElem) localTimeElem.textContent = timeString;
+  }
+  updateLocalTime();
+  setInterval(updateLocalTime, 10000);
   </script>
 </body>
 </html>

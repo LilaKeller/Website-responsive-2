@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <style>
+        .main-header nav ul li a {
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekt 7 - Fallstudie</title>
+    <title>FlavorFusion - Landing Page für eine mobile Rezepte App</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
 </head>
@@ -19,36 +25,59 @@
             </nav>
         </header>
     <main>
-        <section>
-            <h2>Projektziele</h2>
-            <p>Hier beschreiben Sie die Ziele des Projekts.</p>
+        <!-- Hero Section -->
+    <section class="hero" style="background:#FD8040 url('../../img/UXUI/Flavor Fusion/Herobereich.png') center center/cover no-repeat; min-height:60vh; display:flex; align-items:center; justify-content:center;">
+            <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:2.5rem 2.5rem 2rem 2.5rem;text-align:center;margin:0 auto;">
+                <h1 style="font-size:2.8rem;font-weight:800;margin:0 0 0.2em 0;line-height:1.3;">FlavorFusion</h1>
+                <div style="font-size:1.8rem;font-weight:600;margin-bottom:1.2em;line-height:1.3;">Landing Page für eine mobile Rezepte App</div>
+                <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">UX/UI-DESIGN | LANDING PAGE</div>
+            </div>
         </section>
-        <section>
-            <h2>Prozess</h2>
-            <p>Hier erläutern Sie den Prozess, der zur Umsetzung des Projekts geführt hat.</p>
-        </section>
-        <section>
-            <h2>Ergebnisse</h2>
-            <p>Hier präsentieren Sie die Ergebnisse des Projekts.</p>
-        </section>
-        <section>
-            <h2>Bilder</h2>
-            <img src="path/to/image.jpg" alt="Bildbeschreibung">
+
+        <!-- Projektinfos wie in P5_... -->
+        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;">
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">MEINE ROLLE</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">UX/UI-Designer</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">AUFGABE</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">End-to-End-Designprozess: vom Problem bis zum High-Fidelity-Prototypen einer Landingpage (UX-Research, UI-Design, Prototyping)</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">PROJEKTZEITRAUM & -RAHMEN</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">Juni 2025: Intensiver 20 Stunden Design-Sprint im Rahmen des UX/UI-Bootcamps bei neuefische</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">TOOLS</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">Figma, FigJam, Notion, ChatGPT, Gemini</div>
+            </div>
         </section>
     </main>
-    <footer class="main-footer">
-        <div class="contact-info contact-info-row">
-            <div class="version">VERSION<br>2025 © Edition</div>
-            <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-            <div class="socials">SOZIALE NETZWERKE<br>
-                <div class="socials-links">
-                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+        <!-- Navigation: Letztes/Nächstes Projekt -->
+        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
+            <div style="position:relative;display:inline-block;">
+                <a href="P6_UXUI_OmNomZen.html" class="btn-secondary projekt-btn" style="background:#b85c4c;color:#fff;padding:0.8em 2em;border-radius:2em;font-weight:600;text-decoration:none;">&lt; LETZTES PROJEKT</a>
+                <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
+                    <img src="../../img/UXUI/OmNomZen/Rectangle 2.png" alt="OnNomZen" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                    <div style="font-weight:700;font-size:1.1rem;">OnNomZen</div>
+                    <div style="font-size:0.98rem;color:#888;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
                 </div>
             </div>
-            <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
-        </div>
-    </footer>
+            <div style="position:relative;display:inline-block;">
+                <a href="P8_UXUI_NaturKompass.html" class="btn-secondary projekt-btn" style="background:#b85c4c;color:#fff;padding:0.8em 2em;border-radius:2em;font-weight:600;text-decoration:none;">NÄCHSTES PROJEKT &gt;</a>
+                <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
+                    <img src="../../img/UXUI/NaturKompass/Mockuuups Holding Samsung Galaxy S20 mockup amongst trees.jpeg" alt="NaturKompass" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                    <div style="font-weight:700;font-size:1.1rem;">NaturKompass</div>
+                    <div style="font-size:0.98rem;color:#888;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
+                </div>
+            </div>
+        </section>
+    
     <script src="../scripts/main.js"></script>
 </body>
 </html>

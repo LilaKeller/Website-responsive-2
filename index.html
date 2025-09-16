@@ -1,14 +1,140 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <style>
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-thumb {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      transition: background 0.3s, filter 0.3s;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .portfolio-subtitle-hover {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      opacity: 0;
+      background: rgba(0,0,0,0.48);
+      text-align: center;
+      padding: 1.2rem;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .portfolio-item:hover .portfolio-thumb,
+    .portfolio-item:focus-within .portfolio-thumb {
+      background: #9ba89c !important;
+      filter: unset !important;
+    }
+    .portfolio-item:hover .portfolio-subtitle-hover,
+    .portfolio-item:focus-within .portfolio-subtitle-hover {
+      opacity: 1;
+    }
+    .portfolio-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+    }
+    .portfolio-category {
+      font-size: 0.98em;
+      color: #888;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin: 0;
+    }
+  </style>
+  <style>
+    .portfolio-carousel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      transition: box-shadow 0.2s;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+    }
+    .portfolio-item > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+    .portfolio-item > a > div:first-child {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 1.2rem 1.2rem 0 0;
+    }
+    .portfolio-info {
+      padding: 1.2rem 1rem 1.2rem 1rem;
+      background: #fff;
+      border-radius: 0 0 1.2rem 1.2rem;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .portfolio-info h3 {
+      margin: 0 0 0.5em 0;
+    }
+    .portfolio-info p {
+      margin: 0;
+    }
+  </style>
+  <style>
+    .main-header nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anika Warncke</title>
   <meta name="description" content="Innenarchitektur & UX/UI Design">
+  <!-- Google Fonts: Poppins for headlines, Nunito for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/jpeg" href="Logo-01.jpg">
 </head>
 <body>
+  <style>
+    body, .portfolio-info, .intro, .subtitle, .btn-primary, .btn-secondary, .btn-contact, .contact-content, .contact-info, .version, .local-time, .socials, .socials-links, .about, .portfolio, .contact, .carousel-btn, .filter-btn {
+      font-family: 'Nunito', Arial, sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .hero-content h1, .contact-content h2, .portfolio-info h3, .main-header .logo {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .main-header nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  </style>
   <header class="main-header">
     <nav>
       <a href="index.html" class="logo">ANIKA WARNCKE</a>
@@ -46,73 +172,97 @@
         <div class="portfolio-carousel">
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div style="width:100%;height:220px;background:url('img/IA/Kloster%20Holzen/kloster_holzen_augsburg_restaurant_formwaende_innenarchitektur_gastronomie_interior_design_konzept_saal_saeulen_tafel.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/IA/Kloster%20Holzen/kloster_holzen_augsburg_restaurant_formwaende_innenarchitektur_gastronomie_interior_design_konzept_saal_saeulen_tafel.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Veranstaltungsgastronomie für Hochzeiten und Events</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">Kloster Veranstaltungssaal</h3>
-                <p style="margin:0;">Innenarchitektur für Hochzeiten & Events</p>
+                <h3 style="margin:0 0 0.2em 0;">Festsaal im Klostergasthof</h3>
+                <p style="margin:0 0 0.2em 0;">Veranstaltungsgastronomie für Hochzeiten und Events</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P2_IA_Schlaf.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div style="width:100%;height:220px;background:url('img/IA/Schlaf/Konzeptskizze%2B-01.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/IA/Schlaf/Konzeptskizze+-01.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Eine Erlebnis­ausstellung in die Tiefen des Schlafes</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">Schlaf</h3>
-                <p style="margin:0;">In die Tiefen des Schlafes</p>
+                <h3 style="margin:0 0 0.2em 0;">SCHLAF</h3>
+                <p style="margin:0 0 0.2em 0;">Eine Erlebnis­ausstellung in die Tiefen des Schlafes</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P1_IA_Weserkoje.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div style="width:100%;height:220px;background:url('img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Multifunktionale Herberge mit integriertem Tagungszentrum</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">Weserkoje</h3>
-                <p style="margin:0;">Multifunktionale Herberge mit integriertem Tagungszentrum</p>
+                <h3 style="margin:0 0 0.2em 0;">weserkoje</h3>
+                <p style="margin:0 0 0.2em 0;">Multifunktionale Herberge mit integriertem Tagungszentrum</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P8_UXUI_NaturKompass.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div style="width:100%;height:220px;background:url('img/UXUI/NaturKompass/Mockuuups%20Holding%20Samsung%20Galaxy%20S20%20mockup%20amongst%20trees.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/UXUI/NaturKompass/Mockuuups%20Holding%20Samsung%20Galaxy%20S20%20mockup%20amongst%20trees.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">NaturKompass, Mobile App</h3>
-                <p style="margin:0;">UX/UI</p>
+                <h3 style="margin:0 0 0.2em 0;">NaturKompass</h3>
+                <p style="margin:0 0 0.2em 0;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P7_UXUI_FlavorFusion.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div style="width:100%;height:220px;background:url('img/UXUI/Flavor%20Fusion/Rectangle%201.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/UXUI/Flavor%20Fusion/Rectangle%201.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Landing Page für eine mobile Rezepte App</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">FlavorFusion, Landingpage für Mobile App</h3>
-                <p style="margin:0;">UX/UI</p>
+                <h3 style="margin:0 0 0.2em 0;">FlavorFusion</h3>
+                <p style="margin:0 0 0.2em 0;">Landing Page für eine mobile Rezepte App</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P5_UXUI_Planora.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Planora">
-              <div style="width:100%;height:220px;background-color:#FD8040;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background-color:#FD8040;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Reiseplanung, die sich dir anpasst.</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">Planora</h3>
-                <p style="margin:0;">Reiseplanung, die sich dir anpasst</p>
+                <h3 style="margin:0 0 0.2em 0;">Planora</h3>
+                <p style="margin:0 0 0.2em 0;">Reiseplanung, die sich dir anpasst.</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P6_UXUI_OmNomZen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: OnNomZen">
-              <div style="width:100%;height:220px;background:url('img/UXUI/OmNomZen/Rectangle 2.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/UXUI/OmNomZen/Rectangle 2.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Stressabbau mit Bio-Ashwagandha-Gummibärchen</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">OnNomZen</h3>
-                <p style="margin:0;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</p>
+                <h3 style="margin:0 0 0.2em 0;">OnNomZen</h3>
+                <p style="margin:0 0 0.2em 0;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P3_IA_MyMindStudio.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: MY MIND Studio">
-              <div style="width:100%;height:220px;background:url('img/IA/My Mind studio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
+              <div class="portfolio-thumb" style="background:url('img/IA/My Mind studio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Meditations- und Yogastudio mit Café</span>
+              </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                <h3 style="margin:0 0 0.5em 0;">MY MIND Studio</h3>
-                <p style="margin:0;">Meditations- & Yoga-Studio mit Café</p>
+                <h3 style="margin:0 0 0.2em 0;">My Mind Studio</h3>
+                <p style="margin:0 0 0.2em 0;">Meditations- und Yogastudio mit Café</p>
+                  <!-- Kategorie ausgeblendet -->
               </div>
             </a>
           </div>
@@ -120,33 +270,87 @@
         <button class="carousel-btn right" aria-label="Weiter">&#62;</button>
       </div>
       <div style="display:flex;justify-content:center;margin-top:2.2rem;">
-        <a href="#work" class="btn-secondary">ZU MEINEN PROJEKTEN</a>
+  <a href="src/pages/projekte.html" class="btn-secondary">ZU MEINEN PROJEKTEN</a>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="contact-row">
-        <div class="contact-content">
-          <h2>GET IN<br>TOUCH</h2>
+  <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;">
+        <div class="contact-content" style="margin:0;flex:1;">
+          <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
         </div>
-        <a href="mailto:anika@email.com" class="btn-contact">LET'S GO</a>
+        <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
+          <a href="src/pages/contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;"></a>
+        </div>
+  <style>
+    .btn-contact.round-yellow {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      background: #FFB800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      border: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      padding: 0;
+    }
+    .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
+      background: #ff9900;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+    }
+    .btn-contact.round-yellow svg {
+      width: 96px;
+      height: 96px;
+      display: block;
+    }
+    .btn-contact.round-yellow svg path {
+      stroke: #fff;
+    }
+  </style>
       </div>
     </section>
   </main>
   <footer class="main-footer">
-    <div class="contact-info contact-info-row">
-      <div class="version">VERSION<br>2025 © Edition</div>
-      <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-      <div class="socials">SOZIALE NETZWERKE<br>
-        <div class="socials-links">
-          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;max-width:1200px;margin:0 auto;display:flex;gap:3rem;justify-content:space-between;">
+      <div style="display:flex;gap:3rem;flex:1;">
+        <div class="footer-block">
+          <div class="footer-title">VERSION</div>
+          <div>2025 © Edition</div>
         </div>
+        <div class="footer-block">
+          <div class="footer-title">LOKALE ZEIT</div>
+          <div><span id="local-time"></span></div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-title">SOZIALE NETZWERKE</div>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-block" style="flex:0 0 auto;">
+        <div class="footer-title">RECHTLICHES</div>
+        <a href="src/pages/datenschutz.html">Datenschutz</a>
+        <a href="src/pages/impressum.html">Impressum</a>
       </div>
     </div>
   </footer>
   <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Zufällige Reihenfolge der Carousel-Karten
+  const carousel = document.querySelector('.portfolio-carousel');
+  if (carousel) {
+    const cards = Array.from(carousel.children);
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    cards.forEach(card => carousel.appendChild(card));
+  }
+
   const filterBtns = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.portfolio-item');
   const header = document.querySelector('.main-header');
@@ -190,6 +394,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-</script>
+  </script>
 </body>
 </html>

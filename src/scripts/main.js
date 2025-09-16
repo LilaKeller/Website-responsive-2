@@ -1,46 +1,29 @@
-// Custom Cursor Script (mit Textanzeige)
-(function() {
-  try {
-    const cursor = document.createElement('div');
-    cursor.classList.add('cursor');
-    const cursorText = document.createElement('span');
-    cursorText.classList.add('cursor-text');
-    cursor.appendChild(cursorText);
-    document.body.appendChild(cursor);
+// Entferne Custom-Cursor-Code
+document.body.style.cursor = 'auto';
 
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-      cursor.style.display = 'flex';
-    });
-
-    // Cursor Hover Effekt für Links und Buttons
-    const hoverTargets = ['a', 'button', '.btn', '.filter-btn', '.carousel-btn'];
-    document.addEventListener('mouseover', (e) => {
-      if (hoverTargets.some(sel => e.target.matches(sel))) {
-        cursor.classList.add('cursor-hover');
-        // Optional: Text im Cursor anzeigen, wenn data-cursor-text gesetzt
-        if (e.target.dataset.cursorText) {
-          cursorText.textContent = e.target.dataset.cursorText;
-        } else {
-          cursorText.textContent = '';
-        }
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (hoverTargets.some(sel => e.target.matches(sel))) {
-        cursor.classList.remove('cursor-hover');
-        cursorText.textContent = '';
-      }
-    });
-
-    // Fallback: Zeige Standardcursor, wenn Cursor-Element nicht sichtbar
-    setTimeout(() => {
-      if (!document.querySelector('.cursor')) {
-        document.body.style.cursor = 'auto';
-      }
-    }, 1000);
-  } catch (e) {
-    document.body.style.cursor = 'auto';
-  }
-})();
+// Projektvorschau bei Hover/Focus auf Projektbuttons anzeigen (wie in P2_IA_Schlaf.html)
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelectorAll('.projekt-btn').forEach(function(btn) {
+		var vorschau = btn.parentElement.querySelector('.projekt-vorschau');
+		btn.addEventListener('mouseenter', function() {
+			if(vorschau) vorschau.style.display = 'block';
+		});
+		btn.addEventListener('mouseleave', function() {
+			if(vorschau) vorschau.style.display = 'none';
+		});
+		btn.addEventListener('focus', function() {
+			if(vorschau) vorschau.style.display = 'block';
+		});
+		btn.addEventListener('blur', function() {
+			if(vorschau) vorschau.style.display = 'none';
+		});
+		if(vorschau) {
+			vorschau.addEventListener('mouseenter', function() {
+				vorschau.style.display = 'block';
+			});
+			vorschau.addEventListener('mouseleave', function() {
+				vorschau.style.display = 'none';
+			});
+		}
+	});
+});

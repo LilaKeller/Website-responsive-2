@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <style>
+        .main-header nav ul li a {
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekt 8 - Fallstudie</title>
+    <title>Naturkompass - Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
 </head>
@@ -19,32 +25,101 @@
             </nav>
         </header>
     <main>
-        <section>
-            <h2>Projektübersicht</h2>
-            <p>Hier finden Sie eine detaillierte Beschreibung des Projekts 8.</p>
-            <h3>Ziele</h3>
-            <p>Die Hauptziele dieses Projekts waren...</p>
-            <h3>Prozess</h3>
-            <p>Der Prozess umfasste die folgenden Schritte...</p>
-            <h3>Ergebnisse</h3>
-            <p>Die Ergebnisse des Projekts waren...</p>
-            <h3>Visuelle Darstellungen</h3>
-            <img src="path/to/image.jpg" alt="Projekt 8 Visualisierung">
+        <!-- Hero Section -->
+    <section class="hero" style="background:#FD8040 url('../../img/UXUI/NaturKompass/Mockuuups Holding Samsung Galaxy S20 mockup amongst trees.jpeg') center center/cover no-repeat; min-height:60vh; display:flex; align-items:center; justify-content:center;">
+            <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:2.5rem 2.5rem 2rem 2.5rem;text-align:center;margin:0 auto;">
+                <h1 style="font-size:2.8rem;font-weight:800;margin:0 0 0.2em 0;line-height:1.3;">NaturKompass</h1>
+                <div style="font-size:1.8rem;font-weight:600;margin-bottom:1.2em;line-height:1.3;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
+                <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">UX/UI-DESIGN | MOBILE APP</div>
+            </div>
+        </section>
+
+        <!-- Projektinfos wie in P5_... -->
+        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;">
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">MEINE ROLLE & TEAM</div>
+
+                <div style="font-weight:400;font-size:16px;">UX/UI-Designer im 2-Personen-Team mit Michael Jakob</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">AUFGABE</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">End-to-End-Designprozess: vom Problem bis zum High-Fidelity-Prototypen einer mobilen App (UX-Research, UI -Design, Prototyping (& Testing))</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">PROJEKTZEITRAUM & -RAHMEN</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">Juni - Juli 2025: Intensiver 4-wöchiger Design-Sprint im Rahmen des UX/UI-Bootcamps bei neuefische</div>
+            </div>
+            <div style="flex:1 1 0;min-width:180px;">
+                <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">TOOLS</div>
+                <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
+                <div style="font-weight:400;font-size:16px;">Figma, FigJam, Notion, ChatGPT, Gemini, DaVinci Resolve</div>
+            </div>
         </section>
     </main>
-    <footer class="main-footer">
-        <div class="contact-info contact-info-row">
-            <div class="version">VERSION<br>2025 © Edition</div>
-            <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-            <div class="socials">SOZIALE NETZWERKE<br>
-                <div class="socials-links">
-                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+        <!-- Navigation: Letztes/Nächstes Projekt -->
+        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
+            <div style="position:relative;display:inline-block;">
+                <a href="P7_UXUI_FlavorFusion.html" class="btn-secondary projekt-btn" style="background:#b85c4c;color:#fff;padding:0.8em 2em;border-radius:2em;font-weight:600;text-decoration:none;">&lt; LETZTES PROJEKT</a>
+                <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
+                    <img src="../../img/UXUI/Flavor Fusion/Herobereich.png" alt="FlavorFusion" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                    <div style="font-weight:700;font-size:1.1rem;">FlavorFusion</div>
+                    <div style="font-size:0.98rem;color:#888;">Landing Page für eine mobile Rezepte App</div>
                 </div>
             </div>
-            <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
+            <div style="position:relative;display:inline-block;">
+                <a href="P1_IA_Weserkoje.html" class="btn-secondary projekt-btn" style="background:#b85c4c;color:#fff;padding:0.8em 2em;border-radius:2em;font-weight:600;text-decoration:none;">NÄCHSTES PROJEKT &gt;</a>
+                <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
+                    <img src="../../img/IA/Weserkoje/Ansicht-3jpg.png" alt="Weserkoje" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                    <div style="font-weight:700;font-size:1.1rem;">Weserkoje</div>
+                    <div style="font-size:0.98rem;color:#888;">Multifunktionale Herberge mit Tagungszentrum</div>
+                </div>
+            </div>
+        </section>
+<footer class="main-footer">
+    <div class="footer-row">
+      <div class="footer-block">
+        <div class="footer-title">VERSION</div>
+        <div>2025 © Edition</div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">LOKALE ZEIT</div>
+        <div><span id="local-time"></span></div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">SOZIALE NETZWERKE</div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">
+            Instagram
+          </a>
         </div>
-    </footer>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">RECHTLICHES</div>
+        <a href="../pages/datenschutz.html">Datenschutz</a>
+        <a href="../pages/impressum.html">Impressum</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+  // Lokale Zeit immer aktuell anzeigen
+  function updateLocalTime() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit' };
+    let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+    // MESZ/MEZ je nach Sommerzeit
+    const isDST = now.getTimezoneOffset() < -60;
+    timeString += isDST ? ' MESZ' : ' MEZ';
+    var localTimeElem = document.getElementById('local-time');
+    if(localTimeElem) localTimeElem.textContent = timeString;
+  }
+  updateLocalTime();
+  setInterval(updateLocalTime, 10000);
+  </script>
     <script src="../scripts/main.js"></script>
 </body>
 </html>

@@ -1,9 +1,96 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+        <style>
+            .main-footer {
+                background: linear-gradient(90deg,#7a8a7c 60%,#9ba89c 100%);
+                color: #fff;
+                padding-left: 80px;
+                padding-right: 80px;
+                margin-top: 0 !important;
+                margin-bottom: 0;
+            }
+            .footer-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                padding: 2.5rem 0 1.5rem 0;
+                flex-wrap: wrap;
+                gap: 6rem;
+            }
+            .footer-block {
+                min-width: 180px;
+                flex: 1 1 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .footer-title {
+                font-size: 0.95em;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                margin-bottom: 0.2em;
+                color: #bfc7be;
+                text-transform: uppercase;
+                font-family: 'Poppins', Arial, sans-serif;
+                font-size: 1em;
+                font-weight: 600;
+                margin-bottom: 0.5em;
+                white-space: nowrap;
+            }
+            .footer-socials {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2em;
+            }
+            .footer-socials a {
+                color: #fff;
+                text-decoration: underline;
+                font-weight: 600;
+                font-size: 1em;
+                margin: 0 0 0.2em 0;
+                transition: color 0.2s;
+            }
+            .footer-block a {
+                color: #fff;
+                text-decoration: underline;
+                font-weight: 600;
+                font-size: 1em;
+                margin: 0 0.3em 0 0;
+                transition: color 0.2s;
+            }
+            .footer-socials a:hover,
+            .footer-block a:hover {
+                color: #FFB800;
+            }
+            @media (max-width: 700px) {
+                .main-footer {
+                    padding-left: 10vw;
+                    padding-right: 10vw;
+                }
+                .footer-row {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1.5rem;
+                    text-align: center;
+                }
+                .footer-block {
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        </style>
+    <style>
+        .main-header nav ul li a {
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORK – Anika Warncke</title>
+    <title>PROJEKTE</title>
     <meta name="description" content="Portfolio Interior Architecture & UX/UI Design – Anika Warncke">
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
@@ -105,37 +192,80 @@
         </section>
     </main>
     <footer class="main-footer">
-        <div class="contact-info contact-info-row">
-            <div class="version">VERSION<br>2025 © Edition</div>
-            <div class="local-time">LOKALE ZEIT<br><span id="local-time"></span></div>
-            <div class="socials">SOZIALE NETZWERKE<br>
-                <div class="socials-links">
-                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+    <div style="margin-top:9rem;"></div>
+        <div class="footer-row">
+            <div class="footer-block">
+                <div class="footer-title">VERSION</div>
+                <div>2025 © Edition</div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-title">LOKALE ZEIT</div>
+                <div><span id="local-time"></span></div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-title">SOZIALE NETZWERKE</div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">
+                        LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">
+                        Instagram
+                    </a>
                 </div>
             </div>
-            <div class="impressum"><a href="../../impressum.html" style="font-size:0.98em;color:#888;text-decoration:underline;">Impressum & Datenschutz</a></div>
+            <div class="footer-block">
+                <div class="footer-title">RECHTLICHES</div>
+                <a href="../pages/datenschutz.html">Datenschutz</a>
+                <a href="../pages/impressum.html">Impressum</a>
+            </div>
         </div>
     </footer>
+    <script>
+    // Lokale Zeit immer aktuell anzeigen
+    function updateLocalTime() {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit' };
+        let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+        // MESZ/MEZ je nach Sommerzeit
+        const isDST = now.getTimezoneOffset() < -60;
+        timeString += isDST ? ' MESZ' : ' MEZ';
+        var localTimeElem = document.getElementById('local-time');
+        if(localTimeElem) localTimeElem.textContent = timeString;
+    }
+    updateLocalTime();
+    setInterval(updateLocalTime, 10000);
+    </script>
+
         <script src="../scripts/main.js"></script>
-                <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const filterBtns = document.querySelectorAll('.filter-btn');
-                    const items = document.querySelectorAll('.portfolio-item');
-                    filterBtns.forEach(btn => {
-                        btn.addEventListener('click', function() {
-                            filterBtns.forEach(b => b.classList.remove('active'));
-                            this.classList.add('active');
-                            const filter = this.getAttribute('data-filter');
-                            items.forEach(item => {
-                                if (filter === 'all' || item.getAttribute('data-type') === filter) {
-                                    item.style.display = '';
-                                } else {
-                                    item.style.display = 'none';
-                                }
-                            });
-                        });
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Shuffle portfolio cards
+            const grid = document.querySelector('.work-grid');
+            if (grid) {
+                const cards = Array.from(grid.children);
+                for (let i = cards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [cards[i], cards[j]] = [cards[j], cards[i]];
+                }
+                cards.forEach(card => grid.appendChild(card));
+            }
+            // Filter logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.portfolio-item');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    items.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-type') === filter) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
                     });
+                });
+            });
         });
         </script>
 </body>
