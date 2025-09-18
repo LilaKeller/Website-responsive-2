@@ -65,7 +65,7 @@
     .portfolio-thumb {
       position: relative;
       width: 100%;
-      height: 220px;
+      height: 250px;
       transition: background 0.3s, filter 0.3s;
       display: flex;
       align-items: flex-end;
@@ -140,7 +140,7 @@
     }
     .portfolio-item > a > div:first-child {
       width: 100%;
-      height: 220px;
+      height: 250px;
       background-size: cover;
       background-position: center;
       border-radius: 1.2rem 1.2rem 0 0;
@@ -420,6 +420,18 @@ document.addEventListener('DOMContentLoaded', function() {
       [cards[i], cards[j]] = [cards[j], cards[i]];
     }
     cards.forEach(card => carousel.appendChild(card));
+  }
+
+  // Carousel Buttons
+  const leftBtn = document.querySelector('.carousel-btn.left');
+  const rightBtn = document.querySelector('.carousel-btn.right');
+  if (leftBtn && rightBtn && carousel) {
+    leftBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -400, behavior: 'smooth' });
+    });
+    rightBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 400, behavior: 'smooth' });
+    });
   }
 
   const filterBtns = document.querySelectorAll('.filter-btn');
