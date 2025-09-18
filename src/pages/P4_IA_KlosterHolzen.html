@@ -1,3 +1,23 @@
+    <style>
+        .main-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            transition: background 0.2s, color 0.2s;
+        }
+        .main-header.scrolled {
+            position: fixed;
+            background: #fff !important;
+            color: #222 !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .main-header.scrolled .logo,
+        .main-header.scrolled nav a {
+            color: #222 !important;
+        }
+    </style>
 <!DOCTYPE html>
 <html lang="de">
                                                                                             <style>
@@ -264,4 +284,22 @@
         });
     </script>
 </body>
+</main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var header = document.querySelector('.main-header');
+            function updateHeaderScrolled() {
+                var hero = document.querySelector('.hero');
+                var heroHeight = hero ? hero.offsetHeight : 0;
+                if(window.scrollY > heroHeight) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeaderScrolled);
+            window.addEventListener('resize', updateHeaderScrolled);
+            updateHeaderScrolled();
+        });
+    </script>
 </html>
