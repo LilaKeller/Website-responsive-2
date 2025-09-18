@@ -130,24 +130,109 @@
             </div>
         </section>
         <!-- Navigation wie auf anderen Projektseiten (Platzhalter) -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
-            <div style="position:relative;display:inline-block;">
-                <a href="P8_UXUI_NaturKompass.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">NaturKompass</div>
-                    <div style="font-size:0.98rem;color:#888;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
-                </div>
-            </div>
-            <div style="position:relative;display:inline-block;">
-                <a href="P2_IA_Schlaf.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/IA/Schlaf/Konzeptskizze+-01.jpg" alt="Schlaf" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">SCHLAF</div>
-                    <div style="font-size:0.98rem;color:#888;">Erlebnisausstellung in die Tiefen des Schlafes</div>
-                </div>
-            </div>
-        </section>
+                        <section class="projekt-nav-section">
+                            <div class="projekt-nav-row">
+                                <div class="projekt-nav-btn projekt-nav-left">
+                                    <a href="P8_UXUI_NaturKompass.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
+                                    <div class="projekt-vorschau">
+                                        <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                                        <div style="font-weight:700;font-size:1.1rem;">NaturKompass</div>
+                                        <div style="font-size:0.98rem;color:#888;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
+                                    </div>
+                                </div>
+                                <div class="projekt-nav-btn projekt-nav-right">
+                                    <a href="P2_IA_Schlaf.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
+                                    <div class="projekt-vorschau">
+                                        <img src="../../img/IA/Schlaf/Konzeptskizze+-01.jpg" alt="Schlaf" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
+                                        <div style="font-weight:700;font-size:1.1rem;">SCHLAF</div>
+                                        <div style="font-size:0.98rem;color:#888;">Erlebnisausstellung in die Tiefen des Schlafes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <style>
+                        .projekt-nav-section {
+                            width: 100vw;
+                            max-width: 100vw;
+                            background: #fff;
+                            padding: 2.5rem 0 1.5rem 0;
+                            box-sizing: border-box;
+                        }
+                        .projekt-nav-row {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            padding-left: 80px;
+                            padding-right: 80px;
+                            box-sizing: border-box;
+                        }
+                        .projekt-nav-btn {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            min-width: 0;
+                        }
+                        .projekt-vorschau {
+                            display: none;
+                            position: absolute;
+                            left: 0;
+                            bottom: 110%;
+                            background: #fff;
+                            border-radius: 1.2rem;
+                            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+                            padding: 1rem;
+                            width: 260px;
+                            z-index: 10;
+                            text-align: left;
+                        }
+                        /* Vorschau immer linksbündig */
+                        .projekt-nav-btn.projekt-nav-right .projekt-vorschau {
+                            left: 0;
+                            right: auto;
+                            text-align: left;
+                        }
+                        .projekt-nav-btn:hover .projekt-vorschau {
+                            display: block;
+                        }
+                        .projekt-vorschau img {
+                            width: 100%;
+                            border-radius: 0.7rem;
+                            margin-bottom: 0.7em;
+                        }
+                        .projekt-vorschau-title {
+                            font-weight: 700;
+                            font-size: 1.1rem;
+                        }
+                        .projekt-vorschau-sub {
+                            font-size: 0.98rem;
+                            color: #888;
+                        }
+                        .projekt-nav-left {
+                            justify-content: flex-start;
+                        }
+                        .projekt-nav-right {
+                            justify-content: flex-end;
+                        }
+                        @media (max-width: 900px) {
+                            .projekt-nav-row {
+                                padding-left: 5vw;
+                                padding-right: 5vw;
+                            }
+                        }
+                        @media (max-width: 600px) {
+                            .projekt-nav-row {
+                                flex-direction: column;
+                                gap: 1.5rem;
+                                padding-left: 2vw;
+                                padding-right: 2vw;
+                            }
+                            .projekt-nav-btn {
+                                width: 100%;
+                                justify-content: center !important;
+                            }
+                        }
+                        </style>
         <!-- Call to Action wie auf anderen Projektseiten -->
         <section style="background:#c6b79e;padding:3.5rem 0;text-align:center;">
             <div style="font-size:1.35rem;font-weight:700;max-width:700px;margin:0 auto 2.5rem auto;color:#fff;">Möchtest du tiefere Einblicke in dieses Projekt und/oder einen Einblick in mein gesamtes Innenarchitekturportfolio haben?</div>

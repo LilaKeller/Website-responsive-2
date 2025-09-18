@@ -107,24 +107,123 @@
         </section>
     </main>
         <!-- Navigation: Letztes/Nächstes Projekt -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
-            <div style="position:relative;display:inline-block;">
-                <a href="P4_IA_KlosterHolzen.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/IA/Kloster Holzen/Generated Image September 16, 2025 - 8_30PM.png" alt="Festsaal im Klostergasthof" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">Festsaal im Klostergasthof</div>
-                    <div style="font-size:0.98rem;color:#888;">Veranstaltungsgastronomie für Hochzeiten und Events</div>
-                </div>
-            </div>
-            <div style="position:relative;display:inline-block;">
-                <a href="P6_UXUI_OmNomZen.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png" alt="OnNomZen" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">OnNomZen</div>
-                    <div style="font-size:0.98rem;color:#888;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
-                </div>
-            </div>
-        </section>
+                <section class="projekt-nav-section">
+                    <div class="projekt-nav-row">
+                        <div class="projekt-nav-btn projekt-nav-btn-left">
+                            <a href="P4_IA_KlosterHolzen.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
+                            <div class="projekt-vorschau">
+                                <img src="../../img/IA/Kloster Holzen/Generated Image September 16, 2025 - 8_30PM.png" alt="Festsaal im Klostergasthof">
+                                <div class="projekt-vorschau-title">Festsaal im Klostergasthof</div>
+                                <div class="projekt-vorschau-sub">Veranstaltungsgastronomie für Hochzeiten und Events</div>
+                            </div>
+                        </div>
+                        <div class="projekt-nav-btn projekt-nav-btn-right">
+                            <a href="P6_UXUI_OmNomZen.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
+                            <div class="projekt-vorschau">
+                                <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png" alt="OnNomZen">
+                                <div class="projekt-vorschau-title">OnNomZen</div>
+                                <div class="projekt-vorschau-sub">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <style>
+                    .projekt-nav-section {
+                        width: 100vw;
+                        position: relative;
+                        left: 50%;
+                        right: 50%;
+                        margin-left: -50vw;
+                        margin-right: -50vw;
+                        background: #fff;
+                        padding: 2.5rem 80px 1.5rem 80px;
+                        box-sizing: border-box;
+                    }
+                    .projekt-nav-row {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 2rem;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                    }
+                    .projekt-nav-btn {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        min-width: 220px;
+                    }
+                    .projekt-nav-btn-right {
+                        align-items: flex-end;
+                    }
+                    .projekt-nav-btn .btn-secondary {
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        border-radius: 2em;
+                        padding: 0.7em 2.2em;
+                        margin-bottom: 0.7em;
+                        background: #b85c4c;
+                        color: #fff;
+                        text-decoration: none;
+                        transition: background 0.2s;
+                    }
+                    .projekt-nav-btn .btn-secondary:hover {
+                        background: #a14d3e;
+                    }
+                    .projekt-vorschau {
+                        display: none;
+                        position: absolute;
+                        left: 0;
+                        bottom: 110%;
+                        background: #fff;
+                        border-radius: 1.2rem;
+                        box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+                        padding: 1rem;
+                        width: 260px;
+                        z-index: 10;
+                        text-align: left;
+                    }
+                    .projekt-nav-btn-right .projekt-vorschau {
+                        left: 0;
+                        right: auto;
+                        text-align: left;
+                    }
+                    .projekt-nav-btn:hover .projekt-vorschau {
+                        display: block;
+                    }
+                    .projekt-vorschau img {
+                        width: 100%;
+                        border-radius: 0.7rem;
+                        margin-bottom: 0.7em;
+                    }
+                    .projekt-vorschau-title {
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                    }
+                    .projekt-vorschau-sub {
+                        font-size: 0.98rem;
+                        color: #888;
+                    }
+                    @media (max-width: 900px) {
+                        .projekt-nav-section {
+                            padding-left: 24px;
+                            padding-right: 24px;
+                        }
+                        .projekt-nav-row {
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            align-items: stretch;
+                        }
+                        .projekt-nav-btn, .projekt-nav-btn-right {
+                            align-items: flex-start !important;
+                        }
+                        .projekt-nav-btn-right .projekt-vorschau {
+                            right: auto;
+                            left: 0;
+                            text-align: left;
+                        }
+                    }
+                </style>
                 <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
                     <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
                         <div class="contact-content" style="margin:0;flex:1;">

@@ -198,24 +198,123 @@
             </section>
             <div style="background:#fff;width:100%;min-height:100vh;">
               <!-- Navigation -->
-              <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
-                  <div style="position:relative;display:inline-block;">
+              <section class="projekt-nav-section">
+                <div class="projekt-nav-row">
+                  <div class="projekt-nav-btn projekt-nav-btn-left">
                     <a href="P1_IA_Weserkoje.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
-                    <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                      <img src="../../img/IA/Weserkoje/Ansicht-3jpg.png" alt="Weserkoje" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                      <div style="font-weight:700;font-size:1.1rem;">weserkoje</div>
-                      <div style="font-size:0.98rem;color:#888;">Multifunktionale Herberge mit integriertem Tagungszentrum</div>
+                    <div class="projekt-vorschau">
+                      <img src="../../img/IA/Weserkoje/Ansicht-3jpg.png" alt="Weserkoje">
+                      <div class="projekt-vorschau-title">Weserkoje</div>
+                      <div class="projekt-vorschau-sub">Multifunktionale Herberge mit integriertem Tagungszentrum</div>
                     </div>
                   </div>
-                  <div style="position:relative;display:inline-block;">
+                  <div class="projekt-nav-btn projekt-nav-btn-right">
                     <a href="P3_IA_MyMindStudio.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
-                    <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                      <img src="../../img/IA/My Mind studio/Seminarraum_Auschnitt.jpg" alt="MyMind Studio" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                      <div style="font-weight:700;font-size:1.1rem;">My Mind Studio</div>
-                      <div style="font-size:0.98rem;color:#888;">Meditations- und Yogastudio mit Café</div>
+                    <div class="projekt-vorschau">
+                      <img src="../../img/IA/My Mind studio/Seminarraum_Auschnitt.jpg" alt="MyMind Studio">
+                      <div class="projekt-vorschau-title">My Mind Studio</div>
+                      <div class="projekt-vorschau-sub">Meditations- und Yogastudio mit Café</div>
                     </div>
                   </div>
+                </div>
               </section>
+              <style>
+                .projekt-nav-section {
+                  width: 100vw;
+                  position: relative;
+                  left: 50%;
+                  right: 50%;
+                  margin-left: -50vw;
+                  margin-right: -50vw;
+                  background: #fff;
+                  padding: 2.5rem 80px 1.5rem 80px;
+                  box-sizing: border-box;
+                }
+                .projekt-nav-row {
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 2rem;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                }
+                .projekt-nav-btn {
+                  position: relative;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  min-width: 220px;
+                }
+                .projekt-nav-btn-right {
+                  align-items: flex-end;
+                }
+                .projekt-nav-btn .btn-secondary {
+                  font-weight: 700;
+                  font-size: 1.1rem;
+                  border-radius: 2em;
+                  padding: 0.7em 2.2em;
+                  margin-bottom: 0.7em;
+                  background: #b85c4c;
+                  color: #fff;
+                  text-decoration: none;
+                  transition: background 0.2s;
+                }
+                .projekt-nav-btn .btn-secondary:hover {
+                  background: #a14d3e;
+                }
+                .projekt-vorschau {
+                  display: none;
+                  position: absolute;
+                  left: 0;
+                  bottom: 110%;
+                  background: #fff;
+                  border-radius: 1.2rem;
+                  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+                  padding: 1rem;
+                  width: 260px;
+                  z-index: 10;
+                  text-align: left;
+                }
+                .projekt-nav-btn-right .projekt-vorschau {
+                  left: 0;
+                  right: auto;
+                  text-align: left;
+                }
+                .projekt-nav-btn:hover .projekt-vorschau {
+                  display: block;
+                }
+                .projekt-vorschau img {
+                  width: 100%;
+                  border-radius: 0.7rem;
+                  margin-bottom: 0.7em;
+                }
+                .projekt-vorschau-title {
+                  font-weight: 700;
+                  font-size: 1.1rem;
+                }
+                .projekt-vorschau-sub {
+                  font-size: 0.98rem;
+                  color: #888;
+                }
+                @media (max-width: 900px) {
+                  .projekt-nav-section {
+                    padding-left: 24px;
+                    padding-right: 24px;
+                  }
+                  .projekt-nav-row {
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    align-items: stretch;
+                  }
+                  .projekt-nav-btn, .projekt-nav-btn-right {
+                    align-items: flex-start !important;
+                  }
+                  .projekt-nav-btn-right .projekt-vorschau {
+                    right: auto;
+                    left: 0;
+                    text-align: left;
+                  }
+                }
+              </style>
               <!-- Call to Action -->
               <section style="background:#c6b79e;padding:3.5rem 0;text-align:center;">
                   <div style="font-size:1.35rem;font-weight:700;max-width:700px;margin:0 auto 2.5rem auto;color:#fff;">Möchtest du tiefere Einblicke in dieses Projekt und/oder einen Einblick in mein gesamtes Innenarchitekturportfolio haben?</div>
