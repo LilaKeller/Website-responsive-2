@@ -64,6 +64,12 @@
             color: #222 !important;
         }
     </style>
+    <style>
+        .main-header nav ul li a {
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -111,7 +117,6 @@
             </div>
         </section>
 
-    </main>
         <!-- Navigation: Letztes/Nächstes Projekt -->
         <section class="projekt-nav-section">
             <div class="projekt-nav-row">
@@ -287,36 +292,34 @@
         </div>
     </footer>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Lokale Zeit immer aktuell anzeigen
-      function updateLocalTime() {
-        const now = new Date();
-        const options = { hour: '2-digit', minute: '2-digit' };
-        let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
-        // MESZ/MEZ je nach Sommerzeit
-        const isDST = now.getTimezoneOffset() < -60;
-        timeString += isDST ? ' MESZ' : ' MEZ';
-        document.getElementById('local-time').textContent = timeString;
-      }
-      updateLocalTime();
-      setInterval(updateLocalTime, 10000);
+        document.addEventListener('DOMContentLoaded', function() {
+            var header = document.querySelector('.main-header');
+            function updateHeaderScrolled() {
+                var hero = document.querySelector('.hero');
+                var heroHeight = hero ? hero.offsetHeight : 0;
+                if(window.scrollY > heroHeight) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', updateHeaderScrolled);
+            window.addEventListener('resize', updateHeaderScrolled);
+            updateHeaderScrolled();
 
-      // Header Hintergrund und Schriftfarbe erst nach Hero-Bereich ändern
-      const header = document.querySelector('.main-header');
-      const hero = document.querySelector('.hero');
-
-      function updateHeaderScrolled() {
-        var heroHeight = hero ? hero.offsetHeight : 0;
-        if(window.scrollY > heroHeight) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      }
-      window.addEventListener('scroll', updateHeaderScrolled);
-      window.addEventListener('resize', updateHeaderScrolled);
-      updateHeaderScrolled();
-    });
+            // Lokale Zeit immer aktuell anzeigen
+            function updateLocalTime() {
+                const now = new Date();
+                const options = { hour: '2-digit', minute: '2-digit' };
+                let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+                // MESZ/MEZ je nach Sommerzeit
+                const isDST = now.getTimezoneOffset() < -60;
+                timeString += isDST ? ' MESZ' : ' MEZ';
+                document.getElementById('local-time').textContent = timeString;
+            }
+            updateLocalTime();
+            setInterval(updateLocalTime, 10000);
+        });
     </script>
 </body>
 </html>
