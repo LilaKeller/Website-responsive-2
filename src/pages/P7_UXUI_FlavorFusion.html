@@ -14,15 +14,15 @@
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
 </head>
 <body>
-        <header class="main-header">
-            <nav>
-                <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
-                <ul>
-                    <li><a href="projekte.html">Projekte</a></li>
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
+                <header class="main-header">
+                    <nav>
+                        <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
+                        <ul>
+                            <li><a href="projekte.html">Projekte</a></li>
+                            <li><a href="about.html">Über mich</a></li>
+                            <li><a href="contact.html">Kontakt</a></li>
+                        </ul>
+                    </nav>
         </header>
     <main>
         <!-- Hero Section -->
@@ -35,7 +35,7 @@
         </section>
 
         <!-- Projektinfos wie in P5_... -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;">
+        <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:2.5rem 80px 1.5rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
             <div style="flex:1 1 0;min-width:180px;">
                 <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">MEINE ROLLE</div>
                 <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
@@ -78,6 +78,88 @@
             </div>
         </section>
     
-    <script src="../scripts/main.js"></script>
+                <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+                    <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
+                        <div class="contact-content" style="margin:0;flex:1;">
+                            <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
+                        </div>
+                        <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
+                            <a href="contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;"></a>
+                        </div>
+                    </div>
+                    <style>
+                        .btn-contact.round-yellow {
+                            width: 192px;
+                            height: 192px;
+                            border-radius: 50%;
+                            background: #FFB800;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+                            border: none;
+                            transition: background 0.2s, box-shadow 0.2s;
+                            padding: 0;
+                        }
+                        .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
+                            background: #ff9900;
+                            box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+                        }
+                        .btn-contact.round-yellow svg {
+                            width: 96px;
+                            height: 96px;
+                            display: block;
+                        }
+                        .btn-contact.round-yellow svg path {
+                            stroke: #fff;
+                        }
+                        @media (max-width: 700px) {
+                            section.contact#contact {
+                                padding-left: 10vw !important;
+                                padding-right: 10vw !important;
+                            }
+                        }
+                    </style>
+                </section>
+                <footer class="main-footer">
+                    <div class="footer-row" style="padding-top:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
+                        <div style="display:flex;gap:3rem;flex:1;">
+                            <div class="footer-block">
+                                <div class="footer-title">VERSION</div>
+                                <div>2025 © Edition</div>
+                            </div>
+                            <div class="footer-block">
+                                <div class="footer-title">LOKALE ZEIT</div>
+                                <div><span id="local-time"></span></div>
+                            </div>
+                            <div class="footer-block">
+                                <div class="footer-title">SOZIALE NETZWERKE</div>
+                                <div class="footer-socials">
+                                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+                                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-block" style="flex:0 0 auto;">
+                            <div class="footer-title">RECHTLICHES</div>
+                            <a href="datenschutz.html">Datenschutz</a>
+                            <a href="impressum.html">Impressum</a>
+                        </div>
+                    </div>
+                </footer>
+        </body>
+        </html>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var header = document.querySelector('.main-header');
+                window.addEventListener('scroll', function() {
+                    if(window.scrollY > window.innerHeight) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            });
+        </script>
 </body>
 </html>
