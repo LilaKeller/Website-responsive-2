@@ -2,29 +2,52 @@
 <html lang="de">
 <head>
   <style>
+    .contact-form input,
+    .contact-form textarea {
+      background: #fbe9e4;
+      border: 1.5px solid #e07a5f;
+      color: #222;
+    }
+    .all-details-block, .contact-details, .business-details, .socials-inline {
+      background: none !important;
+    }
+    .contact-section, .contact-container, .contact-left, .contact-right {
+      box-shadow: none !important;
+    }
     .main-header nav ul li a {
-      text-transform: up                            <div class="business-details">
-                <div><strong style="color:#e07a5f;">Name:</strong> Anika Warncke</div>
-                <div><strong style="color:#e07a5f;">Location:</strong> Lüneburg, Deutschland</div>
-              </div>
-              <h3 style="color:#e07a5f;">Socials</h3>3 style="color:#e07a5f;">Contact Details</h3>
-              <div class="contact-details">
-                <div><strong style="color:#e07a5f;">E-Mail:</strong> <a href="mailto:hallo@anika-warncke.de" style="color:#e07a5f;">hallo@anika-warncke.de</a></div>
-                <div><strong style="color:#e07a5f;">Mobil:</strong> <a href="tel:+491234567890" style="color:#e07a5f;">+49 123 4567890</a></div>
-              </div>
-              <h3 style="color:#e07a5f;">Business Details</h3>     <div class="contact-details">
-                <div><strong style="color:#e07a5f;">E-Mail:</strong> <a href="mailto:hallo@anika-warncke.de" style="color:#e07a5f;">hallo@anika-warncke.de</a></div>
-                <div><strong style="color:#e07a5f;">Mobil:</strong> <a href="tel:+491234567890" style="color:#e07a5f;">+49 123 4567890</a></div>
-              </div>
-              <h3 style="color:#e07a5f;">Contact Details</h3>se;
+      text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .profile-block {
-      width: 260px;
-      margin: 0;
+    .contact-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
-    .contact-info-block {
+    .contact-right {
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100%;
+  max-width: 270px;
+  width: auto;
+  margin: 0;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+    }
+    .profile-block {
+        align-items: flex-end;
+      width: auto;
+      margin: 0 0 2em 0;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
       text-align: left;
+      padding: 0;
     }
   </style>
   <meta charset="UTF-8">
@@ -47,8 +70,7 @@
     "image": "https://anika-warncke.de/img/anika-warncke.jpg",
     "url": "https://anika-warncke.de/",
     "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lüneburg",
+              <!-- Removed empty all-details-block -->
       "addressCountry": "DE"
     },
     "sameAs": [
@@ -70,8 +92,8 @@
     </nav>
   </header>
   <main>
-    <section class="contact-section">
-      <div class="contact-container">
+    <section class="contact-section" style="background:none;">
+  <div class="contact-container" style="width:100vw;max-width:100vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
         <div class="contact-left">
           <h1 class="contact-headline">Lass uns gemeinsam ein Projekt starten!</h1>
           <form class="contact-form" autocomplete="off">
@@ -109,36 +131,38 @@
         <div class="contact-right">
           <div class="contact-info-block">
             <div class="profile-block">
-              <div style="width:260px;height:260px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;margin:0 0 1.2em 0;background:#eee;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+              <div style="width:260px;height:260px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:flex-start;margin:0;background:#eee;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
                 <img src="../../img/anika-warncke.jpg" alt="Porträt von Anika Warncke" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
               </div>
-              <a href="about.html" class="btn-secondary" style="width:260px; display:block; margin-left:0; text-align:center;">Über mich</a>
+              <a href="about.html" class="btn-secondary" style="width:260px; display:block; margin:2em 0 0 0; text-align:center;">Über mich</a>
             </div>
             <div class="all-details-block">
-              <h3 style="color:#e07a5f;">Contact Details</h3>
-              <div class="contact-details">
-                <div><strong style="color:#e07a5f;">E-Mail:</strong> <a href="mailto:hallo@anika-warncke.de" style="color:#e07a5f;">hallo@anika-warncke.de</a></div>
-                <div><strong style="color:#e07a5f;">Mobil:</strong> <a href="tel:+491234567890" style="color:#e07a5f;">+49 123 4567890</a></div>
+                <h3 style="color:#e07a5f;">Contact Details</h3>
+                <div class="contact-details">
+                  <div><strong style="color:#e07a5f;">E-Mail:</strong> <a href="mailto:hallo@anika-warncke.de" style="color:#e07a5f;">hallo@anika-warncke.de</a></div>
+                  <div><strong style="color:#e07a5f;">Mobil:</strong> <a href="tel:+491234567890" style="color:#e07a5f;">+49 123 4567890</a></div>
+                </div>
+                <h3 style="color:#e07a5f;">Business Details</h3>
+                <div class="business-details">
+                  <div><strong style="color:#e07a5f;">Name:</strong> Anika Warncke</div>
+                  <div><strong style="color:#e07a5f;">Location:</strong> Lüneburg, Deutschland</div>
+                </div>
+                <h3 style="color:#e07a5f;">Socials</h3>
+                <div class="socials-inline">
+                  <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;color:#e07a5f;">
+                    <!-- Lucide LinkedIn Icon Outline, corporate orange -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07a5f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></svg>
+                    LinkedIn
+                  </a>
+                  <!-- Instagram Link ausgeblendet
+                  <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;color:#e07a5f;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07a5f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="4"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                    Instagram
+                  </a>
+                  -->
+                </div>
               </div>
-              <h3 style="color:#e07a5f;">Business Details</h3>
-              <div class="business-details">
-                <div><strong style="color:#e07a5f;">Name:</strong> Anika Warncke</div>
-                <div><strong style="color:#e07a5f;">Location:</strong> Lüneburg, Deutschland</div>
-              </div>
-              <h3 style="color:#e07a5f;">Socials</h3>
-              <div class="socials-inline">
-                <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;color:#e07a5f;">
-                  <!-- Lucide LinkedIn Icon Outline, corporate orange -->
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07a5f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></svg>
-                  LinkedIn
-                </a>
-                <!-- Instagram Link ausgeblendet
-                <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.3em;color:#e07a5f;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e07a5f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="16" x="4" y="4" rx="4"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
-                  Instagram
-                </a>
-                -->
-              </div>
+              <div class="all-details-block" style="margin-top:0;">
             </div>
           </div>
         </div>
