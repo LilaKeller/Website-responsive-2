@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <style>
-        .main-header nav ul li a {
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weserkoje - Multifunktionale Herberge mit integriertem Tagungszentrum</title>
+    <title>Weserkoje – Multifunktionale Herberge</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
 </head>
 <body>
-        <header class="main-header">
-            <nav>
-                <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
-                <ul>
-                    <li><a href="projekte.html">Projekte</a></li>
-                    <li><a href="about.html">Über mich</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </header>
-    <main>
-        <!-- Hero-Bereich mit Bild und Titel -->
-    <section class="hero" style="background:url('../../img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat; min-height:60vh; display:flex; align-items:center; justify-content:center;">
-        <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:2.5rem 2.5rem 2rem 2.5rem;text-align:center;margin:0 auto;">
-            <h1 style="font-size:2.8rem;font-weight:800;margin:0 0 0.2em 0;line-height:1.3;">weserkoje</h1>
+    <header class="main-header">
+        <nav>
+            <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
+            <ul>
+                <li><a href="projekte.html">Projekte</a></li>
+                <li><a href="about.html">Über mich</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+        <!-- Hero-Bereich mit Bild und Titel wie auf index.html -->
+    <section class="hero hero-weserkoje">
+        <div class="hero-content">
+            <h1>weserkoje</h1>
             <div style="font-size:1.8rem;font-weight:600;margin-bottom:1.2em;line-height:1.3;">Multifunktionale Herberge mit integriertem Tagungszentrum</div>
             <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">INNENARCHITEKTUR | HOSPITALITY</div>
         </div>
     </section>
+    <main>
+</main>
+<style>
+    .hero-weserkoje {
+        background: url('../../img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat;
+        position: static !important;
+    }
+    .main-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        transition: background 0.2s, color 0.2s;
+    }
+    .main-header.scrolled {
+        position: fixed;
+        background: #fff !important;
+        color: #222 !important;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .main-header.scrolled .logo,
+    .main-header.scrolled nav a {
+        color: #222 !important;
+    }
+</style>
         <!-- Projektinfos -->
     <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:2.5rem 80px 1.5rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
             <div style="flex:1 1 0;min-width:180px;">
@@ -238,8 +257,8 @@
             <div style="font-size:1.35rem;font-weight:700;max-width:700px;margin:0 auto 2.5rem auto;color:#fff;">Möchtest du tiefere Einblicke in dieses Projekt und/oder einen Einblick in mein gesamtes Innenarchitekturportfolio haben?</div>
             <div style="font-size:2.5rem;color:#fff;">&#8595;</div>
         </section>
-        </main>
-        <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+    </main>
+    <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
             <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
                 <div class="contact-content" style="margin:0;flex:1;">
                     <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
@@ -307,9 +326,7 @@
                     <a href="impressum.html">Impressum</a>
                 </div>
             </div>
-        </footer>
-    </body>
-    </html>
+                </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var header = document.querySelector('.main-header');

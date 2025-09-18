@@ -1,3 +1,17 @@
+/* Sticky Footer: Footer immer unten */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
 /* Header: Weißer Hintergrund und schwarze Typo beim Hover nur wenn gescrollt */
 .main-header.scrolled:hover {
   background: #fff !important;
