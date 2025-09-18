@@ -27,3 +27,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 });
+
+// Lokale Zeit immer aktuell anzeigen (wie auf index.html)
+function updateLocalTime() {
+	const now = new Date();
+	const options = { hour: '2-digit', minute: '2-digit' };
+	let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+	// MESZ/MEZ je nach Sommerzeit
+	const isDST = now.getTimezoneOffset() < -60;
+	timeString += isDST ? ' MESZ' : ' MEZ';
+	var el = document.getElementById('local-time');
+	if (el) el.textContent = timeString;
+}
+updateLocalTime();
+setInterval(updateLocalTime, 10000);
