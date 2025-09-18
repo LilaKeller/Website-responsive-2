@@ -1122,7 +1122,7 @@ nav a:hover, nav a:focus {
 }
 .hero-content {
 
-  max-width: 100%;
+  max-width: 33.33%;
   left:0;
   background: rgba(255,255,255,0.72);
   border-radius: 1.2rem;
