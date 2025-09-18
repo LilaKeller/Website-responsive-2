@@ -34,17 +34,17 @@
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
 </head>
 <body>
-        <header class="main-header">
-          <nav>
-            <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
-            <ul>
-              <li><a href="projekte.html">Projekte</a></li>
-              <li><a href="about.html">Über mich</a></li>
-              <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-          </nav>
-    
-        <main>
+    <header class="main-header">
+      <nav>
+        <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
+        <ul>
+          <li><a href="projekte.html">Projekte</a></li>
+          <li><a href="about.html">Über mich</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
             <!-- Hero-Bereich mit Bild und Titel -->
             <section class="hero" style="background:url('../../img/IA/Schlaf/Konzeptskizze+-01.jpg') center center/cover no-repeat; min-height:60vh; display:flex; align-items:center; justify-content:center;">
                 <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:2.5rem 2.5rem 2rem 2.5rem;text-align:center;margin:0 auto;">
@@ -499,38 +499,37 @@
           </div>
         </div>
       </footer>
-      <script>
-        // Lokale Zeit immer aktuell anzeigen
-        function updateLocalTime() {
-          const now = new Date();
-          const options = { hour: '2-digit', minute: '2-digit' };
-          let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
-          // MESZ/MEZ je nach Sommerzeit
-          const isDST = now.getTimezoneOffset() < -60;
-          timeString += isDST ? ' MESZ' : ' MEZ';
-          var el = document.getElementById('local-time');
-          if (el) el.textContent = timeString;
-        }
-        updateLocalTime();
-        setInterval(updateLocalTime, 10000);
-      </script>
-  </body>
-</main>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var header = document.querySelector('.main-header');
-      function updateHeaderScrolled() {
-        var hero = document.querySelector('.hero');
-        var heroHeight = hero ? hero.offsetHeight : 0;
-        if(window.scrollY > heroHeight) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+    </main>
+    <script>
+      // Lokale Zeit immer aktuell anzeigen
+      function updateLocalTime() {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit' };
+        let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+        // MESZ/MEZ je nach Sommerzeit
+        const isDST = now.getTimezoneOffset() < -60;
+        timeString += isDST ? ' MESZ' : ' MEZ';
+        var el = document.getElementById('local-time');
+        if (el) el.textContent = timeString;
       }
-      window.addEventListener('scroll', updateHeaderScrolled);
-      window.addEventListener('resize', updateHeaderScrolled);
-      updateHeaderScrolled();
-    });
-  </script>
+      updateLocalTime();
+      setInterval(updateLocalTime, 10000);
+      // Header scroll effect
+      document.addEventListener('DOMContentLoaded', function() {
+        var header = document.querySelector('.main-header');
+        function updateHeaderScrolled() {
+          var hero = document.querySelector('.hero');
+          var heroHeight = hero ? hero.offsetHeight : 0;
+          if(window.scrollY > heroHeight) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+        window.addEventListener('scroll', updateHeaderScrolled);
+        window.addEventListener('resize', updateHeaderScrolled);
+        updateHeaderScrolled();
+      });
+    </script>
+</body>
 </html>
