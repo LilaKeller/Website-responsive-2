@@ -83,63 +83,6 @@
             }
         </style>
     <style>
-        /* Hovereffekt wie im Carousel auf index.html */
-        .work-grid .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-        }
-        .work-grid .portfolio-item > a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            color: inherit;
-        }
-        .work-grid .portfolio-item > a > div:first-child {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 1.2rem 1.2rem 0 0;
-            transition: background 0.3s, filter 0.3s;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-        }
-        .work-grid .portfolio-item .portfolio-subtitle-hover {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: 600;
-            opacity: 0;
-            background: rgba(0,0,0,0.48);
-            text-align: center;
-            padding: 1.2rem;
-            transition: opacity 0.3s;
-            pointer-events: none;
-            font-family: 'Nunito', Arial, sans-serif;
-        }
-        .work-grid .portfolio-item:hover > a > div:first-child,
-        .work-grid .portfolio-item:focus-within > a > div:first-child {
-            background: #9ba89c !important;
-            filter: unset !important;
-        }
-        .work-grid .portfolio-item:hover .portfolio-subtitle-hover,
-        .work-grid .portfolio-item:focus-within .portfolio-subtitle-hover {
-            opacity: 1;
-        }
-        .portfolio-category {
-            display: none;
-        }
         .main-header nav ul li a {
             text-transform: uppercase;
             letter-spacing: 0.04em;
@@ -175,97 +118,73 @@
             <div class="work-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3.5rem 3.5rem;width:100%;box-sizing:border-box;">
                                     <div class="portfolio-item" data-type="innenarchitektur">
                                         <a href="../../src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-                                            <div style="width:100%;height:220px;background:url('../../img/IA/Kloster%20Holzen/Generated%20Image%20September%2016%2C%202025%20-%208_30PM.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Veranstaltungsgastronomie für Hochzeiten und Events</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/IA/Kloster%20Holzen/Generated%20Image%20September%2016%2C%202025%20-%208_30PM.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">Festsaal im Klostergasthof</h3>
-                                                <p style="margin:0;">Veranstaltungsgastronomie für Hochzeiten und Events</p>
-                                                <span class="portfolio-category">Innenarchitektur</span>
+                                                <h3 style="margin:0 0 0.5em 0;">Kloster Veranstaltungssaal</h3>
+                                                <p style="margin:0;">Innenarchitektur für Hochzeiten & Events</p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="innenarchitektur">
                                         <a href="../../src/pages/P2_IA_Schlaf.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-                                            <div style="width:100%;height:220px;background:url('../../img/IA/Schlaf/Konzeptskizze%2B-01.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Eine Erlebnis­ausstellung in die Tiefen des Schlafes</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/IA/Schlaf/Konzeptskizze%2B-01.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1.2rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">SCHLAF</h3>
-                                                <p style="margin:0;">Eine Erlebnis­ausstellung in die Tiefen des Schlafes</p>
-                                                <span class="portfolio-category">Innenarchitektur</span>
+                                                <h3 style="margin:0 0 0.5em 0;">Schlaf</h3>
+                                                <p style="margin:0;">In die Tiefen des Schlafes</p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="innenarchitektur">
                                         <a href="../../src/pages/P1_IA_Weserkoje.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-                                            <div style="width:100%;height:220px;background:url('../../img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Multifunktionale Herberge mit integriertem Tagungszentrum</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/IA/Weserkoje/Ansicht-3jpg.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1.2rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">weserkoje</h3>
+                                                <h3 style="margin:0 0 0.5em 0;">Weserkoje</h3>
                                                 <p style="margin:0;">Multifunktionale Herberge mit integriertem Tagungszentrum</p>
-                                                <span class="portfolio-category">Innenarchitektur</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="uxui">
                                         <a href="../../src/pages/P8_UXUI_NaturKompass.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/NaturKompass/WhatsApp%20Image%202025-09-17%20at%2011.36.22.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/NaturKompass/WhatsApp%20Image%202025-09-17%20at%2011.36.22.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">NaturKompass</h3>
-                                                <p style="margin:0;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</p>
-                                                <span class="portfolio-category">UX/UI Design</span>
+                                                <h3 style="margin:0 0 0.5em 0;">NaturKompass, Mobile App</h3>
+                                                <p style="margin:0;">UX/UI</p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="uxui">
                                         <a href="../../src/pages/P7_UXUI_FlavorFusion.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/Flavor%20Fusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Landing Page für eine mobile Rezepte App</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/Flavor%20Fusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">FlavorFusion</h3>
-                                                <p style="margin:0;">Landing Page für eine mobile Rezepte App</p>
-                                                <span class="portfolio-category">UX/UI Design</span>
+                                                <h3 style="margin:0 0 0.5em 0;">FlavorFusion, Landingpage für Mobile App</h3>
+                                                <p style="margin:0;">UX/UI</p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="uxui">
                                         <a href="../../src/pages/P5_UXUI_Planora.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Planora">
-                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/Planora/63f7859e-393c-4393-a7eb-127ef2966c57.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Reiseplanung, die sich dir anpasst.</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/Planora/63f7859e-393c-4393-a7eb-127ef2966c57.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
                                                 <h3 style="margin:0 0 0.5em 0;">Planora</h3>
-                                                <p style="margin:0;">Reiseplanung, die sich dir anpasst.</p>
-                                                <span class="portfolio-category">UX/UI Design</span>
+                                                <p style="margin:0;">Reiseplanung, die sich dir anpasst</p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="uxui">
                                         <a href="../../src/pages/P6_UXUI_OmNomZen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: OnNomZen">
-                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Stressabbau mit Bio-Ashwagandha-Gummibärchen</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
                                                 <h3 style="margin:0 0 0.5em 0;">OnNomZen</h3>
                                                 <p style="margin:0;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</p>
-                                                <span class="portfolio-category">UX/UI Design</span>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="portfolio-item" data-type="innenarchitektur">
                                         <a href="../../src/pages/P3_IA_MyMindStudio.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: MY MIND Studio">
-                                            <div style="width:100%;height:220px;background:url('../../img/IA/My Mind studio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;position:relative;">
-                                                <span class="portfolio-subtitle-hover">Meditations- und Yogastudio mit Café</span>
-                                            </div>
+                                            <div style="width:100%;height:220px;background:url('../../img/IA/My Mind studio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;"></div>
                                             <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
-                                                <h3 style="margin:0 0 0.5em 0;">My Mind Studio</h3>
-                                                <p style="margin:0;">Meditations- und Yogastudio mit Café</p>
-                                                <span class="portfolio-category">Innenarchitektur</span>
+                                                <h3 style="margin:0 0 0.5em 0;">MY MIND Studio</h3>
+                                                <p style="margin:0;">Meditations- & Yoga-Studio mit Café</p>
                                             </div>
                                         </a>
                                     </div>
