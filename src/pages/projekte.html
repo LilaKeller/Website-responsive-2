@@ -191,82 +191,38 @@
             </div>
         </section>
     </main>
-    <footer class="main-footer">
-    <div style="margin-top:9rem;"></div>
-        <div class="footer-row">
-            <div class="footer-block">
-                <div class="footer-title">VERSION</div>
-                <div>2025 © Edition</div>
-            </div>
-            <div class="footer-block">
-                <div class="footer-title">LOKALE ZEIT</div>
-                <div><span id="local-time"></span></div>
-            </div>
-            <div class="footer-block">
-                <div class="footer-title">SOZIALE NETZWERKE</div>
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">
-                        LinkedIn
-                    </a>
-                    <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">
-                        Instagram
-                    </a>
-                </div>
-            </div>
-            <div class="footer-block">
-                <div class="footer-title">RECHTLICHES</div>
-                <a href="../pages/datenschutz.html">Datenschutz</a>
-                <a href="../pages/impressum.html">Impressum</a>
-            </div>
-        </div>
-    </footer>
+    <div style="margin-bottom:3.5rem;"></div>
+    <script src="../scripts/main.js"></script>
     <script>
-    // Lokale Zeit immer aktuell anzeigen
-    function updateLocalTime() {
-        const now = new Date();
-        const options = { hour: '2-digit', minute: '2-digit' };
-        let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
-        // MESZ/MEZ je nach Sommerzeit
-        const isDST = now.getTimezoneOffset() < -60;
-        timeString += isDST ? ' MESZ' : ' MEZ';
-        var localTimeElem = document.getElementById('local-time');
-        if(localTimeElem) localTimeElem.textContent = timeString;
-    }
-    updateLocalTime();
-    setInterval(updateLocalTime, 10000);
-    </script>
-
-        <script src="../scripts/main.js"></script>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Shuffle portfolio cards
-            const grid = document.querySelector('.work-grid');
-            if (grid) {
-                const cards = Array.from(grid.children);
-                for (let i = cards.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [cards[i], cards[j]] = [cards[j], cards[i]];
-                }
-                cards.forEach(card => grid.appendChild(card));
+    document.addEventListener('DOMContentLoaded', function() {
+        // Shuffle portfolio cards
+        const grid = document.querySelector('.work-grid');
+        if (grid) {
+            const cards = Array.from(grid.children);
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
             }
-            // Filter logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const items = document.querySelectorAll('.portfolio-item');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    const filter = this.getAttribute('data-filter');
-                    items.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-type') === filter) {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
+            cards.forEach(card => grid.appendChild(card));
+        }
+        // Filter logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                items.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-type') === filter) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 });
             });
         });
-        </script>
+    });
+    </script>
 </body>
 </html>

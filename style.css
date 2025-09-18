@@ -1,27 +1,36 @@
+/* Header: Weißer Hintergrund und schwarze Typo beim Hover */
+.main-header:hover {
+  background: #fff !important;
+}
+.main-header:hover .logo,
+.main-header:hover nav a {
+  color: #222 !important;
+}
 .contact {
   margin-bottom: 0 !important;
 }
 .main-footer {
-  margin-top: 10px;
-  margin-bottom: 10px;
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 2rem;
 }
 .footer-socials a[href*="instagram"] {
   display: none !important;
 }
-.main-footer {
-  padding-left: 80px;
-  padding-right: 80px;
-}
 /* Moderner, responsiver Footer */
 .footer-row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: stretch;
-  padding: 2.5rem 0 1.5rem 0;
   flex-wrap: wrap;
   gap: 6rem;
-  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
 }
 .footer-block {
   min-width: 180px;
@@ -40,13 +49,12 @@
   color: #9ba89c;
   text-transform: uppercase;
 }
-  .footer-title {
-    color: #bfc7be;
-    font-size: 1em;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    white-space: nowrap;
-  }
+.footer-title {
+  color: #bfc7be;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  white-space: nowrap;
 }
 /* Footer-Links weiß */
 .footer-socials {
@@ -133,7 +141,6 @@
   gap: 1.2rem;
   margin: 0 auto 2.5rem auto;
 }
-}
 .profile-img {
   width: 180px;
   height: 180px;
@@ -152,7 +159,6 @@
   transform: scale(1.06);
   box-shadow: 0 12px 40px rgba(255,153,0,0.18);
   outline: 2px solid #ff9900;
-}
 }
 @media (max-width: 700px) {
   .contact-container {
@@ -788,7 +794,6 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   box-shadow: 0 0 0 3px rgba(255,153,0,0.18);
   transition: box-shadow 0.18s, border-color 0.18s;
 }
-}
 .btn-primary {
   background: linear-gradient(90deg,#b6a1e6,#6e8efb);
   color: #fff;
@@ -921,6 +926,27 @@ body {
   color: #333;
 }
 
+.about {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  box-sizing: border-box !important;
+  background: #94A293 !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+.about blockquote {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 2rem 0 !important;
+}
 
 /* Sticky Header und Farbwechsel beim Scrollen */
 .main-header {
@@ -1147,7 +1173,6 @@ nav a:hover, nav a:focus {
   cursor: pointer;
   box-sizing: border-box;
   white-space: nowrap;
-}
   min-width: 44px;
   min-height: 44px;
   line-height: 1.2;
@@ -1279,19 +1304,19 @@ nav a:hover, nav a:focus {
   background: #e07a5f;
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #fff;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
 }
 .carousel-btn:hover {
   background: #b85c44;
