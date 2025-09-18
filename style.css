@@ -1,9 +1,9 @@
-/* Header: Weißer Hintergrund und schwarze Typo beim Hover */
-.main-header:hover {
+/* Header: Weißer Hintergrund und schwarze Typo beim Hover nur wenn gescrollt */
+.main-header.scrolled:hover {
   background: #fff !important;
 }
-.main-header:hover .logo,
-.main-header:hover nav a {
+.main-header.scrolled:hover .logo,
+.main-header.scrolled:hover nav a {
   color: #222 !important;
 }
 .contact {
@@ -313,7 +313,7 @@ a:hover, a:focus, .socials-inline a:hover, .socials-inline a:focus, .main-header
   background: linear-gradient(90deg, #f7f6fb 60%, #ffe7c2 100%);
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  padding: 2.5rem 2vw 2.5rem 2vw;
+  padding: 0 2vw 2.5rem 2vw;
   margin-bottom: 3.5rem;
   display: flex;
   align-items: flex-start;
@@ -934,6 +934,7 @@ body {
   right: 50% !important;
   margin-left: -50vw !important;
   margin-right: -50vw !important;
+  margin-top: 100vh !important;
   padding-left: 80px !important;
   padding-right: 80px !important;
   box-sizing: border-box !important;
@@ -959,7 +960,7 @@ body {
   transition: background 0.3s;
 }
 .main-header.scrolled {
-  background: #fff;
+  background: #fff !important;
 }
 .main-header .logo,
 .main-header nav a {
@@ -987,12 +988,24 @@ body {
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
-  animation: gradient-move 0.7s linear infinite;
+  animation: gradient-move 2.5s linear infinite;
   -webkit-text-fill-color: transparent;
 }
 @keyframes gradient-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+@-webkit-keyframes gradient-move {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+@-moz-keyframes gradient-move {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+@-o-keyframes gradient-move {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
 }
 nav {
   display: flex;
@@ -1002,10 +1015,61 @@ nav {
   background: none;
 }
 .logo {
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 1px;
   color: #fff;
   margin-right: 2rem;
+  text-decoration: none !important;
+  -webkit-text-stroke: none !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  font-size: 1rem;
+  position: relative;
+  transition: none;
+  z-index: 1;
+  background: none;
+  text-transform: uppercase;
+}
+.test-hover:hover {
+  color: transparent !important;
+  background: linear-gradient(90deg, #f4b63d, #e07a5f, #ffb347, #ffcc33, #ff5e62, #ff9966, #f857a6, #f4b63d) !important;
+  background-size: 200% 200% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  animation: gradient-move 2.5s linear infinite !important;
+  -webkit-animation: gradient-move 2.5s linear infinite !important;
+  -moz-animation: gradient-move 2.5s linear infinite !important;
+  -o-animation: gradient-move 2.5s linear infinite !important;
+  -webkit-text-fill-color: transparent !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-text-stroke: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+}
+
+.main-header .logo:hover, .main-header .logo:focus,
+.main-header.scrolled .logo:hover, .main-header.scrolled .logo:focus,
+.main-header.scrolled:hover .logo:hover, .main-header.scrolled:hover .logo:focus {
+  color: transparent !important;
+  background: linear-gradient(90deg, #f4b63d, #e07a5f, #ffb347, #ffcc33, #ff5e62, #ff9966, #f857a6, #f4b63d) !important;
+  background-size: 200% 200% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  animation: gradient-move 2.5s linear infinite !important;
+  -webkit-animation: gradient-move 2.5s linear infinite !important;
+  -moz-animation: gradient-move 2.5s linear infinite !important;
+  -o-animation: gradient-move 2.5s linear infinite !important;
+  -webkit-text-fill-color: transparent !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  -webkit-text-stroke: none !important;
+  text-shadow: none !important;
+  transition: none !important;
 }
 nav ul {
   list-style: none;
@@ -1024,6 +1088,9 @@ nav a {
   transition: color 0.2s;
   z-index: 1;
   background: none;
+  -webkit-text-stroke: none;
+  outline: none;
+  border: none;
 }
 nav a:hover, nav a:focus {
   background: linear-gradient(90deg, #f4b63d 0%, #e07a5f 100%);
@@ -1035,7 +1102,9 @@ nav a:hover, nav a:focus {
 }
 
 .hero {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1099,12 +1168,10 @@ nav a:hover, nav a:focus {
 
 .about {
   background: #94A293;
-.contact {
-  background: #94A293;
-}
   color: #fff;
   padding: 2rem 4vw 2rem 4vw;
   text-align: center;
+  margin-top: 100vh;
 }
 .about blockquote {
   font-size: 1.3rem;
@@ -1468,7 +1535,7 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
   transition: background 0.3s;
 }
 .main-header.scrolled {
-  background: #fff;
+  background: #fff !important;
 }
 .main-header .logo,
 .main-header nav a {

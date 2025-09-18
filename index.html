@@ -162,9 +162,18 @@
     }
   </style>
   <style>
+    .main-header nav ul {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
     .main-header nav ul li a {
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 1px;
+      font-weight: 600;
     }
   </style>
   <meta charset="UTF-8">
@@ -193,7 +202,7 @@
   </style>
   <header class="main-header">
     <nav>
-      <a href="index.html" class="logo">ANIKA WARNCKE</a>
+      <a href="index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
       <ul>
   <li><a href="src/pages/projekte.html">Projekte</a></li>
     <li><a href="src/pages/about.html">Über mich</a></li>
@@ -448,8 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Header Hintergrund und Schriftfarbe erst nach Hero-Bereich ändern
   window.addEventListener('scroll', function() {
-    const heroHeight = hero.offsetHeight;
-    if(window.scrollY > heroHeight - 60) {
+    if(window.scrollY > window.innerHeight) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
