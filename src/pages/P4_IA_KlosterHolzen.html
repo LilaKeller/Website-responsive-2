@@ -108,7 +108,7 @@
                                 </div>
                                         </section>
     <!-- Navigation wie auf P2_IA_Schlaf.html -->
-    <section class="projekt-nav-section" style="position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:2.5rem 80px 1.5rem 80px;box-sizing:border-box;background:#fff;width:100vw;">
+    <section class="projekt-nav-section" style="position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:2.5rem 0 1.5rem 0;box-sizing:border-box;background:#fff;width:100vw;">
         <div class="projekt-nav-row">
             <div class="projekt-nav-btn projekt-nav-btn-left">
                 <a href="P3_IA_MyMindStudio.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
@@ -167,16 +167,11 @@
             border-radius: 2em;
             padding: 0.7em 2.2em;
             margin-bottom: 0.7em;
-            background: #b85c4c;
-            color: #fff;
             border: none;
             text-decoration: none;
             transition: background 0.2s, color 0.2s;
         }
-        .projekt-nav-btn .btn-secondary:hover {
-            background: #a14d3e;
-            color: #fff;
-        }
+
         .projekt-vorschau {
             display: none;
             position: absolute;
@@ -314,7 +309,6 @@
                                                                                         display: flex;
                                                                                         justify-content: space-between;
                                                                                         gap: 2rem;
-                                                                                        max-width: 1200px;
                                                                                         margin: 0 auto;
                                                                                     }
                                                                                     .projekt-nav-btn {
@@ -333,14 +327,10 @@
                                                                                         border-radius: 2em;
                                                                                         padding: 0.7em 2.2em;
                                                                                         margin-bottom: 0.7em;
-                                                                                        background: #b85c4c;
-                                                                                        color: #fff;
                                                                                         text-decoration: none;
                                                                                         transition: background 0.2s;
                                                                                     }
-                                                                                    .projekt-nav-btn .btn-secondary:hover {
-                                                                                        background: #a14d3e;
-                                                                                    }
+
                                                                                     .projekt-vorschau {
                                                                                         display: none;
                                                                                         position: absolute;
@@ -488,6 +478,19 @@
             window.addEventListener('scroll', updateHeaderScrolled);
             window.addEventListener('resize', updateHeaderScrolled);
             updateHeaderScrolled();
+
+            // Lokale Zeit immer aktuell anzeigen
+            function updateLocalTime() {
+                const now = new Date();
+                const options = { hour: '2-digit', minute: '2-digit' };
+                let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+                // MESZ/MEZ je nach Sommerzeit
+                const isDST = now.getTimezoneOffset() < -60;
+                timeString += isDST ? ' MESZ' : ' MEZ';
+                document.getElementById('local-time').textContent = timeString;
+            }
+            updateLocalTime();
+            setInterval(updateLocalTime, 10000);
         });
     </script>
 </body>
