@@ -70,6 +70,170 @@
             letter-spacing: 0.04em;
         }
     </style>
+
+  <style>
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(224, 122, 95, 0.95) 0%, rgba(200, 100, 75, 0.95) 100%);
+      backdrop-filter: blur(12px) saturate(1.2);
+      -webkit-backdrop-filter: blur(12px) saturate(1.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 32px rgba(224, 122, 95, 0.16),
+        0 1px 4px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      /* Temporär sichtbar für Test */
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1) rotate(0deg);
+      z-index: 1000;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      will-change: transform, opacity;
+    }
+    
+    .back-to-top::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: xor;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      pointer-events: none;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1) rotate(0deg);
+    }
+    
+    .back-to-top:hover {
+      background: linear-gradient(135deg, rgba(184, 92, 68, 0.95) 0%, rgba(164, 82, 58, 0.95) 100%);
+      transform: translateY(-6px) scale(1.08);
+      box-shadow: 
+        0 16px 48px rgba(224, 122, 95, 0.24),
+        0 4px 16px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    .back-to-top:active {
+      transform: translateY(-3px) scale(1.02);
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 
+        0 8px 28px rgba(224, 122, 95, 0.2),
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    
+    .back-to-top:focus {
+      outline: none;
+      box-shadow: 
+        0 8px 32px rgba(224, 122, 95, 0.16),
+        0 1px 4px rgba(0, 0, 0, 0.08),
+        0 0 0 3px rgba(224, 122, 95, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    
+    .back-to-top::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg, 
+        transparent 0deg, 
+        rgba(224, 122, 95, 0.8) var(--progress, 0deg),
+        rgba(255, 255, 255, 0.3) calc(var(--progress, 0deg) + 2deg),
+        transparent calc(var(--progress, 0deg) + 4deg)
+      );
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: -1;
+      filter: blur(0.5px);
+    }
+    
+    .back-to-top.visible::before {
+      opacity: 1;
+    }
+    
+    .back-to-top svg {
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .back-to-top:hover svg {
+      transform: translateY(-1px);
+    }
+    
+    .back-to-top.visible.first-show {
+      animation: backToTopPulse 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @keyframes backToTopPulse {
+      0% { transform: translateY(0) scale(1) rotate(0deg); }
+      50% { transform: translateY(-2px) scale(1.1) rotate(1deg); }
+      100% { transform: translateY(0) scale(1) rotate(0deg); }
+    }
+    
+    @media (max-width: 700px) {
+      .back-to-top {
+        width: 52px;
+        height: 52px;
+        bottom: 2rem;
+        right: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .back-to-top {
+        bottom: 1.5rem;
+        right: 1rem;
+        width: 48px;
+        height: 48px;
+      }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .back-to-top, .back-to-top svg, .back-to-top::before {
+        transition: opacity 0.2s ease;
+      }
+      .back-to-top:hover {
+        transform: none;
+      }
+      .back-to-top.visible.first-show {
+        animation: none;
+      }
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      .back-to-top {
+        background: linear-gradient(135deg, rgba(224, 122, 95, 0.9) 0%, rgba(200, 100, 75, 0.9) 100%);
+        border-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px) saturate(1.4);
+      }
+    }
+  </style>
 </head>
 <body>
     <header class="main-header">
@@ -309,7 +473,14 @@
             </div>
         </div>
     </footer>
-    <script>
+    
+  <button class="back-to-top" aria-label="Nach oben scrollen" role="button" tabindex="0" style="--progress: 0deg">
+    <svg width="24" height="24" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M48 76L48 20M48 20L24 44M48 20L72 44" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script>
         document.addEventListener('DOMContentLoaded', function() {
             var header = document.querySelector('.main-header');
             function updateHeaderScrolled() {
@@ -338,6 +509,99 @@
             updateLocalTime();
             setInterval(updateLocalTime, 10000);
         });
+    
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        if (backToTopBtn) {
+          let hasShownOnce = false;
+          
+          function updateScrollProgress() {
+            const scrollTop = window.pageYOffset;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.max(0, Math.min(100, (scrollTop / documentHeight) * 100));
+            
+            const easedPercent = scrollPercent < 50 ? 
+              2 * scrollPercent * scrollPercent / 100 :
+              1 - Math.pow(-2 * scrollPercent + 2, 3) / 2;
+            
+            const progressDeg = (easedPercent / 100) * 360;
+            backToTopBtn.style.setProperty('--progress', `${progressDeg}deg`);
+            
+            // Hero-Bereich als Threshold nutzen
+            const hero = document.querySelector('.hero');
+            const heroHeight = hero ? hero.offsetHeight : window.innerHeight * 0.8;
+            
+            if (scrollTop > heroHeight) {
+              if (!backToTopBtn.classList.contains('visible')) {
+                backToTopBtn.classList.add('visible');
+                
+                if (!hasShownOnce) {
+                  hasShownOnce = true;
+                  backToTopBtn.classList.add('first-show');
+                  setTimeout(() => {
+                    backToTopBtn.classList.remove('first-show');
+                  }, 600);
+                }
+              }
+            } else {
+              backToTopBtn.classList.remove('visible');
+            }
+          }
+          
+          backToTopBtn.addEventListener('click', () => {
+            const startTime = performance.now();
+            const startPos = window.pageYOffset;
+            const duration = Math.min(1200, Math.max(600, startPos / 3));
+            
+            backToTopBtn.style.pointerEvents = 'none';
+            backToTopBtn.style.opacity = '0.7';
+            
+            function scrollStep(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const ease = 1 - Math.pow(1 - progress, 4);
+              
+              window.scrollTo(0, startPos * (1 - ease));
+              
+              if (progress < 1) {
+                requestAnimationFrame(scrollStep);
+              } else {
+                backToTopBtn.style.pointerEvents = '';
+                backToTopBtn.style.opacity = '';
+              }
+            }
+            
+            requestAnimationFrame(scrollStep);
+          });
+          
+          let isScrolling = false;
+          function handleScroll() {
+            if (!isScrolling) {
+              requestAnimationFrame(() => {
+                updateScrollProgress();
+                isScrolling = false;
+              });
+              isScrolling = true;
+            }
+          }
+          
+          window.addEventListener('scroll', handleScroll, { passive: true });
+          
+          backToTopBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              backToTopBtn.click();
+            }
+            if (e.key === 'Escape') {
+              backToTopBtn.blur();
+            }
+          });
+          
+          updateScrollProgress();
+        }setInterval(updateLocalTime, 10000);
+        });
     </script>
+
+  
 </body>
 </html>
