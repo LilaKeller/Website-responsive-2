@@ -1261,17 +1261,27 @@ nav a:hover, nav a:focus {
 .carousel-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
 }
 .portfolio-carousel {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   gap: 2rem;
   padding: 1rem 0;
-  max-width: 100vw;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-carousel::-webkit-scrollbar {
+  display: none;
 }
 .portfolio-item {
   min-width: 400px;
@@ -1303,6 +1313,58 @@ nav a:hover, nav a:focus {
 .carousel-btn:active {
   background: #e07a5f;
   color: #fff;
+}
+
+.carousel-btn.round-svg {
+  background: #e07a5f;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  margin: 0 10px;
+  padding: 0;
+  position: relative;
+  z-index: 100;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  flex-shrink: 0;
+}
+
+.carousel-btn.round-svg:hover:not(:disabled) {
+  background: #b85c44;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.carousel-btn.round-svg:active:not(:disabled) {
+  background: #e07a5f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(0);
+}
+
+.carousel-btn.round-svg:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-btn.round-svg svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.carousel-btn.round-svg svg path {
+  stroke: #fff;
 }
 
 .portfolio-filter {

@@ -10,8 +10,18 @@
       position: relative;
       width: 100%;
       height: 220px;
-      transition: background 0.3s, filter 0.3s;
-      display: flex;
+      transition: background 0.3s, filter 0          <div class="portfolio-item" data-type="innenarchitektur">
+            <a href="src/pages/P3_IA_MyMindStudio.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: MY MIND Studio">
+              <div class="portfolio-thumb" style="background:url('img/IA/My%20Mind%20studio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+                <span class="portfolio-subtitle-hover">Meditations- und Yogastudio mit Café</span>
+              </div>
+              <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
+                <h3 style="margin:0 0 0.2em 0;">My Mind Studio</h3>
+                <p style="margin:0 0 0.2em 0;">Meditations- und Yogastudio mit Café</p>
+                  <!-- Kategorie ausgeblendet -->
+              </div>
+            </a>
+          </div>isplay: flex;
       align-items: flex-end;
       justify-content: center;
     }
@@ -168,11 +178,15 @@
         <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
       </div>
       <div class="carousel-wrapper">
-        <button class="carousel-btn left" aria-label="Zurück">&#60;</button>
+        <button class="carousel-btn left round-svg" aria-label="Zurück">
+          <svg width="24" height="24" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M76 48L20 48M20 48L44 24M20 48L44 72" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <div class="portfolio-carousel">
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div class="portfolio-thumb" style="background:url('img/IA/Kloster%20Holzen/kloster_holzen_augsburg_restaurant_formwaende_innenarchitektur_gastronomie_interior_design_konzept_saal_saeulen_tafel.jpg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+              <div class="portfolio-thumb" style="background:url('img/IA/Kloster%20Holzen/Generated%20Image%20September%2016,%202025%20-%208_30PM.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
                 <span class="portfolio-subtitle-hover">Veranstaltungsgastronomie für Hochzeiten und Events</span>
               </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
@@ -208,7 +222,7 @@
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P8_UXUI_NaturKompass.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div class="portfolio-thumb" style="background:url('img/UXUI/NaturKompass/Mockuuups%20Holding%20Samsung%20Galaxy%20S20%20mockup%20amongst%20trees.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+              <div class="portfolio-thumb" style="background:url('img/UXUI/NaturKompass/WhatsApp%20Image%202025-09-17%20at%2011.36.22.jpeg') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
                 <span class="portfolio-subtitle-hover">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</span>
               </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
@@ -220,7 +234,7 @@
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P7_UXUI_FlavorFusion.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
-              <div class="portfolio-thumb" style="background:url('img/UXUI/Flavor%20Fusion/Rectangle%201.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+              <div class="portfolio-thumb" style="background:url('img/UXUI/Flavor%20Fusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
                 <span class="portfolio-subtitle-hover">Landing Page für eine mobile Rezepte App</span>
               </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
@@ -232,7 +246,7 @@
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P5_UXUI_Planora.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Planora">
-              <div class="portfolio-thumb" style="background-color:#FD8040;border-radius:1.2rem 1.2rem 0 0;">
+              <div class="portfolio-thumb" style="background:url('img/UXUI/Planora/63f7859e-393c-4393-a7eb-127ef2966c57.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
                 <span class="portfolio-subtitle-hover">Reiseplanung, die sich dir anpasst.</span>
               </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
@@ -244,7 +258,7 @@
           </div>
           <div class="portfolio-item" data-type="uxui">
             <a href="src/pages/P6_UXUI_OmNomZen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: OnNomZen">
-              <div class="portfolio-thumb" style="background:url('img/UXUI/OmNomZen/Rectangle 2.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
+              <div class="portfolio-thumb" style="background:url('img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
                 <span class="portfolio-subtitle-hover">Stressabbau mit Bio-Ashwagandha-Gummibärchen</span>
               </div>
               <div class="portfolio-info" style="padding:1.2rem 1rem 1.2rem 1rem;background:#fff;border-radius:0 0 1.2rem 1.2rem;">
@@ -267,6 +281,11 @@
             </a>
           </div>
         </div>
+        <button class="carousel-btn right round-svg" aria-label="Weiter">
+          <svg width="24" height="24" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
       <div style="display:flex;justify-content:center;margin-top:2.2rem;">
   <a href="src/pages/projekte.html" class="btn-secondary">ZU MEINEN PROJEKTEN</a>
@@ -299,6 +318,9 @@
       transition: background 0.2s, box-shadow 0.2s;
       padding: 0;
     }
+    .btn-contact.round-yellow::after {
+      display: none;
+    }
     .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
       background: #ff9900;
       box-shadow: 0 12px 48px rgba(0,0,0,0.16);
@@ -310,6 +332,12 @@
     }
     .btn-contact.round-yellow svg path {
       stroke: #fff;
+    }
+    @media (max-width: 700px) {
+      section.contact#contact {
+        padding-left: 10vw !important;
+        padding-right: 10vw !important;
+      }
     }
   </style>
       </div>

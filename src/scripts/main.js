@@ -133,3 +133,102 @@ document.addEventListener('DOMContentLoaded', function() {
     updateScrollProgress();
   }
 });
+
+// Portfolio Carousel Funktionalität
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, initializing carousel...');
+  
+  // Warte einen Moment, um sicherzustellen, dass alle Elemente geladen sind
+  setTimeout(function() {
+    const carousel = document.querySelector('.portfolio-carousel');
+    const leftBtn = document.querySelector('.carousel-btn.left.round-svg');
+    const rightBtn = document.querySelector('.carousel-btn.right.round-svg');
+    
+    console.log('Carousel elements found:', { 
+      carousel: !!carousel, 
+      leftBtn: !!leftBtn, 
+      rightBtn: !!rightBtn 
+    });
+    
+    if (!carousel) {
+      console.error('Portfolio carousel not found!');
+      return;
+    }
+    
+    if (!leftBtn) {
+      console.error('Left carousel button not found!');
+      return;
+    }
+    
+    if (!rightBtn) {
+      console.error('Right carousel button not found!');
+      return;
+    }
+    
+    console.log('All carousel elements exist, adding event listeners');
+    
+    // Scroll-Funktion für Links-Button
+    leftBtn.addEventListener('click', function(e) {
+      console.log('Left button clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      carousel.scrollBy({
+        left: -420, // Scroll nach links um eine Kartenbreite + gap
+        behavior: 'smooth'
+      });
+    });
+    
+    // Scroll-Funktion für Rechts-Button
+    rightBtn.addEventListener('click', function(e) {
+      console.log('Right button clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      carousel.scrollBy({
+        left: 420, // Scroll nach rechts um eine Kartenbreite + gap
+        behavior: 'smooth'
+      });
+    });
+    
+    // Button-States basierend auf Scroll-Position aktualisieren
+    function updateButtonStates() {
+      const scrollLeft = carousel.scrollLeft;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      
+      const isAtStart = scrollLeft <= 10;
+      const isAtEnd = scrollLeft >= maxScroll - 10;
+      
+      console.log('Scroll state:', { scrollLeft, maxScroll, isAtStart, isAtEnd });
+      
+      leftBtn.style.opacity = isAtStart ? '0.3' : '1';
+      leftBtn.disabled = isAtStart;
+      
+      rightBtn.style.opacity = isAtEnd ? '0.3' : '1';
+      rightBtn.disabled = isAtEnd;
+    }
+    
+    // Button-States beim Laden aktualisieren
+    updateButtonStates();
+    
+    // Button-States beim Scrollen aktualisieren
+    carousel.addEventListener('scroll', function() {
+      setTimeout(updateButtonStates, 100); // Kleine Verzögerung für smooth scrolling
+    });
+    
+    // Button-States bei Fenstergrößenänderung aktualisieren
+    window.addEventListener('resize', updateButtonStates);
+    
+    console.log('Carousel functionality initialized successfully');
+    
+    // Test-Click um zu sehen, ob die Buttons funktionieren
+    leftBtn.addEventListener('mousedown', function() {
+      console.log('Left button mouse down');
+    });
+    
+    rightBtn.addEventListener('mousedown', function() {
+      console.log('Right button mouse down');
+    });
+    
+  }, 500); // 500ms warten
+});
