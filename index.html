@@ -223,6 +223,9 @@
       transition: background 0.2s, box-shadow 0.2s;
       padding: 0;
     }
+    .btn-contact.round-yellow::after {
+      display: none;
+    }
     .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
       background: #ff9900;
       box-shadow: 0 12px 48px rgba(0,0,0,0.16);
@@ -347,7 +350,11 @@
         <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
       </div>
       <div class="carousel-wrapper">
-        <button class="carousel-btn left" aria-label="Zurück">&#60;</button>
+        <button class="carousel-btn left" aria-label="Zurück">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
         <div class="portfolio-carousel">
           <div class="portfolio-item" data-type="innenarchitektur">
             <a href="src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;">
@@ -446,7 +453,11 @@
             </a>
           </div>
         </div>
-        <button class="carousel-btn right" aria-label="Weiter">&#62;</button>
+        <button class="carousel-btn right" aria-label="Weiter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
       <div style="display:flex;justify-content:center;margin-top:2.2rem;">
   <a href="src/pages/projekte.html" class="btn-secondary projekt-btn">ZU MEINEN PROJEKTEN</a>
@@ -459,7 +470,11 @@
           <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
         </div>
         <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
-          <a href="src/pages/contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;"></a>
+          <a href="src/pages/contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
+            <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
