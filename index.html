@@ -1,4 +1,8 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
   <style>
+    /* Carousel Buttons */
     .carousel-btn {
       width: 64px !important;
       height: 64px !important;
@@ -53,11 +57,8 @@
         left: auto;
       }
     }
-  </style>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <style>
+
+    /* Portfolio Items */
     .portfolio-item {
       position: relative;
       overflow: hidden;
@@ -112,8 +113,8 @@
       letter-spacing: 0.03em;
       margin: 0;
     }
-  </style>
-  <style>
+
+    /* Portfolio Carousel */
     .portfolio-carousel {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -160,8 +161,8 @@
     .portfolio-info p {
       margin: 0;
     }
-  </style>
-  <style>
+
+    /* Header Styles */
     .main-header {
       position: absolute;
       top: 0;
@@ -192,6 +193,53 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 600;
+    }
+
+    /* Typography */
+    body, .portfolio-info, .intro, .subtitle, .btn-primary, .btn-secondary, .btn-contact, .contact-content, .contact-info, .version, .local-time, .socials, .socials-links, .about, .portfolio, .contact, .carousel-btn, .filter-btn {
+      font-family: 'Nunito', Arial, sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .hero-content h1, .contact-content h2, .portfolio-info h3, .main-header .logo {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .main-header nav ul li a {
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Contact Button */
+    .btn-contact.round-yellow {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      background: #FFB800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      border: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      padding: 0;
+    }
+    .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
+      background: #ff9900;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+    }
+    .btn-contact.round-yellow svg {
+      width: 96px;
+      height: 96px;
+      display: block;
+    }
+    .btn-contact.round-yellow svg path {
+      stroke: #fff;
+    }
+    @media (max-width: 700px) {
+      section.contact#contact {
+        padding-left: 10vw !important;
+        padding-right: 10vw !important;
+      }
     }
   </style>
   <meta charset="UTF-8">
@@ -266,20 +314,6 @@
   <link rel="icon" type="image/jpeg" href="Logo-01.jpg">
 </head>
 <body>
-  <style>
-    body, .portfolio-info, .intro, .subtitle, .btn-primary, .btn-secondary, .btn-contact, .contact-content, .contact-info, .version, .local-time, .socials, .socials-links, .about, .portfolio, .contact, .carousel-btn, .filter-btn {
-      font-family: 'Nunito', Arial, sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6, .hero-content h1, .contact-content h2, .portfolio-info h3, .main-header .logo {
-      font-family: 'Poppins', Arial, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-    }
-    .main-header nav ul li a {
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-  </style>
   <header class="main-header">
     <nav>
       <a href="index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
@@ -428,39 +462,6 @@
           <a href="src/pages/contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;"></a>
         </div>
       </div>
-      <style>
-        .btn-contact.round-yellow {
-          width: 192px;
-          height: 192px;
-          border-radius: 50%;
-          background: #FFB800;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-          border: none;
-          transition: background 0.2s, box-shadow 0.2s;
-          padding: 0;
-        }
-        .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
-          background: #ff9900;
-          box-shadow: 0 12px 48px rgba(0,0,0,0.16);
-        }
-        .btn-contact.round-yellow svg {
-          width: 96px;
-          height: 96px;
-          display: block;
-        }
-        .btn-contact.round-yellow svg path {
-          stroke: #fff;
-        }
-        @media (max-width: 700px) {
-          section.contact#contact {
-            padding-left: 10vw !important;
-            padding-right: 10vw !important;
-          }
-        }
-      </style>
     </section>
   </main>
   <footer class="main-footer">
