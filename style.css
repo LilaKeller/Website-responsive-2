@@ -1290,6 +1290,19 @@ nav a:hover, nav a:focus {
   color: #fff;
 }
 
+/* Einheitlicher Style für Links in Projektinfobereichen */
+.projekt-info-link {
+  color: #e07a5f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.projekt-info-link:hover {
+  color: #b85c44;
+  text-decoration: underline;
+}
+
 .contact {
   background: #9ba89c;
   color: #fff;
