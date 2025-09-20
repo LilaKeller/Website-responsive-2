@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/jpeg" href="Logo-01.jpg">
   <style>
+    /* Footer-Links immer weiß */
+    .main-footer a,
+    .main-footer a:visited,
+    .main-footer a:active,
+    .main-footer a:hover {
+      color: #fff !important;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
     /* Base Typography */
     body, .portfolio-info, .intro, .subtitle, .btn-primary, .btn-secondary, .btn-contact, .contact-content, .contact-info, .version, .local-time, .socials, .socials-links, .about, .portfolio, .contact, .carousel-btn, .filter-btn {
       font-family: 'Nunito', Arial, sans-serif;
@@ -104,19 +113,19 @@
 
     /* Carousel Styles */
     .portfolio-carousel {
-      display: flex;
-      gap: 2rem;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      width: max-content;
-      min-width: 100%;
-      padding: 0 20px;
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  padding: 0;
     }
     .carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding: 20px 80px;
-      margin: 20px 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  width: 100%;
+  padding: 0 0;
+  margin: 20px 0;
     }
     .carousel-btn {
       position: absolute;
@@ -285,8 +294,8 @@
       </blockquote>
     </section>
 
-    <section class="portfolio" id="work" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:0;padding-right:0;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;">
-      <div class="portfolio-filter" style="padding-left:4vw;padding-right:4vw;">
+  <section class="portfolio" id="work" style="width:100%;max-width:100vw;padding-left:80px;padding-right:80px;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;overflow-x:hidden;">
+  <div class="portfolio-filter" style="padding-left:0;padding-right:0;">
         <button class="filter-btn active" data-filter="all">Alle Projekte</button>
         <button class="filter-btn" data-filter="innenarchitektur">Innenarchitektur</button>
         <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
