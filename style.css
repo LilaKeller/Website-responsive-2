@@ -786,7 +786,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   margin-top: 0.3rem;
 }
 .main-footer .socials a {
-  color: #333;
+  color: #fff;
   text-decoration: underline;
   transition: color 0.2s;
   display: inline-flex;
