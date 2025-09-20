@@ -37,13 +37,13 @@
       height: auto;
       min-width: 0;
       max-width: 100%;
-      width: 320px;
+      width: 280px;
       flex-shrink: 0;
     }
     .portfolio-thumb {
       position: relative;
       width: 100%;
-      height: 220px;
+      height: 200px;
       transition: background 0.3s, filter 0.3s;
       background-size: cover;
       background-position: center;
@@ -105,7 +105,7 @@
     /* Carousel Styles */
     .portfolio-carousel {
       display: flex;
-      gap: 2.5rem;
+      gap: 2rem;
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       width: max-content;
       min-width: 100%;
@@ -115,7 +115,7 @@
       position: relative;
       overflow: hidden;
       width: 100%;
-      padding: 20px 0;
+      padding: 20px 80px;
       margin: 20px 0;
     }
     .carousel-btn {
@@ -140,10 +140,10 @@
       transform: translateY(-50%) scale(1.1);
     }
     .carousel-btn.left {
-      left: 20px;
+      left: 10px;
     }
     .carousel-btn.right {
-      right: 20px;
+      right: 10px;
     }
     .portfolio-item > a {
       display: block;
@@ -151,6 +151,33 @@
       height: 100%;
       text-decoration: none;
       color: inherit;
+    }
+
+    /* Carousel Indicator Styles */
+    .carousel-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem 0;
+      padding: 0 80px;
+    }
+
+    .indicator-track {
+      width: 100%;
+      max-width: 400px;
+      height: 4px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .indicator-fill {
+      height: 100%;
+      background: #e07a5f;
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.3s ease;
     }
 
     /* Contact Button Styles */
@@ -186,10 +213,10 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .portfolio-item {
-        width: 280px;
+        width: 240px;
       }
       .portfolio-carousel {
-        gap: 1.5rem;
+        gap: 1.2rem;
       }
       .carousel-btn {
         width: 40px;
@@ -201,13 +228,25 @@
       .carousel-btn.right {
         right: 5px;
       }
+      .carousel-wrapper {
+        padding: 20px 80px;
+      }
+      .carousel-indicator {
+        padding: 0 80px;
+      }
     }
     @media (max-width: 480px) {
       .portfolio-item {
-        width: 250px;
+        width: 200px;
       }
       .portfolio-carousel {
-        gap: 1rem;
+        gap: 0.8rem;
+      }
+      .carousel-wrapper {
+        padding: 20px 80px;
+      }
+      .carousel-indicator {
+        padding: 0 80px;
       }
     }
     @media (max-width: 700px) {
@@ -246,8 +285,8 @@
       </blockquote>
     </section>
 
-    <section class="portfolio" id="work">
-      <div class="portfolio-filter">
+    <section class="portfolio" id="work" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:0;padding-right:0;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;">
+      <div class="portfolio-filter" style="padding-left:4vw;padding-right:4vw;">
         <button class="filter-btn active" data-filter="all">Alle Projekte</button>
         <button class="filter-btn" data-filter="innenarchitektur">Innenarchitektur</button>
         <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
@@ -354,6 +393,11 @@
           </svg>
         </button>
       </div>
+      <div class="carousel-indicator">
+        <div class="indicator-track">
+          <div class="indicator-fill"></div>
+        </div>
+      </div>
       <div style="display:flex;justify-content:center;margin-top:2.2rem;">
         <a href="src/pages/projekte.html" class="btn-secondary">ZU MEINEN PROJEKTEN</a>
       </div>
@@ -419,75 +463,21 @@
       const leftBtn = document.querySelector('.carousel-btn.left');
       const rightBtn = document.querySelector('.carousel-btn.right');
       let currentIndex = 0;
+      let maxIndex = 0;
 
-      function updateCarousel() {
-        if (!carousel) return;
-        const cards = carousel.children;
-        if (cards.length === 0) return;
-
-        // Berechne Gap basierend auf CSS-Werten
-        const computedStyle = getComputedStyle(carousel);
-        const cssGap = computedStyle.gap;
-        let gap = 40; // Standardwert
-
-        if (cssGap.includes('rem')) {
-          gap = parseFloat(cssGap) * 16; // 16px = 1rem
-        } else if (cssGap.includes('px')) {
-          gap = parseFloat(cssGap);
-        }
-
-        const cardWidth = cards[0].offsetWidth;
-        const totalCardWidth = cardWidth + gap;
-        const containerWidth = carousel.parentElement.offsetWidth;
-        const visibleCards = Math.floor(containerWidth / totalCardWidth);
-        const maxIndex = Math.max(0, cards.length - visibleCards);
-
-        console.log('Carousel Debug:', {
-          cardWidth,
-          gap,
-          totalCardWidth,
-          containerWidth,
-          visibleCards,
-          maxIndex,
-          currentIndex,
-          totalCards: cards.length
-        });
-
-        carousel.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
-
-        // Button-States aktualisieren
-        if (leftBtn) {
-          leftBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
-          leftBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
-        }
-        if (rightBtn) {
-          const canScrollRight = currentIndex < maxIndex;
-          rightBtn.style.opacity = canScrollRight ? '1' : '0.3';
-          rightBtn.style.pointerEvents = canScrollRight ? 'auto' : 'none';
-        }
-      }
-
-      if (leftBtn && rightBtn && carousel) {
-        leftBtn.addEventListener('click', function() {
-          console.log('Left button clicked, currentIndex:', currentIndex);
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
-        });
-
-        rightBtn.addEventListener('click', function() {
-          console.log('Right button clicked, currentIndex:', currentIndex);
+      function calculateMaxIndex() {
+        try {
+          if (!carousel) return 0;
           const cards = carousel.children;
-          if (cards.length === 0) return;
+          if (cards.length === 0) return 0;
 
           // Berechne Gap basierend auf CSS-Werten
           const computedStyle = getComputedStyle(carousel);
           const cssGap = computedStyle.gap;
-          let gap = 40;
+          let gap = 40; // Standardwert
 
           if (cssGap.includes('rem')) {
-            gap = parseFloat(cssGap) * 16;
+            gap = parseFloat(cssGap) * 16; // 16px = 1rem
           } else if (cssGap.includes('px')) {
             gap = parseFloat(cssGap);
           }
@@ -496,20 +486,97 @@
           const totalCardWidth = cardWidth + gap;
           const containerWidth = carousel.parentElement.offsetWidth;
           const visibleCards = Math.floor(containerWidth / totalCardWidth);
-          const maxIndex = Math.max(0, cards.length - visibleCards);
+          
+          return Math.max(0, cards.length - visibleCards);
+        } catch (error) {
+          console.error('Error in calculateMaxIndex:', error);
+          return 0;
+        }
+      }
 
-          console.log('Right button calc:', { visibleCards, maxIndex, canScroll: currentIndex < maxIndex });
+      function updateCarousel() {
+        try {
+          if (!carousel) return;
+          const cards = carousel.children;
+          if (cards.length === 0) return;
 
-          if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
+          // Berechne Gap basierend auf CSS-Werten
+          const computedStyle = getComputedStyle(carousel);
+          const cssGap = computedStyle.gap;
+          let gap = 40; // Standardwert
+
+          if (cssGap.includes('rem')) {
+            gap = parseFloat(cssGap) * 16; // 16px = 1rem
+          } else if (cssGap.includes('px')) {
+            gap = parseFloat(cssGap);
+          }
+
+          const cardWidth = cards[0].offsetWidth;
+          const totalCardWidth = cardWidth + gap;
+          const containerWidth = carousel.parentElement.offsetWidth;
+          const visibleCards = Math.floor(containerWidth / totalCardWidth);
+          maxIndex = Math.max(0, cards.length - visibleCards);
+
+          // Sicherstellen, dass currentIndex nicht größer als maxIndex ist
+          if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+          }
+
+          carousel.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+
+          // Indicator aktualisieren
+          const indicatorFill = document.querySelector('.indicator-fill');
+          if (indicatorFill) {
+            const progress = maxIndex > 0 ? (currentIndex / maxIndex) * 100 : 100;
+            indicatorFill.style.width = `${progress}%`;
+          }
+
+          // Button-States aktualisieren
+          if (leftBtn) {
+            const canScrollLeft = currentIndex > 0;
+            leftBtn.style.opacity = canScrollLeft ? '1' : '0.3';
+            leftBtn.style.pointerEvents = canScrollLeft ? 'auto' : 'none';
+            leftBtn.disabled = !canScrollLeft;
+          }
+          if (rightBtn) {
+            const canScrollRight = currentIndex < maxIndex;
+            rightBtn.style.opacity = canScrollRight ? '1' : '0.3';
+            rightBtn.style.pointerEvents = canScrollRight ? 'auto' : 'none';
+            rightBtn.disabled = !canScrollRight;
+          }
+        } catch (error) {
+          console.error('Error in updateCarousel:', error);
+        }
+      }
+
+      if (leftBtn && rightBtn && carousel) {
+        leftBtn.addEventListener('click', function() {
+          try {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateCarousel();
+            }
+          } catch (error) {
+            console.error('Error in left button click:', error);
           }
         });
 
-        // Initial update mit besserem Timing
+        rightBtn.addEventListener('click', function() {
+          try {
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+              updateCarousel();
+            }
+          } catch (error) {
+            console.error('Error in right button click:', error);
+          }
+        });        // Initial update mit besserem Timing
         setTimeout(() => {
-          updateCarousel();
-          console.log('Carousel initialized successfully');
+          try {
+            updateCarousel();
+          } catch (error) {
+            console.error('Error in initial carousel update:', error);
+          }
         }, 500);
 
         // Resize Event mit besserem Debouncing
@@ -517,8 +584,11 @@
         window.addEventListener('resize', function() {
           clearTimeout(resizeTimeout);
           resizeTimeout = setTimeout(() => {
-            console.log('Resize event triggered');
-            updateCarousel();
+            try {
+              updateCarousel();
+            } catch (error) {
+              console.error('Error in resize carousel update:', error);
+            }
           }, 200);
         });
       }
@@ -530,19 +600,23 @@
 
       filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-          filterBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          const filter = this.getAttribute('data-filter');
-          items.forEach(item => {
-            if (filter === 'all' || item.getAttribute('data-type') === filter) {
-              item.style.display = '';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-          // Reset carousel position after filtering
-          currentIndex = 0;
-          updateCarousel();
+          try {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            items.forEach(item => {
+              if (filter === 'all' || item.getAttribute('data-type') === filter) {
+                item.style.display = '';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+            // Reset carousel position after filtering
+            currentIndex = 0;
+            updateCarousel();
+          } catch (error) {
+            console.error('Error in filter button click:', error);
+          }
         });
       });
 
