@@ -1045,6 +1045,20 @@
         });
     </script>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function updateLocalTime() {
+        const now = new Date();
+        const options = { hour: '2-digit', minute: '2-digit' };
+        let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+        const isDST = now.getTimezoneOffset() < -60;
+        timeString += isDST ? ' MESZ' : ' MEZ';
+        const el = document.getElementById('local-time');
+        if (el) el.textContent = timeString;
+      }
+      updateLocalTime();
+      setInterval(updateLocalTime, 10000);
+    });
+  </script>
 </body>
 </html>
