@@ -5,6 +5,7 @@ html, body {
 }
 .contact {
   margin-bottom: 0 !important;
+  background: #f7f7f7;
 }
 .main-footer {
   margin-top: 0 !important;
@@ -14,6 +15,7 @@ html, body {
   box-sizing: border-box;
   padding-left: 80px;
   padding-right: 80px;
+  background: #9ba89c;
 }
 .footer-socials a[href*="instagram"] {
   display: none !important;
@@ -42,7 +44,7 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.08em;
   margin-bottom: 0.2em;
-  color: #9ba89c;
+  color: #5a6b5a;
   text-transform: uppercase;
 }
 /* Footer-Links weiß */
@@ -600,7 +602,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   font-weight: 400 !important;
 }
 .main-footer {
-  background: #94A293;
+  background: #9ba89c;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
@@ -611,7 +613,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   align-items: flex-start;
   align-self: stretch;
   align-self: stretch;
-  color: #FFF;
+  color: #fff;
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -648,7 +650,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   margin-top: 0.3rem;
 }
 .main-footer .socials a {
-  color: #fff;
+  color: #333;
   text-decoration: underline;
   transition: color 0.2s;
   display: inline-flex;
