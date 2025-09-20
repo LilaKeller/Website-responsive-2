@@ -6,248 +6,11 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    /* Profilbild-Zoom */
-    .about-profile-img img {
-      transition: transform 0.18s, box-shadow 0.18s;
-      will-change: transform;
-      cursor: pointer;
-    }
-    .about-profile-img img:hover,
-    .about-profile-img img:focus,
-    .about-profile-img img:active {
-      transform: scale(1.06);
-      box-shadow: 0 12px 40px rgba(255,153,0,0.18);
-      outline: 2px solid #ff9900;
-    }
-    /* Karussell-Button Fokus-Style */
-    .testimonial-prev:focus, .testimonial-next:focus {
-      outline: 2.5px solid #ff9900;
-      box-shadow: 0 0 0 3px rgba(255,153,0,0.18);
-    }
-    /* Testimonial sanfte Animation */
-    .testimonial-item {
-      opacity: 0;
-      transition: opacity 0.5s;
-      pointer-events: none;
-      position: absolute;
-      left: 0; right: 0;
-    }
-    .testimonial-item.active {
-      opacity: 1;
-      pointer-events: auto;
-      position: relative;
-    }
-    /* Wichtige Begriffe hervorheben */
-    .about-keyword {
-      color: #e07a5f;
-      font-weight: 700;
-      background: #fffbe7;
-      border-radius: 0.3em;
-      padding: 0.05em 0.3em;
-    }
-  </style>
-  <style>
-    /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2.5rem;
-      right: 2.5rem;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(224, 122, 95, 0.95) 0%, rgba(200, 100, 75, 0.95) 100%);
-      backdrop-filter: blur(12px) saturate(1.2);
-      -webkit-backdrop-filter: blur(12px) saturate(1.2);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 
-        0 8px 32px rgba(224, 122, 95, 0.16),
-        0 1px 4px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1) rotate(0deg);
-      z-index: 1000;
-      -webkit-tap-highlight-color: transparent;
-      user-select: none;
-      will-change: transform, opacity;
-    }
-    
-    .back-to-top::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite: xor;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      pointer-events: none;
-    }
-    
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1) rotate(0deg);
-    }
-    
-    .back-to-top:hover {
-      background: linear-gradient(135deg, rgba(184, 92, 68, 0.95) 0%, rgba(164, 82, 58, 0.95) 100%);
-      transform: translateY(-6px) scale(1.08);
-      box-shadow: 
-        0 16px 48px rgba(224, 122, 95, 0.24),
-        0 4px 16px rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-    
-    .back-to-top:active {
-      transform: translateY(-3px) scale(1.02);
-      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 
-        0 8px 28px rgba(224, 122, 95, 0.2),
-        0 2px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    }
-    
-    .back-to-top:focus {
-      outline: none;
-      box-shadow: 
-        0 8px 32px rgba(224, 122, 95, 0.16),
-        0 1px 4px rgba(0, 0, 0, 0.08),
-        0 0 0 3px rgba(224, 122, 95, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    }
-    
-    .back-to-top::before {
-      content: '';
-      position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg, 
-        transparent 0deg, 
-        rgba(224, 122, 95, 0.8) var(--progress, 0deg),
-        rgba(255, 255, 255, 0.3) calc(var(--progress, 0deg) + 2deg),
-        transparent calc(var(--progress, 0deg) + 4deg)
-      );
-      opacity: 0;
-      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: -1;
-      filter: blur(0.5px);
-    }
-    
-    .back-to-top.visible::before {
-      opacity: 1;
-    }
-    
-    .back-to-top svg {
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .back-to-top:hover svg {
-      transform: translateY(-1px);
-    }
-    
-    .back-to-top.visible.first-show {
-      animation: backToTopPulse 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    @keyframes backToTopPulse {
-      0% { transform: translateY(0) scale(1) rotate(0deg); }
-      50% { transform: translateY(-2px) scale(1.1) rotate(1deg); }
-      100% { transform: translateY(0) scale(1) rotate(0deg); }
-    }
-    
-    @media (max-width: 700px) {
-      .back-to-top {
-        width: 52px;
-        height: 52px;
-        bottom: 2rem;
-        right: 1.5rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .back-to-top {
-        bottom: 1.5rem;
-        right: 1rem;
-        width: 48px;
-        height: 48px;
-      }
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .back-to-top, .back-to-top svg, .back-to-top::before {
-        transition: opacity 0.2s ease;
-      }
-      .back-to-top:hover {
-        transform: none;
-      }
-      .back-to-top.visible.first-show {
-        animation: none;
-      }
-    }
-    
-    @media (prefers-color-scheme: dark) {
-      .back-to-top {
-        background: linear-gradient(135deg, rgba(224, 122, 95, 0.9) 0%, rgba(200, 100, 75, 0.9) 100%);
-        border-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(16px) saturate(1.4);
-      }
-    }
   </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Über mich – Anika Warncke | Innenarchitektin & UX/UI-Designerin Hamburg</title>
+  <title>Über mich – Anika Warncke</title>
   <meta name="description" content="Erfahren Sie mehr über Anika Warncke – Innenarchitektin (M.A.) & UX/UI-Designerin aus Hamburg. Kompetenzen, Designphilosophie, Arbeitgeberstimmen und persönlicher Werdegang auf einen Blick." />
-  <meta name="keywords" content="Anika Warncke, Über mich, Innenarchitektin Hamburg, UX/UI Designerin, Werdegang, Qualifikationen, HAWK Hildesheim, neuefische Hamburg, Interior Design Erfahrung, UX Design Portfolio, Designphilosophie, Testimonials Arbeitgeber">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Anika Warncke",
-      "jobTitle": "Innenarchitektin & UX/UI-Designerin",
-      "url": "https://anika-warncke.de",
-      "description": "Kreative Gestalterin mit feinem Gespür für Menschen und ihre Bedürfnisse. Mission: funktionale und sinnstiftende Räume schaffen – digital und physisch.",
-      "hasOccupation": [
-        {
-          "@type": "Occupation",
-          "name": "Innenarchitektin",
-          "qualifications": "Master of Arts in Gestaltung - Innenarchitektur",
-          "experienceRequirements": "Über 4 Jahre in Innenarchitekturbüros"
-        },
-        {
-          "@type": "Occupation", 
-          "name": "UX/UI-Designerin",
-          "qualifications": "Zertifizierte UX/UI-Designerin bei neuefische Hamburg"
-        }
-      ],
-      "knowsAbout": [
-        "Raumfluss und Atmosphäre",
-        "Materialauswahl", 
-        "Konzeptentwicklung",
-        "User Experience Design",
-        "Interface Design",
-        "Wireframing",
-        "Prototyping"
-      ]
-    }
-  }
-  </script>
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
   <link rel="canonical" href="https://anika-warncke.de/src/pages/about.html">
@@ -255,7 +18,7 @@
 <body>
   <header class="main-header">
     <nav>
-      <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
+      <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
       <ul>
         <li><a href="projekte.html">Projekte</a></li>
         <li><a href="about.html" aria-current="page">Über mich</a></li>
@@ -263,8 +26,8 @@
       </ul>
     </nav>
   </header>
-    <main style="margin-top: 0 !important; padding-top: 0;">
-        <section class="about-hero" style="margin-top:0;width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+    <main>
+        <section class="about-hero" style="margin-top:2.5rem;">
           <div class="about-hero-content">
             <h1 class="about-main-title">Herzlich Willkommen!</h1>
             <div class="about-hero-subtitle">Schön, dass du hier bist.</div>
@@ -274,13 +37,13 @@
             <img src="../../img/anika-warncke.jpg" alt="Anika Warncke, Portrait" />
           </div>
         </section>
-        <section class="about-section" style="margin-top:5rem;width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+        <section class="container about-section">
           <div style="display:flex;flex-wrap:wrap;gap:3rem;align-items:flex-start;justify-content:space-between;">
             <div style="flex:2 1 340px;min-width:320px;max-width:700px;">
               <h3>Meine Expertise auf einen Blick</h3>
               <ul>
                 <li>Doppelte Kompetenz: Innenarchitektur M.A. &amp; zertifizierte UX/UI-Designerin</li>
-                <li>Akademischer Hintergrund: Master of Arts in Gestaltung im Kompetenzfeld Innenarchitektur von der HAWK Hildesheim und Zertifizierung als UX/UI Designerin bei neuefische Hamburg</li>
+                <li>Akademischer Hintergrund: Master of Arts in Gestaltung im Kompetenzfeld Innenarchitektur von der HAWK Hildesheim und Zertifizierung als UX/UI Designerin bei reputablem Hamburg</li>
                 <li>Berufserfahrung: Über 4 Jahre in Innenarchitekturbüros in allen Leistungsphasen</li>
                 <li>Publikationen: Mitarbeit an Projekten mit Veröffentlichung in TGA, im bdia Handbuch 2022/23 und Auftraggeberbeitrag</li>
                 <li>Fortbildungen: diverse Weiterbildung in Architektur, Bauökonomie, Nachhaltigkeit und agiles Arbeiten</li>
@@ -292,7 +55,7 @@
               <div class="testimonial-carousel" aria-label="Arbeitgeber-Zitate">
                 <div class="testimonial-item active">
                   <p class="testimonial-quote">„Frau Warncke überzeugt durch umfangreiche Fachkenntnisse und kreativen Output, die sie zur Erfüllung ihrer Aufgaben sehr erfolgreich einsetzt. [...] Dabei zeichnet sie sich unter anderem besonders durch ihre sehr guten Kenntnisse und ihr Wissen in den Bereichen der Grafik, Layout und Produktgestaltung aus.“</p>
-                  <span class="testimonial-source"><span class="testimonial-initials">FK</span>FORMWÆNDE, Innenarchitekturbüro, Lüneburg, DE</span>
+                  <span class="testimonial-source"><span class="testimonial-initials">FK</span>FORMWENDE, Innenarchitekturbüro, Lüneburg, DE</span>
                 </div>
                 <div class="testimonial-item">
                   <p class="testimonial-quote">„Auch in Situationen mit wechselnden Anforderungen erwies sich Frau Warncke als belastbare Mitarbeiterin und ging jederzeit überlegt und zielorientiert vor.“</p>
@@ -328,7 +91,55 @@
             </div>
           </div>
         </section>
-        <section style="margin-top:5rem;display:flex;flex-wrap:wrap;gap:3rem;width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+              <div style="margin-top:2.5rem;">
+        
+              </div>
+            </div>
+     <div class="about-profile-img">
+  <img src="../../img/anika-warncke.jpg" alt="Anika Warncke">
+/* Profilbild-Zoom */
+.about-profile-img img {
+  transition: transform 0.18s, box-shadow 0.18s;
+  will-change: transform;
+  cursor: pointer;
+}
+.about-profile-img img:hover,
+.about-profile-img img:focus,
+.about-profile-img img:active {
+  transform: scale(1.06);
+  box-shadow: 0 12px 40px rgba(255,153,0,0.18);
+  outline: 2px solid #ff9900;
+}
+/* Karussell-Button Fokus-Style */
+.testimonial-prev:focus, .testimonial-next:focus {
+  outline: 2.5px solid #ff9900;
+  box-shadow: 0 0 0 3px rgba(255,153,0,0.18);
+}
+/* Testimonial sanfte Animation */
+.testimonial-item {
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  position: absolute;
+  left: 0; right: 0;
+}
+.testimonial-item.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+/* Wichtige Begriffe hervorheben */
+.about-keyword {
+  color: #e07a5f;
+  font-weight: 700;
+  background: #fffbe7;
+  border-radius: 0.3em;
+  padding: 0.05em 0.3em;
+}
+</div>
+          </div>
+        </section>
+        <section class="container" style="margin-top:3.5rem;display:flex;flex-wrap:wrap;gap:3rem;">
             <div style="flex:1 1 320px;">
                 <h3>INNENARCHITEKTUR</h3>
         <p>
@@ -355,6 +166,17 @@
                 </ul>
             </div>
         </section>
+        <section class="contact" style="margin-top:4rem;">
+            <div class="contact-row">
+                <div class="contact-content">
+                    <div style="font-weight:700;margin-bottom:1rem;">Let’s connect and talk about your next project!</div>
+                    <h2>GET<br>IN<br>TOUCH</h2>
+                </div>
+                <a href="contact.html" class="btn-contact" aria-label="Kontakt aufnehmen">
+                    <span style="position:absolute;left:-9999px;">LET'S GO</span>
+                </a>
+            </div>
+        </section>
     </main>
   <script src="../scripts/main.js"></script>
   <script src="../scripts/testimonial-carousel.js"></script>
@@ -377,59 +199,6 @@
   </script>
   <script>
   </script>
-  <section class="contact" id="contact" style="margin-top:5rem;width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
-    <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
-      <div class="contact-content" style="margin:0;flex:1;">
-        <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
-      </div>
-      <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
-        <a href="contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
-          <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <style>
-      .btn-contact.round-yellow {
-        width: 192px;
-        height: 192px;
-        border-radius: 50%;
-        background: #FFB800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-        border: none;
-        transition: background 0.2s, box-shadow 0.2s;
-        padding: 0;
-      }
-      .btn-contact.round-yellow::after {
-        display: none;
-      }
-      .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
-        background: #ff9900;
-        box-shadow: 0 12px 48px rgba(0,0,0,0.16);
-      }
-      .btn-contact.round-yellow svg {
-        width: 96px;
-        height: 96px;
-        display: block;
-      }
-      .btn-contact.round-yellow svg path {
-        stroke: #fff;
-      }
-      @media (max-width: 700px) {
-        section.contact#contact,
-        section.about-hero,
-        section.about-section,
-        section:not(.contact):not(footer) {
-          padding-left: 10vw !important;
-          padding-right: 10vw !important;
-        }
-      }
-    </style>
-  </section>
   <footer class="main-footer">
     <div class="footer-row">
       <div class="footer-block">
@@ -458,16 +227,6 @@
       </div>
     </div>
   </footer>
-
-  
-
-  
-  <button class="back-to-top" aria-label="Nach oben scrollen" role="button" tabindex="0" style="--progress: 0deg">
-    <svg width="24" height="24" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M48 76L48 20M48 20L24 44M48 20L72 44" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
-
   <script>
   // Lokale Zeit immer aktuell anzeigen
   function updateLocalTime() {
@@ -482,96 +241,6 @@
   }
   updateLocalTime();
   setInterval(updateLocalTime, 10000);
-
-  // Back to Top Button
-  const backToTopBtn = document.querySelector('.back-to-top');
-  if (backToTopBtn) {
-    let hasShownOnce = false;
-    
-    function updateScrollProgress() {
-      const scrollTop = window.pageYOffset;
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = Math.max(0, Math.min(100, (scrollTop / documentHeight) * 100));
-      
-      const easedPercent = scrollPercent < 50 ? 
-        2 * scrollPercent * scrollPercent / 100 :
-        1 - Math.pow(-2 * scrollPercent + 2, 3) / 2;
-      
-      const progressDeg = (easedPercent / 100) * 360;
-      backToTopBtn.style.setProperty('--progress', `${progressDeg}deg`);
-      
-      // Hero-Bereich als Threshold nutzen
-      const hero = document.querySelector('.hero');
-      const heroHeight = hero ? hero.offsetHeight : 100;
-      
-      if (scrollTop > heroHeight) {
-        if (!backToTopBtn.classList.contains('visible')) {
-          backToTopBtn.classList.add('visible');
-          
-          if (!hasShownOnce) {
-            hasShownOnce = true;
-            backToTopBtn.classList.add('first-show');
-            setTimeout(() => {
-              backToTopBtn.classList.remove('first-show');
-            }, 600);
-          }
-        }
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }
-    
-    backToTopBtn.addEventListener('click', () => {
-      const startTime = performance.now();
-      const startPos = window.pageYOffset;
-      const duration = Math.min(1200, Math.max(600, startPos / 3));
-      
-      backToTopBtn.style.pointerEvents = 'none';
-      backToTopBtn.style.opacity = '0.7';
-      
-      function scrollStep(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 4);
-        
-        window.scrollTo(0, startPos * (1 - ease));
-        
-        if (progress < 1) {
-          requestAnimationFrame(scrollStep);
-        } else {
-          backToTopBtn.style.pointerEvents = '';
-          backToTopBtn.style.opacity = '';
-        }
-      }
-      
-      requestAnimationFrame(scrollStep);
-    });
-    
-    let isScrolling = false;
-    function handleScroll() {
-      if (!isScrolling) {
-        requestAnimationFrame(() => {
-          updateScrollProgress();
-          isScrolling = false;
-        });
-        isScrolling = true;
-      }
-    }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    backToTopBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        backToTopBtn.click();
-      }
-      if (e.key === 'Escape') {
-        backToTopBtn.blur();
-      }
-    });
-    
-    updateScrollProgress();
-  }
   </script>
 </body>
 </html>
