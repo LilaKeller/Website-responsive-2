@@ -69,23 +69,6 @@
                 color: #FFB800 !important;
             }
             }
-            /* Force white for specific footer links */
-            .footer-block a[href*="linkedin"],
-            .footer-block a[href*="datenschutz"],
-            .footer-block a[href*="impressum"] {
-                color: #fff !important;
-            }
-            .footer-block a[href*="linkedin"]:visited,
-            .footer-block a[href*="datenschutz"]:visited,
-            .footer-block a[href*="impressum"]:visited,
-            .footer-block a[href*="linkedin"]:hover,
-            .footer-block a[href*="datenschutz"]:hover,
-            .footer-block a[href*="impressum"]:hover,
-            .footer-block a[href*="linkedin"]:active,
-            .footer-block a[href*="datenschutz"]:active,
-            .footer-block a[href*="impressum"]:active {
-                color: #fff !important;
-            }
             .footer-socials a:hover,
             .footer-block a:hover {
                 color: #FFB800;
@@ -296,15 +279,16 @@
         </nav>
     </header>
     
-    <main style="margin-top: 6rem; padding-left: 80px; padding-right: 80px;">
+    <main style="margin-top: 6rem;">
     <section class="work-section" style="padding:0;">
-        <h1 style="font-family:'Poppins',sans-serif;font-size:2.3rem;font-weight:800;color:#333;letter-spacing:0.01em;margin-bottom:2.2rem;text-align:left;margin-top:0;">PROJEKTE</h1>
-        <div class="work-filter" style="display:flex;gap:1.1rem;margin-bottom:2.5rem;width:100%;box-sizing:border-box;">
-            <button class="filter-btn active" data-filter="all">Alle Projekte</button>
-            <button class="filter-btn" data-filter="innenarchitektur">Innenarchitektur</button>
-            <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
-        </div>
-                        <div class="portfolio-carousel">
+    <div style="padding-left: 80px; padding-right: 80px; box-sizing: border-box; width: 100vw; max-width: 100vw; margin-left: auto; margin-right: auto;">
+            <h1 style="font-family:'Poppins',sans-serif;font-size:2.3rem;font-weight:800;color:#333;letter-spacing:0.01em;margin-bottom:2.2rem;text-align:left;margin-top:0;">PROJEKTE</h1>
+            <div class="work-filter" style="display:flex;gap:1.1rem;margin-bottom:2.5rem;width:100%;box-sizing:border-box;">
+                <button class="filter-btn active" data-filter="all">Alle Projekte</button>
+                <button class="filter-btn" data-filter="innenarchitektur">Innenarchitektur</button>
+                <button class="filter-btn" data-filter="uxui">UX/UI Design</button>
+            </div>
+            <div class="portfolio-carousel">
                             <div class="portfolio-item" data-type="innenarchitektur">
                                 <a href="../../src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Festsaal im Klostergasthof - Veranstaltungsgastronomie für Hochzeiten und Events">
                                     <div class="portfolio-thumb" style="background:url('../../img/IA/Kloster%20Holzen/Generated%20Image%20September%2016%2C%202025%20-%208_30PM.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
@@ -401,8 +385,8 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
             </div>
+        </div>
         </section>
             <style>
             .portfolio-carousel {
@@ -410,6 +394,7 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: 2rem;
                 width: 100%;
+                min-width: 0;
                 padding: 0;
                 box-sizing: border-box;
             }
@@ -439,6 +424,7 @@
                 transition: box-shadow 0.2s, transform 0.2s;
                 height: auto;
                 position: relative;
+                margin: 0 auto;
             }
             .portfolio-item:hover {
                 transform: translateY(-4px);
@@ -454,7 +440,7 @@
             .portfolio-thumb {
                 position: relative;
                 width: 100%;
-                height: 250px;
+                height: 160px;
                 transition: background 0.3s, filter 0.3s;
                 display: flex;
                 align-items: flex-end;
@@ -492,10 +478,10 @@
                 opacity: 1;
             }
             .portfolio-info {
-                padding: 1.2rem 1rem 1.2rem 1rem;
+                padding: 0.8rem 0.7rem 0.8rem 0.7rem;
                 background: #fff;
                 border-radius: 0 0 1.2rem 1.2rem;
-                min-height: 100px;
+                min-height: 70px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
