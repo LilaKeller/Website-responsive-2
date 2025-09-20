@@ -1112,7 +1112,7 @@ main {
 
 .portfolio {
   background: #fff;
-  padding: 4rem 4vw 2rem 4vw;
+  padding: 4rem 4vw 4rem 4vw;
 }
 .portfolio-grid {
   display: grid;
@@ -1328,7 +1328,8 @@ main {
   display: flex;
   gap: 1.2rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
 }
 .filter-btn {
   background: #f3f3f3;
