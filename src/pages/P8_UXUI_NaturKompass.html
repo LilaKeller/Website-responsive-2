@@ -241,6 +241,33 @@
         backdrop-filter: blur(16px) saturate(1.4);
       }
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      section {
+        padding: 3rem 40px !important;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .grid-2col > div {
+        flex: none !important;
+      }
+      h2 {
+        font-size: 2rem !important;
+      }
+      h3 {
+        font-size: 1.5rem !important;
+      }
+      p {
+        font-size: 1rem !important;
+      }
+      .btn-secondary, .projekt-btn {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.9rem !important;
+      }
+    }
   </style>
 </head>
 <body>
