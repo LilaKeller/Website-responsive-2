@@ -37,8 +37,8 @@
   height: auto;
   position: relative;
   margin: 0 auto;
-  max-width: 480px;
-  min-width: 280px;
+  max-width: 420px;
+  min-width: 300px;
 }
 .portfolio-item:hover {
   transform: translateY(-6px) scale(1.03);
