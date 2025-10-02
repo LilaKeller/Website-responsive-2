@@ -16,6 +16,36 @@
       text-decoration: underline;
       transition: color 0.2s;
     }
+
+    /* Contact Button Styles */
+    .btn-contact.round-yellow {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      background: #FFB800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      border: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      padding: 0;
+    }
+    .btn-contact.round-yellow::after {
+      display: none;
+    }
+    .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
+      background: #ff9900;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+    }
+    .btn-contact.round-yellow svg {
+      width: 96px;
+      height: 96px;
+      display: block;
+    }
+    .btn-contact.round-yellow svg path {
+      stroke: #fff;
+    }
   </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,17 +206,20 @@
                 </ul>
             </div>
         </section>
-        <section class="contact" style="margin-top:4rem;">
-            <div class="contact-row">
-                <div class="contact-content">
-                    <div style="font-weight:700;margin-bottom:1rem;">Let’s connect and talk about your next project!</div>
-                    <h2>GET<br>IN<br>TOUCH</h2>
-                </div>
-                <a href="contact.html" class="btn-contact" aria-label="Kontakt aufnehmen">
-                    <span style="position:absolute;left:-9999px;">LET'S GO</span>
-                </a>
-            </div>
-        </section>
+    <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+      <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
+        <div class="contact-content" style="margin:0;flex:1;">
+          <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
+        </div>
+        <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
+          <a href="contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
+            <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
     </main>
   <script src="../scripts/main.js"></script>
   <script src="../scripts/testimonial-carousel.js"></script>
