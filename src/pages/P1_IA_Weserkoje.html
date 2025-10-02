@@ -282,7 +282,7 @@
 <body>
     <header class="main-header">
         <nav>
-            <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
+            <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
             <ul>
                 <li><a href="projekte.html">Projekte</a></li>
                 <li><a href="about.html">Über mich</a></li>
@@ -615,19 +615,16 @@
         setInterval(updateLocalTime, 10000);
         // Header scroll effect
         document.addEventListener('DOMContentLoaded', function() {
-            var header = document.querySelector('.main-header');
-            function updateHeaderScrolled() {
-                var hero = document.querySelector('.hero');
-                var heroHeight = hero ? hero.offsetHeight : 0;
-                if(window.scrollY > heroHeight) {
+            const header = document.querySelector('.main-header');
+            const hero = document.querySelector('.hero');
+            window.addEventListener('scroll', function() {
+                const heroHeight = hero.offsetHeight;
+                if(window.scrollY > heroHeight - 60) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
                 }
-            }
-            window.addEventListener('scroll', updateHeaderScrolled);
-            window.addEventListener('resize', updateHeaderScrolled);
-            updateHeaderScrolled();
+            });
         });
 
         // Back to Top Button

@@ -879,6 +879,20 @@
     }
     updateLocalTime();
     setInterval(updateLocalTime, 10000);
+
+    // Header Hintergrund und Schriftfarbe erst nach Hero-Bereich ändern
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.main-header');
+      const hero = document.querySelector('.hero');
+      window.addEventListener('scroll', function() {
+        const heroHeight = hero.offsetHeight;
+        if(window.scrollY > heroHeight - 60) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    });
   </script>
 </body>
 </html>
