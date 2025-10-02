@@ -1103,6 +1103,19 @@
   </button>
 
   <script>
+        // Lokale Zeit sofort anzeigen
+        function updateLocalTime() {
+            const now = new Date();
+            const options = { hour: '2-digit', minute: '2-digit' };
+            let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
+            // MESZ/MEZ je nach Sommerzeit
+            const isDST = now.getTimezoneOffset() < -60;
+            timeString += isDST ? ' MESZ' : ' MEZ';
+            document.getElementById('local-time').textContent = timeString;
+        }
+        updateLocalTime();
+        setInterval(updateLocalTime, 10000);
+
         document.addEventListener('DOMContentLoaded', function() {
             var header = document.querySelector('.main-header');
             function updateHeaderScrolled() {
@@ -1117,19 +1130,6 @@
             window.addEventListener('scroll', updateHeaderScrolled);
             window.addEventListener('resize', updateHeaderScrolled);
             updateHeaderScrolled();
-
-            // Lokale Zeit immer aktuell anzeigen
-            function updateLocalTime() {
-                const now = new Date();
-                const options = { hour: '2-digit', minute: '2-digit' };
-                let timeString = now.toLocaleTimeString('de-DE', options) + ' Uhr';
-                // MESZ/MEZ je nach Sommerzeit
-                const isDST = now.getTimezoneOffset() < -60;
-                timeString += isDST ? ' MESZ' : ' MEZ';
-                document.getElementById('local-time').textContent = timeString;
-            }
-            updateLocalTime();
-            setInterval(updateLocalTime, 10000);
         });
     
         // Back to Top Button
