@@ -11,6 +11,16 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
+
+    /* Footer-Links immer weiß */
+    .main-footer a,
+    .main-footer a:visited,
+    .main-footer a:active,
+    .main-footer a:hover {
+      color: #fff !important;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
   </style>
 
   <style>
@@ -324,7 +334,7 @@
     </style>
   </section>
   <footer class="main-footer">
-    <div class="footer-row">
+    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
       <div style="display:flex;gap:3rem;flex:1;">
         <div class="footer-block">
           <div class="footer-title">VERSION</div>
@@ -344,8 +354,8 @@
       </div>
       <div class="footer-block" style="flex:0 0 auto;">
         <div class="footer-title">RECHTLICHES</div>
-  <a href="datenschutz.html">Datenschutz</a>
-  <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
       </div>
     </div>
   </footer>
