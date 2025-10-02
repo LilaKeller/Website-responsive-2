@@ -37,6 +37,84 @@
           stroke: #fff;
         }
 
+        .projekt-nav-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: #fff;
+            padding: 4rem 80px 4rem 80px;
+            box-sizing: border-box;
+        }
+        .projekt-nav-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .projekt-nav-btn {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 220px;
+        }
+        .projekt-nav-btn-right {
+            align-items: flex-end;
+        }
+        .projekt-vorschau {
+            display: none;
+            position: absolute;
+            left: 0;
+            bottom: 110%;
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+            padding: 1rem;
+            width: 260px;
+            z-index: 10;
+            text-align: left;
+        }
+        .projekt-nav-btn-right .projekt-vorschau {
+            left: 0;
+            right: auto;
+            text-align: left;
+        }
+        .projekt-nav-btn:hover .projekt-vorschau {
+            display: block;
+        }
+        .projekt-vorschau img {
+            width: 100%;
+            border-radius: 0.7rem;
+            margin-bottom: 0.7em;
+        }
+        .projekt-vorschau-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .projekt-vorschau-sub {
+            font-size: 0.98rem;
+            color: #888;
+        }
+        @media (max-width: 900px) {
+            .projekt-nav-section {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+            .projekt-nav-row {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            .projekt-nav-btn {
+                min-width: unset;
+                width: 100%;
+            }
+            .projekt-nav-btn-right {
+                align-items: flex-start;
+            }
+        }
+
         /* Footer-Links immer weiß */
         .main-footer a,
         .main-footer a:visited,
@@ -714,21 +792,33 @@
         </section>
 
         <!-- Navigation: Letztes/Nächstes Projekt -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;display:flex;gap:2rem;justify-content:space-between;">
-            <div style="position:relative;display:inline-block;">
-                <a href="P6_UXUI_OmNomZen.html" class="btn-secondary projekt-btn">&lt; LETZTES PROJEKT</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;left:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png" alt="OnNomZen" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">OnNomZen</div>
-                    <div style="font-size:0.98rem;color:#888;">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
+        <section class="projekt-nav-section">
+            <div class="projekt-nav-row">
+                <div class="projekt-nav-btn projekt-nav-btn-left">
+                    <a href="P6_UXUI_OmNomZen.html" class="btn-secondary projekt-btn" style="display: flex !important; align-items: center !important;">
+                        <svg width="20" height="20" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; flex-shrink: 0;">
+                            <path d="M76 48L20 48M20 48L44 24M20 48L44 72" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        LETZTES PROJEKT
+                    </a>
+                    <div class="projekt-vorschau">
+                        <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808%20(1).png" alt="OnNomZen">
+                        <div class="projekt-vorschau-title">OnNomZen</div>
+                        <div class="projekt-vorschau-sub">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
+                    </div>
                 </div>
-            </div>
-            <div style="position:relative;display:inline-block;">
-                <a href="P8_UXUI_NaturKompass.html" class="btn-secondary projekt-btn">NÄCHSTES PROJEKT &gt;</a>
-                <div class="projekt-vorschau" style="display:none;position:absolute;right:0;bottom:110%;background:#fff;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.13);padding:1rem;width:260px;z-index:10;text-align:left;">
-                    <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass" style="width:100%;border-radius:0.7rem;margin-bottom:0.7em;">
-                    <div style="font-weight:700;font-size:1.1rem;">NaturKompass</div>
-                    <div style="font-size:0.98rem;color:#888;">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
+                <div class="projekt-nav-btn projekt-nav-btn-right">
+                    <a href="P8_UXUI_NaturKompass.html" class="btn-secondary projekt-btn" style="display: flex !important; align-items: center !important;">
+                        NÄCHSTES PROJEKT
+                        <svg width="20" height="20" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px; flex-shrink: 0;">
+                            <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="projekt-vorschau">
+                        <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass">
+                        <div class="projekt-vorschau-title">NaturKompass</div>
+                        <div class="projekt-vorschau-sub">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
+                    </div>
                 </div>
             </div>
         </section>
