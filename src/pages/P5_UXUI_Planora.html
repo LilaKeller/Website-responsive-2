@@ -47,15 +47,13 @@
             box-shadow: 0 4px 18px rgba(224,122,95,0.13);
         }
         .main-header {
-            position: absolute;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
             z-index: 10;
+            background: transparent;
             transition: background 0.2s, color 0.2s;
         }
         .main-header.scrolled {
-            position: fixed;
             background: #fff !important;
             color: #222 !important;
             box-shadow: 0 2px 12px rgba(0,0,0,0.07);
