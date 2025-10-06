@@ -51,6 +51,12 @@
     .main-header nav ul li a {
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .main-header nav ul li a.active {
+      text-decoration: underline;
     }
 
     /* Footer-Links immer weiß */
@@ -113,7 +119,7 @@
       <a href="../../index.html" class="logo test-hover" style="outline: none !important; border: none !important; box-shadow: none !important; -webkit-text-stroke: none !important;">ANIKA WARNCKE</a>
       <ul>
   <li><a href="projekte.html">Projekte</a></li>
-    <li><a href="about.html" aria-current="page">Über mich</a></li>
+    <li><a href="about.html" class="active" aria-current="page">Über mich</a></li>
     <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </nav>
