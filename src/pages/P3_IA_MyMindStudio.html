@@ -96,11 +96,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px) scale(0.8) rotate(-10deg);
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1) rotate(0deg);
+      will-change: transform, opacity;
     }
     
     .back-to-top::after {

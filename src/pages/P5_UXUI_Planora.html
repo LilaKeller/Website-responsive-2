@@ -934,7 +934,10 @@
                 }
             });
         });
-    
+        setInterval(updateLocalTime, 10000);
+    </script>
+
+    <script>
         // Back to Top Button
         const backToTopBtn = document.querySelector('.back-to-top');
         if (backToTopBtn) {
@@ -1023,7 +1026,6 @@
           });
           
           updateScrollProgress();
-        setInterval(updateLocalTime, 10000);
-        });
+        }
     </script>
 </html>
