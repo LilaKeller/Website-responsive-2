@@ -709,14 +709,8 @@
       updateLocalTime();
       setInterval(updateLocalTime, 10000);
 
-      // Header Hintergrund und Schriftfarbe beim Scrollen ändern
-      window.addEventListener('scroll', function() {
-        if(window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
+      // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
+      header.classList.add('scrolled');
     });
   </script>
 </body>

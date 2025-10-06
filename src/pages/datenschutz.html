@@ -495,16 +495,10 @@
       });
     }
     
-    // Header Hintergrund und Schriftfarbe beim Scrollen ändern
+    // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
     const header = document.querySelector('.main-header');
     if (header) {
-      window.addEventListener('scroll', function() {
-        if(window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
+      header.classList.add('scrolled');
     }
   </script>
 
