@@ -7,6 +7,31 @@
   <link rel="stylesheet" href="../../style.css">
   <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
   <style>
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: transparent;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      transition: background 0.3s;
+    }
+    
+    .main-header.scrolled {
+      background: #fff;
+    }
+    
+    .main-header .logo,
+    .main-header nav a {
+      color: #fff;
+      transition: color 0.3s;
+    }
+    
+    .main-header.scrolled .logo,
+    .main-header.scrolled nav a {
+      color: #333;
+    }
+    
     .main-header nav ul li a {
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -471,6 +496,18 @@
         }
         if (e.key === 'Escape') {
           backToTopBtn.blur();
+        }
+      });
+    }
+    
+    // Header Hintergrund und Schriftfarbe beim Scrollen ändern
+    const header = document.querySelector('.main-header');
+    if (header) {
+      window.addEventListener('scroll', function() {
+        if(window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
         }
       });
     }
