@@ -61,6 +61,12 @@
     .btn-contact.round-yellow svg path {
       stroke: #fff;
     }
+
+    /* Testimonial Hover Effects */
+    .testimonial-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12) !important;
+    }
   </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -202,57 +208,147 @@
             </div>
         </section>
         <section class="intro-section" style="width:100vw; max-width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; padding-left:80px; padding-right:80px; box-sizing:border-box; padding-bottom:5rem;">
-            <div style="text-align: center; margin-bottom: 3rem;">
+            <div style="text-align: left; margin-bottom: 4rem;">
                 <h1 class="about-main-title" style="margin-bottom: 1.5rem; line-height: 1.4;">Was andere über meine Arbeitsweise sagen.</h1>
-                <p style="line-height: 1.8; max-width: 600px; margin: 0 auto;">Erfahrungen und Feedback von ehemaligen Arbeitgebern und Kollegen.</p>
+                <p style="line-height: 1.8; max-width: 600px; margin: 0; font-size: 1.1rem; color: #666;">Erfahrungen und Feedback von ehemaligen Arbeitgebern und Kollegen.</p>
             </div>
-            <div class="testimonials-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <!-- Zitat 1 -->
-                <div class="testimonial-card" style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #94A293;">
-                    <blockquote style="font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; color: #333;">
-                        "Anika zeichnet sich durch ihre strukturierte und zuverlässige Arbeitsweise aus. Sie denkt immer einen Schritt voraus und findet kreative Lösungen für komplexe Herausforderungen."
-                    </blockquote>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: #94A293; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                            A
+            <div class="testimonials-carousel-container" style="position: relative; width: 100%; margin: 0; overflow: hidden;">
+                <div class="testimonials-carousel" style="display: flex; transition: transform 0.5s ease; width: 600%;">
+                    <!-- Zitat 1 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(148,162,147,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(148,162,147,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Frau Warncke überzeugt durch umfangreiche Fachkenntnisse und kreativen Output, die sie zur Erfüllung ihrer Aufgaben sehr erfolgreich einsetzt. [...] Dabei zeichnet sie sich unter anderem besonders durch ihre sehr guten Kenntnisse und ihr Wissen in den Bereichen der Grafik, Layout und Produktgestaltung aus."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(148,162,147,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #94A293 0%, #7a8b79 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(148,162,147,0.3); letter-spacing: 0.1em;">
+                                    FK
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Florian Kienast</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, FORMWÆNDE GmbH & Co. KG, Innenarchitekturbüro, Lüneburg, DE</div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div style="font-weight: 600; color: #333;">Anna Schmidt</div>
-                            <div style="font-size: 0.9rem; color: #666;">Projektleiterin, Architekturbüro München</div>
+                    </div>
+
+                    <!-- Zitat 2 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(155,168,156,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(155,168,156,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Durch ihre schnelle Auffassungsgabe, gute fachliche Vorkenntnisse, einem sicheren Umgang mit den notwendigen Programmen und nicht zuletzt durch ihre Kreativität, hat sie die ihr gestellten Aufgaben immer sehr zu unserer Zufriedenheit gelöst."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(155,168,156,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #9ba89c 0%, #838f84 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(155,168,156,0.3); letter-spacing: 0.1em;">
+                                    JS
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Jens Schneider</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, CUBIK³ Innenarchitekten GmbH, Innenarchitekturbüro, Hamburg, DE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zitat 3 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(148,162,147,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(148,162,147,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Sie führte alle Aufgaben selbständig, äußerst sorgfältig und durchdacht aus."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(148,162,147,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #94A293 0%, #7a8b79 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(148,162,147,0.3); letter-spacing: 0.1em;">
+                                    FK
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Florian Kienast</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, FORMWÆNDE GmbH & Co. KG, Innenarchitekturbüro, Lüneburg, DE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zitat 4 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(155,168,156,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(155,168,156,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Kunden schätzten sie auf Grund ihrer Ehrlichkeit, Zuverlässigkeit und ihres lösungsorientierten Umgangs mit Herausforderungen. Frau Anika Warncke hat in allen Projekten mit einzelnen Partnern und Gewerken stets auf Augenhöhe agiert."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(155,168,156,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #9ba89c 0%, #838f84 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(155,168,156,0.3); letter-spacing: 0.1em;">
+                                    FK
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Florian Kienast</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, FORMWÆNDE GmbH & Co. KG, Innenarchitekturbüro, Lüneburg, DE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zitat 5 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(148,162,147,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(148,162,147,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Auch in Situationen mit wechselnden Anforderungen erwies sich Frau Warncke als belastbare Mitarbeiterin und ging jederzeit überlegt und zielorientiert vor."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(148,162,147,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #94A293 0%, #7a8b79 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(148,162,147,0.3); letter-spacing: 0.1em;">
+                                    FK
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Florian Kienast</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, FORMWÆNDE GmbH & Co. KG, Innenarchitekturbüro, Lüneburg, DE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zitat 6 -->
+                    <div class="testimonial-slide" style="width: 16.666%; flex-shrink: 0; padding: 0 1rem; box-sizing: border-box;">
+                        <div class="testimonial-card" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 1.5rem; padding: 3rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); border: 1px solid rgba(155,168,156,0.1); position: relative; transition: all 0.3s ease; overflow: hidden; max-width: 800px; margin: 0 auto;">
+                            <div style="position: absolute; top: 2rem; left: 2.5rem; font-size: 5rem; line-height: 1; color: rgba(155,168,156,0.15); font-family: Georgia, serif;">"</div>
+                            <blockquote style="font-style: italic; line-height: 1.8; margin: 3rem 0 2.5rem 0; color: #2c3e50; font-size: 1.3rem; position: relative; z-index: 2; text-align: center;">
+                                „Ihre Arbeitsergebnisse waren dabei nicht nur inhaltlich überzeugend, sondern auch gut strukturiert und wurden von ihr zudem überzeugend erläutert. Man konnte sich immer auf sie verlassen und nicht zuletzt wegen ihrer freundlichen Art, ist sie ein Gewinn für jedes Büro."
+                            </blockquote>
+                            <div style="display: flex; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(155,168,156,0.1);">
+                                <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #9ba89c 0%, #838f84 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(155,168,156,0.3); letter-spacing: 0.1em;">
+                                    JS
+                                </div>
+                                <div style="text-align: left;">
+                                    <div style="font-weight: 700; color: #2c3e50; font-size: 1.2rem; margin-bottom: 0.5rem;">Jens Schneider</div>
+                                    <div style="font-size: 1rem; color: #6b7280; line-height: 1.4;">Geschäftsführer, CUBIK³ Innenarchitekten GmbH, Innenarchitekturbüro, Hamburg, DE</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Zitat 2 -->
-                <div class="testimonial-card" style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #9ba89c;">
-                    <blockquote style="font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; color: #333;">
-                        "Ihre Fähigkeit, sowohl technische Anforderungen als auch ästhetische Aspekte perfekt zu vereinen, macht sie zu einer herausragenden Innenarchitektin."
-                    </blockquote>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: #9ba89c; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                            M
-                        </div>
-                        <div>
-                            <div style="font-weight: 600; color: #333;">Michael Weber</div>
-                            <div style="font-size: 0.9rem; color: #666;">Geschäftsführer, Design Studio Hamburg</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Navigation Buttons -->
+                <button class="testimonial-btn testimonial-btn-prev" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(148, 162, 147, 0.9); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="testimonial-btn testimonial-btn-next" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(148, 162, 147, 0.9); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
 
-                <!-- Zitat 3 -->
-                <div class="testimonial-card" style="background: #f8f9fa; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-left: 4px solid #94A293;">
-                    <blockquote style="font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; color: #333;">
-                        "Anika bringt nicht nur Fachkompetenz mit, sondern auch eine ruhige und lösungsorientierte Art, die in stressigen Projektsituationen besonders wertvoll ist."
-                    </blockquote>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 50px; height: 50px; background: #94A293; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                            S
-                        </div>
-                        <div>
-                            <div style="font-weight: 600; color: #333;">Sarah Müller</div>
-                            <div style="font-size: 0.9rem; color: #666;">Team Lead UX/UI, Tech Company Berlin</div>
-                        </div>
-                    </div>
+                <!-- Dots Indicator -->
+                <div class="testimonial-dots" style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem;">
+                    <div class="testimonial-dot active" data-slide="0" style="width: 12px; height: 12px; border-radius: 50%; background: #94A293; cursor: pointer; transition: all 0.3s ease;"></div>
+                    <div class="testimonial-dot" data-slide="1" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(148, 162, 147, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
+                    <div class="testimonial-dot" data-slide="2" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(148, 162, 147, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
+                    <div class="testimonial-dot" data-slide="3" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(148, 162, 147, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
+                    <div class="testimonial-dot" data-slide="4" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(148, 162, 147, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
+                    <div class="testimonial-dot" data-slide="5" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(148, 162, 147, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
                 </div>
             </div>
         </section>
@@ -318,6 +414,95 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Testimonial Carousel
+      const testimonialCarousel = document.querySelector('.testimonials-carousel');
+      const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+      const testimonialPrevBtn = document.querySelector('.testimonial-btn-prev');
+      const testimonialNextBtn = document.querySelector('.testimonial-btn-next');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+      let currentTestimonialIndex = 0;
+
+      function updateTestimonialCarousel() {
+        if (testimonialCarousel) {
+          // Jedes Testimonial nimmt 16.666% (1/6) der Gesamtbreite ein
+          const slideWidth = 100 / 6; // 16.666%
+          testimonialCarousel.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}%)`;
+          
+          // Update dots
+          testimonialDots.forEach((dot, index) => {
+            if (index === currentTestimonialIndex) {
+              dot.classList.add('active');
+              dot.style.background = '#94A293';
+            } else {
+              dot.classList.remove('active');
+              dot.style.background = 'rgba(148, 162, 147, 0.3)';
+            }
+          });
+
+          // Update button states - always allow navigation through all slides
+          if (testimonialPrevBtn) {
+            testimonialPrevBtn.style.opacity = '1';
+          }
+          if (testimonialNextBtn) {
+            testimonialNextBtn.style.opacity = '1';
+          }
+        }
+      }
+
+      function nextTestimonial() {
+        if (currentTestimonialIndex < testimonialSlides.length - 1) {
+          currentTestimonialIndex++;
+        } else {
+          currentTestimonialIndex = 0; // Loop to first
+        }
+        updateTestimonialCarousel();
+      }
+
+      function prevTestimonial() {
+        if (currentTestimonialIndex > 0) {
+          currentTestimonialIndex--;
+        } else {
+          currentTestimonialIndex = testimonialSlides.length - 1; // Loop to last
+        }
+        updateTestimonialCarousel();
+      }
+
+      function goToTestimonial(index) {
+        currentTestimonialIndex = index;
+        updateTestimonialCarousel();
+      }
+
+      // Event listeners for testimonial carousel
+      if (testimonialNextBtn) {
+        testimonialNextBtn.addEventListener('click', nextTestimonial);
+      }
+      if (testimonialPrevBtn) {
+        testimonialPrevBtn.addEventListener('click', prevTestimonial);
+      }
+
+      // Dot navigation
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToTestimonial(index));
+      });
+
+      // Auto-play testimonials deaktiviert
+      // setInterval(nextTestimonial, 8000); // Change every 8 seconds
+
+      // Initialize testimonial carousel
+      updateTestimonialCarousel();
+
+      // Button hover effects
+      document.querySelectorAll('.testimonial-btn').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+          this.style.background = 'rgba(148, 162, 147, 1)';
+          this.style.transform = 'translateY(-50%) scale(1.1)';
+        });
+        btn.addEventListener('mouseleave', function() {
+          this.style.background = 'rgba(148, 162, 147, 0.9)';
+          this.style.transform = 'translateY(-50%) scale(1)';
+        });
+      });
+
       // Zufällige Reihenfolge der Carousel-Karten
       const carousel = document.querySelector('.portfolio-carousel');
       if (carousel) {
