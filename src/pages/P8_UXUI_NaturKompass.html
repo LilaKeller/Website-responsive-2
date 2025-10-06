@@ -1221,16 +1221,17 @@
         const scrollPercent = Math.max(0, Math.min(100, (scrollTop / documentHeight) * 100));
         
         const easedPercent = scrollPercent < 50 ? 
-          2 * scrollPercent * scrollPercent / 100 : 
+          2 * scrollPercent * scrollPercent / 100 :
           1 - Math.pow(-2 * scrollPercent + 2, 3) / 2;
         
         const progressDeg = (easedPercent / 100) * 360;
         backToTopBtn.style.setProperty('--progress', `${progressDeg}deg`);
         
-        // Verwende 100px als Threshold für bessere Sichtbarkeit
-        const threshold = 100;
+        // Hero-Bereich als Threshold nutzen
+        const hero = document.querySelector('.hero');
+        const heroHeight = hero ? hero.offsetHeight : window.innerHeight * 0.8;
         
-        if (scrollTop > threshold) {
+        if (scrollTop > heroHeight) {
           if (!backToTopBtn.classList.contains('visible')) {
             backToTopBtn.classList.add('visible');
             
@@ -1250,32 +1251,27 @@
       backToTopBtn.addEventListener('click', () => {
         const startTime = performance.now();
         const startPos = window.pageYOffset;
-        const distance = startPos;
-        const duration = Math.min(Math.max(distance / 3, 400), 1000);
+        const duration = Math.min(1200, Math.max(600, startPos / 3));
         
         backToTopBtn.style.pointerEvents = 'none';
         backToTopBtn.style.opacity = '0.7';
         
-        function easeInOutCubic(t) {
-          return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-        }
-        
-        function animateScroll(currentTime) {
+        function scrollStep(currentTime) {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          const eased = easeInOutCubic(progress);
+          const ease = 1 - Math.pow(1 - progress, 4);
           
-          window.scrollTo(0, startPos * (1 - eased));
+          window.scrollTo(0, startPos * (1 - ease));
           
           if (progress < 1) {
-            requestAnimationFrame(animateScroll);
+            requestAnimationFrame(scrollStep);
           } else {
             backToTopBtn.style.pointerEvents = '';
             backToTopBtn.style.opacity = '';
           }
         }
         
-        requestAnimationFrame(animateScroll);
+        requestAnimationFrame(scrollStep);
       });
       
       let isScrolling = false;
@@ -1291,7 +1287,16 @@
       
       window.addEventListener('scroll', handleScroll, { passive: true });
       
-      // Initial call
+      backToTopBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          backToTopBtn.click();
+        }
+        if (e.key === 'Escape') {
+          backToTopBtn.blur();
+        }
+      });
+      
       updateScrollProgress();
     }
   </script>
