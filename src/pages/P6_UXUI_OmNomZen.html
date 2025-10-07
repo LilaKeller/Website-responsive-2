@@ -46,9 +46,29 @@
             transform: scale(1.06);
             box-shadow: 0 4px 18px rgba(224,122,95,0.13);
         }
-        .main-header.scrolled .logo,
-        .main-header.scrolled nav a {
+        .main-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            transition: background 0.2s, color 0.2s;
+        }
+        .main-header.scrolled {
+            position: fixed;
+            background: #fff !important;
             color: #222 !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .main-header.scrolled .logo,
+        .main-header.scrolled nav a,
+        .main-header.scrolled nav a:visited {
+            color: #222 !important;
+        }
+        .main-header .logo,
+        .main-header nav a,
+        .main-header nav a:visited {
+            color: #fff !important;
         }
     </style>
     <style>
