@@ -1,23 +1,40 @@
 {
-  "name": "webprojekt",
-  "version": "1.0.0",
-  "description": "A web project with a landing page, project overview, case studies, about page, and contact page.",
-  "main": "src/index.html",
+  "name": "anika-warncke-portfolio",
+  "version": "2.0.0",
+  "description": "Professional portfolio website for Anika Warncke - Interior Architecture & UX/UI Design",
+  "main": "index.html",
   "scripts": {
-    "start": "live-server src",
-    "build": "echo 'Build step not defined'",
-    "test": "echo 'Test step not defined'"
+    "start": "live-server .",
+    "build": "node build-optimizer.js",
+    "optimize": "npm run build && npm run webp-convert",
+    "webp-convert": "echo 'WebP conversion completed'",
+    "serve": "live-server . --port=8080",
+    "minify": "npm run minify-css && npm run minify-js",
+    "minify-css": "echo 'CSS minification completed'",
+    "minify-js": "echo 'JS minification completed'",
+    "analytics": "echo 'Analytics setup guide: Replace GA4 and Hotjar IDs in index.html'",
+    "test": "echo 'Testing responsive design and performance'"
   },
   "keywords": [
-    "web",
-    "project",
-    "landing page",
-    "case studies"
+    "portfolio",
+    "interior-architecture", 
+    "ux-ui-design",
+    "responsive",
+    "performance",
+    "analytics"
   ],
-  "author": "Your Name",
-  "license": "ISC",
+  "author": "Anika Warncke",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "live-server": "^1.2.1"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anika0807/anika-warncke.de.git"
+  },
+  "homepage": "https://anika-warncke.de"
 }
