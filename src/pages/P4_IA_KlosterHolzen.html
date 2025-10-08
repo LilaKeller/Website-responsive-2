@@ -286,6 +286,36 @@
         backdrop-filter: blur(16px) saturate(1.4);
       }
     }
+    
+    /* Responsive Design für Projektseiten */
+    @media (max-width: 1200px) {
+      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding: 4rem 60px !important; }
+      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding: 3rem 60px !important; }
+      section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
+    }
+    @media (max-width: 900px) {
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
+      section[style*="padding:1rem"] { padding: 1rem 40px !important; }
+      section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
+    }
+    @media (max-width: 768px) {
+      section[style*="padding"] { padding: 2rem 30px !important; }
+      .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
+      section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
+      h1 { font-size: 2.2rem !important; } h2 { font-size: 1.8rem !important; } h3 { font-size: 1.4rem !important; }
+    }
+    @media (max-width: 480px) {
+      section[style*="padding"] { padding: 1.5rem 20px !important; }
+      .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
+      div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
+      h1 { font-size: 1.8rem !important; } h2 { font-size: 1.5rem !important; } h3 { font-size: 1.2rem !important; }
+      .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
+    }
+    @media (max-width: 360px) {
+      section[style*="padding"] { padding: 1rem 15px !important; }
+      .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
+      h1 { font-size: 1.6rem !important; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; }
+    }
   </style>
 </head>
     <body>
