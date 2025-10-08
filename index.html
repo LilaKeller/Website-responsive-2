@@ -483,71 +483,6 @@
       </blockquote>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials" style="width:100%;max-width:100vw;padding:4rem 80px;background:linear-gradient(135deg, #f8f9fa 0%, #fff 100%);overflow:hidden;">
-      <div style="max-width:1200px;margin:0 auto;text-align:center;">
-        <h2 style="font-size:2.5rem;margin-bottom:3rem;color:#333;font-weight:700;">Was Kunden sagen</h2>
-        
-        <div class="testimonials-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;margin-bottom:2rem;">
-          
-          <div class="testimonial-card" style="background:#fff;padding:2rem;border-radius:1.2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;">
-            <div style="display:flex;align-items:center;margin-bottom:1.5rem;">
-              <div class="testimonial-avatar" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#ffb800,#ff9500);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.5rem;margin-right:1rem;">S</div>
-              <div>
-                <h4 style="margin:0;color:#333;font-size:1.1rem;">Sarah M.</h4>
-                <p style="margin:0;color:#666;font-size:0.9rem;">Restaurant Kloster Holzen</p>
-              </div>
-            </div>
-            <blockquote style="margin:0;font-style:italic;color:#555;line-height:1.6;">
-              „Anika hat unseren Festsaal in eine wahre Wohlfühloase verwandelt. Ihre Aufmerksamkeit für Details und das Verständnis für unsere Bedürfnisse waren außergewöhnlich."
-            </blockquote>
-            <div style="display:flex;justify-content:center;margin-top:1rem;color:#ffb800;">
-              ★★★★★
-            </div>
-          </div>
-
-          <div class="testimonial-card" style="background:#fff;padding:2rem;border-radius:1.2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;">
-            <div style="display:flex;align-items:center;margin-bottom:1.5rem;">
-              <div class="testimonial-avatar" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#ffb800,#ff9500);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.5rem;margin-right:1rem;">M</div>
-              <div>
-                <h4 style="margin:0;color:#333;font-size:1.1rem;">Marcus K.</h4>
-                <p style="margin:0;color:#666;font-size:0.9rem;">Tech Startup CEO</p>
-              </div>
-            </div>
-            <blockquote style="margin:0;font-style:italic;color:#555;line-height:1.6;">
-              „Das UX/UI Design für unsere App war perfekt durchdacht. Anika versteht es, komplexe Prozesse einfach und intuitiv zu gestalten."
-            </blockquote>
-            <div style="display:flex;justify-content:center;margin-top:1rem;color:#ffb800;">
-              ★★★★★
-            </div>
-          </div>
-
-          <div class="testimonial-card" style="background:#fff;padding:2rem;border-radius:1.2rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform 0.3s ease,box-shadow 0.3s ease;">
-            <div style="display:flex;align-items:center;margin-bottom:1.5rem;">
-              <div class="testimonial-avatar" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#ffb800,#ff9500);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.5rem;margin-right:1rem;">L</div>
-              <div>
-                <h4 style="margin:0;color:#333;font-size:1.1rem;">Lisa B.</h4>
-                <p style="margin:0;color:#666;font-size:0.9rem;">Hoteldirektorin</p>
-              </div>
-            </div>
-            <blockquote style="margin:0;font-style:italic;color:#555;line-height:1.6;">
-              „Professionell, kreativ und zuverlässig. Anika hat unsere Erwartungen in jeder Hinsicht übertroffen. Absolute Empfehlung!"
-            </blockquote>
-            <div style="display:flex;justify-content:center;margin-top:1rem;color:#ffb800;">
-              ★★★★★
-            </div>
-          </div>
-
-        </div>
-        
-        <div style="text-align:center;margin-top:2rem;">
-          <a href="src/pages/contact.html" class="btn-primary" style="display:inline-block;padding:1rem 2rem;background:linear-gradient(135deg,#ffb800,#ff9500);color:#fff;text-decoration:none;border-radius:50px;font-weight:600;transition:transform 0.3s ease,box-shadow 0.3s ease;">
-            Kostenlose Erstberatung vereinbaren
-          </a>
-        </div>
-      </div>
-    </section>
-
   <section class="portfolio" id="work" style="width:100%;max-width:100vw;padding-left:80px;padding-right:80px;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;overflow-x:hidden;">
   <div class="portfolio-filter" style="padding-left:0;padding-right:0;">
         <button class="filter-btn active" data-filter="all">Alle Projekte</button>
@@ -961,32 +896,6 @@
               page_title: document.title
             });
           }
-        });
-      });
-
-      // Track testimonial interactions
-      const testimonialCards = document.querySelectorAll('.testimonial-card');
-      testimonialCards.forEach((card, index) => {
-        card.addEventListener('mouseenter', function() {
-          if (window.trackAnalyticsEvent) {
-            window.trackAnalyticsEvent('testimonial_view', {
-              testimonial_index: index,
-              testimonial_name: this.querySelector('h4')?.textContent || 'unknown'
-            });
-          }
-        });
-      });
-
-      // Add hover effects for testimonials
-      testimonialCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-5px)';
-          this.style.boxShadow = '0 8px 30px rgba(0,0,0,0.12)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0)';
-          this.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
         });
       });
     });
