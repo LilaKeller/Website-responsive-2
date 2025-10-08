@@ -669,7 +669,7 @@
     <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
       <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
         <div class="contact-content" style="margin:0;flex:1;">
-          <h2 style="margin:0;">GET<br>IN<br>TOUCH</h2>
+          <h2 style="margin:0;color:#fff;">GET<br>IN<br>TOUCH</h2>
         </div>
         <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
           <a href="src/pages/contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
@@ -730,70 +730,6 @@
 
       function calculateMaxIndex() {
         try {
-          if (!carousel) return 0;
-          const cards = carousel.children;
-          if (cards.length === 0) return 0;
-
-          // Berechne Gap basierend auf CSS-Werten
-          const computedStyle = getComputedStyle(carousel);
-          const cssGap = computedStyle.gap;
-          let gap = 40; // Standardwert
-
-          if (cssGap.includes('rem')) {
-            gap = parseFloat(cssGap) * 16; // 16px = 1rem
-          } else if (cssGap.includes('px')) {
-            gap = parseFloat(cssGap);
-          }
-
-          const cardWidth = cards[0].offsetWidth;
-          const totalCardWidth = cardWidth + gap;
-          const containerWidth = carousel.parentElement.offsetWidth;
-          const visibleCards = Math.floor(containerWidth / totalCardWidth);
-          
-          return Math.max(0, cards.length - visibleCards);
-        } catch (error) {
-          console.error('Error in calculateMaxIndex:', error);
-          return 0;
-        }
-      }
-
-      function updateCarousel() {
-        try {
-          if (!carousel) return;
-          const cards = carousel.children;
-          if (cards.length === 0) return;
-
-          // Berechne Gap basierend auf CSS-Werten
-          const computedStyle = getComputedStyle(carousel);
-          const cssGap = computedStyle.gap;
-          let gap = 40; // Standardwert
-
-          if (cssGap.includes('rem')) {
-            gap = parseFloat(cssGap) * 16; // 16px = 1rem
-          } else if (cssGap.includes('px')) {
-            gap = parseFloat(cssGap);
-          }
-
-          const cardWidth = cards[0].offsetWidth;
-          const totalCardWidth = cardWidth + gap;
-          const containerWidth = carousel.parentElement.offsetWidth;
-          const visibleCards = Math.floor(containerWidth / totalCardWidth);
-          maxIndex = Math.max(0, cards.length - visibleCards);
-
-          // Sicherstellen, dass currentIndex nicht größer als maxIndex ist
-          if (currentIndex > maxIndex) {
-            currentIndex = maxIndex;
-          }
-
-          carousel.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
-
-          // Indicator aktualisieren
-          const indicatorFill = document.querySelector('.indicator-fill');
-          if (indicatorFill) {
-            const progress = maxIndex > 0 ? (currentIndex / maxIndex) * 100 : 100;
-            indicatorFill.style.width = `${progress}%`;
-          }
-
           // Button-States aktualisieren
           if (leftBtn) {
             const canScrollLeft = currentIndex > 0;
