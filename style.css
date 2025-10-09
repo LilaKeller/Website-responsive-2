@@ -639,7 +639,7 @@ a:hover, a:focus, .socials-inline a:hover, .socials-inline a:focus, .main-header
 }
 .testimonial-prev:hover,
 .testimonial-next:hover {
-  background: #b85c44;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
 }
 @media (max-width: 900px) {
   .about-section {
@@ -721,7 +721,7 @@ a:hover, a:focus, .socials-inline a:hover, .socials-inline a:focus, .main-header
 }
 .testimonial-prev:hover,
 .testimonial-next:hover {
-  background: #b85c44;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
 }
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Poppins:wght@700;800&display=swap');
 
