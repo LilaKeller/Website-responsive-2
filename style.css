@@ -1693,3 +1693,12 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
   position: relative;
   z-index: 2;
 }
+
+/* Header auf index.html kompakter machen */
+.main-page-hero .main-header {
+  padding-bottom: 8px;
+}
+
+.main-page-hero nav {
+  padding: 1.5rem 4vw 0 4vw;
+}
