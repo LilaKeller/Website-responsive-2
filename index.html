@@ -713,8 +713,9 @@
             carousel.style.transform = 'translateX(0px)';
           } else {
             const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
-            maxIndex = Math.max(0, visibleItemsCount - visibleItems);
-            const translateX = -currentIndex * (itemWidth + gap);
+            const pageWidth = visibleItems * itemWidth + (visibleItems - 1) * gap;
+            maxIndex = Math.max(0, Math.ceil(visibleItemsCount / visibleItems) - 1);
+            const translateX = -currentIndex * pageWidth;
             carousel.style.transform = `translateX(${translateX}px)`;
           }
           
