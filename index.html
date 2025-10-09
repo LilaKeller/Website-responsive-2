@@ -265,13 +265,13 @@
       height: auto;
       min-width: 0;
       max-width: 100%;
-      width: 280px;
+      width: 240px;
       flex-shrink: 0;
     }
     .portfolio-thumb {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 250px;
       transition: background 0.3s, filter 0.3s;
       background-size: cover;
       background-position: center;
@@ -443,10 +443,10 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .portfolio-item {
-        width: 240px;
+        width: 200px;
       }
       .portfolio-thumb {
-        height: 250px;
+        height: 200px;
       }
       .portfolio-carousel {
         gap: 1.2rem;
@@ -470,10 +470,10 @@
     }
     @media (max-width: 480px) {
       .portfolio-item {
-        width: 200px;
+        width: 160px;
       }
       .portfolio-thumb {
-        height: 200px;
+        height: 150px;
       }
       .portfolio-carousel {
         gap: 0.8rem;
@@ -717,7 +717,7 @@
           const allItems = Array.from(carousel.children);
           const visibleItemsCount = allItems.filter(child => getComputedStyle(child).display !== 'none').length;
           
-          let itemWidth = 280;
+          let itemWidth = 240;
           if (visibleItemsCount <= 4 && visibleItemsCount > 0) {
             itemWidth = (effectiveWidth - (visibleItemsCount - 1) * gap) / visibleItemsCount;
             itemWidth = Math.max(itemWidth, 200); // min width
