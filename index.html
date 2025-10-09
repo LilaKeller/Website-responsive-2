@@ -698,18 +698,26 @@
         try {
           const container = document.querySelector('.carousel-wrapper');
           const containerWidth = container.offsetWidth;
-          const itemWidth = 312; // 280px item + 32px gap
-          const totalItems = carousel.children.length;
-          
           const display = getComputedStyle(carousel).display;
+          
           if (display === 'grid') {
             maxIndex = 0;
             carousel.style.transform = 'translateX(0px)';
           } else {
-            const visibleItems = Math.floor(containerWidth / itemWidth);
-            maxIndex = Math.max(0, totalItems - visibleItems);
-            const translateX = -currentIndex * itemWidth;
-            carousel.style.transform = `translateX(${translateX}px)`;
+            // Berechne dynamische Item-Breite
+            const firstItem = Array.from(carousel.children).find(child => getComputedStyle(child).display !== 'none');
+            if (!firstItem) {
+              maxIndex = 0;
+              carousel.style.transform = 'translateX(0px)';
+            } else {
+              const itemWidth = firstItem.offsetWidth + parseFloat(getComputedStyle(carousel).gap || '32px');
+              const visibleItems = Array.from(carousel.children).filter(child => getComputedStyle(child).display !== 'none');
+              const visibleItemsCount = visibleItems.length;
+              const visibleItemsPerPage = Math.floor(containerWidth / itemWidth);
+              maxIndex = Math.max(0, visibleItemsCount - visibleItemsPerPage);
+              const translateX = -currentIndex * itemWidth;
+              carousel.style.transform = `translateX(${translateX}px)`;
+            }
           }
           
           calculateMaxIndex();
