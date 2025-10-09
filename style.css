@@ -979,7 +979,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   text-align: center;
 }
 .btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  background: #b85c44;
   color: #fff;
 }
 .details-block {
@@ -1319,7 +1319,7 @@ main {
   line-height: 1.2;
 }
 .btn-secondary:hover {
-  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  background: #b85c44;
   color: #fff;
 }
 
