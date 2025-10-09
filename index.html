@@ -694,6 +694,30 @@
       let currentIndex = 0;
       let maxIndex = 0;
 
+      function updateCarousel() {
+        try {
+          const container = document.querySelector('.carousel-wrapper');
+          const containerWidth = container.offsetWidth;
+          const itemWidth = 312; // 280px item + 32px gap
+          const totalItems = carousel.children.length;
+          
+          const display = getComputedStyle(carousel).display;
+          if (display === 'grid') {
+            maxIndex = 0;
+            carousel.style.transform = 'translateX(0px)';
+          } else {
+            const visibleItems = Math.floor(containerWidth / itemWidth);
+            maxIndex = Math.max(0, totalItems - visibleItems);
+            const translateX = -currentIndex * itemWidth;
+            carousel.style.transform = `translateX(${translateX}px)`;
+          }
+          
+          calculateMaxIndex();
+        } catch (error) {
+          console.error('Error in updateCarousel:', error);
+        }
+      }
+
       function calculateMaxIndex() {
         try {
           // Button-States aktualisieren
