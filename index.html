@@ -265,7 +265,7 @@
       height: auto;
       min-width: 0;
       max-width: 100%;
-      width: 120px;
+      width: var(--item-width, 120px);
       flex-shrink: 0;
     }
     .portfolio-thumb {
@@ -708,10 +708,17 @@
           const paddingLeft = parseFloat(style.paddingLeft) || 0;
           const paddingRight = parseFloat(style.paddingRight) || 0;
           const effectiveWidth = containerWidth - paddingLeft - paddingRight;
-          const itemWidth = 120; // item width, updated
           const gap = parseFloat(getComputedStyle(carousel).gap) || 32;
           const allItems = Array.from(carousel.children);
           const visibleItemsCount = allItems.filter(child => getComputedStyle(child).display !== 'none').length;
+          
+          let itemWidth = 120; // default
+          if (visibleItemsCount <= 4 && visibleItemsCount > 0) {
+            itemWidth = (effectiveWidth - (visibleItemsCount - 1) * gap) / visibleItemsCount;
+            itemWidth = Math.max(itemWidth, 80); // min width
+          }
+          
+          carousel.style.setProperty('--item-width', itemWidth + 'px');
           
           const display = getComputedStyle(carousel).display;
           if (display === 'grid') {
