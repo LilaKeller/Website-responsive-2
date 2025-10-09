@@ -721,6 +721,13 @@
           if (visibleItemsCount <= 4 && visibleItemsCount > 0) {
             itemWidth = (effectiveWidth - (visibleItemsCount - 1) * gap) / visibleItemsCount;
             itemWidth = Math.max(itemWidth, 200); // min width
+          } else if (visibleItemsCount > 4) {
+            // For more than 4 items, adjust itemWidth so that the last visibleItems fit exactly
+            const visibleItems = Math.floor((effectiveWidth + gap) / (280 + gap));
+            if (visibleItems > 0) {
+              itemWidth = (effectiveWidth - (visibleItems - 1) * gap) / visibleItems;
+              itemWidth = Math.max(itemWidth, 200);
+            }
           }
           
           // Set width for visible portfolio items
