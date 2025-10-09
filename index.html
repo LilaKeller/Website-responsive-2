@@ -343,7 +343,7 @@
   overflow-x: hidden;
   overflow-y: visible;
   width: 100%;
-  padding: 0 80px;
+  padding: 0 0;
   margin: 20px 0;
     }
     .carousel-btn {
@@ -698,26 +698,23 @@
         try {
           const container = document.querySelector('.carousel-wrapper');
           const containerWidth = container.offsetWidth;
-          const display = getComputedStyle(carousel).display;
+          const style = getComputedStyle(container);
+          const paddingLeft = parseFloat(style.paddingLeft) || 0;
+          const paddingRight = parseFloat(style.paddingRight) || 0;
+          const effectiveWidth = containerWidth - paddingLeft - paddingRight;
+          const itemWidth = 312; // 280px item + 32px gap
+          const allItems = Array.from(carousel.children);
+          const visibleItemsCount = allItems.filter(child => getComputedStyle(child).display !== 'none').length;
           
+          const display = getComputedStyle(carousel).display;
           if (display === 'grid') {
             maxIndex = 0;
             carousel.style.transform = 'translateX(0px)';
           } else {
-            // Berechne dynamische Item-Breite
-            const firstItem = Array.from(carousel.children).find(child => getComputedStyle(child).display !== 'none');
-            if (!firstItem) {
-              maxIndex = 0;
-              carousel.style.transform = 'translateX(0px)';
-            } else {
-              const itemWidth = firstItem.offsetWidth + parseFloat(getComputedStyle(carousel).gap || '32px');
-              const visibleItems = Array.from(carousel.children).filter(child => getComputedStyle(child).display !== 'none');
-              const visibleItemsCount = visibleItems.length;
-              const visibleItemsPerPage = Math.floor(containerWidth / itemWidth);
-              maxIndex = Math.max(0, visibleItemsCount - visibleItemsPerPage);
-              const translateX = -currentIndex * itemWidth;
-              carousel.style.transform = `translateX(${translateX}px)`;
-            }
+            const visibleItems = Math.floor((effectiveWidth + 32) / itemWidth);
+            maxIndex = Math.max(0, visibleItemsCount - visibleItems);
+            const translateX = -currentIndex * itemWidth;
+            carousel.style.transform = `translateX(${translateX}px)`;
           }
           
           calculateMaxIndex();
