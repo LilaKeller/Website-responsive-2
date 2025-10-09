@@ -702,7 +702,8 @@
           const paddingLeft = parseFloat(style.paddingLeft) || 0;
           const paddingRight = parseFloat(style.paddingRight) || 0;
           const effectiveWidth = containerWidth - paddingLeft - paddingRight;
-          const itemWidth = 312; // 280px item + 32px gap
+          const itemWidth = 280; // item width
+          const gap = 32; // gap
           const allItems = Array.from(carousel.children);
           const visibleItemsCount = allItems.filter(child => getComputedStyle(child).display !== 'none').length;
           
@@ -711,9 +712,10 @@
             maxIndex = 0;
             carousel.style.transform = 'translateX(0px)';
           } else {
-            const visibleItems = Math.floor((effectiveWidth + 32) / itemWidth);
-            maxIndex = Math.max(0, visibleItemsCount - visibleItems);
-            const translateX = -currentIndex * itemWidth;
+            const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
+            const pageWidth = visibleItems * itemWidth + (visibleItems - 1) * gap;
+            maxIndex = Math.max(0, Math.ceil(visibleItemsCount / visibleItems) - 1);
+            const translateX = -currentIndex * pageWidth;
             carousel.style.transform = `translateX(${translateX}px)`;
           }
           
