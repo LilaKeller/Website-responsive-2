@@ -409,6 +409,7 @@ html, body {
 }
 .btn-primary:hover, .btn-secondary:hover, .btn-contact:hover, .testimonial-prev:hover, .testimonial-next:hover,
 .btn-primary:focus, .btn-secondary:focus, .btn-contact:focus, .testimonial-prev:focus, .testimonial-next:focus {
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   transform: scale(1.06);
   box-shadow: 0 4px 18px rgba(255,184,0,0.13);
   outline: none;
@@ -978,7 +979,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   text-align: center;
 }
 .btn-secondary:hover {
-  background: #b6a1e6;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
 }
 .details-block {
@@ -1318,7 +1319,7 @@ main {
   line-height: 1.2;
 }
 .btn-secondary:hover {
-  background: #b85c44;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
 }
 
