@@ -736,8 +736,9 @@
             carousel.style.transform = 'translateX(0px)';
           } else {
             const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
-            maxIndex = Math.max(0, visibleItemsCount - visibleItems);
-            const translateX = -currentIndex * (itemWidth + gap);
+            maxIndex = Math.max(0, Math.ceil(visibleItemsCount / visibleItems) - 1);
+            const pageWidth = visibleItems * itemWidth + (visibleItems - 1) * gap;
+            const translateX = -currentIndex * pageWidth;
             carousel.style.transform = `translateX(${translateX}px)`;
           }
           
@@ -790,11 +791,18 @@
         carousel.style.cursor = 'grab';
         carousel.style.userSelect = '';
 
-        // Snap to nearest card
+        // Snap to nearest page
+        const container = document.querySelector('.carousel-wrapper');
+        const containerWidth = container.offsetWidth;
+        const style = getComputedStyle(container);
+        const paddingLeft = parseFloat(style.paddingLeft) || 0;
+        const paddingRight = parseFloat(style.paddingRight) || 0;
+        const effectiveWidth = containerWidth - paddingLeft - paddingRight;
         const gap = 32;
         const itemWidth = parseFloat(carousel.children[0].style.width) || 280;
-        const step = itemWidth + gap;
-        const snappedIndex = Math.round(-dragDistance / step);
+        const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
+        const pageWidth = visibleItems * itemWidth + (visibleItems - 1) * gap;
+        const snappedIndex = Math.round(-dragDistance / pageWidth);
         currentIndex = Math.max(0, Math.min(maxIndex, snappedIndex));
         updateCarousel();
       }
@@ -818,11 +826,18 @@
         if (!isDragging) return;
         isDragging = false;
 
-        // Snap to nearest card
+        // Snap to nearest page
+        const container = document.querySelector('.carousel-wrapper');
+        const containerWidth = container.offsetWidth;
+        const style = getComputedStyle(container);
+        const paddingLeft = parseFloat(style.paddingLeft) || 0;
+        const paddingRight = parseFloat(style.paddingRight) || 0;
+        const effectiveWidth = containerWidth - paddingLeft - paddingRight;
         const gap = 32;
         const itemWidth = parseFloat(carousel.children[0].style.width) || 280;
-        const step = itemWidth + gap;
-        const snappedIndex = Math.round(-dragDistance / step);
+        const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
+        const pageWidth = visibleItems * itemWidth + (visibleItems - 1) * gap;
+        const snappedIndex = Math.round(-dragDistance / pageWidth);
         currentIndex = Math.max(0, Math.min(maxIndex, snappedIndex));
         updateCarousel();
       }
