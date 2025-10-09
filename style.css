@@ -259,8 +259,8 @@ html, body {
 .btn-primary:hover, .btn-primary:focus {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 32px rgba(204,153,0,0.16);
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
   outline: none;
 }
 .btn-primary:disabled {
@@ -981,6 +981,8 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
 .btn-secondary:hover {
   background: #b85c44;
   color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 .details-block {
   width: 100%;
@@ -1321,6 +1323,8 @@ main {
 .btn-secondary:hover {
   background: #b85c44;
   color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 
 .contact {
