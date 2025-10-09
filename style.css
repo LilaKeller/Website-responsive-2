@@ -1230,6 +1230,9 @@ main {
   transform: scale(1.08);
   box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
+.filter-btn:hover, .filter-btn.active {
+  background: #ffb800;
+}
 .hero-image img {
   width: 320px;
   border-radius: 1.5rem;
@@ -1530,7 +1533,7 @@ main {
   transition: background 0.2s, color 0.2s;
 }
 .filter-btn.active, .filter-btn:hover {
-  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  background: #ffb800;
   color: #fff;
   transform: scale(1.08);
   box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
