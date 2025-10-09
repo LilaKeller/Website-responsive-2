@@ -265,7 +265,7 @@
       height: auto;
       min-width: 0;
       max-width: 100%;
-      width: var(--item-width, 120px);
+      width: 120px;
       flex-shrink: 0;
     }
     .portfolio-thumb {
@@ -718,7 +718,10 @@
             itemWidth = Math.max(itemWidth, 80); // min width
           }
           
-          carousel.style.setProperty('--item-width', itemWidth + 'px');
+          // Set width for all portfolio items
+          allItems.forEach(item => {
+            item.style.width = itemWidth + 'px';
+          });
           
           const display = getComputedStyle(carousel).display;
           if (display === 'grid') {
