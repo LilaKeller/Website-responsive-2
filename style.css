@@ -257,10 +257,10 @@ html, body {
   line-height: 1.2;
 }
 .btn-primary:hover, .btn-primary:focus {
-  background: linear-gradient(90deg,#ffb800 60%,#ff9900 100%);
+  background: linear-gradient(90deg,#cc9900 60%,#b8860b 100%);
   color: #fff;
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 32px rgba(255,153,0,0.16);
+  box-shadow: 0 8px 32px rgba(204,153,0,0.16);
   outline: none;
 }
 .btn-primary:disabled {
