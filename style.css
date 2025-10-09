@@ -788,6 +788,16 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
 .main-footer .socials a:hover {
   color: #b6a1e6;
 }
+
+/* Footer-Links immer weiß */
+.main-footer a,
+.main-footer a:visited,
+.main-footer a:active,
+.main-footer a:hover {
+  color: #fff !important;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
 @media (max-width: 700px) {
   .contact-info.contact-info-row {
     flex-direction: column;
@@ -1700,5 +1710,5 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
 }
 
 .main-page-hero nav {
-  padding: 0.5rem 4vw 0 4vw;
+  padding: 1.5rem 4vw 0 4vw;
 }
