@@ -640,6 +640,8 @@ a:hover, a:focus, .socials-inline a:hover, .socials-inline a:focus, .main-header
 .testimonial-prev:hover,
 .testimonial-next:hover {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 @media (max-width: 900px) {
   .about-section {
@@ -722,6 +724,8 @@ a:hover, a:focus, .socials-inline a:hover, .socials-inline a:focus, .main-header
 .testimonial-prev:hover,
 .testimonial-next:hover {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Poppins:wght@700;800&display=swap');
 
@@ -1223,6 +1227,8 @@ main {
 .btn-primary:hover, .btn-secondary:hover, .filter-btn:hover, .filter-btn.active {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 .hero-image img {
   width: 320px;
@@ -1378,8 +1384,9 @@ main {
   font-family: 'Poppins', Arial, sans-serif;
 }
 .btn-contact:hover {
-  background: #ffb800;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 .contact-info {
   flex: 1 1 220px;
@@ -1523,8 +1530,10 @@ main {
   transition: background 0.2s, color 0.2s;
 }
 .filter-btn.active, .filter-btn:hover {
-  background: #ffb800;
+  background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 
 /* Custom Cursor Styles */
