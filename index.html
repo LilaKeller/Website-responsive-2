@@ -337,6 +337,7 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   padding: 0;
+  cursor: grab;
     }
     .carousel-wrapper {
   position: relative;
@@ -699,6 +700,10 @@
       const rightBtn = document.querySelector('.carousel-btn.right');
       let currentIndex = 0;
       let maxIndex = 0;
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let dragDistance = 0;
 
       function updateCarousel() {
         try {
@@ -762,7 +767,68 @@
         }
       }
 
+      // Drag functionality
+      function startDrag(e) {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        carousel.style.cursor = 'grabbing';
+        carousel.style.userSelect = 'none';
+      }
+
+      function drag(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        dragDistance = (x - startX) * 2; // sensitivity
+        carousel.style.transform = `translateX(${dragDistance}px)`;
+      }
+
+      function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+        carousel.style.userSelect = '';
+
+        // Snap to nearest card
+        const gap = 32;
+        const itemWidth = parseFloat(carousel.children[0].style.width) || 280;
+        const step = itemWidth + gap;
+        const snappedIndex = Math.round(-dragDistance / step);
+        currentIndex = Math.max(0, Math.min(maxIndex, snappedIndex));
+        updateCarousel();
+      }
+
+      // Touch functionality
+      function startTouch(e) {
+        isDragging = true;
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        dragDistance = 0;
+      }
+
+      function moveTouch(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        dragDistance = (x - startX) * 2;
+        carousel.style.transform = `translateX(${dragDistance}px)`;
+      }
+
+      function endTouch() {
+        if (!isDragging) return;
+        isDragging = false;
+
+        // Snap to nearest card
+        const gap = 32;
+        const itemWidth = parseFloat(carousel.children[0].style.width) || 280;
+        const step = itemWidth + gap;
+        const snappedIndex = Math.round(-dragDistance / step);
+        currentIndex = Math.max(0, Math.min(maxIndex, snappedIndex));
+        updateCarousel();
+      }
+
       if (leftBtn && rightBtn && carousel) {
+        // Button clicks
         leftBtn.addEventListener('click', function() {
           try {
             if (currentIndex > 0) {
@@ -783,7 +849,31 @@
           } catch (error) {
             console.error('Error in right button click:', error);
           }
-        });        // Initial update mit besserem Timing
+        });
+
+        // Mouse drag
+        carousel.addEventListener('mousedown', startDrag);
+        carousel.addEventListener('mousemove', drag);
+        carousel.addEventListener('mouseup', endDrag);
+        carousel.addEventListener('mouseleave', endDrag);
+
+        // Touch swipe
+        carousel.addEventListener('touchstart', startTouch, { passive: false });
+        carousel.addEventListener('touchmove', moveTouch, { passive: false });
+        carousel.addEventListener('touchend', endTouch);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          } else if (e.key === 'ArrowRight' && currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+
+        // Initial update
         setTimeout(() => {
           try {
             updateCarousel();
@@ -792,7 +882,7 @@
           }
         }, 500);
 
-        // Resize Event mit besserem Debouncing
+        // Resize Event
         let resizeTimeout;
         window.addEventListener('resize', function() {
           clearTimeout(resizeTimeout);
