@@ -708,18 +708,31 @@
           const paddingLeft = parseFloat(style.paddingLeft) || 0;
           const paddingRight = parseFloat(style.paddingRight) || 0;
           const effectiveWidth = containerWidth - paddingLeft - paddingRight;
-          const itemWidth = 312; // 280px item + 32px gap
+          const gap = 32;
           const allItems = Array.from(carousel.children);
           const visibleItemsCount = allItems.filter(child => getComputedStyle(child).display !== 'none').length;
+          
+          let itemWidth = 280;
+          if (visibleItemsCount <= 4 && visibleItemsCount > 0) {
+            itemWidth = (effectiveWidth - (visibleItemsCount - 1) * gap) / visibleItemsCount;
+            itemWidth = Math.max(itemWidth, 200); // min width
+          }
+          
+          // Set width for visible portfolio items
+          allItems.forEach(item => {
+            if (getComputedStyle(item).display !== 'none') {
+              item.style.width = itemWidth + 'px';
+            }
+          });
           
           const display = getComputedStyle(carousel).display;
           if (display === 'grid') {
             maxIndex = 0;
             carousel.style.transform = 'translateX(0px)';
           } else {
-            const visibleItems = Math.floor((effectiveWidth + 32) / itemWidth);
+            const visibleItems = Math.floor((effectiveWidth + gap) / (itemWidth + gap));
             maxIndex = Math.max(0, visibleItemsCount - visibleItems);
-            const translateX = -currentIndex * itemWidth;
+            const translateX = -currentIndex * (itemWidth + gap);
             carousel.style.transform = `translateX(${translateX}px)`;
           }
           
