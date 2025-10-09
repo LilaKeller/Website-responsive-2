@@ -511,6 +511,49 @@
   if (header) {
     header.classList.add('scrolled');
   }
+
+  // Form Submit Handling mit Feedback
+  const contactForm = document.querySelector('.contact-form');
+  const submitBtn = document.getElementById('contact-submit');
+  const formLoader = document.getElementById('form-loader');
+  const formCheck = document.getElementById('form-check');
+  const formFeedback = document.getElementById('form-feedback');
+
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Verhindere Standard-Submit
+
+      // Button deaktivieren und Text ändern
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet...';
+
+      // Loader anzeigen
+      formLoader.style.display = 'inline';
+      formCheck.style.display = 'none';
+      formFeedback.style.display = 'none';
+
+      // Simuliere Submit-Prozess (da kein Backend, mock)
+      setTimeout(() => {
+        // Erfolg simulieren
+        formLoader.style.display = 'none';
+        formCheck.style.display = 'inline';
+        formFeedback.textContent = 'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns bald bei Ihnen.';
+        formFeedback.style.display = 'block';
+        formFeedback.style.color = '#2e7d32';
+
+        // Button zurücksetzen
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage absenden';
+
+        // Formular zurücksetzen nach kurzer Zeit
+        setTimeout(() => {
+          contactForm.reset();
+          formCheck.style.display = 'none';
+          formFeedback.style.display = 'none';
+        }, 5000);
+      }, 2000); // 2 Sekunden Delay für Simulation
+    });
+  }
   </script>
 </body>
 </html>
