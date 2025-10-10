@@ -27,21 +27,20 @@
   <link rel="stylesheet" href="src/styles/main.css">
   <link rel="icon" type="image/jpeg" href="Logo-01.jpg">
   <style>
-        .main-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-            transition: background 0.2s, color 0.2s;
-            padding-bottom: 8px;
-        }
-        .main-header.scrolled {
-            position: fixed;
-            background: #fff !important;
-            color: #222 !important;
-            box-shadow: 0 2px 12px rgba(145, 139, 139, 0.07);
-        }
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: background 0.2s, color 0.2s;
+      padding-bottom: 8px;
+    }
+    .main-header.scrolled {
+      background: #fff !important;
+      color: #222 !important;
+      box-shadow: 0 2px 12px rgba(145, 139, 139, 0.07);
+    }
         .main-header.scrolled .logo,
         .main-header.scrolled nav a,
         .main-header.scrolled nav a:visited {
