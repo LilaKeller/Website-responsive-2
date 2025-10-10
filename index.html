@@ -298,15 +298,18 @@
       font-size: 1.2rem;
       font-weight: 600;
       opacity: 0;
-      background: rgba(0,0,0,0.48);
+      background: rgba(155,168,156,0.48);
       text-align: center;
       padding: 1.2rem;
       transition: opacity 0.3s;
       pointer-events: none;
     }
+    .portfolio-item:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+    }
     .portfolio-item:hover .portfolio-thumb,
     .portfolio-item:focus-within .portfolio-thumb {
-      background: #9ba89c !important;
       filter: unset !important;
     }
     .portfolio-item:hover .portfolio-subtitle-hover,

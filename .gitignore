@@ -1,0 +1,4 @@
+# Ignore macOS system files
+.DS_Store
+img/.DS_Store
+img/IA/.DS_Store
