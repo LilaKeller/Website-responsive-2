@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <!-- Favicon (SVG bevorzugt, fallback JPEG) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/jpeg" href="Logo-01.jpg">
+  <!-- Verbesserte Open Graph Tags -->
+  <meta property="og:image" content="Logo-01.jpg">
+  <meta name="theme-color" content="#ffb800">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anika Warncke - Innenarchitektur & UX/UI Design</title>
@@ -494,9 +502,9 @@
   </style>
 </head>
 <body>
-  <header class="main-header">
+  <header class="main-header" role="banner">
     <nav>
-      <a href="index.html" class="logo active">ANIKA WARNCKE</a>
+  <a href="index.html" class="logo active" aria-current="page">ANIKA WARNCKE</a>
       <ul>
         <li><a href="src/pages/projekte.html">Projekte</a></li>
         <li><a href="src/pages/about.html">Über mich</a></li>
@@ -514,14 +522,14 @@
     </div>
   </section>
 
-  <main>
-    <section class="about" id="about">
+  <main id="main-content" tabindex="-1">
+  <section class="about" id="about" aria-label="Über mich">
       <blockquote>
         <p>„Ob als <strong>Innenarchitektur M.A.</strong>, die physische Räume gestaltet, oder als <strong>UX/UI Designerin</strong>, die digitale Erlebnisse kreiert – ich verbinde Funktion, Ästhetik und ein tiefes Verständnis für Menschen, um Lösungen zu schaffen, die Geist, Herz und Wohlbefinden verbinden."</p>
       </blockquote>
     </section>
 
-  <section class="portfolio" id="work" style="width:100%;max-width:100vw;padding-left:80px;padding-right:80px;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;overflow-x:hidden;">
+  <section class="portfolio" id="work" aria-label="Portfolio" style="width:100%;max-width:100vw;padding-left:80px;padding-right:80px;padding-top:4rem;padding-bottom:4rem;box-sizing:border-box;overflow-x:hidden;">
   <div class="portfolio-filter" style="padding-left:0;padding-right:0;">
         <button class="filter-btn active" data-filter="all">Alle Projekte</button>
         <button class="filter-btn" data-filter="innenarchitektur">Innenarchitektur</button>
@@ -639,7 +647,7 @@
       </div>
     </section>
 
-    <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+  <section class="contact" id="contact" aria-label="Kontakt" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
       <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
         <div class="contact-content" style="margin:0;flex:1;">
           <h2 style="margin:0;color:#fff;">GET<br>IN<br>TOUCH</h2>
@@ -655,7 +663,7 @@
     </section>
   </main>
 
-  <footer class="main-footer">
+  <footer class="main-footer" role="contentinfo">
     <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
       <div style="display:flex;gap:3rem;flex:1;">
         <div class="footer-block">
@@ -1055,6 +1063,14 @@
 
   <!-- Performance & Analytics Scripts -->
   <script src="src/scripts/lazy-loading.js" defer></script>
+  <!-- Lazy Loading für alle Bilder -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+    });
+  </script>
   <script src="src/scripts/analytics.js" defer></script>
   
   <!-- Contact Form Tracking -->
