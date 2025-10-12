@@ -1561,32 +1561,27 @@
       let currentTestimonialIndex = 0;
 
       function updateTestimonialCarousel() {
-        if (testimonialCarousel) {
-          // Der Container ist 600% breit mit 6 Slides
-          // Jede Slide ist 16.666% vom Container (also 100% vom Viewport)
-          // Um eine Slide nach links zu schieben, müssen wir um 16.666% des Containers verschieben
-          const slideWidth = 16.666; // % des Containers
-          testimonialCarousel.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}%)`;
-          
-          // Update dots
-          testimonialDots.forEach((dot, index) => {
-            if (index === currentTestimonialIndex) {
-              dot.classList.add('active');
-              dot.style.background = '#94A293';
-            } else {
-              dot.classList.remove('active');
-              dot.style.background = 'rgba(148, 162, 147, 0.3)';
-            }
-          });
+        if (!testimonialCarousel || testimonialSlides.length === 0) return;
 
-          // Update button states - always allow navigation through all slides
-          if (testimonialPrevBtn) {
-            testimonialPrevBtn.style.opacity = '1';
+        // Pixel-basierte Navigation: exakt zum Beginn der Ziel-Slide scrollen
+        const targetSlide = testimonialSlides[currentTestimonialIndex];
+        const offset = targetSlide ? targetSlide.offsetLeft : 0;
+        testimonialCarousel.style.transform = `translateX(-${offset}px)`;
+
+        // Update dots
+        testimonialDots.forEach((dot, index) => {
+          if (index === currentTestimonialIndex) {
+            dot.classList.add('active');
+            dot.style.background = '#94A293';
+          } else {
+            dot.classList.remove('active');
+            dot.style.background = 'rgba(148, 162, 147, 0.3)';
           }
-          if (testimonialNextBtn) {
-            testimonialNextBtn.style.opacity = '1';
-          }
-        }
+        });
+
+        // Buttons immer aktiv lassen (Loop-Carousel)
+        if (testimonialPrevBtn) testimonialPrevBtn.style.opacity = '1';
+        if (testimonialNextBtn) testimonialNextBtn.style.opacity = '1';
       }
 
       function nextTestimonial() {
@@ -1630,6 +1625,10 @@
 
       // Initialize testimonial carousel
       updateTestimonialCarousel();
+
+  // Recompute offsets on resize/orientation changes
+  window.addEventListener('resize', updateTestimonialCarousel);
+  window.addEventListener('orientationchange', updateTestimonialCarousel);
 
       // Button hover effects
       document.querySelectorAll('.testimonial-btn').forEach(btn => {
