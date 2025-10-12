@@ -68,7 +68,7 @@
 
 .portfolio-thumb {
   width: 100%;
-  height: clamp(220px, 40vw, 320px);
+  height: clamp(180px, 40vw, 260px);
   border-radius: 1.5rem 1.5rem 0 0;
   background-size: cover;
   background-position: center;
@@ -76,16 +76,179 @@
 
 @media (max-width: 700px) {
   .portfolio-thumb {
-    height: clamp(180px, 35vw, 240px);
+    height: clamp(140px, 35vw, 180px);
   }
 }
 
 @media (max-width: 500px) {
   .portfolio-thumb {
-    height: clamp(200px, 45vw, 280px);
+    height: clamp(160px, 45vw, 200px);
   }
   
   .portfolio-item {
     border-radius: 1.2rem;
+  }
+}
+
+/* iPhone SE and Small Mobile Optimizations */
+@media (max-width: 375px) {
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .portfolio-item {
+    border-radius: 1rem;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .portfolio-thumb {
+    height: clamp(140px, 40vw, 180px);
+    border-radius: 1rem 1rem 0 0;
+  }
+  
+  .portfolio-info {
+    padding: 1rem 0.8rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+  
+  .portfolio-info h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .portfolio-info p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Hover effects disabled on touch devices */
+  .portfolio-item:hover {
+    transform: none;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+  }
+  
+  .portfolio-item:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+  .portfolio-gallery {
+    gap: 0.8rem;
+  }
+  
+  .portfolio-thumb {
+    height: clamp(120px, 35vw, 160px);
+  }
+  
+  .portfolio-info {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .portfolio-info h3 {
+    font-size: 0.95rem;
+  }
+  
+  .portfolio-info p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Filter Button Styles for Mobile */
+@media (max-width: 768px) {
+  .work-filter {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  .filter-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 2rem;
+    border: 2px solid #9ba89c;
+    background: transparent;
+    color: #9ba89c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    min-width: 120px;
+    text-align: center;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #9ba89c;
+    color: white;
+  }
+}
+
+@media (max-width: 375px) {
+  .work-filter {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .filter-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 1.5rem;
+    white-space: nowrap;
+    line-height: 1.2;
+    width: 100%;
+  }
+  
+  .filter-btn[data-filter="all"] {
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+  
+  .filter-row {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .filter-row .filter-btn {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .work-filter {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 1rem;
+    line-height: 1.1;
+  }
+  
+  .filter-btn[data-filter="all"] {
+    margin-bottom: 0.1rem;
+  }
+  
+  .filter-row {
+    gap: 0.4rem;
+  }
+  
+  .filter-row .filter-btn {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
   }
 }
