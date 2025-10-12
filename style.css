@@ -484,16 +484,6 @@ img {
     padding: 0;
     display: block;
   }
-  
-  /* Remove spacing after LinkedIn */
-  .footer-socials a:last-child {
-    margin-bottom: 0 !important;
-  }
-  
-  /* Remove spacing between Datenschutz and Impressum */
-  .footer-block a + a {
-    margin-top: 0 !important;
-  }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
 .contact-headline {
@@ -1975,6 +1965,18 @@ main {
   
   .footer-title {
     margin-bottom: 0.4rem !important;
+    line-height: 1 !important;
+  }
+  
+  /* Entfernt Leerzeilen nach LinkedIn und zwischen Rechtliches-Links */
+  .footer-socials {
+    gap: 0.8rem !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .footer-socials a {
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
   }
 }
 
