@@ -2,6 +2,27 @@
 <html lang="de">
 <head>
   <style>
+    /* Desktop header layout: logo left, menu right */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    nav ul li a { color: inherit; }
+
+    /* Mobile Navigation Styles */
+    .mobile-nav-toggle { display: none; }
+    .hamburger-line { display: none; }
     .contact-form input,
     .contact-form textarea {
       background: #fbe9e4;
@@ -55,6 +76,13 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
     }
+
+    /* Contact form base */
+    .contact-form { max-width: 720px; }
+    .contact-form .form-group { margin-bottom: 1rem; }
+    .contact-form label { display: block; margin-bottom: 0.4rem; font-weight: 600; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 0.9rem 1rem; border-radius: 10px; }
+    .contact-headline { margin: 0 0 1rem 0; }
 
     /* Footer-Links immer weiß */
     .main-footer a,
@@ -291,7 +319,7 @@
   </style>
 </head>
 <body>
-  <header class="main-header" role="banner">
+  <header class="main-header">
     <nav>
       <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
       <button class="mobile-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
@@ -407,6 +435,40 @@
   </button>
 
   <script>
+  // Mobile Navigation (Burger + Off-Canvas)
+  (function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    if (mobileNavToggle && navMenu) {
+      // Styles for hamburger
+      Object.assign(mobileNavToggle.style, { display: 'none' });
+      // Activate on mobile via CSS below
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', (!isExpanded).toString());
+        this.classList.toggle('active');
+        navMenu.classList.toggle('mobile-menu-open');
+        document.body.classList.toggle('mobile-menu-active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!mobileNavToggle.contains(e.target) && !navMenu.contains(e.target)) {
+          navMenu.classList.remove('mobile-menu-open');
+          document.body.classList.remove('mobile-menu-active');
+          mobileNavToggle.classList.remove('active');
+          mobileNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      navLinks.forEach(link => link.addEventListener('click', () => {
+        navMenu.classList.remove('mobile-menu-open');
+        document.body.classList.remove('mobile-menu-active');
+        mobileNavToggle.classList.remove('active');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+  })();
+
   // Lokale Zeit immer aktuell anzeigen
   function updateLocalTime() {
     const now = new Date();
@@ -560,5 +622,51 @@
     });
   }
   </script>
+  <style>
+    /* Mobile Menu Styles (match about/index) */
+    @media (max-width: 768px) {
+      .main-header { background: #fff !important; }
+      nav { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 1rem 1rem 0 1rem !important; }
+      .logo { order: 1 !important; margin-right: auto !important; color: #333 !important; }
+      .mobile-nav-toggle { display: flex !important; order: 2 !important; width: 48px !important; height: 48px !important; background: transparent !important; border: none !important; cursor: pointer !important; z-index: 1002 !important; }
+      .hamburger-line { display: block !important; width: 28px !important; height: 3px !important; background-color: #333 !important; border-radius: 2px !important; }
+      .hamburger-line:not(:last-child) { margin-bottom: 5px !important; }
+      .mobile-nav-toggle.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .mobile-nav-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+      .mobile-nav-toggle.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      nav ul { position: fixed; top: 0; right: 0; width: min(280px, 75vw); height: 100vh; background: #9ba89c; flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 0; padding: 80px 0 20px 0; margin: 0; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 0 24px rgba(0,0,0,0.25); z-index: 1001; overflow-y: auto; list-style: none; pointer-events: auto; }
+      nav ul.mobile-menu-open { transform: translateX(0); }
+      nav ul li a { width: 100%; padding: 1.2rem 2rem; color: #fff !important; font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.12); display: block; text-decoration: none; }
+      body.mobile-menu-active { overflow: hidden; }
+      body.mobile-menu-active::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
+    }
+
+    /* Mobile contact layout */
+    @media (max-width: 600px) {
+      .contact-section [style*='padding-left:80px'] { padding-left: 16px !important; padding-right: 16px !important; }
+      .contact-container { flex-direction: column !important; gap: 1.5rem !important; align-items: stretch !important; }
+      .contact-left, .contact-right { width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+      .contact-headline { font-size: clamp(2.2rem, 8vw, 3.5rem) !important; line-height: 1 !important; letter-spacing: 0.01em !important; font-weight: 900 !important; color: #94A293 !important; }
+      .contact-form .form-group { margin-bottom: 0.9rem !important; }
+      .contact-form input, .contact-form textarea { padding: 0.9rem 1rem !important; font-size: 1rem !important; }
+      .contact-form textarea { min-height: 140px !important; }
+      #contact-submit { width: 100% !important; padding: 0.9rem 1rem !important; font-size: 1.05rem !important; }
+      .profile-block > div[style*='height:260px'] { width: 200px !important; height: 200px !important; margin: 0 auto !important; }
+      .profile-block a.btn-secondary { width: 200px !important; margin: 1rem auto 0 auto !important; }
+      .all-details-block h3 { margin-top: 1.5rem !important; }
+    }
+
+    @media (max-width: 480px) {
+      .profile-block > div[style*='height:260px'] { width: 180px !important; height: 180px !important; }
+      .profile-block a.btn-secondary { width: 180px !important; }
+    }
+
+    @media (max-width: 375px) {
+      .profile-block > div[style*='height:260px'] { width: 160px !important; height: 160px !important; }
+      .profile-block a.btn-secondary { width: 160px !important; }
+      .footer-row { flex-direction: column !important; gap: 1rem !important; }
+      .footer-block { display: flex !important; flex-direction: column !important; gap: 0.2rem !important; }
+    }
+  </style>
 </body>
 </html>
