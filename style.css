@@ -436,10 +436,14 @@ img {
   }
   
   .footer-block a {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
     padding: 0;
     display: block;
+  }
+  
+  .footer-block a + a {
+    margin-top: 0;
   }
   
   .footer-title {
@@ -478,10 +482,14 @@ img {
   }
   
   .footer-block a {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
     padding: 0;
     display: block;
+  }
+  
+  .footer-block a + a {
+    margin-top: 0;
   }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
@@ -1177,7 +1185,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   color: #fff !important;
   text-decoration: underline;
   transition: color 0.2s;
-  line-height: 1.2;
+  line-height: 1;
   margin: 0;
   padding: 0;
 }
