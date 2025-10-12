@@ -2123,50 +2123,48 @@ main {
   .main-page-hero .hero-content {
     position: relative !important;
     z-index: 2;
-    width: calc(100% - 2rem) !important;
-    max-width: calc(100vw - 2rem) !important;
-    margin: 0 1rem !important;
-    padding: 1.5rem 0.85rem 1.75rem 0.85rem !important;
-    background: rgba(255, 255, 255, 0.93) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.2rem 1rem 1.5rem 1rem !important;
+    background: rgba(255, 255, 255, 0.92) !important;
     border-radius: 1.2rem 1.2rem 0 0 !important;
     left: auto !important;
     top: auto !important;
     transform: none !important;
     box-sizing: border-box !important;
+    overflow: hidden !important;
   }
   
   .hero h1 {
-    font-size: 1.35rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 0.5rem !important;
+    font-size: 1.3rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.4rem !important;
+    max-width: 100% !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
-    max-width: 100% !important;
+    hyphens: auto !important;
   }
   
   .hero .subtitle {
-    font-size: 0.8rem !important;
-    margin-bottom: 0.6rem !important;
-    line-height: 1.3 !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
+    font-size: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
     max-width: 100% !important;
+    word-wrap: break-word !important;
   }
   
   .hero .intro {
-    font-size: 0.85rem !important;
-    line-height: 1.45 !important;
-    margin-bottom: 1rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.9rem !important;
+    max-width: 100% !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
-    max-width: 100% !important;
   }
   
   .hero .btn-primary {
-    padding: 0.75rem 1.6rem !important;
-    font-size: 0.9rem !important;
-    width: 100% !important;
-    max-width: 200px !important;
+    padding: 0.7rem 1.5rem !important;
+    font-size: 0.85rem !important;
   }
   
   /* Main content direkt nach Hero */
@@ -2181,8 +2179,8 @@ main {
   left: 80px;
   top: 50%;
   transform: translateY(-50%);
-  width: 40vw;
-  min-width: 420px;
+  width: 33.33vw;
+  min-width: 300px;
   background: rgba(255,255,255,0.72);
   border-radius: 1.2rem;
   padding: 2rem 2.5rem;
@@ -2206,6 +2204,14 @@ main {
   line-height: 1.2;
   word-wrap: break-word;
 }
+
+/* Auf Desktop: kein Zeilenumbruch in h1 */
+@media (min-width: 769px) {
+  .hero h1 br {
+    display: none;
+  }
+}
+
 .subtitle {
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #e07a5f;
