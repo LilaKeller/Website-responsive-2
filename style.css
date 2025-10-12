@@ -1889,29 +1889,122 @@ main {
     margin-bottom: 4px;
   }
   
-  /* Ensure nav ul stays hidden on small screens and doesn't affect layout */
+  /* Mobile Menu für iPhone SE */
   nav ul {
+    position: fixed !important;
+    top: 0;
+    right: 0;
     width: min(260px, 85vw);
-    display: none;
+    height: 100vh;
+    background: #9ba89c !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 80px 0 20px 0 !important;
+    margin: 0 !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25) !important;
+    z-index: 1001 !important;
+    overflow-y: auto !important;
+    list-style: none !important;
+    pointer-events: auto !important;
+    display: flex !important;
   }
   
   /* Show menu when opened */
   nav ul.mobile-menu-open {
-    display: flex !important;
-    z-index: 1001 !important;
-    pointer-events: auto !important;
     transform: translateX(0) !important;
   }
   
-  /* Ensure menu items are clickable */
-  nav ul.mobile-menu-open li {
+  /* Menu items */
+  nav ul li {
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     pointer-events: auto !important;
-    z-index: 1002 !important;
   }
   
-  nav ul.mobile-menu-open li a {
+  /* Menu links */
+  nav ul li a {
+    width: 100% !important;
+    padding: 1.2rem 2rem !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    display: block !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
     pointer-events: auto !important;
+    position: relative !important;
+    z-index: 1002 !important;
+    -webkit-text-fill-color: #fff !important;
+    background-clip: initial !important;
+    -webkit-background-clip: initial !important;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+  
+  nav ul li a:active {
+    background: rgba(255, 255, 255, 0.16) !important;
+  }
+  
+  nav ul li a.active {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Mobile Menu Button für iPhone SE */
+  .mobile-nav-toggle {
     z-index: 1003 !important;
+    pointer-events: auto !important;
+  }
+  
+  .mobile-nav-toggle .hamburger-line {
+    background-color: #fff !important;
+    pointer-events: auto !important;
+  }
+  
+  /* When menu is open, keep hamburger button clickable */
+  body.mobile-menu-active .mobile-nav-toggle {
+    z-index: 1003 !important;
+    pointer-events: auto !important;
+  }
+  
+  body.mobile-menu-active .mobile-nav-toggle .hamburger-line {
+    background-color: #fff !important;
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.mobile-menu-active {
+    overflow: hidden !important;
+  }
+  
+  /* Overlay for iPhone SE */
+  body.mobile-menu-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: auto;
   }
   
   /* Filter Buttons in einer Zeile für iPhone SE */
