@@ -254,6 +254,17 @@
 
     /* iPhone SE and Small Mobile Optimizations */
     @media (max-width: 375px) {
+      /* 2-Bilder-Container neben "Meine Leidenschaft": iPhone SE kompakt */
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] {
+        height: 220px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px !important;
+      }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img { width: 100% !important; height: auto !important; border-radius: 6px !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(1) { height: 44% !important; flex-basis: 44% !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(2) { height: 56% !important; flex-basis: 56% !important; }
       .main-header {
         position: sticky !important;
         top: 0 !important;
@@ -673,6 +684,18 @@
       .intro-section > div > div:last-child > div[style*="height: 700px"] {
         height: 320px !important;
       }
+  
+      /* 2-Bilder-Container neben "Meine Leidenschaft": mobil stapeln (600px) */
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] {
+        height: 280px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px !important;
+      }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img { width: 100% !important; height: auto !important; border-radius: 8px !important; flex: 0 0 auto !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(1) { height: 44% !important; flex-basis: 44% !important; object-fit: cover !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(2) { height: 56% !important; flex-basis: 56% !important; object-fit: cover !important; }
       
       /* Testimonial Optimierungen für mittlere mobile Geräte */
       .testimonials-carousel-container {
@@ -743,6 +766,18 @@
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 100px !important;
       }
+  
+      /* 2-Bilder-Container neben "Meine Leidenschaft": mobil stapeln (480px) */
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] {
+        height: 240px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px !important;
+      }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img { width: 100% !important; height: auto !important; border-radius: 8px !important; flex: 0 0 auto !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(1) { height: 44% !important; flex-basis: 44% !important; object-fit: cover !important; }
+      .intro-section > div > div:last-child > div[style*="grid-template-columns: 1fr 2fr"] img:nth-child(2) { height: 56% !important; flex-basis: 56% !important; object-fit: cover !important; }
       
       /* Visions-Container (3-Bilder Grid) für mobile Geräte */
       .intro-section > div > div:last-child > div[style*="height: 700px"] {
