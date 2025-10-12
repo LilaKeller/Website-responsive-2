@@ -2022,7 +2022,7 @@ main {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 1.2rem 1rem 1.5rem 1rem !important;
+    padding: 1.2rem clamp(20px, 4vw, 80px) 1.5rem clamp(20px, 4vw, 80px) !important;
     background: rgba(255, 255, 255, 0.92) !important;
     border-radius: 1.2rem 1.2rem 0 0 !important;
     left: auto !important;
