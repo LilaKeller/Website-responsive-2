@@ -481,6 +481,21 @@
         height: 28px !important;
       }
       
+      /* Visions-Container (3-Bilder Grid) für iPhone SE */
+      .intro-section > div > div:last-child > div[style*="height: 700px"] {
+        height: 180px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+      }
+      
+      .intro-section > div > div:last-child > div[style*="height: 700px"] img {
+        width: 100% !important;
+        height: 33.33% !important;
+        object-fit: cover !important;
+        flex: 1 !important;
+      }
+      
       /* Bildcontainer für sehr kleine Bildschirme */
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 90px !important;
@@ -557,6 +572,21 @@
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 220px !important;
       }
+      
+      /* Visions-Container für Tablets */
+      .intro-section > div > div:last-child > div[style*="height: 700px"] {
+        height: 320px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+      }
+      
+      .intro-section > div > div:last-child > div[style*="height: 700px"] img {
+        width: 100% !important;
+        height: 33.33% !important;
+        object-fit: cover !important;
+        flex: 1 !important;
+      }
     }
 
       /* Mittlere mobile Geräte */
@@ -573,6 +603,11 @@
       /* Grid-Bildcontainer für mittlere mobile Geräte */
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 160px !important;
+      }
+      
+      /* Visions-Container für mittlere mobile Geräte */
+      .intro-section > div > div:last-child > div[style*="height: 700px"] {
+        height: 240px !important;
       }
     }    @media (max-width: 480px) {
       .main-footer {
@@ -592,6 +627,21 @@
       /* Grid-Bildcontainer für kleine mobile Geräte */
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 100px !important;
+      }
+      
+      /* Visions-Container (3-Bilder Grid) für mobile Geräte */
+      .intro-section > div > div:last-child > div[style*="height: 700px"] {
+        height: 200px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+      }
+      
+      .intro-section > div > div:last-child > div[style*="height: 700px"] img {
+        width: 100% !important;
+        height: 33.33% !important;
+        object-fit: cover !important;
+        flex: 1 !important;
       }
       
       /* Icons in mobilen Containern kleiner machen */
