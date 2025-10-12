@@ -484,6 +484,16 @@ img {
     padding: 0;
     display: block;
   }
+  
+  /* Remove spacing after LinkedIn */
+  .footer-socials a:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Remove spacing between Datenschutz and Impressum */
+  .footer-block a + a {
+    margin-top: 0 !important;
+  }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
 .contact-headline {
