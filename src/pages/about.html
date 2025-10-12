@@ -1562,8 +1562,10 @@
 
       function updateTestimonialCarousel() {
         if (testimonialCarousel) {
-          // Jedes Testimonial nimmt 16.666% (1/6) der Gesamtbreite ein
-          const slideWidth = 100 / 6; // 16.666%
+          // Der Container ist 600% breit mit 6 Slides
+          // Jede Slide ist 16.666% vom Container (also 100% vom Viewport)
+          // Um eine Slide nach links zu schieben, müssen wir um 16.666% des Containers verschieben
+          const slideWidth = 16.666; // % des Containers
           testimonialCarousel.style.transform = `translateX(-${currentTestimonialIndex * slideWidth}%)`;
           
           // Update dots
