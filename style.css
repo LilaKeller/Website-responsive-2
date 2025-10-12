@@ -1945,7 +1945,7 @@ main {
   }
   
   .footer-block a + a {
-    margin-top: 0.3rem !important;
+    margin-top: 0 !important;
   }
   
   .footer-title {
