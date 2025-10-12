@@ -2045,6 +2045,8 @@ main {
     width: 60px !important;
     height: 60px !important;
     flex-shrink: 0;
+    border: none !important;
+    outline: none !important;
   }
   
   .contact .btn-contact.round-yellow svg {
@@ -2717,7 +2719,8 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
     width: 72px !important;
     height: 72px !important;
     border-radius: 50%;
-    border: 2px solid #FF9900;
+    border: none !important;
+    outline: none !important;
     box-shadow: 0 4px 20px rgba(255,153,0,0.2);
     margin-top: 0;
   }
