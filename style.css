@@ -442,6 +442,7 @@ img {
     display: block;
   }
   
+  /* Sicherstellen dass direkt aufeinanderfolgende Links keinen Abstand haben */
   .footer-block a + a {
     margin-top: 0;
   }
@@ -488,6 +489,7 @@ img {
     display: block;
   }
   
+  /* Sicherstellen dass direkt aufeinanderfolgende Links keinen Abstand haben */
   .footer-block a + a {
     margin-top: 0;
   }
@@ -1189,6 +1191,12 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   margin: 0;
   padding: 0;
 }
+
+/* Sicherstellen dass aufeinanderfolgende Links keinen zusätzlichen Abstand haben */
+.main-footer a + a {
+  margin-top: 0;
+}
+
 @media (max-width: 700px) {
   .contact-info.contact-info-row {
     flex-direction: column;
