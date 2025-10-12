@@ -2081,19 +2081,19 @@ main {
 .contact-row {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 3rem;
+  justify-content: space-between;
+  gap: 4rem;
   margin-bottom: 2.5rem;
 }
 .contact-content {
-  flex: 1 1 320px;
+  flex: 1 1 auto;
 }
 .contact-content h2 {
-  font-size: 6rem;
-  font-weight: 800;
+  font-size: 8rem;
+  font-weight: 900;
   margin: 0;
-  line-height: 1.5;
-  letter-spacing: 0.1em;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
 }
 .btn-contact {
   display: flex;
@@ -2406,17 +2406,18 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
   .contact-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 2rem;
     width: 100%;
   }
   .contact-content {
     width: 100%;
   }
   .contact-content h2 {
-    font-size: clamp(12rem, 36vw, 16rem);
-    line-height: 0.9;
-    letter-spacing: 0.1em;
+    font-size: clamp(14rem, 40vw, 20rem);
+    line-height: 0.85;
+    letter-spacing: 0.05em;
     margin-bottom: 2rem;
+    font-weight: 900;
   }
   /* Make the round contact button much smaller on mobile.
      Use !important to override inline styles present in index.html */
@@ -2548,7 +2549,10 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
   }
   
   .contact-content h2 {
-    font-size: clamp(1.8rem, 5vw, 2.1rem);
+    font-size: clamp(10rem, 30vw, 14rem);
+    line-height: 0.85;
+    letter-spacing: 0.05em;
+    font-weight: 900;
   }
   
   .portfolio-item {
@@ -2648,8 +2652,10 @@ body.hide-native-cursor, body.hide-native-cursor * { cursor: none !important; }
   }
   
   .contact-content h2 {
-    font-size: clamp(1.5rem, 6vw, 2rem);
-    line-height: 1.2;
+    font-size: clamp(8rem, 25vw, 12rem);
+    line-height: 0.85;
+    letter-spacing: 0.05em;
+    font-weight: 900;
   }
   
   /* Force portfolio to display as column on small screens */
