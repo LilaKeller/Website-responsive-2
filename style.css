@@ -1950,16 +1950,22 @@ main {
   /* Footer für iPhone SE - kompakter */
   .footer-block {
     gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   
   .footer-block a {
     line-height: 1 !important;
     margin: 0 !important;
     padding: 0 !important;
-    display: block;
+    display: inline-block !important;
   }
   
-  .footer-block a + a {
+  .footer-block > a {
+    margin-bottom: 0 !important;
+  }
+  
+  .footer-block > a + a {
     margin-top: 0 !important;
   }
   
@@ -1968,14 +1974,17 @@ main {
     line-height: 1 !important;
   }
   
-  /* Entfernt Leerzeilen nach LinkedIn und zwischen Rechtliches-Links */
+  /* Entfernt Leerzeilen im Social-Block */
   .footer-socials {
-    gap: 0.8rem !important;
-    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    align-items: flex-start !important;
   }
   
   .footer-socials a {
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     line-height: 1 !important;
   }
 }
