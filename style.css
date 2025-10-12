@@ -2193,14 +2193,6 @@ main {
   line-height: 1.2;
   word-wrap: break-word;
 }
-
-/* Auf Desktop: kein Zeilenumbruch in h1 */
-@media (min-width: 769px) {
-  .hero h1 br {
-    display: none;
-  }
-}
-
 .subtitle {
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #e07a5f;
