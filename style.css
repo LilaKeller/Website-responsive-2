@@ -2022,7 +2022,7 @@ main {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 1.5rem 1rem 2rem 1rem !important;
+    padding: 1.2rem 1rem 1.5rem 1rem !important;
     background: rgba(255, 255, 255, 0.92) !important;
     border-radius: 1.2rem 1.2rem 0 0 !important;
     left: auto !important;
@@ -2031,25 +2031,25 @@ main {
   }
   
   .hero h1 {
-    font-size: 1.6rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 0.6rem !important;
+    font-size: 1.4rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.4rem !important;
   }
   
   .hero .subtitle {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.8rem !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
   }
   
   .hero .intro {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-    margin-bottom: 1.2rem !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.9rem !important;
   }
   
   .hero .btn-primary {
-    padding: 0.8rem 1.8rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.7rem 1.5rem !important;
+    font-size: 0.85rem !important;
   }
   
   /* Main content direkt nach Hero */
