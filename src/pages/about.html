@@ -42,6 +42,26 @@
       color: #333;
       transition: color 0.3s;
     }
+
+    /* Desktop header layout: logo left, menu right */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    nav ul li a {
+      color: inherit;
+    }
     
     .main-header.scrolled .logo,
     .main-header.scrolled nav a {
