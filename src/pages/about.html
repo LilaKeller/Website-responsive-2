@@ -391,7 +391,7 @@
       
       .intro-section > div > div:first-child > div {
         width: 100% !important;
-        height: 400px !important;
+        height: 280px !important;
         max-width: 100% !important;
       }
       
@@ -467,7 +467,7 @@
       }
       
       .intro-section > div > div:first-child > div {
-        height: 400px !important;
+        height: 240px !important;
       }
       
       /* Bildcontainer für sehr kleine Bildschirme */
@@ -531,11 +531,28 @@
       .intro-section img[alt*="Leidenschaft"] {
         object-position: 20% center !important;
       }
+      
+      /* Profilbild Container für Tablets optimieren */
+      .intro-section > div > div:first-child > div {
+        height: 320px !important;
+      }
+    }
+
+    /* Mittlere mobile Geräte */
+    @media (max-width: 600px) {
+      .intro-section > div > div:first-child > div {
+        height: 300px !important;
+      }
     }
 
     @media (max-width: 480px) {
       .main-footer {
         padding: 1.5rem 1rem;
+      }
+      
+      /* Profilbild Container für kleine mobile Geräte */
+      .intro-section > div > div:first-child > div {
+        height: 280px !important;
       }
       
       .footer-row {
