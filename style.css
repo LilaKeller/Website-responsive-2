@@ -131,9 +131,9 @@ img {
 /* Moderner, responsiver Footer */
 .footer-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
   padding-top: 1.2rem;
