@@ -2169,7 +2169,7 @@ main {
   top: 50%;
   transform: translateY(-50%);
   width: 33.33vw;
-  min-width: 300px;
+  min-width: 380px;
   background: rgba(255,255,255,0.72);
   border-radius: 1.2rem;
   padding: 2rem 2.5rem;
