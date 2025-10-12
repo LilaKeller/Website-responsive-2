@@ -822,6 +822,24 @@
         width: 44px !important;
         height: 44px !important;
       }
+
+      /* Moodboard (7 Bilder) – mittlere Mobile: Mosaik-Layout */
+      .moodboard-container {
+        height: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        grid-auto-rows: 95px !important;
+        gap: 6px !important;
+        padding: 6px !important;
+      }
+      .moodboard-container img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 8px !important; }
+      .moodboard-container img:nth-child(1) { grid-column: span 3; grid-row: span 2; }
+      .moodboard-container img:nth-child(2) { grid-column: span 3; grid-row: span 3; }
+      .moodboard-container img:nth-child(3) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(4) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(5) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(6) { grid-column: span 3; grid-row: span 2; }
+      .moodboard-container img:nth-child(7) { grid-column: span 3; grid-row: span 2; }
       
       .footer-row {
         gap: 1.5rem !important;
@@ -851,6 +869,23 @@
 
     /* iPhone SE Footer optimizations */
     @media (max-width: 375px) {
+      /* Moodboard (7 Bilder) – iPhone SE: kompakteres Mosaik */
+      .moodboard-container {
+        height: auto !important;
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        grid-auto-rows: 70px !important;
+        gap: 6px !important;
+        padding: 6px !important;
+      }
+      .moodboard-container img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 6px !important; }
+      .moodboard-container img:nth-child(1) { grid-column: span 3; grid-row: span 2; }
+      .moodboard-container img:nth-child(2) { grid-column: span 3; grid-row: span 3; }
+      .moodboard-container img:nth-child(3) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(4) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(5) { grid-column: span 2; grid-row: span 2; }
+      .moodboard-container img:nth-child(6) { grid-column: span 3; grid-row: span 2; }
+      .moodboard-container img:nth-child(7) { grid-column: span 3; grid-row: span 2; }
       .footer-block {
         gap: 0 !important;
         display: flex !important;
@@ -1467,7 +1502,7 @@
                     <h1 class="about-main-title" style="margin-bottom: 1.5rem; line-height: 1.4;">Meine Welt abseits des Desktops.</h1>
                     <p style="line-height: 1.8;">In meiner Freizeit lese ich gerne und widme mich der persönlichen Weiterentwicklung. Erholung und Inspiration finde ich beim Spazierengehen, Wandern, Reisen, genießen von (Live-)musik und Erlebnisausstellungen. Meine kreative Seite lebe ich auch beim Malen, Schreiben und Fotografieren aus – oder indem ich einfach frei und ohne Ziel gestalte. So sammle ich neue Eindrücke, tanke Energie und lasse mich inspirieren. Besonders am Herzen liegt mir zudem mein ehrenamtliches Engagement beim Kinderklinikkonzerte e.V., wo ich erlebe, wie bereichernd es ist, Freude zu schenken und positive Erlebnisse zu schaffen.</p>
                 </div>
-                <div style="width: 100%; height: 400px; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding: 8px;">
+        <div class="moodboard-container" style="width: 100%; height: 400px; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; padding: 8px;">
                     <img src="../../img/aboutme/IMG_9339.jpg" alt="Anika Warncke Hobby" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;" />
                     <img src="../../img/aboutme/imm.jpg" alt="Anika Warncke Hobby" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;" />
                     <img src="../../img/aboutme/IMG_5785.JPG" alt="Anika Warncke Hobby" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;" />
