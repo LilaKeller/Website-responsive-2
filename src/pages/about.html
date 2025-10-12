@@ -470,6 +470,17 @@
         height: 240px !important;
       }
       
+      /* Icon-Container für sehr kleine Bildschirme */
+      .intro-section > div > div:last-child > div[style*="flex-direction: column"] {
+        height: 180px !important;
+      }
+      
+      /* Icons für sehr kleine Bildschirme noch kleiner */
+      .intro-section > div > div:last-child > div svg {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      
       /* Bildcontainer für sehr kleine Bildschirme */
       .intro-section > div > div:first-child > div[style*="grid-template-columns"] {
         height: 120px !important;
@@ -536,16 +547,24 @@
       .intro-section > div > div:first-child > div {
         height: 320px !important;
       }
+      
+      /* Icon-Container für Tablets */
+      .intro-section > div > div:last-child > div[style*="flex-direction: column"] {
+        height: 280px !important;
+      }
     }
 
-    /* Mittlere mobile Geräte */
+      /* Mittlere mobile Geräte */
     @media (max-width: 600px) {
       .intro-section > div > div:first-child > div {
         height: 300px !important;
       }
-    }
-
-    @media (max-width: 480px) {
+      
+      /* Icon-Container für mittlere mobile Geräte */
+      .intro-section > div > div:last-child > div[style*="flex-direction: column"] {
+        height: 220px !important;
+      }
+    }    @media (max-width: 480px) {
       .main-footer {
         padding: 1.5rem 1rem;
       }
@@ -553,6 +572,17 @@
       /* Profilbild Container für kleine mobile Geräte */
       .intro-section > div > div:first-child > div {
         height: 280px !important;
+      }
+      
+      /* Icon-Container für kleine mobile Geräte */
+      .intro-section > div > div:last-child > div[style*="flex-direction: column"] {
+        height: 200px !important;
+      }
+      
+      /* Icons in mobilen Containern kleiner machen */
+      .intro-section > div > div:last-child > div svg {
+        width: 32px !important;
+        height: 32px !important;
       }
       
       .footer-row {
