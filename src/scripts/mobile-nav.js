@@ -37,15 +37,16 @@
     }
     
     // Check if hamburger already exists
-    if (document.querySelector('.mobile-nav-toggle')) {
-      console.log('Hamburger already exists');
-      return;
+    let hamburger = document.querySelector('.mobile-nav-toggle');
+    if (!hamburger) {
+      console.log('Creating hamburger button');
+      // Create and insert hamburger button
+      hamburger = createHamburgerButton();
+      nav.insertBefore(hamburger, navList);
+      console.log('Hamburger button added');
+    } else {
+      console.log('Hamburger already exists, using existing one');
     }
-    
-  // Create and insert hamburger button
-  const hamburger = createHamburgerButton();
-  nav.insertBefore(hamburger, navList);
-    console.log('Hamburger button added');
     
     // Toggle menu
     function openMenuUI() {

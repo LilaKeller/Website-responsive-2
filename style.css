@@ -1515,13 +1515,14 @@ nav {
   font-weight: bold;
   letter-spacing: 1px;
   color: #fff;
-  margin-right: 2rem;
+  margin-right: auto;
   padding: 0.5rem 0.7rem;
   min-width: var(--touch-target-min);
   min-height: var(--touch-target-min);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  order: 1;
 }
 nav ul {
   list-style: none;
@@ -1531,6 +1532,7 @@ nav ul {
   padding: 0;
   flex-wrap: wrap;
   align-items: center;
+  order: 3;
 }
 
 nav a {
@@ -1600,6 +1602,8 @@ main {
   position: relative;
   -webkit-tap-highlight-color: transparent;
   pointer-events: auto;
+  order: 2;
+  margin-left: 1rem;
 }
 
 .hamburger-line {
@@ -1632,7 +1636,7 @@ main {
 @media (max-width: 768px) {
   .mobile-nav-toggle {
     display: flex;
-    order: 3;
+    order: 2;
     color: inherit;
   }
   

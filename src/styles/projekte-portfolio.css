@@ -68,7 +68,7 @@
 
 .portfolio-thumb {
   width: 100%;
-  height: clamp(180px, 40vw, 260px);
+  height: clamp(220px, 40vw, 320px);
   border-radius: 1.5rem 1.5rem 0 0;
   background-size: cover;
   background-position: center;
@@ -76,13 +76,13 @@
 
 @media (max-width: 700px) {
   .portfolio-thumb {
-    height: clamp(140px, 35vw, 180px);
+    height: clamp(180px, 35vw, 240px);
   }
 }
 
 @media (max-width: 500px) {
   .portfolio-thumb {
-    height: clamp(160px, 45vw, 200px);
+    height: clamp(200px, 45vw, 280px);
   }
   
   .portfolio-item {
