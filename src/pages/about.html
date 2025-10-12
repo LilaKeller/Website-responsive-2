@@ -1144,6 +1144,18 @@
       stroke: #fff;
     }
 
+    /* Testimonial Layout: Autorzeile immer unten */
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-card blockquote {
+      flex: 1 1 auto;
+    }
+    .testimonial-card > div:last-child {
+      margin-top: auto;
+    }
+
     /* Testimonial Hover Effects */
     .testimonial-card:hover {
       transform: translateY(-8px) !important;
