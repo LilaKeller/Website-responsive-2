@@ -125,9 +125,6 @@ img {
   padding-bottom: 2rem;
   background: #9ba89c;
 }
-.footer-socials a[href*="instagram"] {
-  display: none !important;
-}
 /* Moderner, responsiver Footer */
 .footer-row {
   display: flex;
