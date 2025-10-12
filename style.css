@@ -148,6 +148,29 @@ img {
   align-items: flex-start;
   text-align: left;
 }
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.footer-socials a {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.footer-block > a,
+.footer-block > div {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 .footer-title {
   font-size: 0.95em;
   font-weight: 700;
