@@ -1178,6 +1178,9 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   color: #fff !important;
   text-decoration: underline;
   transition: color 0.2s;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 700px) {
   .contact-info.contact-info-row {
