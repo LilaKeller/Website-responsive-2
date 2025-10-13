@@ -290,10 +290,10 @@
     
     @media (max-width: 480px) {
       .back-to-top {
-        bottom: 1.5rem;
-        right: 1rem;
+      nav { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 1rem 1rem 0 1rem !important; gap: 0.5rem !important; }
+      .logo { order: 1 !important; margin-right: auto !important; color: #333 !important; flex: 0 0 auto !important; text-align: left !important; display: inline-block !important; }
         width: 48px;
-        height: 48px;
+      .hamburger-line { display: block !important; width: 28px !important; height: 3px !important; background-color: #000 !important; border-radius: 2px !important; visibility: visible !important; }
       }
     }
     
@@ -441,9 +441,7 @@
     const navMenu = document.querySelector('nav ul');
     const navLinks = document.querySelectorAll('nav ul li a');
     if (mobileNavToggle && navMenu) {
-      // Styles for hamburger
-      Object.assign(mobileNavToggle.style, { display: 'none' });
-      // Activate on mobile via CSS below
+      // Visibility is handled via CSS media queries
       mobileNavToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
