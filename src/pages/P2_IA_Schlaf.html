@@ -310,6 +310,14 @@
       h1 { font-size: 1.6rem !important; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; }
     }
 
+    /* Mobile Navigation Button - hidden by default */
+    .mobile-nav-toggle { 
+      display: none; 
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
     /* Mobile Navigation Styles */
     @media (max-width: 900px) {
       .mobile-nav-toggle { display: flex; order: 2; width: 48px; height: 48px; background: transparent; border: none; cursor: pointer; z-index: 1002; align-items: center; justify-content: center; }
