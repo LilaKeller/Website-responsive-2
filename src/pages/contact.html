@@ -669,7 +669,10 @@
       .contact-details > div[style*='align-items: flex-end'] a { display: inline-flex !important; align-items: center !important; }
       .contact-details > div[style*='align-items: flex-end'] a svg { display: block !important; }
       /* Footer mobile: stack and safe-area padding */
-      .footer-row { flex-direction: column !important; gap: 1.25rem !important; }
+  .footer-row { flex-direction: column !important; gap: 1.25rem !important; }
+  /* Stack the inner left footer wrapper (VERSION, LOKALE ZEIT, SOZIALE NETZWERKE) */
+  .footer-row > div[style*='display:flex'] { flex-direction: column !important; gap: 1rem !important; flex: 1 1 100% !important; }
+  .footer-row .footer-block { width: 100% !important; }
       .footer-block { display: flex !important; flex-direction: column !important; gap: 0.3rem !important; }
       .main-footer { padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px) + 68px) !important; }
       /* Add spare space under last footer block to clear floating button */
