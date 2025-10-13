@@ -384,8 +384,8 @@
       
       .hero-content[style*="padding:3.5rem"],
       .hero-content[style*="padding:2.5rem"] {
-        padding: 2rem 1.5rem 1.5rem 1.5rem !important;
-        max-width: 95% !important;
+        padding: 1.6rem 1.25rem 1.25rem 1.25rem !important;
+        max-width: 92% !important;
       }
       
       /* Smaller tags/badges */
@@ -396,8 +396,8 @@
       }
       
       /* Text Größen Mobile */
-      h1 { font-size: 1.8rem !important; }
-      h2 { font-size: 1.5rem !important; }
+  h1 { font-size: 1.7rem !important; }
+  h2 { font-size: 1.45rem !important; }
       h3 { font-size: 1.2rem !important; }
       
       /* Mobile Navigation */
@@ -433,9 +433,14 @@
 </head>
 <body>
     <header class="main-header">
-        <nav>
-            <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
-            <ul>
+    <nav>
+      <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
+      <button class="mobile-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul>
                 <li><a href="projekte.html" class="active">Projekte</a></li>
                 <li><a href="about.html">Über mich</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
@@ -662,6 +667,48 @@
                             }
                         }
                         </style>
+                        <style>
+                          /* Mobile Menu Styles (like index/contact) */
+                          @media (max-width: 768px) {
+                            .main-header { background: transparent; }
+                            .mobile-nav-toggle { display: flex; order: 2; width: 48px; height: 48px; background: transparent; border: none; cursor: pointer; z-index: 1002; align-items: center; justify-content: center; }
+                            .hamburger-line { display: block; width: 28px; height: 3px; background-color: #fff; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+                            .hamburger-line:not(:last-child) { margin-bottom: 5px; }
+                            .mobile-nav-toggle.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+                            .mobile-nav-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
+                            .mobile-nav-toggle.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+                            /* When header gets scrolled state, dark lines for contrast */
+                            .main-header.scrolled .hamburger-line { background-color: #333; }
+
+                            nav { display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 1rem 1rem 0 1rem !important; gap: 0.5rem !important; }
+                            .logo { order: 1 !important; margin-right: auto !important; color: inherit !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; }
+                            nav > .mobile-nav-toggle { margin-left: auto; }
+
+                            /* Off-canvas menu */
+                            nav ul { position: fixed; top: 0; right: 0; width: min(280px, 75vw); height: 100vh; background: #9ba89c; flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 0; padding: 80px 0 20px 0; margin: 0; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: -4px 0 24px rgba(0,0,0,0.25); z-index: 1001; overflow-y: auto; list-style: none; pointer-events: auto; display: none; }
+                            nav ul.mobile-menu-open { display: flex; transform: translateX(0); }
+                            nav ul li a { width: 100%; padding: 1.2rem 2rem; color: #fff !important; font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.12); display: block; text-decoration: none; }
+                            body.mobile-menu-active { overflow: hidden; }
+                            body.mobile-menu-active::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
+                          }
+
+                          /* Contact strip: stack on mobile */
+                          @media (max-width: 600px) {
+                            .contact-row { flex-direction: column !important; gap: 1.5rem !important; align-items: center !important; }
+                            .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
+                          }
+                          @media (max-width: 375px) {
+                            .btn-contact.round-yellow { width: 144px !important; height: 144px !important; }
+                          }
+
+                          /* Footer mobile: stack blocks and add safe-area padding */
+                          @media (max-width: 600px) {
+                            .footer-row { flex-direction: column !important; gap: 1.25rem !important; }
+                            .footer-row > div[style*='display:flex'] { flex-direction: column !important; gap: 1rem !important; flex: 1 1 100% !important; }
+                            .footer-block { display: flex !important; flex-direction: column !important; gap: 0.3rem !important; width: 100% !important; }
+                            .main-footer { padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px) + 68px) !important; }
+                          }
+                        </style>
         <!-- Call to Action wie auf anderen Projektseiten -->
         <section style="background:#c6b79e;padding:3.5rem 0;text-align:center;">
             <div style="font-size:1.35rem;font-weight:700;max-width:700px;margin:0 auto 2.5rem auto;color:#fff;">Möchtest du tiefere Einblicke in dieses Projekt und/oder einen Einblick in mein gesamtes Innenarchitekturportfolio haben?</div>
@@ -752,6 +799,37 @@
   </button>
 
   <script>
+        // Mobile Navigation (Burger + Off-Canvas)
+        (function() {
+          const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+          const navMenu = document.querySelector('nav ul');
+          const navLinks = document.querySelectorAll('nav ul li a');
+          if (mobileNavToggle && navMenu) {
+            mobileNavToggle.addEventListener('click', function(e) {
+              e.stopPropagation();
+              const isExpanded = this.getAttribute('aria-expanded') === 'true';
+              this.setAttribute('aria-expanded', (!isExpanded).toString());
+              this.classList.toggle('active');
+              navMenu.classList.toggle('mobile-menu-open');
+              document.body.classList.toggle('mobile-menu-active');
+            });
+            document.addEventListener('click', function(e) {
+              if (!mobileNavToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('mobile-menu-open');
+                document.body.classList.remove('mobile-menu-active');
+                mobileNavToggle.classList.remove('active');
+                mobileNavToggle.setAttribute('aria-expanded', 'false');
+              }
+            });
+            navLinks.forEach(link => link.addEventListener('click', () => {
+              navMenu.classList.remove('mobile-menu-open');
+              document.body.classList.remove('mobile-menu-active');
+              mobileNavToggle.classList.remove('active');
+              mobileNavToggle.setAttribute('aria-expanded', 'false');
+            }));
+          }
+        })();
+
         // Lokale Zeit immer aktuell anzeigen (wie auf index.html)
         function updateLocalTime() {
             const now = new Date();
