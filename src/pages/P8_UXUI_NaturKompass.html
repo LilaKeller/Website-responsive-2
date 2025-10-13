@@ -1029,20 +1029,20 @@
               width: 140px !important; 
               height: auto !important; 
               max-height: 300px !important;
-              flex: 0 0 140px !important;
             }
-            /* First 2 images in row 1 */
+            /* First 2 images stay in row */
             .button-hierarchy-images .hierarchy-img:nth-child(1),
             .button-hierarchy-images .hierarchy-img:nth-child(2) {
               flex: 0 0 140px !important;
             }
-            /* Center image alone in row 2 */
+            /* Center image takes full width to force new line */
             .button-hierarchy-images .hierarchy-center {
-              flex: 0 0 140px !important;
+              flex: 0 0 100% !important;
               width: 140px !important;
               margin: 0 auto !important;
+              display: block !important;
             }
-            /* Last 2 images in row 3 */
+            /* Last 2 images in final row */
             .button-hierarchy-images .hierarchy-img:nth-child(4),
             .button-hierarchy-images .hierarchy-img:nth-child(5) {
               flex: 0 0 140px !important;
@@ -1055,10 +1055,17 @@
             .button-hierarchy-images .hierarchy-img { 
               width: 110px !important; 
               max-height: 238px !important;
+            }
+            .button-hierarchy-images .hierarchy-img:nth-child(1),
+            .button-hierarchy-images .hierarchy-img:nth-child(2) {
               flex: 0 0 110px !important;
             }
             .button-hierarchy-images .hierarchy-center {
               width: 110px !important;
+              flex: 0 0 100% !important;
+            }
+            .button-hierarchy-images .hierarchy-img:nth-child(4),
+            .button-hierarchy-images .hierarchy-img:nth-child(5) {
               flex: 0 0 110px !important;
             }
           }
@@ -1066,10 +1073,17 @@
             .button-hierarchy-images .hierarchy-img { 
               width: 95px !important; 
               max-height: 205px !important;
+            }
+            .button-hierarchy-images .hierarchy-img:nth-child(1),
+            .button-hierarchy-images .hierarchy-img:nth-child(2) {
               flex: 0 0 95px !important;
             }
             .button-hierarchy-images .hierarchy-center {
               width: 95px !important;
+              flex: 0 0 100% !important;
+            }
+            .button-hierarchy-images .hierarchy-img:nth-child(4),
+            .button-hierarchy-images .hierarchy-img:nth-child(5) {
               flex: 0 0 95px !important;
             }
           }
