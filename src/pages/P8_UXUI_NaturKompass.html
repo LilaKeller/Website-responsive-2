@@ -506,13 +506,13 @@
         </section>
 
         <!-- Fünfte Zweispalten-Section -->
-        <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
+        <section class="quantitative-insights-section" style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <h2 style="font-size:2rem;font-weight:700;color:#333;line-height:1.2;margin:0;">Quantitative Insights</h2>
                 </div>
                 <div style="flex:2;">
-                    <div style="display:flex;gap:1rem;flex-wrap:nowrap;justify-content:flex-end;">
+                    <div class="quantitative-insights-badges" style="display:flex;gap:1rem;flex-wrap:nowrap;justify-content:flex-end;">
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">50 Online Befragungen</div>
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">Altersgruppen: 20-80 Jahre</div>
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">Du & Dein Naturerlebnis</div>
@@ -522,7 +522,7 @@
         </section>
 
         <!-- Donut Charts Section -->
-        <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
+        <section class="donut-charts-section" style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <div style="width:100%;">
                 <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:3rem;width:100%;">
                     <!-- Chart 1 -->
@@ -1193,6 +1193,28 @@
             .qualitative-insights-quotes > div {
               grid-template-columns: 1fr !important;
               gap: 2rem !important;
+            }
+          }
+          
+          /* Quantitative Insights: Stack badges and donut charts vertically on mobile */
+          @media (max-width: 768px) {
+            .quantitative-insights-section > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+            .quantitative-insights-badges {
+              flex-direction: column !important;
+              gap: 0.8rem !important;
+              justify-content: flex-start !important;
+            }
+            .quantitative-insights-badges > div {
+              width: 100% !important;
+              min-width: auto !important;
+              white-space: normal !important;
+            }
+            .donut-charts-section > div > div {
+              grid-template-columns: 1fr !important;
+              gap: 2.5rem !important;
             }
           }
         </style>
