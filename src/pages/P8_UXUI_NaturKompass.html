@@ -600,13 +600,13 @@
         </section>
 
         <!-- Qualitative Insights Section -->
-        <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
+        <section class="qualitative-insights-section" style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <h2 style="font-size:2rem;font-weight:700;color:#333;line-height:1.2;margin:0;">Qualitative Insights</h2>
                 </div>
                 <div style="flex:2;">
-                    <div style="display:flex;gap:1rem;flex-wrap:nowrap;justify-content:flex-end;">
+                    <div class="qualitative-insights-badges" style="display:flex;gap:1rem;flex-wrap:nowrap;justify-content:flex-end;">
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">5 Interviews</div>
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">Altersgruppen: 20-60 Jahre</div>
                         <div style="background:#94A293;color:#fff;padding:1rem 1.5rem;border-radius:8px;font-size:1rem;font-weight:600;text-align:center;min-width:180px;white-space:nowrap;">Du & Dein Naturerlebnis</div>
@@ -616,7 +616,7 @@
         </section>
 
         <!-- Qualitative Insights Quotes Section -->
-        <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:1rem 80px 4rem 80px;box-sizing:border-box;">
+        <section class="qualitative-insights-quotes" style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:1rem 80px 4rem 80px;box-sizing:border-box;">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <div style="background:#94A293;padding:1.5rem;border-radius:8px;margin:0 0 1rem 0;">
@@ -1171,6 +1171,28 @@
             }
             .research-insights-container > div > div[style*="width:240px"] > div[style*="font-size:1.3rem"] {
               font-size: 1.15rem !important;
+            }
+          }
+          
+          /* Qualitative Insights: Stack badges and quotes vertically on mobile */
+          @media (max-width: 768px) {
+            .qualitative-insights-section > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+            .qualitative-insights-badges {
+              flex-direction: column !important;
+              gap: 0.8rem !important;
+              justify-content: flex-start !important;
+            }
+            .qualitative-insights-badges > div {
+              width: 100% !important;
+              min-width: auto !important;
+              white-space: normal !important;
+            }
+            .qualitative-insights-quotes > div {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
             }
           }
         </style>
