@@ -1040,9 +1040,10 @@
             /* Center image takes full width to force new line */
             .button-hierarchy-images .hierarchy-center {
               flex: 0 0 100% !important;
-              width: 140px !important;
+              width: auto !important;
+              max-width: 140px !important;
               margin: 0 auto !important;
-              display: block !important;
+              display: inline-flex !important;
             }
             /* Last 2 images in final row */
             .button-hierarchy-images .hierarchy-img:nth-child(4),
@@ -1063,7 +1064,7 @@
               flex: 0 0 110px !important;
             }
             .button-hierarchy-images .hierarchy-center {
-              width: 110px !important;
+              max-width: 110px !important;
               flex: 0 0 100% !important;
             }
             .button-hierarchy-images .hierarchy-img:nth-child(4),
@@ -1081,7 +1082,7 @@
               flex: 0 0 95px !important;
             }
             .button-hierarchy-images .hierarchy-center {
-              width: 95px !important;
+              max-width: 95px !important;
               flex: 0 0 100% !important;
             }
             .button-hierarchy-images .hierarchy-img:nth-child(4),
