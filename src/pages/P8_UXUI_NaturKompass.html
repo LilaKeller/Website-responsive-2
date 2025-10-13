@@ -983,7 +983,7 @@
                 <img src="../../img/UXUI/NaturKompass/Onboarding vorher - nachher.png" alt="Onboarding Vorher vs Nachher Vergleich" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
             </div>
             
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
+            <div class="vorher-nachher-text" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
                 <div style="flex:1;">
                     <h4 style="font-size:1.4rem;font-weight:700;color:#333;margin:0 0 0.5rem 0;">Vorher</h4>
                     <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0;">Nutzer empfanden den Splash Screen und die 11 Onboarding-Screens als zu langwierig.</p>
@@ -1007,7 +1007,7 @@
                 <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 1.png" alt="Button Iteration Nachher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
                 <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 2.png" alt="Button Iteration Nachher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;width:100%;margin-top:0;">
+            <div class="vorher-nachher-text" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;width:100%;margin-top:0;">
                 <div>
                     <h4 style="font-size:1.5rem;font-weight:700;color:#94A293;margin:0 0 0.8rem 0;">Vorher</h4>
                     <p style="font-size:1.05rem;line-height:1.7;color:#555;margin:0;">Nutzer empfanden den Secondary Button präsenter als den Primary Button, sodass die Bedienung gestört war und eine klare Hierachie nicht zu erkennen war.</p>
@@ -1106,6 +1106,14 @@
           @media (max-width: 375px) {
             .finale-design-screens {
               gap: 0.25rem !important;
+            }
+          }
+          
+          /* Vorher/Nachher Text: Single column on mobile */
+          @media (max-width: 768px) {
+            .vorher-nachher-text {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
             }
           }
         </style>
