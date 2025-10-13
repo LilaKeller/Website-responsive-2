@@ -777,7 +777,7 @@
             <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:3rem;width:100%;margin-top:2rem;">
                 
                 <!-- Principle 1 -->
-                <div style="display:flex;align-items:center;gap:2rem;">
+                <div class="design-principle" style="display:flex;align-items:center;gap:2rem;">
                     <div style="width:120px;height:120px;border-radius:50%;background:#94A293;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                         <span style="font-size:2.5rem;font-weight:700;color:#fff;">1</span>
                     </div>
@@ -788,7 +788,7 @@
                 </div>
                 
                 <!-- Principle 2 -->
-                <div style="display:flex;align-items:center;gap:2rem;">
+                <div class="design-principle" style="display:flex;align-items:center;gap:2rem;">
                     <div style="width:120px;height:120px;border-radius:50%;background:#94A293;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                         <span style="font-size:2.5rem;font-weight:700;color:#fff;">2</span>
                     </div>
@@ -799,7 +799,7 @@
                 </div>
                 
                 <!-- Principle 3 -->
-                <div style="display:flex;align-items:center;gap:2rem;">
+                <div class="design-principle" style="display:flex;align-items:center;gap:2rem;">
                     <div style="width:120px;height:120px;border-radius:50%;background:#94A293;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                         <span style="font-size:2.5rem;font-weight:700;color:#fff;">3</span>
                     </div>
@@ -1125,6 +1125,23 @@
             }
             .design-system-row > div {
               flex: none !important;
+            }
+          }
+          
+          /* Design Principles: Stack vertically on mobile with centered circle */
+          @media (max-width: 768px) {
+            .design-principle {
+              flex-direction: column !important;
+              align-items: center !important;
+              text-align: center !important;
+              gap: 1.5rem !important;
+            }
+            .design-principle > div:first-child {
+              width: 100px !important;
+              height: 100px !important;
+            }
+            .design-principle > div:first-child span {
+              font-size: 2rem !important;
             }
           }
         </style>
