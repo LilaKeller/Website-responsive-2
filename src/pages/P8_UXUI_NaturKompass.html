@@ -1023,26 +1023,33 @@
               flex-wrap: wrap !important; 
               justify-content: center !important;
               gap: 0.8rem !important;
+              max-width: 100% !important;
             }
             .button-hierarchy-images img { 
               width: 140px !important; 
               height: auto !important; 
               max-height: 300px !important;
+              flex: 0 0 calc(50% - 0.4rem) !important;
+              max-width: 140px !important;
             }
           }
           @media (max-width: 480px) {
             .button-hierarchy-images { 
-              gap: 0.5rem !important;
+              gap: 0.6rem !important;
             }
             .button-hierarchy-images img { 
-              width: 100px !important; 
-              max-height: 216px !important;
+              width: 110px !important; 
+              max-height: 238px !important;
+              flex: 0 0 calc(50% - 0.3rem) !important;
+              max-width: 110px !important;
             }
           }
           @media (max-width: 375px) {
             .button-hierarchy-images img { 
-              width: 85px !important; 
-              max-height: 184px !important;
+              width: 95px !important; 
+              max-height: 205px !important;
+              flex: 0 0 calc(50% - 0.3rem) !important;
+              max-width: 95px !important;
             }
           }
         </style>
