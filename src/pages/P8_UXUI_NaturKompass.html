@@ -1044,54 +1044,42 @@
             max-height: 416px;
           }
           
-          /* Button-Hierarchie Images: Mobile layout - all 5 in a row */
+          /* Button-Hierarchie Images: Mobile layout - all 5 visible without scrolling */
           @media (max-width: 768px) {
             .button-hierarchy-images { 
               flex-wrap: nowrap !important;
-              justify-content: flex-start !important;
-              gap: 0.5rem !important;
+              justify-content: space-between !important;
+              gap: 0.4rem !important;
               max-width: 100% !important;
               margin-bottom: 2rem !important;
-              overflow-x: auto !important;
-              -webkit-overflow-scrolling: touch !important;
-              padding-bottom: 0.5rem !important;
+              overflow-x: visible !important;
             }
             .button-hierarchy-images img { 
-              width: 110px !important; 
+              width: 18% !important; 
               height: auto !important; 
-              max-height: 238px !important;
+              max-height: none !important;
               object-fit: contain !important;
-              flex-shrink: 0 !important;
+              flex-shrink: 1 !important;
             }
             .button-hierarchy-images .hierarchy-center {
-              flex-shrink: 0 !important;
+              flex-shrink: 1 !important;
+              width: 18% !important;
+              max-width: none !important;
             }
             .button-hierarchy-images .hierarchy-center img {
-              max-width: 94px !important;
-              max-height: 230px !important;
+              max-width: 100% !important;
+              max-height: none !important;
+              width: 100% !important;
             }
           }
           @media (max-width: 480px) {
             .button-hierarchy-images { 
-              gap: 0.4rem !important;
-            }
-            .button-hierarchy-images img { 
-              width: 85px !important; 
-              max-height: 184px !important;
-            }
-            .button-hierarchy-images .hierarchy-center img {
-              max-width: 73px !important;
-              max-height: 176px !important;
+              gap: 0.3rem !important;
             }
           }
           @media (max-width: 375px) {
-            .button-hierarchy-images img { 
-              width: 70px !important; 
-              max-height: 151px !important;
-            }
-            .button-hierarchy-images .hierarchy-center img {
-              max-width: 58px !important;
-              max-height: 143px !important;
+            .button-hierarchy-images { 
+              gap: 0.25rem !important;
             }
           }
         </style>
