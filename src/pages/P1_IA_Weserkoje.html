@@ -769,7 +769,7 @@
       .btn-contact.round-yellow svg { width: 96px; height: 96px; display: block; }
       .btn-contact.round-yellow svg path { stroke: #fff; }
       
-      /* Desktop/Tablet: keep side-by-side, adjust heading size */
+      /* Keep side-by-side layout on all screen sizes like index.html */
       @media (max-width: 900px) {
         .contact-content h2 { font-size: 3.5rem !important; }
       }
@@ -777,11 +777,8 @@
         .contact-content h2 { font-size: 3rem !important; }
         section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
       }
-      
-      /* Mobile: stack layout only on small screens */
       @media (max-width: 480px) {
-        .contact-row { flex-direction: column !important; gap: 1.5rem !important; align-items: center !important; }
-        .contact-content h2 { font-size: 2.5rem !important; text-align: center; }
+        .contact-content h2 { font-size: 2.5rem !important; }
         .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
       }
       @media (max-width: 375px) {
