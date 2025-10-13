@@ -651,19 +651,19 @@
       .contact-form input, .contact-form textarea { padding: 0.9rem 1rem !important; font-size: 1rem !important; }
       .contact-form textarea { min-height: 140px !important; }
       #contact-submit { width: 100% !important; padding: 0.9rem 1rem !important; font-size: 1.05rem !important; }
-      .profile-block > div[style*='height:260px'] { width: 200px !important; height: 200px !important; margin: 0 auto !important; }
-      .profile-block a.btn-secondary { width: 200px !important; margin: 1rem auto 0 auto !important; }
+  .profile-block > div[style*='height:260px'] { width: 200px !important; height: 200px !important; margin: 0 auto !important; }
+  .profile-block a.btn-secondary { width: auto !important; min-width: 0 !important; display: inline-flex !important; align-self: flex-start !important; margin: 1rem 0 0 0 !important; padding: 0.9rem 1.25rem !important; }
       .all-details-block h3 { margin-top: 1.5rem !important; }
     }
 
     @media (max-width: 480px) {
-      .profile-block > div[style*='height:260px'] { width: 180px !important; height: 180px !important; }
-      .profile-block a.btn-secondary { width: 180px !important; }
+  .profile-block > div[style*='height:260px'] { width: 180px !important; height: 180px !important; }
+  .profile-block a.btn-secondary { width: auto !important; min-width: 0 !important; padding: 0.85rem 1.15rem !important; }
     }
 
     @media (max-width: 375px) {
-      .profile-block > div[style*='height:260px'] { width: 160px !important; height: 160px !important; }
-      .profile-block a.btn-secondary { width: 160px !important; }
+  .profile-block > div[style*='height:260px'] { width: 160px !important; height: 160px !important; }
+  .profile-block a.btn-secondary { width: auto !important; min-width: 0 !important; padding: 0.8rem 1rem !important; }
       .footer-row { flex-direction: column !important; gap: 1rem !important; }
       .footer-block { display: flex !important; flex-direction: column !important; gap: 0.2rem !important; }
     }
