@@ -768,17 +768,24 @@
       }
       .btn-contact.round-yellow svg { width: 96px; height: 96px; display: block; }
       .btn-contact.round-yellow svg path { stroke: #fff; }
-      @media (max-width: 700px) {
+      
+      /* Desktop/Tablet: keep side-by-side, adjust heading size */
+      @media (max-width: 900px) {
+        .contact-content h2 { font-size: 3.5rem !important; }
+      }
+      @media (max-width: 768px) {
+        .contact-content h2 { font-size: 3rem !important; }
         section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
       }
-      /* Contact mobile: stack and resize button */
-      @media (max-width: 600px) {
+      
+      /* Mobile: stack layout only on small screens */
+      @media (max-width: 480px) {
         .contact-row { flex-direction: column !important; gap: 1.5rem !important; align-items: center !important; }
-        .contact-content h2 { font-size: 3rem !important; text-align: center; }
+        .contact-content h2 { font-size: 2.5rem !important; text-align: center; }
         .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
       }
       @media (max-width: 375px) {
-        .contact-content h2 { font-size: 2.5rem !important; }
+        .contact-content h2 { font-size: 2.2rem !important; }
         .btn-contact.round-yellow { width: 144px !important; height: 144px !important; }
       }
     </style>
