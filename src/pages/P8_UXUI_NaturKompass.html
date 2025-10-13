@@ -290,13 +290,22 @@
       section[style*="padding"] { padding: 1.5rem 20px !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
-      h1 { font-size: 1.8rem !important; } h2 { font-size: 1.5rem !important; } h3 { font-size: 1.2rem !important; }
+      h1 { font-size: 2.2rem !important; } h2 { font-size: 1.45rem !important; } h3 { font-size: 1.2rem !important; }
+      /* Hero-specific sizing to ensure clear hierarchy */
+      .hero .hero-content h1 { font-size: 2.6rem !important; }
+      .hero .hero-content div[style*="font-size:1.8rem"] { font-size: 1.4rem !important; }
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
+    }
+    @media (max-width: 375px) {
+      .hero .hero-content h1 { font-size: 2.4rem !important; }
+      .hero .hero-content div[style*="font-size:1.8rem"] { font-size: 1.3rem !important; }
     }
     @media (max-width: 360px) {
       section[style*="padding"] { padding: 1rem 15px !important; }
       .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
-      h1 { font-size: 1.6rem !important; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; }
+      h1 { font-size: 2.0rem !important; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; }
+      .hero .hero-content h1 { font-size: 2.2rem !important; }
+      .hero .hero-content div[style*="font-size:1.8rem"] { font-size: 1.2rem !important; }
     }
 
     /* Responsive Design */
