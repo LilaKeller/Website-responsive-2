@@ -747,98 +747,97 @@
         </div>
       </div>
     </section>
-    </main>
-    <style>
-      .btn-contact.round-yellow {
-        width: 192px;
-        height: 192px;
-        border-radius: 50%;
-        background: #ffb800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-        border: none;
-        transition: background 0.2s, box-shadow 0.2s;
-        padding: 0;
-      }
-      .btn-contact.round-yellow::after { display: none; }
-      .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
-        background: #e6a600;
-        box-shadow: 0 12px 48px rgba(0,0,0,0.16);
-      }
-      .btn-contact.round-yellow svg { width: 96px; height: 96px; display: block; }
-      .btn-contact.round-yellow svg path { stroke: #fff; }
-      
-      /* CTA Section: Full width on mobile without padding */
-      @media (max-width: 768px) {
-        .cta-section {
-          padding: 3.5rem 0 !important;
-          width: 100vw !important;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw !important;
-          margin-right: -50vw !important;
-        }
-        .cta-section > div {
-          padding-left: 20px !important;
-          padding-right: 20px !important;
-        }
-      }
-      
-      /* Keep side-by-side layout on all screen sizes like index.html */
-      @media (max-width: 900px) {
-        .contact-content h2 { font-size: 3.5rem !important; }
-      }
-      @media (max-width: 768px) {
-        .contact-content h2 { font-size: 3rem !important; }
-        section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
-      }
-      @media (max-width: 480px) {
-        .contact-content h2 { font-size: 2.5rem !important; }
-        .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
-      }
-      @media (max-width: 375px) {
-        .contact-content h2 { font-size: 2.2rem !important; }
-        .btn-contact.round-yellow { width: 144px !important; height: 144px !important; }
-      }
-    </style>
-  
-        <footer class="main-footer">
-            <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
-                <div style="display:flex;gap:3rem;flex:1;">
-                    <div class="footer-block">
-                        <div class="footer-title">VERSION</div>
-                        <div>2025 © Edition</div>
-                    </div>
-                    <div class="footer-block">
-                        <div class="footer-title">LOKALE ZEIT</div>
-                        <div><span id="local-time"></span></div>
-                    </div>
-                    <div class="footer-block">
-                        <div class="footer-title">SOZIALE NETZWERKE</div>
-                        <div class="footer-socials">
-                            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-                            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-block" style="flex:0 0 auto;">
-                    <div class="footer-title">RECHTLICHES</div>
-                    <a href="datenschutz.html">Datenschutz</a>
-                    <a href="impressum.html">Impressum</a>
-                </div>
-            </div>
-                </footer>
-    
+  </main>
+
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;">
+      <div class="footer-block">
+        <div class="footer-title">VERSION</div>
+        <div>2025 © Edition</div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">LOKALE ZEIT</div>
+        <div><span id="local-time"></span></div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">SOZIALE NETZWERKE</div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">RECHTLICHES</div>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
   <button class="back-to-top" aria-label="Nach oben scrollen" role="button" tabindex="0" style="--progress: 0deg">
     <svg width="24" height="24" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M48 76L48 20M48 20L24 44M48 20L72 44" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </button>
 
-  <script>
+  <style>
+    .btn-contact.round-yellow {
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      background: #ffb800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      border: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      padding: 0;
+    }
+    .btn-contact.round-yellow::after { display: none; }
+    .btn-contact.round-yellow:hover, .btn-contact.round-yellow:focus {
+      background: #e6a600;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+    }
+    .btn-contact.round-yellow svg { width: 96px; height: 96px; display: block; }
+    .btn-contact.round-yellow svg path { stroke: #fff; }
+    
+    /* CTA Section: Full width on mobile without padding */
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 3.5rem 0 !important;
+        width: 100vw !important;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+      }
+      .cta-section > div {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+    }
+    
+    /* Keep side-by-side layout on all screen sizes like index.html */
+    @media (max-width: 900px) {
+      .contact-content h2 { font-size: 3.5rem !important; }
+    }
+    @media (max-width: 768px) {
+      .contact-content h2 { font-size: 3rem !important; }
+      section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
+    }
+    @media (max-width: 480px) {
+      .contact-content h2 { font-size: 2.5rem !important; }
+      .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
+    }
+    @media (max-width: 375px) {
+      .contact-content h2 { font-size: 2.2rem !important; }
+      .btn-contact.round-yellow { width: 144px !important; height: 144px !important; }
+    }
+  </style>
+
+  <script>  <script>
         // Mobile Navigation (Burger + Off-Canvas)
         (function() {
           const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
