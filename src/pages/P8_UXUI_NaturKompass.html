@@ -1027,17 +1027,18 @@
               gap: 0.8rem !important;
               max-width: 100% !important;
             }
-            .button-hierarchy-images .hierarchy-img { 
+            .button-hierarchy-images img { 
               width: 140px !important; 
               height: auto !important; 
               max-height: 300px !important;
+              object-fit: contain !important;
             }
-            /* First 2 images stay in row */
-            .button-hierarchy-images .hierarchy-img:nth-child(1),
-            .button-hierarchy-images .hierarchy-img:nth-child(2) {
+            /* First 2 images (child 1 and 2) stay in first row */
+            .button-hierarchy-images > :nth-child(1),
+            .button-hierarchy-images > :nth-child(2) {
               flex: 0 0 140px !important;
             }
-            /* Center image takes full width to force new line */
+            /* Center div (child 3) takes full width to force new line */
             .button-hierarchy-images .hierarchy-center {
               flex: 0 0 100% !important;
               width: auto !important;
@@ -1045,9 +1046,9 @@
               margin: 0 auto !important;
               display: inline-flex !important;
             }
-            /* Last 2 images in final row */
-            .button-hierarchy-images .hierarchy-img:nth-child(4),
-            .button-hierarchy-images .hierarchy-img:nth-child(5) {
+            /* Last 2 images (child 4 and 5) in final row */
+            .button-hierarchy-images > :nth-child(4),
+            .button-hierarchy-images > :nth-child(5) {
               flex: 0 0 140px !important;
             }
           }
@@ -1055,38 +1056,38 @@
             .button-hierarchy-images { 
               gap: 0.6rem !important;
             }
-            .button-hierarchy-images .hierarchy-img { 
+            .button-hierarchy-images img { 
               width: 110px !important; 
               max-height: 238px !important;
             }
-            .button-hierarchy-images .hierarchy-img:nth-child(1),
-            .button-hierarchy-images .hierarchy-img:nth-child(2) {
+            .button-hierarchy-images > :nth-child(1),
+            .button-hierarchy-images > :nth-child(2) {
               flex: 0 0 110px !important;
             }
             .button-hierarchy-images .hierarchy-center {
               max-width: 110px !important;
               flex: 0 0 100% !important;
             }
-            .button-hierarchy-images .hierarchy-img:nth-child(4),
-            .button-hierarchy-images .hierarchy-img:nth-child(5) {
+            .button-hierarchy-images > :nth-child(4),
+            .button-hierarchy-images > :nth-child(5) {
               flex: 0 0 110px !important;
             }
           }
           @media (max-width: 375px) {
-            .button-hierarchy-images .hierarchy-img { 
+            .button-hierarchy-images img { 
               width: 95px !important; 
               max-height: 205px !important;
             }
-            .button-hierarchy-images .hierarchy-img:nth-child(1),
-            .button-hierarchy-images .hierarchy-img:nth-child(2) {
+            .button-hierarchy-images > :nth-child(1),
+            .button-hierarchy-images > :nth-child(2) {
               flex: 0 0 95px !important;
             }
             .button-hierarchy-images .hierarchy-center {
               max-width: 95px !important;
               flex: 0 0 100% !important;
             }
-            .button-hierarchy-images .hierarchy-img:nth-child(4),
-            .button-hierarchy-images .hierarchy-img:nth-child(5) {
+            .button-hierarchy-images > :nth-child(4),
+            .button-hierarchy-images > :nth-child(5) {
               flex: 0 0 95px !important;
             }
           }
