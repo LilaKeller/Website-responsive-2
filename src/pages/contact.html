@@ -401,7 +401,7 @@
       </div>
     </section>
   </main>
-  <footer class="main-footer">
+  <footer class="main-footer" role="contentinfo">
     <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
       <div style="display:flex;gap:3rem;flex:1;">
         <div class="footer-block">
@@ -422,8 +422,8 @@
       </div>
       <div class="footer-block" style="flex:0 0 auto;">
         <div class="footer-title">RECHTLICHES</div>
-        <a href="datenschutz.html">Datenschutz</a>
-        <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
+  <a href="impressum.html">Impressum</a>
       </div>
     </div>
   </footer>
@@ -668,6 +668,12 @@
       .contact-details > div[style*='align-items: flex-end'] a { line-height: 1.25 !important; }
       .contact-details > div[style*='align-items: flex-end'] a { display: inline-flex !important; align-items: center !important; }
       .contact-details > div[style*='align-items: flex-end'] a svg { display: block !important; }
+      /* Footer mobile: stack and safe-area padding */
+      .footer-row { flex-direction: column !important; gap: 1.25rem !important; }
+      .footer-block { display: flex !important; flex-direction: column !important; gap: 0.3rem !important; }
+      .main-footer { padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px) + 68px) !important; }
+      /* Add spare space under last footer block to clear floating button */
+      .main-footer .footer-row > :last-child { margin-bottom: 0.5rem !important; }
     }
 
     @media (max-width: 480px) {
