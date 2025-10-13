@@ -406,6 +406,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlavorFusion - Landing Page für eine mobile Rezepte App</title>
     <link rel="stylesheet" href="../../style.css">
+    <!-- Page-specific overrides to align hero behavior with other projects -->
+    <style>
+      /* Ensure this page's hero uses the intended image and not the global .hero default */
+      .hero.hero-flavorfusion {
+        background: url('../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png') center center/cover no-repeat !important;
+      }
+
+      /* Prevent global main margin-top (100vh) from creating a second blank hero-sized gap */
+      main { margin-top: 0 !important; }
+    </style>
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
   <style>
     a {
