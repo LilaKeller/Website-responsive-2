@@ -826,7 +826,7 @@
             <!-- UI Foundation Text Blocks -->
             <div style="display:flex;flex-direction:column;gap:3rem;width:100%;">
                 <!-- Row 1: Farbwelt -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Farbwelt</h3>
                     </div>
@@ -836,7 +836,7 @@
                 </div>
                 
                 <!-- Row 2: Schriftarten -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Schriftarten</h3>
                     </div>
@@ -846,7 +846,7 @@
                 </div>
                 
                 <!-- Row 3: Ikonographie -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Ikonographie</h3>
                     </div>
@@ -856,7 +856,7 @@
                 </div>
                 
                 <!-- Row 4: Ton of Voice -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Ton of Voice</h3>
                     </div>
@@ -866,7 +866,7 @@
                 </div>
                 
                 <!-- Row 5: Komponenten -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Komponenten</h3>
                     </div>
@@ -876,7 +876,7 @@
                 </div>
                 
                 <!-- Row 6: Visuelle Sprache -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Visuelle Sprache</h3>
                     </div>
@@ -886,7 +886,7 @@
                 </div>
                 
                 <!-- Row 7: Konsistenz -->
-                <div style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
+                <div class="design-system-row" style="display:flex;gap:4rem;width:100%;align-items:flex-start;">
                     <div style="flex:1;">
                         <h3 style="font-size:1.5rem;font-weight:700;color:#fff;margin:0;">Konsistenz</h3>
                     </div>
@@ -1114,6 +1114,17 @@
             .vorher-nachher-text {
               grid-template-columns: 1fr !important;
               gap: 2rem !important;
+            }
+          }
+          
+          /* Design System Rows: Single column on mobile */
+          @media (max-width: 768px) {
+            .design-system-row {
+              flex-direction: column !important;
+              gap: 1rem !important;
+            }
+            .design-system-row > div {
+              flex: none !important;
             }
           }
         </style>
