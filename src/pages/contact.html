@@ -659,6 +659,12 @@
   /* Button: full width */
   .profile-block a.btn-secondary { width: 100% !important; min-width: 0 !important; display: block !important; align-self: stretch !important; margin: 1rem 0 0 0 !important; padding: 0.9rem 1.25rem !important; text-align: center !important; }
       .all-details-block h3 { margin-top: 1.5rem !important; }
+      /* Social Media row alignment */
+      .contact-details > div[style*='align-items: flex-end'] { align-items: center !important; gap: 0.5em !important; }
+      .contact-details > div[style*='align-items: flex-end'] strong,
+      .contact-details > div[style*='align-items: flex-end'] a { line-height: 1.25 !important; }
+      .contact-details > div[style*='align-items: flex-end'] a { display: inline-flex !important; align-items: center !important; }
+      .contact-details > div[style*='align-items: flex-end'] a svg { display: block !important; }
     }
 
     @media (max-width: 480px) {
