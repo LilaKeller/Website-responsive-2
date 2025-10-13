@@ -943,7 +943,7 @@
                 <section class="contact" id="contact" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
                     <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
                         <div class="contact-content" style="margin:0;flex:1;">
-                            <h2 style="margin:0;color:#fff;font-size:4rem;line-height:1.1;font-weight:700;">GET<br>IN<br>TOUCH</h2>
+                            <h2 style="margin:0;color:#fff;">GET<br>IN<br>TOUCH</h2>
                         </div>
                         <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
                             <a href="contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
@@ -982,11 +982,27 @@
                         .btn-contact.round-yellow svg path {
                             stroke: #fff;
                         }
+                        
+                        /* Mobile: GET IN TOUCH larger than desktop */
+                        @media (max-width: 900px) {
+                            .contact-content h2 { font-size: 4rem !important; line-height: 1.1 !important; }
+                        }
+                        @media (max-width: 768px) {
+                            .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
+                        }
                         @media (max-width: 700px) {
                             section.contact#contact {
                                 padding-left: 10vw !important;
                                 padding-right: 10vw !important;
                             }
+                        }
+                        @media (max-width: 480px) {
+                            .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
+                            .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
+                        }
+                        @media (max-width: 375px) {
+                            .contact-content h2 { font-size: 2.5rem !important; line-height: 1.1 !important; }
+                            .btn-contact.round-yellow { width: 144px !important; height: 144px !important; }
                         }
                     </style>
                 </section>
