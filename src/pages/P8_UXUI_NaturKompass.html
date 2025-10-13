@@ -1253,31 +1253,38 @@
     </style>
 
     <footer class="main-footer">
-        <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
-            <div style="display:flex;gap:3rem;flex:1;">
-                <div class="footer-block">
-                    <div class="footer-title">VERSION</div>
-                    <div>2025 © Edition</div>
-                </div>
-                <div class="footer-block">
-                    <div class="footer-title">LOKALE ZEIT</div>
-                    <div><span id="local-time"></span></div>
-                </div>
-                <div class="footer-block">
-                    <div class="footer-title">SOZIALE NETZWERKE</div>
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-block" style="flex:0 0 auto;">
-                <div class="footer-title">RECHTLICHES</div>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a href="impressum.html">Impressum</a>
-            </div>
+      <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;">
+        <div class="footer-block">
+          <div class="footer-title">VERSION</div>
+          <div>2025 © Edition</div>
         </div>
+        <div class="footer-block">
+          <div class="footer-title">LOKALE ZEIT</div>
+          <div><span id="local-time"></span></div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-title">SOZIALE NETZWERKE</div>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-title">RECHTLICHES</div>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+        </div>
+      </div>
     </footer>
+    <style>
+      /* Footer mobile: stack blocks and add safe-area padding */
+      @media (max-width: 600px) {
+        .footer-row { flex-direction: column !important; gap: 1.25rem !important; }
+        .footer-row > div[style*='display:flex'] { flex-direction: column !important; gap: 1rem !important; flex: 1 1 100% !important; }
+        .footer-block { display: flex !important; flex-direction: column !important; gap: 0.3rem !important; width: 100% !important; }
+        .main-footer { padding-bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px) + 68px) !important; }
+      }
+    </style>
 
   <script>
         document.addEventListener('DOMContentLoaded', function() {
