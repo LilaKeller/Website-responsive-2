@@ -997,24 +997,24 @@
 
         <!-- Vorher vs. Nachher: Button-Hierachie Section -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
-            <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 1rem 0;">Vorher vs. Nachher: Button-Hierachie</h3>
-            <div class="button-hierarchy-images" style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;align-items:center;">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 1.png" alt="Button Iteration Vorher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 2.png" alt="Button Iteration Vorher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;" loading="lazy">
-                <div class="hierarchy-center" style="border:4px solid #94A293;padding:8px;background:#fff;border-radius:8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;">
+            <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 2rem 0;">Vorher vs. Nachher: Button-Hierachie</h3>
+            <div class="button-hierarchy-images" style="display:flex;justify-content:center;gap:1.2rem;margin-bottom:2.5rem;align-items:flex-start;">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 1.png" alt="Button Iteration Vorher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 2.png" alt="Button Iteration Vorher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
+                <div class="hierarchy-center" style="border:4px solid #94A293;padding:8px;background:#fff;border-radius:8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(148,162,147,0.3);">
                   <img src="../../img/UXUI/NaturKompass/Iteration Buttons.png" alt="Button Iteration Vergleich" class="hierarchy-img" style="width:auto;height:auto;max-width:184px;max-height:416px;border-radius:4px;display:block;" loading="lazy">
                 </div>
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 1.png" alt="Button Iteration Nachher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 2.png" alt="Button Iteration Nachher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 1.png" alt="Button Iteration Nachher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 2.png" alt="Button Iteration Nachher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
-                <div style="flex:1;">
-                    <h4 style="font-size:1.4rem;font-weight:700;color:#333;margin:0 0 0.5rem 0;">Vorher</h4>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0;">Nutzer empfanden den Secondary Button präsenter als den Primary Button, sodass die Bedienung gestört war und eine klare Hierachie nicht zu erkennen war.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;width:100%;margin-top:0;">
+                <div>
+                    <h4 style="font-size:1.5rem;font-weight:700;color:#94A293;margin:0 0 0.8rem 0;">Vorher</h4>
+                    <p style="font-size:1.05rem;line-height:1.7;color:#555;margin:0;">Nutzer empfanden den Secondary Button präsenter als den Primary Button, sodass die Bedienung gestört war und eine klare Hierachie nicht zu erkennen war.</p>
                 </div>
-                <div style="flex:1;">
-                    <h4 style="font-size:1.4rem;font-weight:700;color:#333;margin:0 0 0.5rem 0;">Nachher</h4>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0;">Invertierung der Farben des Primary Buttons führt zur klaren hierachischen Struktur der Buttons und somit zur zur gewünschten intuitiven Bedienung.</p>
+                <div>
+                    <h4 style="font-size:1.5rem;font-weight:700;color:#94A293;margin:0 0 0.8rem 0;">Nachher</h4>
+                    <p style="font-size:1.05rem;line-height:1.7;color:#555;margin:0;">Invertierung der Farben des Primary Buttons führt zur klaren hierachischen Struktur der Buttons und somit zur gewünschten intuitiven Bedienung.</p>
                 </div>
             </div>
         </section>
@@ -1024,6 +1024,18 @@
             width: 200px;
             height: 432px;
             object-fit: contain;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          .button-hierarchy-images img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+          }
+          .button-hierarchy-images .hierarchy-center {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+          .button-hierarchy-images .hierarchy-center:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(148,162,147,0.4) !important;
           }
           .button-hierarchy-images .hierarchy-center img {
             width: auto;
@@ -1037,8 +1049,9 @@
             .button-hierarchy-images { 
               flex-wrap: wrap !important; 
               justify-content: center !important;
-              gap: 0.8rem !important;
+              gap: 1rem !important;
               max-width: 100% !important;
+              margin-bottom: 2rem !important;
             }
             .button-hierarchy-images img { 
               width: 140px !important; 
