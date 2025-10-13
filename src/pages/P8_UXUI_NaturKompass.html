@@ -652,7 +652,7 @@
             </div>
 
             <!-- Full-width button container -->
-            <div style="margin-top:2rem;display:flex;gap:2rem;justify-content:space-between;width:100%;">
+            <div class="research-insights-container" style="margin-top:2rem;display:flex;gap:2rem;justify-content:space-between;width:100%;">
                 <!-- Insight 1 -->
                 <div style="flex:1;text-align:center;">
                     <div style="width:240px;height:240px;border-radius:50%;background:#94A293;margin:0 auto 1rem auto;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:1.5rem;">
@@ -1149,6 +1149,28 @@
           @media (max-width: 768px) {
             .moodboard-section {
               padding: 0 !important;
+            }
+          }
+          
+          /* Research Insights: Stack vertically on mobile */
+          @media (max-width: 768px) {
+            .research-insights-container {
+              flex-direction: column !important;
+              gap: 3rem !important;
+            }
+            .research-insights-container > div {
+              flex: 1 1 100% !important;
+              max-width: 100% !important;
+            }
+            .research-insights-container > div > div[style*="width:240px"] {
+              width: 200px !important;
+              height: 200px !important;
+            }
+            .research-insights-container > div > div[style*="width:240px"] > div[style*="font-size:1.6rem"] {
+              font-size: 1.4rem !important;
+            }
+            .research-insights-container > div > div[style*="width:240px"] > div[style*="font-size:1.3rem"] {
+              font-size: 1.15rem !important;
             }
           }
         </style>
