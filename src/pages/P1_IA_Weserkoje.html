@@ -725,7 +725,7 @@
                           }
                         </style>
     <!-- Call to Action wie auf anderen Projektseiten -->
-    <section style="background:#c6b79e;padding:3.5rem 0;text-align:center;">
+    <section class="cta-section" style="background:#c6b79e;padding:3.5rem 0;text-align:center;">
       <div style="font-size:1.35rem;font-weight:700;max-width:700px;margin:0 auto 2.5rem auto;color:#fff;">Möchtest du tiefere Einblicke in dieses Projekt und/oder einen Einblick in mein gesamtes Innenarchitekturportfolio haben?</div>
       <div style="font-size:2.5rem;color:#fff;">&#8595;</div>
     </section>
@@ -767,6 +767,23 @@
       }
       .btn-contact.round-yellow svg { width: 96px; height: 96px; display: block; }
       .btn-contact.round-yellow svg path { stroke: #fff; }
+      
+      /* CTA Section: Full width on mobile without padding */
+      @media (max-width: 768px) {
+        .cta-section {
+          padding: 3.5rem 0 !important;
+          width: 100vw !important;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw !important;
+          margin-right: -50vw !important;
+        }
+        .cta-section > div {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+      }
       
       /* Keep side-by-side layout on all screen sizes like index.html */
       @media (max-width: 900px) {
