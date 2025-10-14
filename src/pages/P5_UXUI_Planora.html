@@ -572,6 +572,49 @@
                 overflow: visible !important;
             }
         }
+
+        /* iPhone SE and small mobile optimization */
+        @media (max-width: 375px) {
+            /* Prevent horizontal overflow on body/html */
+            html, body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+
+            /* Reset all full-width sections */
+            section[style*="width:100vw"] {
+                width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Tighter padding for all sections */
+            section[style*="padding:"] {
+                padding: 1.5rem 12px !important;
+            }
+
+            /* Wireframe screens even smaller */
+            section img[src*="Planora/"][src$=".png"][alt*="Screen"] {
+                height: 120px !important;
+                max-width: 20vw !important;
+            }
+
+            /* Wireframe container tighter */
+            section div[style*="display:flex"][style*="justify-content:space-around"] {
+                gap: 0.2rem !important;
+                padding: 0 !important;
+            }
+
+            /* Smaller typography */
+            section[style*="background:#FFE4B5"] h2 { font-size: 1.5rem !important; }
+            section[style*="background:#FFE4B5"] h3 { font-size: 1.2rem !important; }
+            section[style*="background:#FFE4B5"] p { font-size: 0.9rem !important; }
+        }
     </style>
 </head>
 <body>
