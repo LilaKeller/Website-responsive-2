@@ -518,7 +518,17 @@
 
         @media (max-width: 480px) {
             /* Section padding tightened */
-            section[style*="padding:"] { padding: 1.5rem 20px !important; }
+            section[style*="padding:"] { padding: 1.5rem 15px !important; }
+
+            /* Wireframe section: reset full-width on mobile */
+            section[style*="background:#FFE4B5"] {
+                width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding: 2rem 15px !important;
+            }
 
             /* Quote text smaller for readability */
             section[style*="background:#94A293"] p { font-size: 1.2rem !important; }
@@ -528,6 +538,11 @@
 
             /* Insight circles smaller */
             div[style*="width:180px"][style*="height:180px"][style*="border-radius:50%"] { width: 160px !important; height: 160px !important; }
+
+            /* Wireframe headings: smaller on mobile */
+            section[style*="background:#FFE4B5"] h2 { font-size: 1.8rem !important; }
+            section[style*="background:#FFE4B5"] h3 { font-size: 1.4rem !important; }
+            section[style*="background:#FFE4B5"] p { font-size: 0.95rem !important; line-height: 1.5 !important; }
 
             /* Wireframe screens: scale to fit 4 per row on mobile */
             section img[src*="Planora/"][src$=".png"][alt*="Screen"],
@@ -545,15 +560,16 @@
             section img[src*="Planora/11.png"],
             section img[src*="Planora/12.png"] {
                 width: auto !important;
-                height: 160px !important;
-                max-width: 22vw !important;
+                height: 140px !important;
+                max-width: 21vw !important;
             }
 
             /* Wireframe container: adjust gap for smaller screens */
             section div[style*="display:flex"][style*="justify-content:space-around"] {
-                gap: 0.4rem !important;
-                justify-content: center !important;
+                gap: 0.3rem !important;
+                justify-content: space-between !important;
                 flex-wrap: nowrap !important;
+                overflow: visible !important;
             }
         }
     </style>
