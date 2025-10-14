@@ -432,26 +432,30 @@
 
     /* Mobile Menu Styles */
     @media (max-width: 900px) {
-      .main-header { background: transparent; }
-      .main-header nav { display: flex !important; align-items: center !important; justify-content: space-between !important; }
-      .mobile-nav-toggle { display: flex; order: 2; width: 48px; height: 48px; background: transparent; border: none; cursor: pointer; z-index: 1002; align-items: center; justify-content: center; }
-      .hamburger-line { display: block; width: 28px; height: 3px; background-color: #fff; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+      /* Mobile Header Layout */
+      .main-header nav { display: flex !important; justify-content: space-between !important; align-items: center !important; padding-left: 16px !important; padding-right: 16px !important; }
+      .main-header .logo { order: 1 !important; padding-left: 0 !important; margin-left: 0 !important; }
+      .main-header .mobile-nav-toggle { order: 2 !important; margin-left: auto !important; }
+      .main-header nav ul { order: 3 !important; }
+      
+      .mobile-nav-toggle { display: flex; width: 48px; height: 48px; background: transparent; border: none; cursor: pointer; z-index: 1002; align-items: center; justify-content: center; }
+      .hamburger-line { display: block; width: 28px; height: 3px; background-color: #fff; border-radius: 2px; transition: transform 0.25s, opacity 0.25s, background-color 0.25s; }
+      .main-header.scrolled .hamburger-line { background-color: #222; }
       .hamburger-line:not(:last-child) { margin-bottom: 5px; }
       .mobile-nav-toggle.active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
       .mobile-nav-toggle.active .hamburger-line:nth-child(2) { opacity: 0; }
       .mobile-nav-toggle.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-      .logo { order: 1 !important; }
-      .mobile-nav-toggle { order: 2 !important; margin-left: auto !important; }
-
-      /* Off-canvas menu */
-      nav ul { position: fixed !important; top: 0 !important; right: 0 !important; width: min(280px, 75vw) !important; height: 100vh !important; background: rgba(0,0,0,0.97) !important; backdrop-filter: blur(20px) !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 2rem !important; padding: 2rem !important; margin: 0 !important; transform: translateX(100%) !important; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; box-shadow: -4px 0 24px rgba(0,0,0,0.25) !important; z-index: 1001 !important; overflow-y: auto !important; list-style: none !important; display: none !important; }
-      nav ul.mobile-menu-open { display: flex !important; transform: translateX(0) !important; }
-      nav ul li { width: 100%; text-align: center; }
-      nav ul li a { width: 100%; padding: 1.2rem 2rem; color: #fff !important; font-size: 1.4rem; display: block; text-decoration: none; }
-      body.mobile-menu-active { overflow: hidden; }
-      body.mobile-menu-active::before { content: ''; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
-    }
+      
+      .main-header nav ul { 
+        position: fixed; top: 0; right: -100%; width: 300px; max-width: 80vw; height: 100vh; 
+        background: rgba(0,0,0,0.97); backdrop-filter: blur(20px); flex-direction: column; justify-content: center; align-items: center; 
+        gap: 2rem; padding: 2rem; z-index: 1001; transition: right 0.3s ease; margin: 0; 
+      }
+      .main-header nav ul.active { right: 0; }
+      .main-header nav ul li { width: 100%; text-align: center; }
+      .main-header nav ul li a { color: #fff !important; font-size: 1.4rem; display: block; padding: 0.8rem 1rem; }
+      
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
   </style>
   <style>
     a {
