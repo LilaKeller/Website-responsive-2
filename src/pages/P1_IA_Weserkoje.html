@@ -454,21 +454,9 @@
   </style>
 </head>
 <body>
-    <header class="main-header">
-    <nav>
-      <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
-      <button class="mobile-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      <ul>
-                <li><a href="projekte.html" class="active">Projekte</a></li>
-                <li><a href="about.html">Über mich</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Header wird dynamisch geladen -->
+    <div id="header-placeholder"></div>
+    
     <!-- Hero-Bereich mit Bild und Titel wie auf index.html -->
   <section class="hero hero-weserkoje" style="position: relative; width: 100vw; height: 100vh; z-index: 0;">
     <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:2.5rem 2.5rem 2rem 2.5rem;text-align:center;margin:0 auto;">
@@ -846,38 +834,10 @@
     }
   </style>
 
-  <script>  <script>
-        // Mobile Navigation (Burger + Off-Canvas)
-        (function() {
-          const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-          const navMenu = document.querySelector('nav ul');
-          const navLinks = document.querySelectorAll('nav ul li a');
-          if (mobileNavToggle && navMenu) {
-            mobileNavToggle.addEventListener('click', function(e) {
-              e.stopPropagation();
-              const isExpanded = this.getAttribute('aria-expanded') === 'true';
-              this.setAttribute('aria-expanded', (!isExpanded).toString());
-              this.classList.toggle('active');
-              navMenu.classList.toggle('mobile-menu-open');
-              document.body.classList.toggle('mobile-menu-active');
-            });
-            document.addEventListener('click', function(e) {
-              if (!mobileNavToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('mobile-menu-open');
-                document.body.classList.remove('mobile-menu-active');
-                mobileNavToggle.classList.remove('active');
-                mobileNavToggle.setAttribute('aria-expanded', 'false');
-              }
-            });
-            navLinks.forEach(link => link.addEventListener('click', () => {
-              navMenu.classList.remove('mobile-menu-open');
-              document.body.classList.remove('mobile-menu-active');
-              mobileNavToggle.classList.remove('active');
-              mobileNavToggle.setAttribute('aria-expanded', 'false');
-            }));
-          }
-        })();
-
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+  <script src="../scripts/header-loader.js"></script>
+  <script>
         // Lokale Zeit immer aktuell anzeigen (wie auf index.html)
         function updateLocalTime() {
             const now = new Date();
@@ -891,19 +851,8 @@
         }
         updateLocalTime();
         setInterval(updateLocalTime, 10000);
-        // Header scroll effect
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.main-header');
-            const hero = document.querySelector('.hero');
-            window.addEventListener('scroll', function() {
-                const heroHeight = hero.offsetHeight;
-                if(window.scrollY > heroHeight - 60) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
+        
+        // Note: Header scroll behavior and mobile navigation now handled by header-loader.js and mobile-nav.js
 
         // Back to Top Button
         const backToTopBtn = document.querySelector('.back-to-top');
