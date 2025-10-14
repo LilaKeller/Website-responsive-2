@@ -268,6 +268,34 @@
         padding: 0.7rem 1.5rem !important;
         font-size: 0.9rem !important;
       }
+
+      /* Research Insights: stack circles vertically on mobile */
+      div[style*="display:flex;gap:2rem;justify-content:space-between"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2.5rem !important;
+      }
+
+      /* Research Insights circles: smaller on mobile */
+      div[style*="width:240px"][style*="height:240px"][style*="border-radius:50%"] {
+        width: 200px !important;
+        height: 200px !important;
+        padding: 1.2rem !important;
+      }
+
+      /* Research Insights text sizing */
+      div[style*="border-radius:50%"] div[style*="font-size:1.6rem"] {
+        font-size: 1.3rem !important;
+      }
+
+      div[style*="border-radius:50%"] div[style*="font-size:1.3rem"] {
+        font-size: 1.1rem !important;
+      }
+
+      /* Research Insights description text */
+      div[style*="flex:1;text-align:center"] p {
+        font-size: 0.95rem !important;
+      }
       /* Video iframe mobile */
       .video-container iframe {
         height: 250px !important;
