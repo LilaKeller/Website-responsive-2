@@ -109,7 +109,10 @@
     });
   }
   
-  // Initialize when DOM is ready
+  // Export function to global scope for use by header-loader
+  window.initMobileNav = initMobileNav;
+  
+  // Initialize when DOM is ready (for backwards compatibility)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initMobileNav);
   } else {
