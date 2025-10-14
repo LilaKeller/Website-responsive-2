@@ -459,21 +459,16 @@
     }
   </style>
     <style>
-        /* Desktop-only spacing adjustment to avoid large whitespace after Projektinfos */
-        @media (min-width: 901px) {
-            /* Reduce bottom padding on Projektinfos */
-            main > section:first-of-type { 
-                padding-bottom: 1.5rem !important; 
+        /* Desktop-only spacing adjustment - all sections now inside main */
+        @media (min-width: 769px) {
+            /* Reduce padding between sections inside main */
+            main > section[style*="padding:3rem 80px"] { 
+                padding-bottom: 2rem !important; 
             }
             
-            /* Target first section after main (01 Problem) to reduce top padding */
-            main + section[style*="padding:5rem"] { 
-                padding-top: 1.5rem !important; 
-            }
-            
-            /* Reduce vertical spacing between consecutive white background sections */
-            section[style*="background:#fff"] + section[style*="background:#fff"][style*="padding:5rem"] { 
-                padding-top: 2rem !important; 
+            main > section[style*="padding:5rem 80px"] { 
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
             }
         }
     </style>
@@ -656,7 +651,6 @@
                 <div style="font-weight:400;font-size:16px;">Figma, FigJam, Notion, ChatGPT, Gemini</div>
             </div>
         </section>
-    </main>
 
         <!-- Two Column Section -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
