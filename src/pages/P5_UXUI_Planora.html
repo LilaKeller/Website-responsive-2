@@ -529,7 +529,7 @@
             /* Insight circles smaller */
             div[style*="width:180px"][style*="height:180px"][style*="border-radius:50%"] { width: 160px !important; height: 160px !important; }
 
-            /* Wireframe screens: scale down to fit viewport */
+            /* Wireframe screens: scale to fit 4 per row on mobile */
             section img[src*="Planora/"][src$=".png"][alt*="Screen"],
             section img[src*="Planora/00.png"],
             section img[src*="Planora/01.png"],
@@ -544,15 +544,16 @@
             section img[src*="Planora/10.png"],
             section img[src*="Planora/11.png"],
             section img[src*="Planora/12.png"] {
-                width: 80px !important;
-                height: auto !important;
-                max-width: 23vw !important;
+                width: auto !important;
+                height: 160px !important;
+                max-width: 22vw !important;
             }
 
             /* Wireframe container: adjust gap for smaller screens */
             section div[style*="display:flex"][style*="justify-content:space-around"] {
-                gap: 0.5rem !important;
+                gap: 0.4rem !important;
                 justify-content: center !important;
+                flex-wrap: nowrap !important;
             }
         }
     </style>
