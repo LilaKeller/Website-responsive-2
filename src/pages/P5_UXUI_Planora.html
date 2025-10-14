@@ -458,6 +458,65 @@
       color: #ffb800;
     }
   </style>
+    <style>
+        /* Mobile best-practice for content under hero (P8-inspired) */
+        @media (max-width: 900px) {
+            /* Convert two-column grids to single column */
+            section div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+
+            /* Persona grid specifically */
+            section div[style*="display:grid"][style*="grid-template-columns:1fr 1fr"][style*="gap:2rem"] { grid-template-columns: 1fr !important; }
+
+            /* Donut charts: 4 columns -> 2 columns */
+            section div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; }
+
+            /* Typography scale */
+            section h2 { font-size: clamp(1.6rem, 5.5vw, 2rem) !important; line-height: 1.2 !important; }
+            section h3 { font-size: clamp(1.2rem, 4.2vw, 1.6rem) !important; }
+            section p { font-size: 1rem !important; line-height: 1.55 !important; }
+
+            /* Wrap chips rows instead of forcing nowrap */
+            div[style*="flex-wrap:nowrap"] { flex-wrap: wrap !important; justify-content: flex-start !important; }
+
+            /* Full-width image containers: remove negative margins */
+            div[style*="width:100vw"][style*="margin-left:-80px"] { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+
+            /* User Flow image: ensure full width */
+            img[alt="User Flow"] { width: 100% !important; max-width: 100% !important; }
+
+            /* Insights circles: reduce size slightly */
+            div[style*="width:240px"][style*="height:240px"][style*="border-radius:50%"] { width: 180px !important; height: 180px !important; }
+
+            /* Stack insight cards vertically */
+            div[style*="margin-top:2rem"][style*="display:flex"][style*="justify-content:space-between"] { flex-direction: column !important; gap: 1.25rem !important; }
+        }
+
+        @media (max-width: 600px) {
+            /* Donut charts: 1 column on small phones */
+            section div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr !important; }
+
+            /* Donut size adjustments */
+            div[style*="conic-gradient"][style*="border-radius:50%"] { width: 120px !important; height: 120px !important; }
+            div[style*="conic-gradient"] > div[style*="width:110px"][style*="height:110px"] { width: 90px !important; height: 90px !important; }
+
+            /* Persona spacing tighter */
+            section div[style*="display:grid"][style*="grid-template-columns:1fr 1fr"][style*="gap:2rem"] { gap: 1rem !important; }
+        }
+
+        @media (max-width: 480px) {
+            /* Section padding tightened */
+            section[style*="padding:"] { padding: 1.5rem 20px !important; }
+
+            /* Quote text smaller for readability */
+            section[style*="background:#94A293"] p { font-size: 1.2rem !important; }
+
+            /* Chips sizing */
+            div[style*="background:#94A293"][style*="border-radius:8px"] { font-size: 0.95rem !important; padding: 0.8rem 1rem !important; }
+
+            /* Insight circles smaller */
+            div[style*="width:180px"][style*="height:180px"][style*="border-radius:50%"] { width: 160px !important; height: 160px !important; }
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
