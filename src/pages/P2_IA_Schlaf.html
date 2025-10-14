@@ -68,10 +68,16 @@
         .main-header.scrolled nav a:visited {
             color: #222 !important;
         }
+        .main-header.scrolled .mobile-nav-toggle .hamburger-line {
+            background-color: #222 !important;
+        }
         .main-header .logo,
         .main-header nav a,
         .main-header nav a:visited {
             color: #fff !important;
+        }
+        .main-header .mobile-nav-toggle .hamburger-line {
+            background-color: #fff;
         }
     .main-header nav ul li a {
       text-transform: uppercase;
@@ -275,6 +281,15 @@
       section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
       section[style*="padding:1rem"] { padding: 1rem 40px !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
+      /* Mobile Header Padding Override - Logo ganz links */
+      .main-header nav {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      .main-header .logo {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+      }
     }
     @media (max-width: 768px) {
       section[style*="padding"] { padding: 2rem 30px !important; }
@@ -282,6 +297,7 @@
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       h1 { font-size: 2.2rem !important; }
       h2 { font-size: 1.45rem !important; }
+    }
     @media (max-width: 480px) {
       section[style*="padding"] { padding: 1.5rem 20px !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
@@ -293,7 +309,11 @@
       .hero-content h1 { font-size: 2.4rem !important; }
       .hero-content h2 { font-size: 1.3rem !important; }
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
-    } section[style*="padding"] { padding: 1.5rem 20px !important; }
+      .main-header nav {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+    }
     @media (max-width: 360px) {
       section[style*="padding"] { padding: 1rem 15px !important; }
       .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
