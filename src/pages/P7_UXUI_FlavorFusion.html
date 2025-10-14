@@ -235,6 +235,7 @@
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       /* Grid zu single column */
       [style*="grid-template-columns:1fr 1fr"],
+      [style*="grid-template-columns:200px 1fr"],
       [style*="grid-template-columns:repeat(2, 1fr)"],
       [style*="grid-template-columns:repeat(3, 1fr)"] {
         grid-template-columns: 1fr !important;
@@ -759,49 +760,35 @@
                 <img src="../../img/UXUI/FlavorFusion/Moodboard.png" alt="UI-Foundation - FlavorFusion" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
             </div>
             
-            <!-- UI Foundation Text Blocks - Single Column Layout -->
-            <div style="display:flex;flex-direction:column;gap:3rem;width:100%;max-width:900px;">
+            <!-- UI Foundation Text Blocks - Two Column Layout: Heading Left, Text Right -->
+            <div style="display:grid;grid-template-columns:200px 1fr;gap:2rem 3rem;width:100%;max-width:1200px;">
                 <!-- Farbwelt -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Farbwelt</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die Farbwelt schafft eine natürliche und warme Atmosphäre, indem sie einen beruhigenden Grünton als Primärfarbe verwendet. Diese wird durch erdige Beige- und Brauntöne ergänzt, während ein appetitanregendes Rot als Akzentfarbe dient, um wichtige Aktionen hervorzuheben und die Leidenschaft für das Kochen zu unterstreichen.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Farbwelt</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die Farbwelt schafft eine natürliche und warme Atmosphäre, indem sie einen beruhigenden Grünton als Primärfarbe verwendet. Diese wird durch erdige Beige- und Brauntöne ergänzt, während ein appetitanregendes Rot als Akzentfarbe dient, um wichtige Aktionen hervorzuheben und die Leidenschaft für das Kochen zu unterstreichen.</p>
                 
                 <!-- Schriftarten -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Schriftarten</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Für die Überschriften und die Buttons wird die moderne und freundliche "Poppins" und für den Fließtext die sehr gut lesbaren "Nunito Sans" verwendet, um für eine klare visuelle Hierarchie, gute Lesbarkeit und eine zugängliche, moderne Ästhetik zu ermöglichen.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Schriftarten</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Für die Überschriften und die Buttons wird die moderne und freundliche "Poppins" und für den Fließtext die sehr gut lesbaren "Nunito Sans" verwendet, um für eine klare visuelle Hierarchie, gute Lesbarkeit und eine zugängliche, moderne Ästhetik zu ermöglichen.</p>
                 
                 <!-- Ikonographie -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Ikonographie</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Klare, minimalistische Linien-Icons unterstützen eine intuitive Nutzerführung und sorgen für eine aufgeräumte Benutzeroberfläche.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Ikonographie</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Klare, minimalistische Linien-Icons unterstützen eine intuitive Nutzerführung und sorgen für eine aufgeräumte Benutzeroberfläche.</p>
                 
                 <!-- Ton of Voice -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Ton of Voice</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Der Ton ist warm, nahbar und inspirierend wie ein Tipp von einem Freund und vermittelt mit einfacher Sprache die Leidenschaft am Kochen.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Ton of Voice</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Der Ton ist warm, nahbar und inspirierend wie ein Tipp von einem Freund und vermittelt mit einfacher Sprache die Leidenschaft am Kochen.</p>
                 
                 <!-- Komponenten -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Komponenten</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Definierte Komponenten wie kontrastreiche Buttons, Testimonial-Karten und aufklappbare FAQs strukturieren die Inhalte und leiten den Nutzer.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Komponenten</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Definierte Komponenten wie kontrastreiche Buttons, Testimonial-Karten und aufklappbare FAQs strukturieren die Inhalte und leiten den Nutzer.</p>
                 
                 <!-- Visuelle Sprache -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Visuelle Sprache</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die Bildsprache ist warm und authentisch; sie fokussiert sich auf das sinnliche Kocherlebnis statt auf sterile Perfektion.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Visuelle Sprache</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die Bildsprache ist warm und authentisch; sie fokussiert sich auf das sinnliche Kocherlebnis statt auf sterile Perfektion.</p>
                 
                 <!-- Konsistenz -->
-                <div>
-                    <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0 0 1rem 0;">Konsistenz</h3>
-                    <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die durchgängige Anwendung von Farben, Schriften und Icons sowie ein klares Layout sorgen für ein stimmiges und vorhersehbares Nutzererlebnis.</p>
-                </div>
+                <h3 style="font-size:1.5rem;font-weight:700;color:#000;margin:0;align-self:start;">Konsistenz</h3>
+                <p style="font-size:1.1rem;line-height:1.6;color:#000;margin:0;">Die durchgängige Anwendung von Farben, Schriften und Icons sowie ein klares Layout sorgen für ein stimmiges und vorhersehbares Nutzererlebnis.</p>
             </div>
         </section>
 
