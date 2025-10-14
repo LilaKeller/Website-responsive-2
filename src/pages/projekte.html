@@ -340,23 +340,23 @@
                     z-index: 1002 !important;
                 }
                 
-                .hamburger-line {
-                    width: 24px !important;
-                    height: 2.5px !important;
-                    background-color: #000 !important;
-                }
+        .hamburger-line {
+          width: 24px !important;
+          height: 2.5px !important;
+          background-color: #222 !important;
+        }
                 
                 .hamburger-line:not(:last-child) {
                     margin-bottom: 4px !important;
                 }
                 
-                .mobile-nav-toggle .hamburger-line {
-                    background-color: #000 !important;
-                }
+        .mobile-nav-toggle .hamburger-line {
+          background-color: #222 !important;
+        }
                 
-                .mobile-nav-toggle.active .hamburger-line {
-                    background-color: #000 !important;
-                }
+        .mobile-nav-toggle.active .hamburger-line {
+          background-color: #222 !important;
+        }
                 
                 /* Mobile Menu für iPhone SE */
                 nav ul {
@@ -453,6 +453,12 @@
             }
         </style>
     <style>
+    /* Mobile header: force white background and black text from the start */
+    @media (max-width: 768px) {
+      .main-header { background: #fff !important; }
+      .main-header .logo, .main-header nav a { color: #000 !important; }
+      .hamburger-line { background-color: #222 !important; }
+    }
         .main-header {
             position: sticky;
             top: 0;
@@ -547,32 +553,32 @@
             }
         }
         
-        .hamburger-line {
-            width: 28px;
-            height: 3px;
-            background-color: #000 !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
-            display: block !important;
-        }
+    .hamburger-line {
+      width: 28px;
+      height: 3px;
+      background-color: #222 !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 2px;
+      display: block !important;
+    }
         
         .hamburger-line:not(:last-child) {
             margin-bottom: 5px;
         }
         
-        .mobile-nav-toggle.active .hamburger-line:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-            background-color: #000;
-        }
+    .mobile-nav-toggle.active .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+      background-color: #222;
+    }
         
         .mobile-nav-toggle.active .hamburger-line:nth-child(2) {
             opacity: 0;
         }
         
-        .mobile-nav-toggle.active .hamburger-line:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-            background-color: #000;
-        }
+    .mobile-nav-toggle.active .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+      background-color: #222;
+    }
         
         /* Mobile Menu Styles - Complete Implementation */
         @media (max-width: 768px) {
@@ -1099,48 +1105,7 @@
         });
       });
 
-      // Mobile Navigation Functionality
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const navMenu = document.querySelector('nav ul');
-      const navLinks = document.querySelectorAll('nav ul li a');
-      
-      if (mobileNavToggle && navMenu) {
-        mobileNavToggle.addEventListener('click', function() {
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          
-          // Toggle aria-expanded
-          this.setAttribute('aria-expanded', !isExpanded);
-          
-          // Toggle menu visibility
-          navMenu.classList.toggle('mobile-menu-open');
-          
-          // Toggle body class for overlay
-          document.body.classList.toggle('mobile-menu-active');
-          
-          // Toggle hamburger animation
-          this.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            navMenu.classList.remove('mobile-menu-open');
-            document.body.classList.remove('mobile-menu-active');
-            mobileNavToggle.classList.remove('active');
-            mobileNavToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (!mobileNavToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('mobile-menu-open');
-            document.body.classList.remove('mobile-menu-active');
-            mobileNavToggle.classList.remove('active');
-            mobileNavToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
+      // Mobile navigation handled by shared script: ../scripts/mobile-nav.js
 
       // Lokale Zeit immer aktuell anzeigen
       function updateLocalTime() {
@@ -1242,5 +1207,6 @@
   </button>
 
   
+  <script src="../scripts/mobile-nav.js"></script>
 </body>
 </html>

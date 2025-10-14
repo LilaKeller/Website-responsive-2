@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
   <style>
+    /* Mobile header: force white background and black text from the start */
+    @media (max-width: 768px) {
+      .main-header { background: #fff !important; }
+      .main-header .logo, .main-header nav a { color: #000 !important; }
+      .hamburger-line { background-color: #222 !important; }
+    }
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
     html, body {
@@ -100,7 +106,7 @@
     .hamburger-line {
       width: 28px;
       height: 3px;
-      background-color: #333 !important;
+      background-color: #222 !important;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 2px;
       display: block !important;
@@ -171,7 +177,7 @@
       .hamburger-line {
         width: 28px !important;
         height: 3px !important;
-        background-color: #333 !important;
+        background-color: #222 !important;
         display: block !important;
         border-radius: 2px !important;
       }
@@ -338,7 +344,7 @@
       .hamburger-line {
         width: 24px !important;
         height: 2.5px !important;
-        background-color: #333 !important;
+        background-color: #222 !important;
       }
       
       .hamburger-line:not(:last-child) {
@@ -1611,48 +1617,9 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Mobile Navigation Functionality
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const navMenu = document.querySelector('nav ul');
-      const navLinks = document.querySelectorAll('nav ul li a');
-      
-      if (mobileNavToggle && navMenu) {
-        mobileNavToggle.addEventListener('click', function() {
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-          
-          // Toggle aria-expanded
-          this.setAttribute('aria-expanded', !isExpanded);
-          
-          // Toggle menu visibility
-          navMenu.classList.toggle('mobile-menu-open');
-          
-          // Toggle body class for overlay
-          document.body.classList.toggle('mobile-menu-active');
-          
-          // Toggle hamburger animation
-          this.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        navLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            navMenu.classList.remove('mobile-menu-open');
-            document.body.classList.remove('mobile-menu-active');
-            mobileNavToggle.classList.remove('active');
-            mobileNavToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (!mobileNavToggle.contains(e.target) && !navMenu.contains(e.target)) {
-            navMenu.classList.remove('mobile-menu-open');
-            document.body.classList.remove('mobile-menu-active');
-            mobileNavToggle.classList.remove('active');
-            mobileNavToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
+      // Mobile Navigation handled by shared script: ../scripts/mobile-nav.js
+      // This page previously had inline nav toggling code which has been removed
+      // to avoid duplicate listeners and ensure consistent behavior across pages.
 
       // Testimonial Carousel
       const testimonialCarousel = document.querySelector('.testimonials-carousel');
@@ -2030,5 +1997,6 @@
       updateScrollProgress();
     }
   </script>
+  <script src="../scripts/mobile-nav.js"></script>
 </body>
 </html>

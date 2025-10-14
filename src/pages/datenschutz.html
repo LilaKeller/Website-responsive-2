@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="../../style.css">
   <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
   <style>
+    /* Mobile header: force white background and black text from the start */
+    @media (max-width: 768px) {
+      .main-header { background: #fff !important; }
+      .main-header .logo, .main-header nav a { color: #000 !important; }
+      .hamburger-line { background-color: #222 !important; }
+    }
     .main-header {
       position: sticky;
       top: 0;

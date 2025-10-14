@@ -86,6 +86,12 @@
   </style>
 
   <style>
+    /* Mobile header: force white background and black text from the start */
+    @media (max-width: 768px) {
+      .main-header { background: #fff !important; }
+      .main-header .logo, .main-header nav a { color: #000 !important; }
+      .hamburger-line { background-color: #222 !important; }
+    }
     /* Back to Top Button */
     .back-to-top {
       position: fixed;
