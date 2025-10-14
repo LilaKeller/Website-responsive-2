@@ -434,6 +434,13 @@
         text-align: left !important;
       }
       
+      /* Stack the inner wrapper that contains VERSION, LOKALE ZEIT, SOZIALE NETZWERKE */
+      .footer-row > div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        width: 100% !important;
+      }
+      
       .footer-block {
         align-items: flex-start !important;
         text-align: left !important;
@@ -465,6 +472,15 @@
       
       .footer-socials {
         justify-content: flex-start !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+      }
+      
+      .footer-socials a {
+        line-height: 0.9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
     }
 
