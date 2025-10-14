@@ -412,6 +412,11 @@
             padding: 1.5rem 15px !important;
         }
 
+        /* Video container: reduce height on mobile */
+        iframe[src*="youtube.com/embed"] {
+            height: 250px !important;
+        }
+
         /* Chips/Badges: wrap and align left */
         section div[style*="display:flex;gap:0.8rem;flex-wrap:wrap"] {
             justify-content: flex-start !important;
