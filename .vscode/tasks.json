@@ -292,6 +292,110 @@
 				"$eslint-stylish"
 			],
 			"group": "build"
+		},
+		{
+			"label": "git-commit-push-static-mobile-header-parity",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"src/pages/about.html",
+				"src/pages/projekte.html",
+				"src/pages/contact.html",
+				"src/pages/impressum.html",
+				"src/pages/datenschutz.html",
+				"&&",
+				"git",
+				"commit",
+				"-m",
+				"Fix(Static pages): Unify mobile header with projects — black text from start, #222 hamburger, shared mobile-nav on projekte.html; remove duplicate inline JS",
+				"&&",
+				"git",
+				"push",
+				"origin",
+				"main",
+				"&&",
+				"git",
+				"push",
+				"new-origin",
+				"main"
+			],
+			"group": "build"
+		},
+		{
+			"label": "git-commit-push-p5-mobile-under-hero",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"src/pages/P5_UXUI_Planora.html",
+				"&&",
+				"git",
+				"commit",
+				"-m",
+				"Style(P5 mobile): Optimize below-hero content like P8 — stack grids, clamp headings, wrap chips, scale charts, and fix full-width images",
+				"&&",
+				"git",
+				"push",
+				"origin",
+				"main",
+				"&&",
+				"git",
+				"push",
+				"new-origin",
+				"main"
+			],
+			"group": "build"
+		},
+		{
+			"label": "git-commit-push-p5-spacing-fix",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"src/pages/P5_UXUI_Planora.html",
+				"&&",
+				"git",
+				"commit",
+				"-m",
+				"Fix(P5 desktop): Remove empty section and tighten spacing before 01 Problem to eliminate large whitespace",
+				"&&",
+				"git",
+				"push",
+				"origin",
+				"main",
+				"&&",
+				"git",
+				"push",
+				"new-origin",
+				"main"
+			],
+			"group": "build"
+		},
+		{
+			"label": "git-commit-push-p5-whitespace-cleanup",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				"src/pages/P5_UXUI_Planora.html",
+				"&&",
+				"git",
+				"commit",
+				"-m",
+				"Fix(P5 desktop): Remove extra blank lines and reduce spacing between white sections to eliminate large whitespace",
+				"&&",
+				"git",
+				"push",
+				"origin",
+				"main",
+				"&&",
+				"git",
+				"push",
+				"new-origin",
+				"main"
+			],
+			"group": "build"
 		}
 	]
 }
