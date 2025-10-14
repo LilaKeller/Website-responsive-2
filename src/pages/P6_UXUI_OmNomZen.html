@@ -495,6 +495,24 @@
             font-size: 0.85rem !important;
         }
     }
+
+    /* Desktop-only spacing adjustment to avoid large whitespace after Projektinfos */
+    @media (min-width: 901px) {
+        /* Reduce bottom padding on Projektinfos */
+        main > section:first-of-type { 
+            padding-bottom: 1.5rem !important; 
+        }
+        
+        /* Target first section after main (01 Problem) to reduce top padding */
+        main + section[style*="padding:5rem"] { 
+            padding-top: 1.5rem !important; 
+        }
+        
+        /* Reduce vertical spacing between consecutive white background sections */
+        section[style*="background:#fff"] + section[style*="background:#fff"][style*="padding:5rem"] { 
+            padding-top: 2rem !important; 
+        }
+    }
   </style>
 </head>
 <body>
