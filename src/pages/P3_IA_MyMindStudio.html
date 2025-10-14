@@ -57,6 +57,21 @@
             transition: background 0.2s, color 0.2s;
             background: transparent;
         }
+        .main-header nav {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+        }
+        .main-header .logo {
+            order: 1 !important;
+        }
+        .main-header nav ul {
+            order: 3 !important;
+        }
+        .main-header .mobile-nav-toggle {
+            order: 2 !important;
+            margin-left: auto !important;
+        }
         .main-header.scrolled {
             position: fixed !important;
             background: #fff !important;
@@ -68,10 +83,16 @@
         .main-header.scrolled nav a:visited {
             color: #222 !important;
         }
+        .main-header.scrolled .mobile-nav-toggle .hamburger-line {
+            background-color: #222 !important;
+        }
         .main-header .logo,
         .main-header nav a,
         .main-header nav a:visited {
             color: #fff !important;
+        }
+        .main-header .mobile-nav-toggle .hamburger-line {
+            background-color: #fff;
         }
     .main-header nav ul li a {
       text-transform: uppercase;
@@ -271,6 +292,15 @@
       section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
       section[style*="padding:1rem"] { padding: 1rem 40px !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
+      /* Mobile Header Padding Override - Logo ganz links */
+      .main-header nav {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      .main-header .logo {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+      }
     }
     @media (max-width: 768px) {
       section[style*="padding"] { padding: 2rem 30px !important; }
@@ -294,6 +324,10 @@
       .hero-content h1 { font-size: 2.4rem !important; }
       .hero-content h2 { font-size: 1.3rem !important; }
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
+      .main-header nav {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
     }
     @media (max-width: 360px) {
       section[style*="padding"] { padding: 1rem 15px !important; }
@@ -342,21 +376,9 @@
   </style>
 </head>
 <body>
-                <header class="main-header">
-                    <nav>
-                        <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
-                        <button class="mobile-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
-                          <span class="hamburger-line"></span>
-                          <span class="hamburger-line"></span>
-                          <span class="hamburger-line"></span>
-                        </button>
-                        <ul>
-                            <li><a href="projekte.html" class="active">Projekte</a></li>
-                            <li><a href="about.html">Über mich</a></li>
-                            <li><a href="contact.html">Kontakt</a></li>
-                        </ul>
-                    </nav>
-        </header>
+                <!-- Header wird dynamisch geladen -->
+                <div id="header-placeholder"></div>
+                
   <section class="hero" style="background:url('../../img/IA/MyMindStudio/Seminarraum_Auschnitt.jpg') center center/cover no-repeat; height:100vh; width:100vw; position:absolute; top:0; left:0; z-index:0; display:flex; align-items:center; justify-content:center; margin:0; padding:0; box-sizing:border-box;">
             <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:3.5rem 3.5rem 3rem 3.5rem;text-align:center;margin:0 auto;">
                 <h1 style="font-size:2.8rem;font-weight:800;margin:0 0 0.2em 0;line-height:1.3;">My Mind Studio</h1>
@@ -731,6 +753,8 @@
   </button>
 
   <script src="../scripts/main.js"></script>
+  <script src="../scripts/mobile-nav.js"></script>
+  <script src="../scripts/header-loader.js"></script>
 
   <script>
     // Lokale Zeit immer aktuell anzeigen
