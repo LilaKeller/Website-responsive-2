@@ -528,6 +528,32 @@
 
             /* Insight circles smaller */
             div[style*="width:180px"][style*="height:180px"][style*="border-radius:50%"] { width: 160px !important; height: 160px !important; }
+
+            /* Wireframe screens: scale down to fit viewport */
+            section img[src*="Planora/"][src$=".png"][alt*="Screen"],
+            section img[src*="Planora/00.png"],
+            section img[src*="Planora/01.png"],
+            section img[src*="Planora/02.png"],
+            section img[src*="Planora/03.png"],
+            section img[src*="Planora/04.png"],
+            section img[src*="Planora/05.png"],
+            section img[src*="Planora/06.png"],
+            section img[src*="Planora/07.png"],
+            section img[src*="Planora/08.png"],
+            section img[src*="Planora/09.png"],
+            section img[src*="Planora/10.png"],
+            section img[src*="Planora/11.png"],
+            section img[src*="Planora/12.png"] {
+                width: 80px !important;
+                height: auto !important;
+                max-width: 23vw !important;
+            }
+
+            /* Wireframe container: adjust gap for smaller screens */
+            section div[style*="display:flex"][style*="justify-content:space-around"] {
+                gap: 0.5rem !important;
+                justify-content: center !important;
+            }
         }
     </style>
 </head>
