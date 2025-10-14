@@ -331,6 +331,14 @@
       section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
     }
     @media (max-width: 900px) {
+      /* Mobile Header Layout */
+      .main-header nav { display: flex !important; justify-content: space-between !important; align-items: center !important; padding-left: 16px !important; padding-right: 16px !important; }
+      .main-header .logo { order: 1 !important; padding-left: 0 !important; margin-left: 0 !important; }
+      .main-header .mobile-nav-toggle { order: 2 !important; margin-left: auto !important; }
+      .main-header nav ul { order: 3 !important; }
+      .hamburger-line { background-color: #fff; transition: background-color 0.25s; }
+      .main-header.scrolled .hamburger-line { background-color: #222; }
+      
       section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
       section[style*="padding:1rem"] { padding: 1rem 40px !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
@@ -342,6 +350,9 @@
       h1 { font-size: 2.2rem !important; } h2 { font-size: 1.8rem !important; } h3 { font-size: 1.4rem !important; }
     }
     @media (max-width: 480px) {
+      /* Mobile Header Tighter Padding */
+      .main-header nav { padding-left: 12px !important; padding-right: 12px !important; }
+      
       section[style*="padding"] { padding: 1.5rem 20px !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
@@ -445,21 +456,7 @@
   </style>
 </head>
 <body>
-    <header class="main-header">
-        <nav>
-            <a href="../../index.html" class="logo">ANIKA WARNCKE</a>
-            <button class="mobile-nav-toggle" aria-label="Navigation öffnen" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <ul>
-                <li><a href="projekte.html" class="active">Projekte</a></li>
-                <li><a href="about.html">Über mich</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
     
     <!-- Hero Section -->
     <section class="hero hero-naturkompass" style="background: url('../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg') center center/cover no-repeat; height:100vh; width:100vw; display:flex; align-items:center; justify-content:center; position:relative; margin:0; padding:0; box-sizing:border-box;">
@@ -1741,5 +1738,8 @@
       }
     })();
   </script>
+  
+  <script src="../scripts/mobile-nav.js"></script>
+  <script src="../scripts/header-loader.js"></script>
 </body>
 </html>
