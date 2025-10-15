@@ -1800,7 +1800,7 @@ main {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25);
-    z-index: 2005; /* above body overlay */
+    z-index: 10000 !important; /* far above overlay (999) */
     overflow-y: auto;
     list-style: none;
     pointer-events: auto;
@@ -1898,7 +1898,7 @@ main {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2000; /* below menu (2005), above page */
+    z-index: 999; /* below menu */
     pointer-events: none; /* allow clicks through to menu */
     animation: fadeIn 0.3s ease;
   }
@@ -2039,7 +2039,7 @@ main {
     transform: translateX(100%) !important;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25) !important;
-    z-index: 2005 !important; /* above body overlay */
+    z-index: 10000 !important; /* far above overlay (999) */
     overflow-y: auto !important;
     list-style: none !important;
     pointer-events: auto !important;
@@ -2149,7 +2149,7 @@ main {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2000; /* below menu (2005), above page */
+    z-index: 999; /* below menu */
     pointer-events: none; /* allow clicks through to menu */
     animation: fadeIn 0.3s ease;
   }  /* Filter Buttons in einer Zeile für iPhone SE */
