@@ -164,34 +164,45 @@
   }
 }
 
-/* Filter Button Styles for Mobile */
+/* Filter Button Styles for Mobile — match index readability */
 @media (max-width: 768px) {
   .work-filter {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem;
   }
-  
+
   .filter-btn {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 2rem;
-    border: 2px solid #9ba89c;
-    background: transparent;
-    color: #9ba89c;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    border: none;
+    background: #ffb800;
+    color: #fff;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    min-width: 120px;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: none;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(255, 184, 0, 0.18);
   }
-  
+
   .filter-btn:hover,
+  .filter-btn:active,
   .filter-btn.active {
-    background: #9ba89c;
-    color: white;
+    background: #ffb800;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(255, 184, 0, 0.16);
+  }
+
+  /* Accessible focus state */
+  .filter-btn:focus-visible {
+    outline: 3px solid #ffb800;
+    outline-offset: 3px;
+    border-radius: 8px;
   }
 }
 

@@ -2242,7 +2242,6 @@ main {
 .btn-primary:hover, .btn-secondary:hover, .filter-btn:hover, .filter-btn.active {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
   color: #fff;
-  transform: scale(1.08);
   box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
 }
 .filter-btn:hover, .filter-btn.active {
@@ -2254,6 +2253,14 @@ main {
   .filter-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 20px rgba(255,184,0,0.15);
+  }
+}
+
+/* Prevent scaling on mobile to avoid cropping of rounded pills */
+@media (max-width: 768px) {
+  .filter-btn:hover,
+  .filter-btn.active {
+    transform: none !important;
   }
 }
 .hero-image img {
