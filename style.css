@@ -148,6 +148,12 @@ img {
   align-items: flex-start;
   text-align: left;
 }
+.footer-block a {
+  min-height: 0 !important;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
 .footer-title {
   font-size: 0.95em;
   font-weight: 700;
@@ -436,10 +442,11 @@ img {
   }
   
   .footer-block a {
-    line-height: 0.9;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
     display: block;
+    min-height: 0 !important;
   }
   
   .footer-title {
@@ -477,10 +484,11 @@ img {
   }
   
   .footer-block a {
-    line-height: 0.9;
+    line-height: 1.2;
     margin: 0;
     padding: 0;
     display: block;
+    min-height: 0 !important;
   }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
