@@ -58,6 +58,13 @@
           gap: 1.2rem;
           justify-content: flex-start;
           margin: 0 0 1rem 0;
+          /* Ensure full visibility on desktop (override inline mobile overflow/snap) */
+          overflow-x: visible !important;
+          overflow-y: visible !important;
+          -webkit-overflow-scrolling: auto !important;
+          scroll-snap-type: none !important;
+          padding-top: 0.5rem !important;
+          padding-bottom: 0.5rem !important;
         }
         .filter-btn {
           background: #f3f3f3;
@@ -71,6 +78,9 @@
           transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
           white-space: nowrap;
           flex-shrink: 0;
+          display: inline-flex;
+          align-items: center;
+          line-height: 1.2;
         }
         .filter-btn:hover,
         .filter-btn.active {
