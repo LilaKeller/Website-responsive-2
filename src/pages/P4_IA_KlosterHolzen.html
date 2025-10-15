@@ -27,6 +27,34 @@
                 transform: scale(1.08);
                 box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
             }
+            
+            /* Mobile Button Improvements */
+            @media (max-width: 768px) {
+                .btn-secondary {
+                    font-size: 0.9rem;
+                    padding: 0.7rem 1.5rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .btn-secondary {
+                    font-size: 0.85rem;
+                    padding: 0.65rem 1.2rem;
+                    text-align: center;
+                    justify-content: center;
+                }
+                .btn-text-full {
+                    display: none !important;
+                }
+                .btn-text-short {
+                    display: inline !important;
+                }
+            }
             .projekt-btn {
                 text-transform: uppercase;
                 letter-spacing: 0.04em;
@@ -460,9 +488,10 @@
                                     <div style="flex:1 1 0;min-width:220px;max-width:100%;">
                                         <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2em;">Redesign der Gastronomie des Tagungshotel Kloster Holzen, einen einzigartigen Raum im ehemaligen Reitstall des Klosters, geprägt von mächtigen Säulen und historischen Gewölben. Der zentrale Ansatz war die Bewahrung der historischen Seele des Ortes und dessen Verbindung mit einem modernen, einladenden Ambiente. Das Ergebnis ist eine stilvolle Symbiose aus Alt und Neu, die eine ebenso elegante wie geschichtsbewusste Atmosphäre schafft.</p>
                                         <div style="text-align: right;">
-                                            <a href="https://www.formwaende.de/projekte/kloster-holzen-festsaal/" target="_blank" class="btn-secondary" style="display: flex !important; align-items: center !important;">
-                                                MEHR PROJEKTINHALTE UNTER FORMWÆNDE
-                                                <svg width="20" height="20" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                                            <a href="https://www.formwaende.de/projekte/kloster-holzen-festsaal/" target="_blank" class="btn-secondary" style="display: flex !important; align-items: center !important; flex-wrap: wrap; justify-content: center;">
+                                                <span class="btn-text-full" style="display: inline;">MEHR PROJEKTINHALTE UNTER FORMWÆNDE</span>
+                                                <span class="btn-text-short" style="display: none;">MEHR UNTER FORMWÆNDE</span>
+                                                <svg width="20" height="20" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px; flex-shrink: 0;">
                                                     <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </a>
