@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum</title>
   <link rel="stylesheet" href="../../style.css">
-  <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
-  <style>
+  <link rel="icon" type="image/jpeg" href="../../Logo-01.jp      Anika Warncke<br>
+      Wallstraße 12<br>
+      21335 Lüneburg<br><br><br>
+      <strong>Kontakt</strong><br>  <style>
     .main-header {
       position: sticky;
       top: 0;
@@ -88,7 +90,8 @@
     @media (max-width: 768px) {
       .main-header { background: #fff !important; }
       .main-header .logo, .main-header nav a { color: #000 !important; }
-      .hamburger-line { background-color: #222 !important; }
+      .main-header .hamburger-line { background-color: #222 !important; }
+      .main-header .mobile-nav-toggle .hamburger-line { background-color: #222 !important; }
     }
     /* Back to Top Button */
     .back-to-top {
@@ -112,10 +115,10 @@
         0 1px 4px rgba(0, 0, 0, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px) scale(0.95) rotate(0deg);
-      z-index: 999;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1) rotate(0deg);
+      z-index: 1000;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
       will-change: transform, opacity;
@@ -423,6 +426,102 @@
         font-weight: 900 !important;
       }
     }
+
+    /* Mobile Footer - Match index.html */
+    @media (max-width: 768px) {
+      .main-footer {
+        padding: 2rem 1.5rem !important;
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px) + 68px) !important;
+      }
+      
+      .footer-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2rem !important;
+        text-align: left !important;
+      }
+      
+      /* Stack the inner wrapper that contains VERSION, LOKALE ZEIT, SOZIALE NETZWERKE */
+      .footer-row > div[style*="display:flex"] {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        width: 100% !important;
+      }
+      
+      .footer-block {
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        padding-bottom: 1rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        gap: 0 !important;
+        display: grid !important;
+        grid-auto-flow: row !important;
+        grid-auto-rows: min-content !important;
+        row-gap: 0 !important;
+      }
+      
+      .footer-block:last-child {
+        border-bottom: none !important;
+      }
+      
+      .footer-block a {
+        line-height: 0.9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+      }
+      
+      .footer-title {
+        margin-bottom: 0.8rem !important;
+        font-size: 1rem !important;
+      }
+      
+      .footer-socials {
+        justify-content: flex-start !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+      }
+      
+      .footer-socials a {
+        line-height: 0.9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-footer {
+        padding: 1.5rem 1rem !important;
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px) + 68px) !important;
+      }
+      
+      .footer-row {
+        gap: 1.5rem !important;
+      }
+      
+      .footer-title {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.6rem !important;
+      }
+      
+      .footer-block {
+        font-size: 0.9rem !important;
+        gap: 0 !important;
+        display: grid !important;
+        grid-auto-flow: row !important;
+        grid-auto-rows: min-content !important;
+        row-gap: 0 !important;
+      }
+      
+      .footer-block a {
+        line-height: 0.9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+      }
+    }
   </style>
   <style>
     a {
@@ -559,21 +658,26 @@
       }
     </style>
   </section>
-  <footer class="main-footer" role="contentinfo">
-    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;">
-      <div class="footer-block">
-        <div class="footer-title">VERSION</div>
-        <div>2025 © Edition</div>
+  <footer class="main-footer">
+    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
+      <div style="display:flex;gap:3rem;flex:1;">
+        <div class="footer-block">
+          <div class="footer-title">VERSION</div>
+          <div>2025 © Edition</div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-title">LOKALE ZEIT</div>
+          <div><span id="local-time"></span></div>
+        </div>
+        <div class="footer-block">
+          <div class="footer-title">SOZIALE NETZWERKE</div>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-block">
-        <div class="footer-title">LOKALE ZEIT</div>
-        <div><span id="local-time"></span></div>
-      </div>
-      <div class="footer-block">
-        <div class="footer-title">SOZIALE NETZWERKE</div>
-        <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-      <div class="footer-block">
+      <div class="footer-block" style="flex:0 0 auto;">
         <div class="footer-title">RECHTLICHES</div>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="impressum.html">Impressum</a>
@@ -602,16 +706,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       updateLocalTime();
       setInterval(updateLocalTime, 10000);
+    });
+
+    // Back to Top Button
+    const backToTopBtn = document.querySelector('.back-to-top');
+    if (backToTopBtn) {
+      let hasShownOnce = false;
       
-      // Back to Top Button
-      const backToTopBtn = document.querySelector('.back-to-top');
-      if (backToTopBtn) {
-        // Ensure button starts hidden
-        backToTopBtn.classList.remove('visible');
-        
-        let hasShownOnce = false;
-        
-        function updateScrollProgress() {
+      function updateScrollProgress() {
         const scrollTop = window.pageYOffset;
         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = Math.max(0, Math.min(100, (scrollTop / documentHeight) * 100));
@@ -623,8 +725,8 @@
         const progressDeg = (easedPercent / 100) * 360;
         backToTopBtn.style.setProperty('--progress', `${progressDeg}deg`);
         
-        // Verwende 200px als Threshold für bessere Sichtbarkeit
-        const threshold = 200;
+        // Verwende 100px als Threshold für bessere Sichtbarkeit
+        const threshold = 100;
         
         if (scrollTop > threshold) {
           if (!backToTopBtn.classList.contains('visible')) {
@@ -687,11 +789,6 @@
       
       window.addEventListener('scroll', handleScroll, { passive: true });
       
-      // Initial check on page load - wait for layout to settle
-      setTimeout(() => {
-        updateScrollProgress();
-      }, 100);
-      
       backToTopBtn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -703,12 +800,11 @@
       });
     }
     
-      // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
-      const header = document.querySelector('.main-header');
-      if (header) {
-        header.classList.add('scrolled');
-      }
-    }); // End DOMContentLoaded
+    // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
+    const header = document.querySelector('.main-header');
+    if (header) {
+      header.classList.add('scrolled');
+    }
   </script>
 
   <script src="../scripts/mobile-nav.js"></script>
