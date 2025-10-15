@@ -885,7 +885,7 @@
     }
     /* Contact section mobile spacing (mirror index) */
     @media (max-width: 900px) {
-      section.contact#contact { padding-left: clamp(2.5rem, 7vw, 3.5rem) !important; padding-right: clamp(2.5rem, 7vw, 3.5rem) !important; padding-top: 3rem !important; padding-bottom: 2rem !important; }
+      section.contact#contact { padding-left: clamp(2.5rem, 7vw, 3.5rem) !important; padding-right: clamp(2.5rem, 7vw, 3.5rem) !important; padding-top: 3rem !important; padding-bottom: 2rem !important; left: 0 !important; right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; width: 100% !important; max-width: 100% !important; }
     }
     @media (max-width: 768px) {
       section.contact#contact { padding: 2rem clamp(2.5rem, 7vw, 3.5rem) !important; }
@@ -907,7 +907,7 @@
     @media (max-width: 600px) {
       section.contact#contact { padding: 2rem 2.25rem !important; }
     }
-    
+
     @media (prefers-reduced-motion: reduce) {
       .back-to-top, .back-to-top svg, .back-to-top::before {
         transition: opacity 0.2s ease;
@@ -919,7 +919,7 @@
         animation: none;
       }
     }
-    
+
     @media (prefers-color-scheme: dark) {
       .back-to-top {
         background: linear-gradient(135deg, rgba(255, 184, 0, 0.9) 0%, rgba(255, 153, 0, 0.9) 100%);
