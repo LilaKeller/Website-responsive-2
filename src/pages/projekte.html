@@ -5,14 +5,12 @@
         <style>
       /* Mobile-first UX improvements */
       @media (max-width: 768px) {
-        .projects-container { padding-left: clamp(2.5rem, 7vw, 3.5rem) !important; padding-right: clamp(2.5rem, 7vw, 3.5rem) !important; }
         .projects-title { font-size: 2rem !important; }
         .work-filter { gap: 0.75rem !important; }
   .filter-btn { min-height: 44px; padding: 0.7rem 1.1rem; border-radius: 999px; font-weight:700; font-size:0.95rem; }
         .portfolio-gallery { gap: 1.25rem !important; }
       }
       @media (max-width: 480px) {
-        .projects-container { padding-left: 2.25rem !important; padding-right: 2.25rem !important; }
         .projects-title { font-size: 1.9rem !important; }
       }
       /* Mobile filter buttons — projekte: only active = yellow */
@@ -961,7 +959,7 @@
     
     <main id="main-content" style="margin-top: 6rem;">
   <section class="work-section" style="padding:0;">
-  <div class="projects-container" style="box-sizing: border-box; width: 100%; max-width: 100%; margin: 0 auto;">
+  <div class="projects-container u-mobile-sidepad" style="box-sizing: border-box; width: 100%; max-width: 100%; margin: 0 auto;">
       <h1 class="projects-title" style="font-family:'Poppins',sans-serif;font-size:2.3rem;font-weight:800;color:#9ba89c;letter-spacing:0.01em;margin-bottom:2.2rem;text-align:left;margin-top:0;">PROJEKTE</h1>
       <a href="#filters" class="skip-to-filters" style="position:absolute;left:-9999px;z-index:999;padding:0.75rem 1rem;background:#ffb800;color:#fff;text-decoration:none;font-weight:700;border-radius:0.5rem;">Zu den Filtern springen</a>
       <div id="filters" class="work-filter" style="display:flex;gap:1rem;margin-bottom:0.5rem;width:100%;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:0.25rem;" role="tablist" aria-label="Projektfilter">

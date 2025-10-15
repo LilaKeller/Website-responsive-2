@@ -2256,6 +2256,20 @@ main {
   }
 }
 
+/* Utility: Consistent mobile side padding */
+@media (max-width: 768px) {
+  .u-mobile-sidepad {
+    padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+    padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+  }
+}
+@media (max-width: 480px) {
+  .u-mobile-sidepad {
+    padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
+  }
+}
+
 /* Prevent scaling on mobile to avoid cropping of rounded pills */
 @media (max-width: 768px) {
   .filter-btn:hover,
