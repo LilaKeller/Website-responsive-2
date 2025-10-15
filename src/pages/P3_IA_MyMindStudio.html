@@ -352,13 +352,13 @@
       section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
     }
     @media (max-width: 900px) {
-      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
-      section[style*="padding:1rem"] { padding: 1rem 40px !important; }
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem clamp(20px, 4vw, 80px) !important; }
+      section[style*="padding:1rem"] { padding: 1rem clamp(20px, 4vw, 80px) !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
       /* Mobile Header Padding Override - Logo ganz links */
       .main-header nav {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+        padding-left: clamp(20px, 4vw, 80px) !important;
+        padding-right: clamp(20px, 4vw, 80px) !important;
       }
       .main-header .logo {
         padding-left: 0 !important;
@@ -366,8 +366,8 @@
       }
     }
     @media (max-width: 768px) {
-      section[style*="padding"] { padding: 2rem 30px !important; }
-      .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
+      section[style*="padding"] { padding: 2rem clamp(20px, 4vw, 80px) !important; }
+      .hero-content[style*="padding:3.5rem"] { padding: 2.5rem clamp(20px, 4vw, 80px) 2rem clamp(20px, 4vw, 80px) !important; max-width: 90% !important; }
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       h1 { font-size: 2.2rem !important; }
       h2 { font-size: 1.45rem !important; }
@@ -377,8 +377,8 @@
       .hero-content h2 { font-size: 1.4rem !important; }
     }
     @media (max-width: 480px) {
-      section[style*="padding"] { padding: 1.5rem 20px !important; }
-      .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
+      section[style*="padding"] { padding: 1.5rem clamp(20px, 4vw, 80px) !important; }
+      .hero-content[style*="padding"] { padding: 2rem clamp(20px, 4vw, 80px) 1.5rem clamp(20px, 4vw, 80px) !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.3rem !important; }
@@ -388,13 +388,13 @@
       .hero-content h2 { font-size: 1.3rem !important; }
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
       .main-header nav {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
+        padding-left: clamp(20px, 4vw, 80px) !important;
+        padding-right: clamp(20px, 4vw, 80px) !important;
       }
     }
     @media (max-width: 360px) {
-      section[style*="padding"] { padding: 1rem 15px !important; }
-      .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
+      section[style*="padding"] { padding: 1rem clamp(20px, 4vw, 80px) !important; }
+      .hero-content[style*="padding"] { padding: 1.5rem clamp(20px, 4vw, 80px) 1rem clamp(20px, 4vw, 80px) !important; }
       h1 { font-size: 2.0rem !important; }
       h2 { font-size: 1.3rem !important; }
       h3 { font-size: 1.1rem !important; }
