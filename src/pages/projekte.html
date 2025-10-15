@@ -17,6 +17,16 @@
       }
       /* Mobile filter buttons — projekte: only active = yellow */
       @media (max-width: 768px) {
+        /* Keep filter bar visible while scrolling */
+        .work-filter {
+          position: sticky;
+          top: 0;
+          background: #fff;
+          padding-top: 0.25rem;
+          padding-bottom: 0.25rem;
+          z-index: 50;
+          box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+        }
         .filter-btn {
           background:#f2f2f2 !important;
           color:#333 !important;
@@ -947,12 +957,14 @@
   <section class="work-section" style="padding:0;">
   <div class="projects-container" style="box-sizing: border-box; width: 100%; max-width: 100%; margin: 0 auto;">
       <h1 class="projects-title" style="font-family:'Poppins',sans-serif;font-size:2.3rem;font-weight:800;color:#9ba89c;letter-spacing:0.01em;margin-bottom:2.2rem;text-align:left;margin-top:0;">PROJEKTE</h1>
-      <div class="work-filter" style="display:flex;gap:1rem;margin-bottom:2rem;width:100%;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:0.25rem;">
-        <button class="filter-btn active" data-filter="all" aria-pressed="true" style="scroll-snap-align:start;">Alle Projekte</button>
-        <button class="filter-btn" data-filter="innenarchitektur" aria-pressed="false" style="scroll-snap-align:start;">Innenarchitektur</button>
-        <button class="filter-btn" data-filter="uxui" aria-pressed="false" style="scroll-snap-align:start;">UX/UI Design</button>
+      <a href="#filters" class="skip-to-filters" style="position:absolute;left:-9999px;z-index:999;padding:0.75rem 1rem;background:#ffb800;color:#fff;text-decoration:none;font-weight:700;border-radius:0.5rem;">Zu den Filtern springen</a>
+      <div id="filters" class="work-filter" style="display:flex;gap:1rem;margin-bottom:0.5rem;width:100%;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:0.25rem;" role="tablist" aria-label="Projektfilter">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-selected="true" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">Alle Projekte</button>
+        <button class="filter-btn" data-filter="innenarchitektur" aria-pressed="false" aria-selected="false" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">Innenarchitektur</button>
+        <button class="filter-btn" data-filter="uxui" aria-pressed="false" aria-selected="false" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">UX/UI Design</button>
       </div>
-      <div class="portfolio-gallery">
+      <div id="filter-status" class="filter-status" role="status" aria-live="polite" style="font:600 0.95rem/1.6 'Nunito', Arial, sans-serif;color:#666;margin:0 0 1rem 0;">Alle Projekte – 7 Ergebnisse</div>
+      <div id="projects-list" class="portfolio-gallery" aria-live="polite" aria-busy="false">
                             <div class="portfolio-item" data-type="innenarchitektur">
                               <a href="../../src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Festsaal im Klostergasthof - Veranstaltungsgastronomie für Hochzeiten und Events">
                                 <div class="portfolio-thumb" style="background:url('../../img/IA/KlosterHolzen/Generated Image September 16, 2025 - 8_30PM.png') center center/cover no-repeat;border-radius:1.2rem 1.2rem 0 0;">
@@ -1096,8 +1108,18 @@
     // Portfolio-Filter und lokale Zeit nach DOM-Load
     document.addEventListener('DOMContentLoaded', function() {
       // Portfolio-Filter with URL persistence
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const items = document.querySelectorAll('.portfolio-item');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.portfolio-item');
+  const statusEl = document.getElementById('filter-status');
+  const filtersBar = document.getElementById('filters');
+
+      function updateStatus(count, filterKey) {
+        if (!statusEl) return;
+        const labelMap = { all: 'Alle Projekte', innenarchitektur: 'Innenarchitektur', uxui: 'UX/UI Design' };
+        const label = labelMap[filterKey] || 'Projekte';
+        const suffix = count === 1 ? 'Ergebnis' : 'Ergebnisse';
+        statusEl.textContent = `${label} – ${count} ${suffix}`;
+      }
 
       function applyFilter(filter) {
         // Update buttons
@@ -1105,21 +1127,32 @@
           const isActive = b.getAttribute('data-filter') === filter || (filter === 'all' && b.getAttribute('data-filter') === 'all');
           b.classList.toggle('active', isActive);
           b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          b.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
-        // Filter items
+
+        // Filter items and count
+        let visible = 0;
         items.forEach(item => {
-          if (filter === 'all' || item.getAttribute('data-type') === filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
+          const match = filter === 'all' || item.getAttribute('data-type') === filter;
+          item.style.display = match ? '' : 'none';
+          if (match) visible++;
         });
+
+        updateStatus(visible, filter);
+
+        // Ensure active button is visible in horizontal scroll
+        try {
+          const activeBtn = document.querySelector('.filter-btn.active');
+          if (activeBtn && filtersBar && typeof activeBtn.scrollIntoView === 'function') {
+            activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          }
+        } catch (_) {}
       }
 
       // Initialize from URL
       const params = new URLSearchParams(window.location.search);
-      const initialFilter = params.get('filter') || 'all';
-      applyFilter(initialFilter);
+  const initialFilter = params.get('filter') || 'all';
+  applyFilter(initialFilter);
 
       // Click handlers update URL (without reload)
       filterBtns.forEach(btn => {
