@@ -844,6 +844,16 @@
         height: 48px;
       }
     }
+    /* Contact section mobile spacing (mirror index) */
+    @media (max-width: 900px) {
+      section.contact#contact { padding-left: clamp(2.5rem, 7vw, 3.5rem) !important; padding-right: clamp(2.5rem, 7vw, 3.5rem) !important; padding-top: 3rem !important; padding-bottom: 2rem !important; }
+    }
+    @media (max-width: 768px) {
+      section.contact#contact { padding: 2rem clamp(2.5rem, 7vw, 3.5rem) !important; }
+    }
+    @media (max-width: 600px) {
+      section.contact#contact { padding: 2rem 2.25rem !important; }
+    }
     
     @media (prefers-reduced-motion: reduce) {
       .back-to-top, .back-to-top svg, .back-to-top::before {
@@ -994,6 +1004,22 @@
     </div>
   </section>
         <div style="height:6rem;"></div>
+
+        <!-- Contact section copied from index.html, paths adjusted -->
+        <section class="contact" id="contact" aria-label="Kontakt" style="width:100vw;max-width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:80px;padding-right:80px;box-sizing:border-box;">
+          <div class="contact-row" style="display:flex;align-items:center;gap:2.5rem;justify-content:space-between;width:100%;max-width:100%;box-sizing:border-box;">
+            <div class="contact-content" style="margin:0;flex:1;">
+              <h2 style="margin:0;color:#fff;">GET<br>IN<br>TOUCH</h2>
+            </div>
+            <div style="flex:0 0 auto;display:flex;justify-content:flex-end;width:192px;">
+              <a href="contact.html" class="btn-contact round-yellow" aria-label="Kontakt aufnehmen" style="width:192px;height:192px;">
+                <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 48L76 48M76 48L52 24M76 48L52 72" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
     </main>
         <footer class="main-footer" role="contentinfo">
             <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;">
