@@ -263,6 +263,8 @@
     @media (max-width: 768px) {
       .hero.main-page-hero {
         padding-top: clamp(60px, 10vh, 80px) !important;
+        padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
       }
       
       .hero-content {
@@ -286,6 +288,8 @@
     @media (max-width: 480px) {
       .hero.main-page-hero {
         padding-top: 60px !important;
+        padding-left: 2.25rem !important;
+        padding-right: 2.25rem !important;
       }
       
       .hero-content {
@@ -505,11 +509,15 @@
       .portfolio-thumb {
         height: 200px;
       }
+      section.portfolio {
+        padding-left: clamp(3rem, 8vw, 4rem) !important;
+        padding-right: clamp(3rem, 8vw, 4rem) !important;
+      }
       .portfolio-carousel {
         gap: 1.2rem;
         display: flex;
         flex-direction: column;
-        padding: 0 clamp(2.5rem, 7vw, 3.5rem);
+        padding: 0;
       }
       .carousel-btn {
         width: 40px;
@@ -522,10 +530,10 @@
         right: 5px;
       }
       .carousel-wrapper {
-        padding: 20px clamp(2.5rem, 7vw, 3.5rem);
+        padding: 20px 0;
       }
       .carousel-indicator {
-        padding: 0 clamp(2.5rem, 7vw, 3.5rem);
+        padding: 0;
       }
     }
     @media (max-width: 480px) {
@@ -535,25 +543,29 @@
       .portfolio-thumb {
         height: 220px;
       }
+      section.portfolio {
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+      }
       .portfolio-carousel {
         gap: 1.5rem;
         display: flex;
         flex-direction: column;
-        padding: 0 2.25rem;
+        padding: 0;
       }
       .carousel-wrapper {
-        padding: 20px 2.25rem;
+        padding: 20px 0;
       }
       .carousel-indicator {
-        padding: 0 2.25rem;
+        padding: 0;
       }
     }
     
     /* Mobile Contact Section - Match other pages */
     @media (max-width: 900px) {
       section.contact#contact {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
+        padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
         padding-top: 3rem !important;
         padding-bottom: 2rem !important;
       }
@@ -590,7 +602,7 @@
     
     @media (max-width: 768px) {
       section.contact#contact {
-        padding: 2rem clamp(15px, 3vw, 20px) !important;
+        padding: 2rem clamp(2.5rem, 7vw, 3.5rem) !important;
       }
       
       .contact-content h2 {
@@ -600,7 +612,7 @@
     
     @media (max-width: 600px) {
       section.contact#contact {
-        padding: 2rem clamp(15px, 3vw, 20px) !important;
+        padding: 2rem 2.25rem !important;
       }
       
       .contact-content h2 {
@@ -635,8 +647,8 @@
     
     @media (max-width: 700px) {
       section.contact#contact {
-        padding-left: 10vw !important;
-        padding-right: 10vw !important;
+        padding-left: 2.25rem !important;
+        padding-right: 2.25rem !important;
       }
     }
     
@@ -649,7 +661,7 @@
         flex-wrap: wrap;
         gap: 0.75rem;
         justify-content: center;
-        padding: 0 1rem;
+        padding: 0 clamp(2.5rem, 7vw, 3.5rem);
         margin-bottom: 2rem;
       }
       
@@ -667,6 +679,12 @@
       }
     }
     
+    @media (max-width: 480px) {
+      .portfolio-filter {
+        padding: 0 2.25rem !important;
+      }
+    }
+    
     /* Blockquote - Better Mobile Readability */
     @media (max-width: 768px) {
       .about blockquote {
@@ -677,6 +695,19 @@
       .about blockquote p {
         font-size: clamp(1rem, 3vw, 1.15rem) !important;
         line-height: 1.6 !important;
+      }
+      
+      /* About Section - Consistent Side Padding */
+      .about {
+        padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .about {
+        padding-left: 2.25rem !important;
+        padding-right: 2.25rem !important;
       }
     }
     
@@ -712,6 +743,15 @@
     @media (max-width: 768px) {
       .main-footer {
         padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)) !important;
+        padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .main-footer {
+        padding-left: 2.25rem !important;
+        padding-right: 2.25rem !important;
       }
     }
     
