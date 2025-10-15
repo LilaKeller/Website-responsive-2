@@ -69,23 +69,35 @@
       display: none;
     }
 
-    /* Desktop header layout: logo left, menu right */
+    /* Desktop Navigation Layout (match projekte.html) */
     nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 0 1rem;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      position: relative;
     }
+    
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    
     nav ul {
       display: flex;
-      gap: 1.25rem;
       list-style: none;
+      gap: 2rem;
       margin: 0;
       padding: 0;
-      align-items: center;
     }
-    nav ul li a { color: inherit; }
+    
+    nav ul li a { 
+      color: inherit; 
+    }
 
     /* Footer-Links immer weiß */
     .main-footer a,
