@@ -1706,6 +1706,36 @@ main {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Mobile Menu Close Button - X icon in top right of menu */
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-menu-close:hover {
+  transform: scale(1.1);
+}
+
+.mobile-menu-close svg {
+  width: 24px;
+  height: 24px;
+  stroke: #222;
+  stroke-width: 2;
+}
+
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
   /* Prevent horizontal overflow on mobile */
@@ -1805,6 +1835,15 @@ main {
     list-style: none;
     pointer-events: auto;
     order: 3 !important;
+  }
+  
+  /* Show close button only when menu is open */
+  nav ul .mobile-menu-close {
+    display: none;
+  }
+  
+  nav ul.mobile-menu-open .mobile-menu-close {
+    display: flex;
   }
   
   /* Show menu when open */
@@ -2050,6 +2089,15 @@ main {
   nav ul.mobile-menu-open {
     transform: translateX(0) !important;
     pointer-events: auto !important;
+  }
+  
+  /* Show close button only when menu is open on iPhone SE */
+  nav ul .mobile-menu-close {
+    display: none !important;
+  }
+  
+  nav ul.mobile-menu-open .mobile-menu-close {
+    display: flex !important;
   }
   
   /* Menu items */

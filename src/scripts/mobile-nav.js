@@ -23,6 +23,20 @@
     return button;
   }
 
+  // Create close button for mobile menu
+  function createCloseButton() {
+    const button = document.createElement('button');
+    button.className = 'mobile-menu-close';
+    button.setAttribute('aria-label', 'Close navigation menu');
+    button.innerHTML = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    `;
+    return button;
+  }
+
   
   // Initialize mobile navigation
   function initMobileNav() {
@@ -46,6 +60,14 @@
       console.log('Hamburger button added');
     } else {
       console.log('Hamburger already exists, using existing one');
+    }
+    
+    // Add close button to menu if it doesn't exist
+    let closeButton = navList.querySelector('.mobile-menu-close');
+    if (!closeButton) {
+      closeButton = createCloseButton();
+      navList.insertBefore(closeButton, navList.firstChild);
+      console.log('Close button added to menu');
     }
     
     // Toggle menu
@@ -72,6 +94,13 @@
       } else {
         openMenuUI();
       }
+    });
+
+    // Close button event listener
+    closeButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('Close button clicked');
+      closeMenuUI();
     });
 
     
