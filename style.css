@@ -1899,6 +1899,7 @@ main {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2000; /* below menu (2005), above page */
+    pointer-events: none; /* allow clicks through to menu */
     animation: fadeIn 0.3s ease;
   }
 
@@ -2149,6 +2150,7 @@ main {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 2000; /* below menu (2005), above page */
+    pointer-events: none; /* allow clicks through to menu */
     animation: fadeIn 0.3s ease;
   }  /* Filter Buttons in einer Zeile für iPhone SE */
   .portfolio-filter {
