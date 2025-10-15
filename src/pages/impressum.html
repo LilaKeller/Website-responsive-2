@@ -423,102 +423,6 @@
         font-weight: 900 !important;
       }
     }
-
-    /* Mobile Footer - Match index.html */
-    @media (max-width: 768px) {
-      .main-footer {
-        padding: 2rem 1.5rem !important;
-        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px) + 68px) !important;
-      }
-      
-      .footer-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 2rem !important;
-        text-align: left !important;
-      }
-      
-      /* Stack the inner wrapper that contains VERSION, LOKALE ZEIT, SOZIALE NETZWERKE */
-      .footer-row > div[style*="display:flex"] {
-        flex-direction: column !important;
-        gap: 2rem !important;
-        width: 100% !important;
-      }
-      
-      .footer-block {
-        align-items: flex-start !important;
-        text-align: left !important;
-        width: 100% !important;
-        padding-bottom: 1rem !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-        gap: 0 !important;
-        display: grid !important;
-        grid-auto-flow: row !important;
-        grid-auto-rows: min-content !important;
-        row-gap: 0 !important;
-      }
-      
-      .footer-block:last-child {
-        border-bottom: none !important;
-      }
-      
-      .footer-block a {
-        line-height: 0.9 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: block !important;
-      }
-      
-      .footer-title {
-        margin-bottom: 0.8rem !important;
-        font-size: 1rem !important;
-      }
-      
-      .footer-socials {
-        justify-content: flex-start !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0 !important;
-      }
-      
-      .footer-socials a {
-        line-height: 0.9 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .main-footer {
-        padding: 1.5rem 1rem !important;
-        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px) + 68px) !important;
-      }
-      
-      .footer-row {
-        gap: 1.5rem !important;
-      }
-      
-      .footer-title {
-        font-size: 0.95rem !important;
-        margin-bottom: 0.6rem !important;
-      }
-      
-      .footer-block {
-        font-size: 0.9rem !important;
-        gap: 0 !important;
-        display: grid !important;
-        grid-auto-flow: row !important;
-        grid-auto-rows: min-content !important;
-        row-gap: 0 !important;
-      }
-      
-      .footer-block a {
-        line-height: 0.9 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: block !important;
-      }
-    }
   </style>
   <style>
     a {
@@ -655,26 +559,21 @@
       }
     </style>
   </section>
-  <footer class="main-footer">
-    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;display:flex;gap:3rem;justify-content:space-between;">
-      <div style="display:flex;gap:3rem;flex:1;">
-        <div class="footer-block">
-          <div class="footer-title">VERSION</div>
-          <div>2025 © Edition</div>
-        </div>
-        <div class="footer-block">
-          <div class="footer-title">LOKALE ZEIT</div>
-          <div><span id="local-time"></span></div>
-        </div>
-        <div class="footer-block">
-          <div class="footer-title">SOZIALE NETZWERKE</div>
-          <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
-          </div>
-        </div>
+  <footer class="main-footer" role="contentinfo">
+    <div class="footer-row" style="padding-top:1.2rem;padding-bottom:1.2rem;">
+      <div class="footer-block">
+        <div class="footer-title">VERSION</div>
+        <div>2025 © Edition</div>
       </div>
-      <div class="footer-block" style="flex:0 0 auto;">
+      <div class="footer-block">
+        <div class="footer-title">LOKALE ZEIT</div>
+        <div><span id="local-time"></span></div>
+      </div>
+      <div class="footer-block">
+        <div class="footer-title">SOZIALE NETZWERKE</div>
+        <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-block">
         <div class="footer-title">RECHTLICHES</div>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="impressum.html">Impressum</a>
