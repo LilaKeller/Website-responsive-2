@@ -321,7 +321,7 @@
         position: relative !important;
       }
       
-      /* Force logo positioning */
+      /* Force logo positioning - compact width */
       body .main-header .logo,
       body nav .logo,
       body .logo { 
@@ -331,6 +331,15 @@
         color: #000 !important;
         flex-shrink: 0 !important;
         display: block !important;
+        width: auto !important;
+        flex: none !important;
+        white-space: nowrap !important;
+      }
+      
+      /* Hide desktop menu on mobile */
+      body .main-header nav ul,
+      body nav ul {
+        display: none !important;
       }
       
       /* Force hamburger visibility with highest specificity */
