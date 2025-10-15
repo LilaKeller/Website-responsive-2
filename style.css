@@ -555,6 +555,10 @@ img {
   min-width: 44px;
   min-height: 44px;
   line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .btn-primary:hover, .btn-primary:focus {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
@@ -1353,6 +1357,10 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .btn-primary:hover {
   background: linear-gradient(135deg, rgba(255, 153, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
