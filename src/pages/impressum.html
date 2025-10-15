@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impressum</title>
   <link rel="stylesheet" href="../../style.css">
-  <link rel="icon" type="image/jpeg" href="../../Logo-01.jp      Anika Warncke<br>
-      Wallstraße 12<br>
-      21335 Lüneburg<br><br><br>
-      <strong>Kontakt</strong><br>  <style>
+  <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
+  <style>
     .main-header {
       position: sticky;
       top: 0;
@@ -114,10 +112,10 @@
         0 1px 4px rgba(0, 0, 0, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1) rotate(0deg);
-      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.95) rotate(0deg);
+      z-index: 999;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
       will-change: transform, opacity;
@@ -705,14 +703,16 @@
     document.addEventListener('DOMContentLoaded', function() {
       updateLocalTime();
       setInterval(updateLocalTime, 10000);
-    });
-
-    // Back to Top Button
-    const backToTopBtn = document.querySelector('.back-to-top');
-    if (backToTopBtn) {
-      let hasShownOnce = false;
       
-      function updateScrollProgress() {
+      // Back to Top Button
+      const backToTopBtn = document.querySelector('.back-to-top');
+      if (backToTopBtn) {
+        // Ensure button starts hidden
+        backToTopBtn.classList.remove('visible');
+        
+        let hasShownOnce = false;
+        
+        function updateScrollProgress() {
         const scrollTop = window.pageYOffset;
         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = Math.max(0, Math.min(100, (scrollTop / documentHeight) * 100));
@@ -724,8 +724,8 @@
         const progressDeg = (easedPercent / 100) * 360;
         backToTopBtn.style.setProperty('--progress', `${progressDeg}deg`);
         
-        // Verwende 100px als Threshold für bessere Sichtbarkeit
-        const threshold = 100;
+        // Verwende 200px als Threshold für bessere Sichtbarkeit
+        const threshold = 200;
         
         if (scrollTop > threshold) {
           if (!backToTopBtn.classList.contains('visible')) {
@@ -788,6 +788,11 @@
       
       window.addEventListener('scroll', handleScroll, { passive: true });
       
+      // Initial check on page load - wait for layout to settle
+      setTimeout(() => {
+        updateScrollProgress();
+      }, 100);
+      
       backToTopBtn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -799,11 +804,12 @@
       });
     }
     
-    // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
-    const header = document.querySelector('.main-header');
-    if (header) {
-      header.classList.add('scrolled');
-    }
+      // Header für Seiten ohne Hero-Bereich immer im "scrolled" Zustand
+      const header = document.querySelector('.main-header');
+      if (header) {
+        header.classList.add('scrolled');
+      }
+    }); // End DOMContentLoaded
   </script>
 
   <script src="../scripts/mobile-nav.js"></script>
