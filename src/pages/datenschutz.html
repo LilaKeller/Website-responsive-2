@@ -108,6 +108,28 @@
       text-decoration: underline;
       transition: color 0.2s;
     }
+
+    /* Skip Link - unsichtbar außer bei Fokus */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #ffb800;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 9999;
+      border-radius: 4px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 6px;
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 
   <style>
@@ -272,37 +294,50 @@
       }
     }
 
-    /* Mobile Navigation (match projekte.html) */
+    /* Mobile Navigation - Override global CSS completely */
     @media (max-width: 768px) {
-      .main-header {
+      /* Force header styles */
+      body .main-header {
         background: #fff !important;
-        padding-bottom: 1rem;
-        margin-bottom: 1.5rem;
+        padding-bottom: 1rem !important;
+        margin-bottom: 1.5rem !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
       }
       
-      main {
+      body main {
         margin-top: 0 !important;
         padding-top: 1.5rem !important;
       }
       
-      nav {
+      /* Force nav layout */
+      body .main-header nav,
+      body nav {
         display: flex !important;
         padding: 1rem !important;
         justify-content: space-between !important;
         align-items: center !important;
+        position: relative !important;
       }
       
-      .logo { 
+      /* Force logo positioning */
+      body .main-header .logo,
+      body nav .logo,
+      body .logo { 
         order: 1 !important; 
-        padding-left: 0 !important; 
-        margin-left: 0 !important;
+        padding: 0 !important; 
+        margin: 0 !important;
         color: #000 !important;
         flex-shrink: 0 !important;
+        display: block !important;
       }
       
-      nav .mobile-nav-toggle,
-      .main-header .mobile-nav-toggle,
-      .mobile-nav-toggle { 
+      /* Force hamburger visibility with highest specificity */
+      body .main-header nav .mobile-nav-toggle,
+      body .main-header .mobile-nav-toggle,
+      body nav .mobile-nav-toggle,
+      body .mobile-nav-toggle { 
         display: flex !important; 
         visibility: visible !important;
         opacity: 1 !important;
@@ -322,7 +357,10 @@
         position: relative !important;
       }
       
-      .hamburger-line { 
+      /* Force hamburger lines visibility */
+      body .main-header .mobile-nav-toggle .hamburger-line,
+      body .mobile-nav-toggle .hamburger-line,
+      body .hamburger-line { 
         display: block !important; 
         width: 28px !important; 
         height: 3px !important; 
@@ -331,11 +369,11 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; 
       }
       
-      .main-header.scrolled .hamburger-line { 
+      body .main-header.scrolled .hamburger-line { 
         background-color: #000 !important; 
       }
       
-      .hamburger-line:not(:last-child) { 
+      body .hamburger-line:not(:last-child) { 
         margin-bottom: 5px !important; 
       }
       
