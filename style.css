@@ -1717,7 +1717,7 @@ main {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 10001;
+  z-index: 100000;
   display: none; /* Hidden by default on desktop */
   align-items: center;
   justify-content: center;
@@ -1830,7 +1830,7 @@ main {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25);
-    z-index: 10000 !important; /* far above overlay (999) */
+    z-index: 99999 !important; /* far above overlay (999) */
     overflow-y: auto;
     list-style: none;
     pointer-events: auto;
@@ -2078,7 +2078,7 @@ main {
     transform: translateX(100%) !important;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25) !important;
-    z-index: 10000 !important; /* far above overlay (999) */
+    z-index: 99999 !important; /* far above overlay (999) */
     overflow-y: auto !important;
     list-style: none !important;
     pointer-events: auto !important;
