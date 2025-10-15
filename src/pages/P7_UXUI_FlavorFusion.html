@@ -2,6 +2,37 @@
 <html lang="de">
 <head>
     <style>
+    /* Skip to main content link for accessibility */
+    .skip-to-main {
+        position: absolute;
+        top: -200px;
+        left: 20px;
+        z-index: 9999;
+        padding: 12px 24px;
+        background: #ffb800;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: top 0.3s;
+    }
+    .skip-to-main:focus {
+        top: 6px;
+    }
+    
+    /* Modern responsive padding system - override inline styles */
+    main#main-content > section {
+        padding-left: clamp(20px, 4vw, 80px) !important;
+        padding-right: clamp(20px, 4vw, 80px) !important;
+    }
+    
+    /* Projektinfos Section - ensure consistent padding on all screen sizes */
+    main#main-content > section[style*="padding:3rem 80px"] {
+        padding-left: clamp(20px, 4vw, 80px) !important;
+        padding-right: clamp(20px, 4vw, 80px) !important;
+    }
+    
     /* Hero Section */
     .hero-flavorfusion {
       background: url('../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png') center center/cover no-repeat;
@@ -217,20 +248,18 @@
     
     /* Responsive Design für Projektseiten */
     @media (max-width: 1200px) {
-      main > section { padding-left: 60px !important; padding-right: 60px !important; }
-      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding: 4rem 60px !important; }
-      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding: 3rem 60px !important; }
-      section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
     }
     @media (max-width: 900px) {
-      main > section { padding-left: 24px !important; padding-right: 24px !important; }
-      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 24px !important; }
-      section[style*="padding:1rem"] { padding: 1rem 24px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
     }
     @media (max-width: 768px) {
-      main > section { padding-left: 20px !important; padding-right: 20px !important; }
-      section[style*="padding"] { padding: 2rem 20px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 2rem !important; padding-bottom: 2rem !important; }
       .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       /* Grid zu single column */
@@ -253,7 +282,8 @@
       }
     }
     @media (max-width: 480px) {
-      section[style*="padding"] { padding: 1.5rem 20px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
       h1 { font-size: 1.8rem !important; }
@@ -398,12 +428,6 @@
         @media (max-width: 768px) {
           .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
         }
-        @media (max-width: 700px) {
-          section.contact#contact {
-            padding-left: 10vw !important;
-            padding-right: 10vw !important;
-          }
-        }
         @media (max-width: 480px) {
           .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
           .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
@@ -523,6 +547,7 @@
   </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">Zum Hauptinhalt springen</a>
     <!-- Header wird dynamisch geladen -->
     <div id="header-placeholder"></div>
     
@@ -534,7 +559,7 @@
             <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">UX/UI-DESIGN | LANDING PAGE</div>
         </div>
   </section>
-  <main>
+  <main id="main-content">
 
         <!-- Projektinfos wie in P1_... -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:3rem 80px 3rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
@@ -687,7 +712,7 @@
 
             <!-- Full-width Image Container -->
             <div style="width:50%;margin:0 auto;">
-                <img src="../../img/UXUI/FlavorFusion/Sitemap.jpg" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/FlavorFusion/Sitemap.jpg" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -699,7 +724,7 @@
             </div>
 
             <div style="width:50%;margin:0 auto;">
-                <img src="../../img/UXUI/FlavorFusion/User Flow.jpg" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/FlavorFusion/User Flow.jpg" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -721,7 +746,7 @@
                 <h2 style="font-size:2rem;font-weight:700;color:#fff;line-height:1.2;margin:0;">Persona</h2>
             </div>
             <div style="width:100%;">
-                <img src="../../img/UXUI/FlavorFusion/Persona_Hanna_Hobbybaeckerin.png" alt="Persona Hanna - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/FlavorFusion/Persona_Hanna_Hobbybaeckerin.png" alt="Persona Hanna - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -785,7 +810,7 @@
             
             <!-- UI Foundation Image -->
             <div style="width:100%;margin-bottom:4rem;">
-                <img src="../../img/UXUI/FlavorFusion/Moodboard.png" alt="UI-Foundation - FlavorFusion" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/FlavorFusion/Moodboard.png" alt="UI-Foundation - FlavorFusion" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
             
             <!-- UI Foundation Text Blocks - Two Column Layout: Heading Left, Text Right -->
@@ -833,13 +858,13 @@
             
             <!-- Logo Development Process Image -->
             <div style="width:100%;margin-bottom:4rem;">
-                <img src="../../img/UXUI/FlavorFusion/Logoprozessentwicklung.png" alt="Logo Entwicklungsprozess" style="width:100%;height:auto;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/FlavorFusion/Logoprozessentwicklung.png" alt="Logo Entwicklungsprozess" style="width:100%;height:auto;border-radius:8px;" loading="lazy" decoding="async">
             </div>
             
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <div style="width:100%;height:100%;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f5f5f5;">
-                        <img src="../../img/UXUI/FlavorFusion/assets-task_01jw8vzwzefhza3d3q01b5mf0t-1748349532_img_2.png" alt="Logo von FlavorFusion" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                        <img src="../../img/UXUI/FlavorFusion/assets-task_01jw8vzwzefhza3d3q01b5mf0t-1748349532_img_2.png" alt="Logo von FlavorFusion" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div style="flex:1;">
@@ -875,7 +900,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen
                     style="border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.13);"
-                    loading="lazy">
+                    loading="lazy" decoding="async">
                 </iframe>
             </div>
         </section>
@@ -939,7 +964,7 @@
                         LETZTES PROJEKT
                     </a>
                     <div class="projekt-vorschau">
-                        <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808 (1).png" alt="OmNomZen">
+                        <img src="../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808 (1).png" alt="OmNomZen Bio-Ashwagandha-Gummibärchen - natürliche Nahrungsergänzung für Stressabbau" loading="lazy" decoding="async">
                         <div class="projekt-vorschau-title">OmNomZen</div>
                         <div class="projekt-vorschau-sub">Stressabbau mit Bio-Ashwagandha-Gummibärchen</div>
                     </div>
@@ -952,7 +977,7 @@
                         </svg>
                     </a>
                     <div class="projekt-vorschau">
-                        <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass">
+                        <img src="../../img/UXUI/NaturKompass/WhatsApp Image 2025-09-17 at 11.36.22.jpeg" alt="NaturKompass mobile App - digitaler Begleiter zur Identifikation von Pflanzen und Tieren" loading="lazy" decoding="async">
                         <div class="projekt-vorschau-title">NaturKompass</div>
                         <div class="projekt-vorschau-sub">Ihr digitaler Begleiter zur Identifikation von Flora & Fauna und für ein tieferes Naturverständnis.</div>
                     </div>
