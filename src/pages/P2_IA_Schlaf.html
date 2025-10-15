@@ -286,35 +286,41 @@
       }
     }
     
+    /* Modern responsive padding system */
+    main > section,
+    main > div[style*="padding"],
+    section[style*="padding"] {
+      padding-left: clamp(20px, 4vw, 80px) !important;
+      padding-right: clamp(20px, 4vw, 80px) !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Contact Section: einheitliche clamp Werte */
+    section.contact#contact {
+      padding-left: clamp(20px, 4vw, 80px) !important;
+      padding-right: clamp(20px, 4vw, 80px) !important;
+    }
+    
+    /* CTA Section: einheitliches seitliches padding */
+    section[style*="background:#c6b79e"] {
+      padding-left: clamp(20px, 4vw, 80px) !important;
+      padding-right: clamp(20px, 4vw, 80px) !important;
+    }
+    
+    /* Projekt Navigation: responsive paddings */
+    .projekt-nav-row {
+      padding-left: clamp(20px, 4vw, 80px) !important;
+      padding-right: clamp(20px, 4vw, 80px) !important;
+    }
+    
     /* Responsive Design für Projektseiten */
-    @media (max-width: 1200px) {
-      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding: 4rem 60px !important; }
-      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding: 3rem 60px !important; }
-      section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
-    }
-    @media (max-width: 900px) {
-      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
-      section[style*="padding:1rem"] { padding: 1rem 40px !important; }
-      section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
-      /* Mobile Header Padding Override - Logo ganz links */
-      .main-header nav {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-      .main-header .logo {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-      }
-    }
     @media (max-width: 768px) {
-      section[style*="padding"] { padding: 2rem 30px !important; }
       .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       h1 { font-size: 2.2rem !important; }
       h2 { font-size: 1.45rem !important; }
     }
     @media (max-width: 480px) {
-      section[style*="padding"] { padding: 1.5rem 20px !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
       h1 { font-size: 1.8rem !important; }
@@ -324,10 +330,6 @@
       .hero-content h1 { font-size: 2.4rem !important; }
       .hero-content h2 { font-size: 1.3rem !important; }
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
-      .main-header nav {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-      }
     }
     @media (max-width: 360px) {
       section[style*="padding"] { padding: 1rem 15px !important; }
@@ -352,32 +354,26 @@
       align-items: center;
       justify-content: center;
     }
-
-    /* Mobile Header Padding Override - Logo ganz links */
-    @media (max-width: 900px) {
-      .main-header nav {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-      .main-header .logo {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-      }
-    }
-    @media (max-width: 480px) {
-      .main-header nav {
-        padding-left: 12px !important;
-        padding-right: 12px !important;
-      }
-    }
   </style>
   <style>
     a {
       color: #ffb800;
     }
+    
+    /* Skip Link Accessibility */
+    .skip-link:focus {
+      top: 6px !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:6px;background:#ffb800;color:#fff;padding:8px;border-radius:4px;text-decoration:none;font-weight:600;z-index:9999;transition:top 0.3s;opacity:0;pointer-events:none;">Zum Hauptinhalt springen</a>
+    
     <!-- Header wird dynamisch geladen -->
     <div id="header-placeholder"></div>
     
@@ -388,7 +384,7 @@
             <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">INNENARCHITEKTUR | AUSSTELLUNGSDESIGN</div>
         </div>
     </section>
-    <main style="margin-top: 100vh;">
+    <main id="main-content" style="margin-top: 100vh;">
             <!-- Projektinfos -->
             <section style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:3rem 80px 3rem 80px;display:flex;flex-wrap:wrap;gap:40px;justify-content:flex-start;box-sizing:border-box;">
                 <div style="flex:1 1 0;min-width:180px;">
@@ -453,7 +449,7 @@
   <div style="display:flex;flex-direction:column;gap:2.5rem;">
     <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;align-items:flex-start;">
-  <img src="../../img/IA/Schlaf/01Intro1.0.jpg" alt="Zeit zum Abschalten" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy">
+  <img src="../../img/IA/Schlaf/01Intro1.0.jpg" alt="Erster Ausstellungsbereich 'Zeit zum Abtauchen' mit gemütlicher Atmosphäre und Lichtsimulation" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy" decoding="async">
       </div>
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;flex-direction:column;justify-content:flex-start;">
         <h4>I. Zeit zum Abtauchen - Gute Nacht</h4>
@@ -462,7 +458,7 @@
     </div>
     <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;align-items:flex-start;">
-  <img src="../../img/IA/Schlaf/02Anamnese.jpg" alt="Wie schläfst du?" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy">
+  <img src="../../img/IA/Schlaf/02Anamnese.jpg" alt="Anamnesebereich mit digitalen Automaten für persönliche Schlafanalyse" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy" decoding="async">
       </div>
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;flex-direction:column;justify-content:flex-start;">
         <h4>II. Wie schläfst du?</h4>
@@ -517,7 +513,7 @@
     </div>
     <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;align-items:flex-start;">
-  <img src="../../img/IA/Schlaf/07SCHLAFPROBLEME1.jpg" alt="Vorwege 1" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy">
+  <img src="../../img/IA/Schlaf/07SCHLAFPROBLEME1.jpg" alt="Irrwege-Bereich mit dunklem Labyrinth aus Lattenrosten für Schlafprobleme" style="width:100%;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy" decoding="async">
       </div>
       <div style="flex:1 1 0;min-width:220px;max-width:100%;display:flex;flex-direction:column;justify-content:flex-start;">
         <h4>VII. Irrwege</h4>
@@ -597,8 +593,8 @@
                 justify-content: space-between;
                 align-items: center;
                 width: 100%;
-                padding-left: 80px;
-                padding-right: 80px;
+                padding-left: clamp(20px, 4vw, 80px);
+                padding-right: clamp(20px, 4vw, 80px);
                 box-sizing: border-box;
             }
             .projekt-nav-btn {
@@ -724,12 +720,7 @@
         @media (max-width: 768px) {
           .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
         }
-        @media (max-width: 700px) {
-          section.contact#contact {
-            padding-left: 10vw !important;
-            padding-right: 10vw !important;
-          }
-        }
+
         @media (max-width: 480px) {
           .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
           .btn-contact.round-yellow { width: 160px !important; height: 160px !important; }
