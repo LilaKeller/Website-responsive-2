@@ -1718,7 +1718,7 @@ main {
   cursor: pointer;
   padding: 10px;
   z-index: 10001;
-  display: flex;
+  display: none; /* Hidden by default on desktop */
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
