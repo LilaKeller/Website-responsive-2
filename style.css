@@ -125,9 +125,6 @@ img {
   padding-bottom: 2rem;
   background: #9ba89c;
 }
-.footer-socials a[href*="instagram"] {
-  display: none !important;
-}
 /* Moderner, responsiver Footer */
 .footer-row {
   display: flex;
@@ -148,13 +145,35 @@ img {
   align-items: flex-start;
   text-align: left;
 }
+.footer-block a,
+.footer-block div {
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove global touch-target min-height for footer links to avoid extra blank line under items */
+.main-footer .footer-block a {
+  min-height: 0;
+  padding: 0;
+}
+.footer-block a + a {
+  margin-top: 0;
+}
 .footer-title {
   font-size: 0.95em;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.25em;
   color: #fff;
   text-transform: uppercase;
+}
+
+/* Ensure footer heading spacing is preserved on desktop */
+@media (min-width: 769px) {
+  .main-footer .footer-title {
+    margin-bottom: 1.25em;
+  }
 }
 /* Portfolio Styles */
 .portfolio-carousel {
@@ -436,19 +455,30 @@ img {
   }
   
   .footer-block a {
-    line-height: 0.9;
+    line-height: 1.1;
     margin: 0;
     padding: 0;
     display: block;
   }
   
+  /* Remove extra spacing between consecutive links */
+  .footer-block a + a {
+    margin-top: 0.3rem;
+  }
+  
+  /* Socials links should stay inline without gaps */
+  .footer-socials a {
+    margin-top: 0 !important;
+  }
+  
   .footer-title {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.25rem;
     font-size: 1rem;
   }
   
   .footer-socials {
     justify-content: flex-start;
+    gap: 0.4rem;
   }
 }
 
@@ -463,7 +493,7 @@ img {
   
   .footer-title {
     font-size: 0.95rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
   }
   
   .footer-block {
@@ -477,10 +507,20 @@ img {
   }
   
   .footer-block a {
-    line-height: 0.9;
+    line-height: 1.1;
     margin: 0;
     padding: 0;
     display: block;
+  }
+  
+  /* Minimal spacing between stacked links */
+  .footer-block a + a {
+    margin-top: 0.3rem;
+  }
+  
+  /* Socials: no extra margin */
+  .footer-socials a {
+    margin-top: 0 !important;
   }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
@@ -2178,10 +2218,11 @@ main {
   
   .footer-block > a {
     margin-bottom: 0 !important;
+    line-height: 1.1 !important;
   }
   
   .footer-block > a + a {
-    margin-top: 0 !important;
+    margin-top: 0.2rem !important;
   }
   
   .footer-title {
