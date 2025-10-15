@@ -143,22 +143,13 @@
 
     /* Mobile Menu Styles */
     @media (max-width: 768px) {
-      /* Final override: bottom-align logo and hamburger, remove residual offset */
-      .main-header nav { align-items: flex-end !important; }
-      .main-header .logo {
+      /* Perfect top edge alignment - clean implementation */
+      .main-header nav { 
+        align-items: center !important;
         display: flex !important;
-        align-items: flex-end !important;
-        height: 44px !important;
-        line-height: 1 !important;
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
+        justify-content: space-between !important;
       }
-      .main-header .mobile-nav-toggle {
-        align-self: flex-end !important;
-        transform: translateY(0) !important;
-      }
-      /* Align both items to center with perfect top edge alignment */
-      .main-header nav { align-items: center !important; }
+      
       .main-header .logo { 
         line-height: 1 !important; 
         padding: 0 !important; 
@@ -166,61 +157,61 @@
         display: flex !important;
         align-items: center !important;
         font-size: 1rem !important;
+        width: auto !important;
+        flex: none !important;
+        white-space: nowrap !important;
+        order: 1 !important;
       }
+      
       .main-header .mobile-nav-toggle {
-        align-self: center !important;
         margin: 0 !important;
         transform: none !important;
         align-items: center !important;
         justify-content: center !important;
+        order: 2 !important;
+        margin-left: auto !important;
       }
-      /* Uniform header height and vertical centering */
-      .main-header { padding-bottom: 0.75rem !important; }
+      /* Clean header implementation */
+      .main-header { 
+        padding-bottom: 0.75rem !important; 
+      }
+      
       .main-header nav {
         min-height: 56px !important;
-        padding: 0.75rem 1rem !important;
+        padding: 1rem !important;
         align-items: center !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
       }
+      
       .main-header .logo {
         display: flex !important;
         align-items: center !important;
-        height: 44px !important;
         line-height: 1 !important;
+        font-size: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: auto !important;
+        flex: none !important;
+        white-space: nowrap !important;
+        order: 1 !important;
+        text-transform: none !important;
+        letter-spacing: 0.5px !important;
+        -webkit-text-fill-color: #000 !important;
       }
+      
       .main-header .mobile-nav-toggle {
-        width: 44px !important;
-        height: 44px !important;
+        width: 48px !important;
+        height: 48px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         padding: 0 !important;
         margin: 0 !important;
-      }
-      /* Prevent logo from taking full row and odd casing */
-      .main-header nav { text-align: left !important; gap: 0.5rem !important; }
-      .main-header .logo {
-        display: inline-block !important;
-        width: auto !important;
-        max-width: 70% !important;
-        white-space: nowrap !important;
-        text-transform: none !important;
-        letter-spacing: 0.5px !important;
-        font-size: 1rem !important;
-        -webkit-text-fill-color: #000 !important;
-        flex: 0 0 auto !important;
-      }
-      .main-header .mobile-nav-toggle { flex: 0 0 auto !important; }
-      /* Ensure header layout: logo left, burger right */
-      .main-header nav {
-        display: flex !important;
-        width: 100% !important;
-        padding: 1rem !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        text-align: left !important;
-      }
-      .main-header .logo {
-        display: inline-block !important;
+        order: 2 !important;
+        margin-left: auto !important;
+        flex: none !important;
         margin: 0 !important;
         margin-right: auto !important;
         text-align: left !important;
@@ -538,6 +529,40 @@
         padding-left: 1rem !important;
         padding-right: 1rem !important;
         padding-bottom: 4rem !important;
+      }
+      
+      /* Final override for mobile header alignment */
+      body .main-header nav {
+        align-items: center !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 1rem !important;
+      }
+      
+      body .main-header .logo {
+        display: flex !important;
+        align-items: center !important;
+        line-height: 1 !important;
+        font-size: 1rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: auto !important;
+        flex: none !important;
+        white-space: nowrap !important;
+        order: 1 !important;
+      }
+      
+      body .main-header .mobile-nav-toggle {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        order: 2 !important;
+        margin-left: auto !important;
+        flex: none !important;
       }
       
       /* About hero section mobile layout */
