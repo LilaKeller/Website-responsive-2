@@ -259,6 +259,44 @@
       }
     }
 
+    /* Hero Section Responsive */
+    @media (max-width: 768px) {
+      .hero.main-page-hero {
+        padding-top: clamp(60px, 10vh, 80px) !important;
+      }
+      
+      .hero-content {
+        max-width: 90% !important;
+        padding: clamp(1.5rem, 4vw, 2.5rem) !important;
+      }
+      
+      .hero-content h1 {
+        font-size: clamp(2rem, 6vw, 3rem) !important;
+      }
+      
+      .hero-content .subtitle {
+        font-size: clamp(1rem, 3vw, 1.2rem) !important;
+      }
+      
+      .hero-content .intro {
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero.main-page-hero {
+        padding-top: 60px !important;
+      }
+      
+      .hero-content {
+        padding: 1.5rem 1rem !important;
+      }
+      
+      .hero-content h1 {
+        font-size: 1.8rem !important;
+      }
+    }
+
     /* Portfolio Styles */
     .portfolio-item {
       position: relative;
@@ -453,13 +491,16 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .portfolio-item {
-        width: 200px;
+        width: 100%;
       }
       .portfolio-thumb {
         height: 200px;
       }
       .portfolio-carousel {
         gap: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
       }
       .carousel-btn {
         width: 40px;
@@ -472,29 +513,117 @@
         right: 5px;
       }
       .carousel-wrapper {
-        padding: 20px 80px;
+        padding: 20px 20px;
       }
       .carousel-indicator {
-        padding: 0 80px;
+        padding: 0 20px;
       }
     }
     @media (max-width: 480px) {
       .portfolio-item {
-        width: 160px;
+        width: 100%;
       }
       .portfolio-thumb {
-        height: 150px;
+        height: 220px;
       }
       .portfolio-carousel {
-        gap: 0.8rem;
+        gap: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0 15px;
       }
       .carousel-wrapper {
-        padding: 20px 80px;
+        padding: 20px 15px;
       }
       .carousel-indicator {
-        padding: 0 80px;
+        padding: 0 15px;
       }
     }
+    
+    /* Mobile Contact Section - Match other pages */
+    @media (max-width: 900px) {
+      section.contact#contact {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-top: 3rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      .contact-row {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      
+      .contact-content {
+        flex: 1 !important;
+      }
+      
+      .contact-content h2 {
+        font-size: clamp(3.5rem, 12vw, 6rem) !important;
+        line-height: 1 !important;
+        letter-spacing: 0.02em !important;
+        font-weight: 900 !important;
+      }
+      
+      .btn-contact.round-yellow {
+        width: 160px !important;
+        height: 160px !important;
+      }
+      
+      .btn-contact.round-yellow svg {
+        width: 80px !important;
+        height: 80px !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      section.contact#contact {
+        padding: 2rem clamp(15px, 3vw, 20px) !important;
+      }
+      
+      .contact-content h2 {
+        font-size: clamp(2.2rem, 8vw, 3.5rem) !important;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      section.contact#contact {
+        padding: 2rem clamp(15px, 3vw, 20px) !important;
+      }
+      
+      .contact-content h2 {
+        font-size: clamp(2.8rem, 10vw, 4.5rem) !important;
+        line-height: 1 !important;
+        letter-spacing: 0.02em !important;
+        font-weight: 900 !important;
+      }
+      
+      .btn-contact.round-yellow {
+        width: 144px !important;
+        height: 144px !important;
+      }
+      
+      .btn-contact.round-yellow svg {
+        width: 72px !important;
+        height: 72px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .btn-contact.round-yellow {
+        width: 128px !important;
+        height: 128px !important;
+      }
+      
+      .btn-contact.round-yellow svg {
+        width: 64px !important;
+        height: 64px !important;
+      }
+    }
+    
     @media (max-width: 700px) {
       section.contact#contact {
         padding-left: 10vw !important;
@@ -520,8 +649,8 @@
     </nav>
   </header>
 
-  <section class="hero main-page-hero" style="padding-top: 120px;">
-    <div class="hero-content" style="background:rgba(255,255,255,0.72);color:#222;max-width:700px;padding:3.5rem 3.5rem 3rem 3.5rem;text-align:left;margin:0 auto;">
+  <section class="hero main-page-hero" style="padding-top: clamp(80px, 15vh, 120px);">
+    <div class="hero-content" style="background:rgba(255,255,255,0.72);color:#222;max-width:700px;padding:clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem);text-align:left;margin:0 auto;">
       <h1>Innenarchitektur<br>& UX/UI Design</h1>
       <p class="subtitle" style="color:#000;">100% remote, mit Sitz in Deutschland</p>
       <p class="intro">Ich bin Anika Warncke, kreative Denkerin, Problemlöserin und leidenschaftliche Designerin von Produkten im digitalen und physischen Raum.</p>
