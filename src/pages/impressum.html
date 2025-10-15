@@ -386,38 +386,34 @@
         margin-bottom: 5px !important; 
       }
       
-      .mobile-nav-toggle.active .hamburger-line:nth-child(1) { 
+      /* Hamburger animation when menu is active */
+      body .mobile-nav-toggle.active .hamburger-line:nth-child(1),
+      body .main-header .mobile-nav-toggle.active .hamburger-line:nth-child(1) { 
         transform: translateY(8px) rotate(45deg) !important; 
-        background-color: #000;
+        background-color: #000 !important;
       }
       
-      .mobile-nav-toggle.active .hamburger-line:nth-child(2) { 
+      body .mobile-nav-toggle.active .hamburger-line:nth-child(2),
+      body .main-header .mobile-nav-toggle.active .hamburger-line:nth-child(2) { 
         opacity: 0 !important; 
       }
       
-      .mobile-nav-toggle.active .hamburger-line:nth-child(3) { 
+      body .mobile-nav-toggle.active .hamburger-line:nth-child(3),
+      body .main-header .mobile-nav-toggle.active .hamburger-line:nth-child(3) { 
         transform: translateY(-8px) rotate(-45deg) !important; 
-        background-color: #000;
+        background-color: #000 !important;
       }
       
-      /* Hide desktop navigation */
-      nav ul {
-        display: none;
-      }
-      
-      nav ul.mobile-menu-open {
-        display: flex !important;
-      }
-      
-      /* Slide-in mobile menu */
-      nav ul { 
-        order: 3 !important;
+      /* Mobile menu slide-in panel */
+      body .main-header nav ul,
+      body nav ul { 
         position: fixed !important; 
         top: 0 !important; 
         right: 0 !important; 
         width: min(280px, 75vw) !important; 
         height: 100vh !important; 
         background: #9ba89c !important; 
+        display: flex !important;
         flex-direction: column !important; 
         justify-content: flex-start !important; 
         align-items: stretch !important; 
@@ -433,19 +429,25 @@
         pointer-events: auto !important; 
       }
       
-      nav ul.active,
-      nav ul.mobile-menu-open { 
+      /* Show menu when opened */
+      body .main-header nav ul.active,
+      body .main-header nav ul.mobile-menu-open,
+      body nav ul.active,
+      body nav ul.mobile-menu-open { 
         transform: translateX(0) !important; 
         pointer-events: auto !important;
       }
       
-      .main-header nav ul li { 
+      /* Mobile menu items */
+      body .main-header nav ul li,
+      body nav ul li { 
         width: 100% !important; 
         margin: 0 !important; 
         display: block !important; 
       }
       
-      .main-header nav ul li a { 
+      body .main-header nav ul li a,
+      body nav ul li a { 
         width: 100% !important;
         padding: 1.2rem 2rem !important; 
         color: #fff !important; 
@@ -460,17 +462,21 @@
         transition: background-color 0.2s ease, color 0.2s ease !important; 
       }
       
-      .main-header nav ul li a:hover,
-      .main-header nav ul li a:focus { 
+      body .main-header nav ul li a:hover,
+      body .main-header nav ul li a:focus,
+      body nav ul li a:hover,
+      body nav ul li a:focus { 
         background: rgba(255, 255, 255, 0.08) !important; 
         color: #fff !important; 
       }
       
-      .main-header nav ul li a:active { 
+      body .main-header nav ul li a:active,
+      body nav ul li a:active { 
         background: rgba(255, 255, 255, 0.16) !important; 
       }
       
-      .main-header nav ul li a.active { 
+      body .main-header nav ul li a.active,
+      body nav ul li a.active { 
         background: rgba(255, 255, 255, 0.12) !important; 
         color: #fff !important; 
         font-weight: 700 !important; 
