@@ -286,19 +286,21 @@
       }
       
       nav {
-        padding: 1rem;
-        justify-content: space-between;
-        align-items: center;
+        display: flex !important;
+        padding: 1rem !important;
+        justify-content: space-between !important;
+        align-items: center !important;
       }
       
-      .main-header .logo { 
+      .logo { 
         order: 1 !important; 
         padding-left: 0 !important; 
         margin-left: 0 !important;
-        color: #333 !important;
+        color: #000 !important;
         flex-shrink: 0 !important;
       }
       
+      nav .mobile-nav-toggle,
       .main-header .mobile-nav-toggle,
       .mobile-nav-toggle { 
         display: flex !important; 
@@ -316,8 +318,8 @@
         justify-content: center !important;
         flex-direction: column !important;
         flex-shrink: 0 !important;
-        padding: 0;
-        position: relative;
+        padding: 0 !important;
+        position: relative !important;
       }
       
       .hamburger-line { 
