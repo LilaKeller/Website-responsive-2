@@ -1691,14 +1691,32 @@ main {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+  /* Perfect mobile logo alignment */
+  .logo {
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+    font-size: 1rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    flex: none !important;
+    white-space: nowrap !important;
+  }
+  
   .mobile-nav-toggle {
     display: flex !important;
     order: 2;
     color: inherit;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
   
   nav {
     position: relative;
+    align-items: center !important;
   }
   
   /* Hide menu by default on mobile */

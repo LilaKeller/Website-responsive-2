@@ -157,13 +157,22 @@
         align-self: flex-end !important;
         transform: translateY(0) !important;
       }
-      /* Align both items to center and nudge burger up slightly for optical baseline */
+      /* Align both items to center with perfect top edge alignment */
       .main-header nav { align-items: center !important; }
-      .main-header .logo { line-height: 1 !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
+      .main-header .logo { 
+        line-height: 1 !important; 
+        padding: 0 !important; 
+        margin: 0 !important; 
+        display: flex !important;
+        align-items: center !important;
+        font-size: 1rem !important;
+      }
       .main-header .mobile-nav-toggle {
         align-self: center !important;
-        margin-bottom: 0 !important;
-        transform: translateY(-1px) !important;
+        margin: 0 !important;
+        transform: none !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
       /* Uniform header height and vertical centering */
       .main-header { padding-bottom: 0.75rem !important; }
