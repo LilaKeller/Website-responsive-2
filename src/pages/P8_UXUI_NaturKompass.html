@@ -33,6 +33,12 @@
             padding-right: clamp(20px, 4vw, 80px) !important;
         }
         
+        /* Exceptions: Full-bleed sections (no horizontal padding) */
+        main#main-content > section.moodboard-section {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        
         /* Projektinfos Section - ensure consistent padding on all screen sizes */
         main#main-content > section[style*="padding:3rem 80px"] {
             padding-left: clamp(20px, 4vw, 80px) !important;
