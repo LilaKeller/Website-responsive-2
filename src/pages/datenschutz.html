@@ -321,7 +321,7 @@
         position: relative !important;
       }
       
-      /* Force logo positioning - compact width */
+      /* Force logo positioning - compact width and aligned top */
       body .main-header .logo,
       body nav .logo,
       body .logo { 
@@ -330,10 +330,13 @@
         margin: 0 !important;
         color: #000 !important;
         flex-shrink: 0 !important;
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
         width: auto !important;
         flex: none !important;
         white-space: nowrap !important;
+        line-height: 1 !important;
+        font-size: 1rem !important;
       }
       
       /* Hide desktop menu on mobile */
@@ -342,7 +345,7 @@
         display: none !important;
       }
       
-      /* Force hamburger visibility with highest specificity */
+      /* Force hamburger visibility with highest specificity and aligned top */
       body .main-header nav .mobile-nav-toggle,
       body .main-header .mobile-nav-toggle,
       body nav .mobile-nav-toggle,
