@@ -8,6 +8,37 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
     <style>
+        /* Skip to main content link for accessibility */
+        .skip-to-main {
+            position: absolute;
+            top: -200px;
+            left: 20px;
+            z-index: 9999;
+            padding: 12px 24px;
+            background: #ffb800;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: top 0.3s;
+        }
+        .skip-to-main:focus {
+            top: 6px;
+        }
+        
+        /* Modern responsive padding system - override inline styles */
+        main#main-content > section {
+            padding-left: clamp(20px, 4vw, 80px) !important;
+            padding-right: clamp(20px, 4vw, 80px) !important;
+        }
+        
+        /* Projektinfos Section - ensure consistent padding on all screen sizes */
+        main#main-content > section[style*="padding:3rem 80px"] {
+            padding-left: clamp(20px, 4vw, 80px) !important;
+            padding-right: clamp(20px, 4vw, 80px) !important;
+        }
+        
         .btn-secondary {
             background: #ffb800;
             color: #fff;
@@ -332,9 +363,9 @@
     
     /* Responsive Design für Projektseiten */
     @media (max-width: 1200px) {
-      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding: 4rem 60px !important; }
-      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding: 3rem 60px !important; }
-      section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
     }
     @media (max-width: 900px) {
       /* Mobile Header Layout */
@@ -345,12 +376,13 @@
       .hamburger-line { background-color: #fff; transition: background-color 0.25s; }
       .main-header.scrolled .hamburger-line { background-color: #222; }
       
-      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
-      section[style*="padding:1rem"] { padding: 1rem 40px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
     }
     @media (max-width: 768px) {
-      section[style*="padding"] { padding: 2rem 30px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 2rem !important; padding-bottom: 2rem !important; }
       .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       h1 { font-size: 2.2rem !important; } h2 { font-size: 1.8rem !important; } h3 { font-size: 1.4rem !important; }
@@ -359,7 +391,8 @@
       /* Mobile Header Tighter Padding */
       .main-header nav { padding-left: 12px !important; padding-right: 12px !important; }
       
-      section[style*="padding"] { padding: 1.5rem 20px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
       h1 { font-size: 2.2rem !important; } h2 { font-size: 1.45rem !important; } h3 { font-size: 1.2rem !important; }
@@ -373,25 +406,12 @@
       .hero .hero-content div[style*="font-size:1.8rem"] { font-size: 1.3rem !important; }
     }
     @media (max-width: 360px) {
-      section[style*="padding"] { padding: 1rem 15px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 1rem !important; padding-bottom: 1rem !important; }
       .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
       h1 { font-size: 2.0rem !important; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; }
       .hero .hero-content h1 { font-size: 2.2rem !important; }
       .hero .hero-content div[style*="font-size:1.8rem"] { font-size: 1.2rem !important; }
-    }
-
-    /* Einheitliches seitliches Padding für alle Inhalte unter dem Hero */
-    main > section {
-      padding-left: 80px !important;
-      padding-right: 80px !important;
-      box-sizing: border-box;
-      width: 100%;
-    }
-    @media (max-width: 900px) {
-      main > section { padding-left: 24px !important; padding-right: 24px !important; }
-    }
-    @media (max-width: 600px) {
-      main > section { padding-left: 20px !important; padding-right: 20px !important; }
     }
 
     /* Responsive Design */
@@ -456,6 +476,7 @@
       .main-header nav ul li a { color: #fff !important; font-size: 1.4rem; display: block; padding: 0.8rem 1rem; }
       
       section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
+    }
   </style>
   <style>
     a {
@@ -464,6 +485,7 @@
   </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">Zum Hauptinhalt springen</a>
     <div id="header-placeholder"></div>
     
     <!-- Hero Section -->
@@ -475,7 +497,7 @@
         </div>
     </section>
 
-    <main style="background:#fff;width:100vw;max-width:100vw;padding-left:0;padding-right:0;box-sizing:border-box;margin:0;position:relative;">
+    <main id="main-content" style="background:#fff;width:100vw;max-width:100vw;padding-left:0;padding-right:0;box-sizing:border-box;margin:0;position:relative;">
         <!-- Projektinfos wie in P5_... -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:3rem 80px 3rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
             <div style="flex:1 1 0;min-width:180px;">
@@ -780,14 +802,14 @@
 
             <!-- Full-width Image Container -->
             <div style="width:100vw;margin-left:-80px;margin-right:-80px;margin-top:2rem;">
-                <img src="../../img/UXUI/NaturKompass/Sitemap.png" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Sitemap.png" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
         <!-- User Flow Image Section -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <div style="width:100%;">
-                <img src="../../img/UXUI/NaturKompass/User Flow.png" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/User Flow.png" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -809,7 +831,7 @@
                 <h2 style="font-size:2rem;font-weight:700;color:#333;line-height:1.2;margin:0;">Persona</h2>
             </div>
             <div style="width:100%;">
-                <img src="../../img/UXUI/NaturKompass/Persona Julia.png" alt="Persona Julia - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Persona Julia.png" alt="Persona Julia - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -818,7 +840,7 @@
             <div style="width:100%;text-align:left;margin-bottom:2rem;">
             </div>
             <div style="width:100%;">
-                <img src="../../img/UXUI/NaturKompass/User Journey Map.png" alt="User Journey Map - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/User Journey Map.png" alt="User Journey Map - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -832,7 +854,7 @@
         <!-- UI-Design Image Container -->
         <section class="moodboard-section" style="background:#555B57;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:0;box-sizing:border-box;">
             <div style="width:100%;">
-                <img src="../../img/UXUI/NaturKompass/Moodboard.png" alt="UI-Design Moodboard - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Moodboard.png" alt="UI-Design Moodboard - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -889,7 +911,7 @@
             
             <!-- UI Foundation Image -->
             <div style="width:100%;margin-bottom:4rem;">
-                <img src="../../img/UXUI/NaturKompass/UI Foundation.png" alt="UI-Foundation - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/UI Foundation.png" alt="UI-Foundation - NaturKompass" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
             
             <!-- UI Foundation Text Blocks -->
@@ -972,7 +994,7 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <div style="width:100%;height:100%;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f5f5f5;">
-                        <img src="../../img/UXUI/NaturKompass/Logo.png" alt="Logo des Naturkompasses" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                        <img src="../../img/UXUI/NaturKompass/Logo.png" alt="Logo des Naturkompasses" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div style="flex:1;">
@@ -994,28 +1016,28 @@
                     
                     <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:2rem 0 1rem 0;">Onboarding</h3>
                     <div class="finale-design-screens" style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                        <img src="../../img/UXUI/NaturKompass/Onboarding 01.png" alt="Onboarding Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Onboarding 02.png" alt="Onboarding Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Onboarding 03.png" alt="Onboarding Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Onboarding 04.png" alt="Onboarding Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                        <img src="../../img/UXUI/NaturKompass/Onboarding 01.png" alt="Onboarding Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Onboarding 02.png" alt="Onboarding Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Onboarding 03.png" alt="Onboarding Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Onboarding 04.png" alt="Onboarding Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
                     </div>
                     <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0 0 2rem 0;">Das <strong>Onboarding</strong> des <strong>NaturKompass</strong> begrüßt neue Nutzer und führt sie direkt in die <strong>Kernfunktionen</strong> der App ein. Um eine <strong>personalisierte Nutzung</strong> zu ermöglichen, fragt das Onboarding <strong>standortbezogene Daten</strong> ab – für präzisere <strong>Artenbestimmung</strong> und standortspezifische Ergebnisse. <strong>Push-Benachrichtigungen</strong> informieren über <strong>Pollenflug</strong> und Ereignisse. Zudem liefert die Abfrage von <strong>Allergien</strong> maßgeschneiderte Informationen und <strong>Warnungen</strong>, optimal auf die individuellen Bedürfnisse zugeschnitten.</p>
                     
                     <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:2rem 0 1rem 0;">Hauptfunktion</h3>
                     <div class="finale-design-screens" style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 01.png" alt="Hauptfunktion Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 02.png" alt="Hauptfunktion Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 03.png" alt="Hauptfunktion Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 04.png" alt="Hauptfunktion Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 01.png" alt="Hauptfunktion Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 02.png" alt="Hauptfunktion Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 03.png" alt="Hauptfunktion Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Hauptfunktion 04.png" alt="Hauptfunktion Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
                     </div>
                     <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0 0 2rem 0;">Die <strong>Hauptfunktion</strong> der App, das <strong>Bestimmen von Spezies</strong>, wird durch einen intuitiven <strong>Scan-Prozess</strong> realisiert. Nutzer können ihre <strong>Kamera</strong> auf z.B. eine Pflanze richten, um eine schnelle <strong>Identifikation</strong> zu erhalten. Nach dem Scan werden <strong>detaillierte Informationen</strong> zur identifizierten Art präsentiert, inklusive <strong>Bildern</strong> und wissenswerten <strong>Fakten</strong>. Mit jedem Fund, sammelt der Nutzer <strong>Punkte</strong>, was spielerisch zur weiteren Nutzung und zum <strong>Sammeln von Wissen</strong> anregt. Dieser Prozess ist darauf ausgelegt, das <strong>Entdecken und Lernen</strong> in der Natur einfach und interaktiv zu gestalten.</p>
                     
                     <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:2rem 0 1rem 0;">Nebenfunktionen</h3>
                     <div class="finale-design-screens" style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 01.png" alt="Nebenfunktionen Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 02.png" alt="Nebenfunktionen Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 03.png" alt="Nebenfunktionen Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 04.png" alt="Nebenfunktionen Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 01.png" alt="Nebenfunktionen Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 02.png" alt="Nebenfunktionen Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 03.png" alt="Nebenfunktionen Screen 3" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                        <img src="../../img/UXUI/NaturKompass/Nebenfunktionen 04.png" alt="Nebenfunktionen Screen 4" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
                     </div>
                     <p style="font-size:1.1rem;line-height:1.6;color:#444;margin:0 0 2rem 0;">Neben der Kernfunktion des Bestimmens bietet <strong>NaturKompass</strong> eine Reihe von <strong>Nebenfunktionen</strong>, die das Naturerlebnis erweitern und vertiefen. Der <strong>"Entdecken"</strong>-Bereich schlägt <strong>Wanderrouten</strong>, <strong>Sehenswürdigkeiten</strong> und lokale <strong>Challenges</strong> vor, um die Umgebung aktiv zu erkunden. Unter <strong>"Wissen"</strong> können Nutzer ihr Verständnis durch interaktive <strong>Lerneinheiten</strong> und detaillierte <strong>Steckbriefe</strong> vertiefen. Das <strong>"Profil"</strong> personalisiert die App, indem es den <strong>Fortschritt</strong> des Nutzers visualisiert und gesammelte <strong>Naturpunkte</strong> anzeigt. Eine weitere wichtige Funktion ist der <strong>"Müllmelder"</strong>, der es Nutzern ermöglicht, <strong>Umweltverschmutzung</strong> zu melden und so aktiv zum <strong>Naturschutz</strong> beizutragen, indem sie Funde von Müll lokalisieren und zur Abholung markieren.</p>
                 </div>
@@ -1049,7 +1071,7 @@
             
             <!-- Image Container with section padding only (80px) -->
             <div style="width:100%;margin-bottom:2rem;">
-                <img src="../../img/UXUI/NaturKompass/Onboarding vorher - nachher.png" alt="Onboarding Vorher vs Nachher Vergleich" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Onboarding vorher - nachher.png" alt="Onboarding Vorher vs Nachher Vergleich" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
             
             <div class="vorher-nachher-text" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
@@ -1068,13 +1090,13 @@
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 2rem 0;">Vorher vs. Nachher: Button-Hierachie</h3>
             <div class="button-hierarchy-images" style="display:flex;justify-content:center;gap:1.2rem;margin-bottom:2.5rem;align-items:flex-start;flex-wrap:nowrap;">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 1.png" alt="Button Iteration Vorher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 2.png" alt="Button Iteration Vorher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 1.png" alt="Button Iteration Vorher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Vorher 2.png" alt="Button Iteration Vorher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
                 <div class="hierarchy-center" style="border:4px solid #94A293;padding:4px;background:#fff;border-radius:8px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(148,162,147,0.3);">
-                  <img src="../../img/UXUI/NaturKompass/Iteration Buttons.png" alt="Button Iteration Vergleich" class="hierarchy-img" style="border-radius:4px;display:block;" loading="lazy">
+                  <img src="../../img/UXUI/NaturKompass/Iteration Buttons.png" alt="Button Iteration Vergleich" class="hierarchy-img" style="border-radius:4px;display:block;" loading="lazy" decoding="async">
                 </div>
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 1.png" alt="Button Iteration Nachher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
-                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 2.png" alt="Button Iteration Nachher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 1.png" alt="Button Iteration Nachher 1" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/NaturKompass/Iteration Buttons_Nachher 2.png" alt="Button Iteration Nachher 2" class="hierarchy-img" style="object-fit:contain;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
             </div>
             <div class="vorher-nachher-text" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;width:100%;margin-top:0;">
                 <div>
@@ -1377,7 +1399,7 @@
                         LETZTES PROJEKT
                     </a>
                     <div class="projekt-vorschau">
-                        <img src="../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png" alt="FlavorFusion">
+                        <img src="../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png" alt="FlavorFusion Rezepte-App Landing Page - moderne mobile App für kulinarische Inspiration" loading="lazy" decoding="async">
                         <div class="projekt-vorschau-title">FlavorFusion</div>
                         <div class="projekt-vorschau-sub">Landing Page für eine mobile Rezepte App</div>
                     </div>
@@ -1390,7 +1412,7 @@
                         </svg>
                     </a>
                     <div class="projekt-vorschau">
-                        <img src="../../img/IA/Weserkoje/Ansicht-3jpg.png" alt="Weserkoje">
+                        <img src="../../img/IA/Weserkoje/Ansicht-3jpg.png" alt="Weserkoje multifunktionale Herberge - moderne Tagungszentrum-Architektur an der Weser" loading="lazy" decoding="async">
                         <div class="projekt-vorschau-title">Weserkoje</div>
                         <div class="projekt-vorschau-sub">Multifunktionale Herberge mit Tagungszentrum</div>
                     </div>
@@ -1523,7 +1545,6 @@
       }
       @media (max-width: 768px) {
         .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
-        section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
       }
       @media (max-width: 480px) {
         .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
