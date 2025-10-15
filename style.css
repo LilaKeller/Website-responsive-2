@@ -125,6 +125,10 @@ img {
   padding-bottom: 2rem;
   background: #9ba89c;
 }
+/* Override global touch-target min-height for footer links only */
+.main-footer a {
+  min-height: 0 !important;
+}
 .footer-socials a[href*="instagram"] {
   display: none !important;
 }
@@ -147,12 +151,6 @@ img {
   gap: 0;
   align-items: flex-start;
   text-align: left;
-}
-.footer-block a {
-  min-height: 0 !important;
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
 }
 .footer-title {
   font-size: 0.95em;
@@ -442,11 +440,10 @@ img {
   }
   
   .footer-block a {
-    line-height: 1.2;
+    line-height: 0.9;
     margin: 0;
     padding: 0;
     display: block;
-    min-height: 0 !important;
   }
   
   .footer-title {
@@ -484,11 +481,10 @@ img {
   }
   
   .footer-block a {
-    line-height: 1.2;
+    line-height: 0.9;
     margin: 0;
     padding: 0;
     display: block;
-    min-height: 0 !important;
   }
 }
 /* Kontaktseite: Überschrift, Button, Whitespace, Profilbild */
