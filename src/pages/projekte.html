@@ -52,6 +52,39 @@
           padding-left: 80px;
           padding-right: 80px;
         }
+        /* Restore original desktop filter button look */
+        .work-filter {
+          display: flex;
+          gap: 1.2rem;
+          justify-content: flex-start;
+          margin: 0 0 1rem 0;
+        }
+        .filter-btn {
+          background: #f3f3f3;
+          color: #333;
+          border: none;
+          border-radius: 2rem;
+          padding: 0.6rem 1.6rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+          background: #ffb800;
+          color: #fff;
+          box-shadow: 0 4px 18px rgba(255, 184, 0, 0.13);
+        }
+        /* Desktop-only subtle lift on hover */
+        @media (hover: hover) and (pointer: fine) {
+          .filter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(255,184,0,0.15);
+          }
+        }
       }
             .main-footer {
                 background: linear-gradient(90deg,#7a8a7c 60%,#9ba89c 100%);
