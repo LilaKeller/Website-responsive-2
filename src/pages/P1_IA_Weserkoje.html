@@ -438,8 +438,14 @@
     main > section {
       padding-left: clamp(20px, 4vw, 80px) !important;
       padding-right: clamp(20px, 4vw, 80px) !important;
-      box-sizing: border-box;
+      box-sizing: border-box !important;
       width: 100%;
+    }
+    
+    /* Höhere Spezifität für inline-styled Sektionen */
+    main#main-content > section {
+      padding-left: clamp(20px, 4vw, 80px) !important;
+      padding-right: clamp(20px, 4vw, 80px) !important;
     }
     
     /* Contact Section: einheitliche clamp Werte mit main sections */
@@ -834,7 +840,6 @@
     }
     @media (max-width: 768px) {
       .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
-      section.contact#contact { padding-left: 10vw !important; padding-right: 10vw !important; }
     }
     @media (max-width: 480px) {
       .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
