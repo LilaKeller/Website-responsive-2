@@ -1293,44 +1293,7 @@ OmNomZen hat das Potenzial, sich als führende Marke für natürliche Stressredu
         }
     </script>
 
-    <!-- Mobile Navigation Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const navUl = document.querySelector('.main-header nav ul');
-        const header = document.querySelector('.main-header');
-        
-        if (mobileNavToggle && navUl) {
-          mobileNavToggle.addEventListener('click', function() {
-            const isActive = navUl.classList.contains('active');
-            navUl.classList.toggle('active');
-            mobileNavToggle.classList.toggle('active');
-            mobileNavToggle.setAttribute('aria-expanded', !isActive);
-            mobileNavToggle.setAttribute('aria-label', isActive ? 'Navigation öffnen' : 'Navigation schließen');
-            document.body.style.overflow = isActive ? '' : 'hidden';
-          });
-
-          navUl.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-              navUl.classList.remove('active');
-              mobileNavToggle.classList.remove('active');
-              mobileNavToggle.setAttribute('aria-expanded', 'false');
-              mobileNavToggle.setAttribute('aria-label', 'Navigation öffnen');
-              document.body.style.overflow = '';
-            });
-          });
-        }
-
-        // Header scroll behavior
-        window.addEventListener('scroll', function() {
-          if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-          }
-        });
-      });
-    </script>
+    
 
     <script src="../scripts/mobile-nav.js"></script>
     <script src="../scripts/header-loader.js"></script>
