@@ -20,12 +20,18 @@
         /* Keep filter bar visible while scrolling */
         .work-filter {
           position: sticky;
-          top: 0;
+          top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px));
           background: #fff;
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
           z-index: 50;
           box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+        }
+        /* Skip links visible on focus */
+        .skip-to-main:focus, .skip-to-filters:focus {
+          left: 1rem !important;
+          top: calc(var(--header-offset, 8px) + 0.5rem) !important;
+          box-shadow: 0 6px 16px rgba(0,0,0,0.15);
         }
         .filter-btn {
           background:#f2f2f2 !important;
@@ -1112,6 +1118,17 @@
   const items = document.querySelectorAll('.portfolio-item');
   const statusEl = document.getElementById('filter-status');
   const filtersBar = document.getElementById('filters');
+  const headerEl = document.querySelector('.main-header');
+
+      // Compute and set header offset for sticky filters
+      function setHeaderOffset() {
+        try {
+          const h = headerEl ? headerEl.getBoundingClientRect().height : 0;
+          document.documentElement.style.setProperty('--header-offset', `${Math.ceil(h)}px`);
+        } catch (_) {}
+      }
+      setHeaderOffset();
+      window.addEventListener('resize', setHeaderOffset, { passive: true });
 
       function updateStatus(count, filterKey) {
         if (!statusEl) return;
