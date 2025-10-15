@@ -345,6 +345,15 @@
       transform: translateY(-6px) scale(1.03);
       box-shadow: 0 12px 48px rgba(0,0,0,0.16);
     }
+    
+    /* Disable hover effects on touch devices */
+    @media (hover: none) {
+      .portfolio-item:hover {
+        transform: none;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      }
+    }
+    
     .portfolio-item:hover .portfolio-thumb,
     .portfolio-item:focus-within .portfolio-thumb {
       filter: unset !important;
@@ -628,6 +637,177 @@
       section.contact#contact {
         padding-left: 10vw !important;
         padding-right: 10vw !important;
+      }
+    }
+    
+    /* Mobile UX/UI Best Practices */
+    
+    /* Filter Buttons - Larger Touch Targets */
+    @media (max-width: 768px) {
+      .portfolio-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+      }
+      
+      .filter-btn {
+        min-height: 48px !important;
+        min-width: 48px !important;
+        padding: 0.75rem 1.5rem !important;
+        font-size: 1rem !important;
+        border-radius: 24px !important;
+        transition: all 0.2s ease !important;
+      }
+      
+      .filter-btn.active {
+        transform: scale(1.05);
+      }
+    }
+    
+    /* Blockquote - Better Mobile Readability */
+    @media (max-width: 768px) {
+      .about blockquote {
+        padding: 1.5rem 1rem !important;
+        margin: 1.5rem 0 !important;
+      }
+      
+      .about blockquote p {
+        font-size: clamp(1rem, 3vw, 1.15rem) !important;
+        line-height: 1.6 !important;
+      }
+    }
+    
+    /* Carousel - Scroll Snap for Better Touch Experience */
+    @media (max-width: 768px) {
+      .carousel-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important; /* Firefox */
+      }
+      
+      .carousel-wrapper::-webkit-scrollbar {
+        display: none !important; /* Chrome, Safari */
+      }
+      
+      .portfolio-carousel {
+        scroll-snap-align: start !important;
+      }
+      
+      .portfolio-item {
+        scroll-snap-align: center !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Hide carousel buttons on mobile, rely on touch scroll */
+      .carousel-btn {
+        display: none !important;
+      }
+    }
+    
+    /* Footer - Safe Area for iPhone notch */
+    @media (max-width: 768px) {
+      .main-footer {
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)) !important;
+      }
+    }
+    
+    /* Improved Focus States for Accessibility */
+    @media (max-width: 768px) {
+      a:focus-visible,
+      button:focus-visible,
+      .filter-btn:focus-visible {
+        outline: 3px solid #ffb800 !important;
+        outline-offset: 3px !important;
+        border-radius: 4px !important;
+      }
+      
+      .portfolio-item:focus-within {
+        outline: 3px solid #ffb800 !important;
+        outline-offset: 2px !important;
+        box-shadow: 0 8px 32px rgba(255, 184, 0, 0.2) !important;
+      }
+    }
+    
+    /* Portfolio Item - Better Touch Feedback */
+    @media (max-width: 768px) {
+      .portfolio-item:active {
+        transform: scale(0.98) !important;
+        transition: transform 0.1s ease !important;
+      }
+    }
+    
+    /* Back to Top Button - Better Mobile Positioning */
+    @media (max-width: 768px) {
+      .back-to-top {
+        bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)) !important;
+        right: 1rem !important;
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .back-to-top {
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px)) !important;
+      }
+    }
+    
+    /* Primary Buttons - Better Touch Targets */
+    @media (max-width: 768px) {
+      .btn-primary,
+      .btn-secondary {
+        min-height: 48px !important;
+        padding: 0.85rem 2rem !important;
+        font-size: 1rem !important;
+        border-radius: 24px !important;
+      }
+      
+      /* Active state for better touch feedback */
+      .btn-primary:active,
+      .btn-secondary:active {
+        transform: scale(0.96) !important;
+      }
+    }
+    
+    /* About Section - Better Mobile Spacing */
+    @media (max-width: 768px) {
+      .about {
+        padding: 2rem clamp(1rem, 4vw, 2rem) !important;
+      }
+    }
+    
+    /* Portfolio Section - Better Mobile Spacing */
+    @media (max-width: 768px) {
+      .portfolio {
+        padding: 2rem 0 !important;
+      }
+    }
+    
+    /* Hero CTA Button - Larger on Mobile */
+    @media (max-width: 768px) {
+      .hero-content .btn-primary {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        display: flex !important;
+        margin-top: 1.5rem !important;
+      }
+    }
+    
+    /* Typography - Optimal Reading Experience */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px !important; /* Prevents iOS zoom on input focus */
+      }
+      
+      p {
+        font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+        line-height: 1.6 !important;
       }
     }
   </style>
