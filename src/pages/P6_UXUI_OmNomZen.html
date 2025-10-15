@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/jpeg" href="../../Logo-01.jpg">
     <style>
+        /* Skip to main content link for accessibility */
+        .skip-to-main {
+            position: absolute;
+            top: -200px;
+            left: 20px;
+            z-index: 9999;
+            padding: 12px 24px;
+            background: #ffb800;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: top 0.3s;
+        }
+        .skip-to-main:focus {
+            top: 6px;
+        }
+        
+        /* Modern responsive padding system - override inline styles */
+        main#main-content > section {
+            padding-left: clamp(20px, 4vw, 80px) !important;
+            padding-right: clamp(20px, 4vw, 80px) !important;
+        }
+        
+        /* Projektinfos Section - ensure consistent padding on all screen sizes */
+        main#main-content > section[style*="padding:3rem 80px"] {
+            padding-left: clamp(20px, 4vw, 80px) !important;
+            padding-right: clamp(20px, 4vw, 80px) !important;
+        }
+        
         .btn-secondary {
             background: #ffb800;
             color: #fff;
@@ -278,9 +309,9 @@
     
     /* Responsive Design für Projektseiten */
     @media (max-width: 1200px) {
-      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding: 4rem 60px !important; }
-      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding: 3rem 60px !important; }
-      section[style*="padding:1rem 80px"], section[style*="padding: 1rem 80px"] { padding: 1rem 60px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem 80px"], section[style*="padding: 5rem 80px"] { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+      section[style*="padding:3rem 80px"], section[style*="padding: 3rem 80px"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
     }
     @media (max-width: 900px) {
       /* Mobile Header Layout */
@@ -291,12 +322,13 @@
       .hamburger-line { background-color: #fff; transition: background-color 0.25s; }
       .main-header.scrolled .hamburger-line { background-color: #222; }
       
-      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding: 3rem 40px !important; }
-      section[style*="padding:1rem"] { padding: 1rem 40px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
     }
     @media (max-width: 768px) {
-      section[style*="padding"] { padding: 2rem 30px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 2rem !important; padding-bottom: 2rem !important; }
       .hero-content[style*="padding:3.5rem"] { padding: 2.5rem 2rem 2rem 2rem !important; max-width: 90% !important; }
       section[style*="display:flex;flex-wrap:wrap"] { flex-direction: column !important; gap: 1.5rem !important; }
       h1 { font-size: 2.2rem !important; }
@@ -310,7 +342,8 @@
       /* Mobile Header Tighter Padding */
       .main-header nav { padding-left: 12px !important; padding-right: 12px !important; }
       
-      section[style*="padding"] { padding: 1.5rem 20px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
       .hero-content[style*="padding"] { padding: 2rem 1.5rem 1.5rem 1.5rem !important; max-width: 95% !important; }
       div[style*="min-width:180px"] { min-width: auto !important; font-size: 0.9rem !important; padding: 0.8rem 1.2rem !important; }
       h1 { font-size: 1.8rem !important; }
@@ -322,7 +355,8 @@
       .main-header nav ul { flex-direction: column !important; gap: 0.5rem !important; }
     }
     @media (max-width: 360px) {
-      section[style*="padding"] { padding: 1rem 15px !important; }
+      /* Vertical padding only, horizontal handled by clamp() */
+      section[style*="padding"] { padding-top: 1rem !important; padding-bottom: 1rem !important; }
       .hero-content[style*="padding"] { padding: 1.5rem 1rem 1rem 1rem !important; }
       h1 { font-size: 2.0rem !important; }
       h2 { font-size: 1.3rem !important; }
@@ -511,6 +545,7 @@
   </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">Zum Hauptinhalt springen</a>
     <div id="header-placeholder"></div>
     <section class="hero" style="background: url('../../img/UXUI/OmNomZen/7b38899a-5ebc-45eb-8080-a8089353c808 (1).png') center center/cover no-repeat; height:100vh; width:100vw; display:flex; align-items:center; justify-content:center; position:absolute; top:0; left:0; z-index:0;">
         <div class="hero-content" style="background:rgba(0,0,0,0.32);color:#fff;max-width:700px;padding:3.5rem 3.5rem 3rem 3.5rem;text-align:center;margin:0 auto;">
@@ -519,7 +554,7 @@
             <div style="font-size:0.95rem;letter-spacing:0.1em;margin-bottom:1.2em;line-height:1.7;">UX/UI-DESIGN | MOBILE APP</div>
         </div>
     </section>
-    <main style="margin-top: 100vh;">
+    <main id="main-content" style="margin-top: 100vh;">
         <!-- Projektinfos wie in P5_... -->
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:3rem 80px 3rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
             <div style="flex:1 1 0;min-width:180px;">
@@ -592,7 +627,7 @@
 
             <!-- Full-width Image Container -->
             <div style="width:100vw;margin-left:-80px;margin-right:-80px;">
-                <img src="../../img/UXUI/OmNomZen/Sitemap.jpg" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Sitemap.jpg" alt="Struktur & Fluss - Sitemap" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -604,7 +639,7 @@
             </div>
             
             <div style="width:100%;">
-                <img src="../../img/UXUI/OmNomZen/User Flow.jpg" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/User Flow.jpg" alt="User Flow" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -626,7 +661,7 @@
                 <h2 style="font-size:2rem;font-weight:700;color:#333;line-height:1.2;margin:0;">Persona</h2>
             </div>
             <div style="width:100%;">
-                <img src="../../img/UXUI/OmNomZen/Persona Max.png" alt="Persona Max - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Persona Max.png" alt="Persona Max - Zielgruppe & Persona" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -647,7 +682,7 @@
                 <h2 style="font-size:2rem;font-weight:700;color:#fff;line-height:1.2;margin:0;">Moodboard</h2>
             </div>
             <div style="width:100%;">
-                <img src="../../img/UXUI/OmNomZen/Moodboard-3.jpg" alt="UI-Design Moodboard - OmNomZen" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Moodboard-3.jpg" alt="UI-Design Moodboard - OmNomZen" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
         </section>
 
@@ -708,7 +743,7 @@
             
             <!-- UI Foundation Image -->
             <div style="width:100%;margin-bottom:4rem;">
-                <img src="../../img/UXUI/OmNomZen/UI Foundation.png" alt="UI-Foundation - OmNomZen" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/UI Foundation.png" alt="UI-Foundation - OmNomZen" style="width:100%;height:auto;max-width:100%;display:block;" loading="lazy" decoding="async">
             </div>
             
             <!-- UI Foundation Text Blocks -->
@@ -762,7 +797,7 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;">
                 <div style="flex:1;">
                     <div style="width:100%;height:100%;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#2A3629;">
-                        <img src="../../img/UXUI/OmNomZen/logo.png" alt="Logo von OmNomZen" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                        <img src="../../img/UXUI/OmNomZen/logo.png" alt="Logo von OmNomZen" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div style="flex:1;">
@@ -805,8 +840,8 @@
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 1rem 0;">Vorher vs. Nachher: Alleinstellungsmerkmal des Produktes</h3>
             <div style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 1.1.png" alt="Onboarding Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 1.2.png" alt="Onboarding Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 1.1.png" alt="Onboarding Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 1.2.png" alt="Onboarding Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
                 <div style="flex:1;">
@@ -824,8 +859,8 @@
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 1rem 0;">Vorher vs. Nachher: Zahlungsmöglichkeiten</h3>
             <div style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 3.1.png" alt="Button-Hierarchie Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 3.2.png" alt="Button-Hierarchie Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 3.1.png" alt="Button-Hierarchie Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 3.2.png" alt="Button-Hierarchie Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
                 <div style="flex:1;">
@@ -843,8 +878,8 @@
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 1rem 0;">Vorher vs. Nachher: Authentizität</h3>
             <div style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 5.1.png" alt="Navigation Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 5.2.png" alt="Navigation Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 5.1.png" alt="Navigation Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 5.2.png" alt="Navigation Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
                 <div style="flex:1;">
@@ -862,8 +897,8 @@
         <section style="background:#fff;width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:5rem 80px;box-sizing:border-box;">
             <h3 style="font-size:1.8rem;font-weight:600;color:#333;margin:0 0 1rem 0;">Vorher vs. Nachher: Produktions- und Lieferschritte</h3>
             <div style="display:flex;justify-content:space-around;gap:1rem;margin-bottom:1rem;">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 6.1.png" alt="Produktkarten Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
-                <img src="../../img/UXUI/OmNomZen/Aufgabe 6.2.png" alt="Produktkarten Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 6.1.png" alt="Produktkarten Screen 1" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
+                <img src="../../img/UXUI/OmNomZen/Aufgabe 6.2.png" alt="Produktkarten Screen 2" style="width:200px;height:432px;object-fit:contain;border-radius:8px;" loading="lazy" decoding="async">
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;width:100%;margin-top:2rem;">
                 <div style="flex:1;">
@@ -898,7 +933,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen
                     style="border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.13);"
-                    loading="lazy">
+                    loading="lazy" decoding="async">
                 </iframe>
             </div>
         </section>
@@ -973,7 +1008,7 @@ OmNomZen hat das Potenzial, sich als führende Marke für natürliche Stressredu
                     LETZTES PROJEKT
                 </a>
                 <div class="projekt-vorschau">
-                    <img src="../../img/UXUI/Planora/63f7859e-393c-4393-a7eb-127ef2966c57.png" alt="Planora">
+                    <img src="../../img/UXUI/Planora/63f7859e-393c-4393-a7eb-127ef2966c57.png" alt="Planora Reiseplanungs-App - intuitive mobile Lösung für Reiseorganisation und Aktivitätenplanung" loading="lazy" decoding="async">
                     <div class="projekt-vorschau-title">Planora</div>
                     <div class="projekt-vorschau-sub">Reiseplanung, die sich dir anpasst.</div>
                 </div>
@@ -986,7 +1021,7 @@ OmNomZen hat das Potenzial, sich als führende Marke für natürliche Stressredu
                     </svg>
                 </a>
                 <div class="projekt-vorschau">
-                    <img src="../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png" alt="FlavorFusion">
+                    <img src="../../img/UXUI/FlavorFusion/01f31bcc-fba0-4fba-b249-4b24feb24397.png" alt="FlavorFusion Rezepte-App Landing Page - moderne mobile App für kulinarische Inspiration" loading="lazy" decoding="async">
                     <div class="projekt-vorschau-title">FlavorFusion</div>
                     <div class="projekt-vorschau-sub">Landing Page für eine mobile Rezepte App</div>
                 </div>
@@ -1124,12 +1159,6 @@ OmNomZen hat das Potenzial, sich als führende Marke für natürliche Stressredu
                         }
                         @media (max-width: 768px) {
                             .contact-content h2 { font-size: 3.5rem !important; line-height: 1.1 !important; }
-                        }
-                        @media (max-width: 700px) {
-                            section.contact#contact {
-                                padding-left: 10vw !important;
-                                padding-right: 10vw !important;
-                            }
                         }
                         @media (max-width: 480px) {
                             .contact-content h2 { font-size: 3rem !important; line-height: 1.1 !important; }
