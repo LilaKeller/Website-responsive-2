@@ -90,8 +90,16 @@
     @media (max-width: 768px) {
       .main-header { background: #fff !important; }
       .main-header .logo, .main-header nav a { color: #000 !important; }
-      .main-header .hamburger-line { background-color: #222 !important; }
-      .main-header .mobile-nav-toggle .hamburger-line { background-color: #222 !important; }
+    }
+    /* Hamburger icon must be visible on mobile */
+    @media (max-width: 768px) {
+      .hamburger-line,
+      .mobile-nav-toggle .hamburger-line,
+      .main-header .hamburger-line,
+      .main-header .mobile-nav-toggle .hamburger-line {
+        background-color: #222 !important;
+        display: block !important;
+      }
     }
     /* Back to Top Button */
     .back-to-top {

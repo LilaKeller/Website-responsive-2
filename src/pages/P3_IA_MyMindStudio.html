@@ -734,6 +734,7 @@
                         <div class="footer-title">SOZIALE NETZWERKE</div>
                         <div class="footer-socials">
                             <a href="https://www.linkedin.com/in/anika-warncke" target="_blank" rel="noopener">LinkedIn</a>
+                            <a href="https://www.instagram.com/dein_instagram" target="_blank" rel="noopener">Instagram</a>
                         </div>
                     </div>
                     <div class="footer-block">
@@ -855,7 +856,44 @@
     }
   </script>
 
-  
+  <!-- Mobile Navigation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navUl = document.querySelector('.main-header nav ul');
+      const header = document.querySelector('.main-header');
+      
+      if (mobileNavToggle && navUl) {
+        mobileNavToggle.addEventListener('click', function() {
+          const isActive = navUl.classList.contains('active');
+          navUl.classList.toggle('active');
+          mobileNavToggle.classList.toggle('active');
+          mobileNavToggle.setAttribute('aria-expanded', !isActive);
+          mobileNavToggle.setAttribute('aria-label', isActive ? 'Navigation öffnen' : 'Navigation schließen');
+          document.body.style.overflow = isActive ? '' : 'hidden';
+        });
+
+        navUl.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            navUl.classList.remove('active');
+            mobileNavToggle.classList.remove('active');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mobileNavToggle.setAttribute('aria-label', 'Navigation öffnen');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      // Header scroll behavior
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    });
+  </script>
 
   
 </body>
