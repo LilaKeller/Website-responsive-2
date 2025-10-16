@@ -1300,6 +1300,17 @@
   <script>
     // Portfolio-Filter und lokale Zeit nach DOM-Load
     document.addEventListener('DOMContentLoaded', function() {
+      // Zufällige Reihenfolge der Projektkarten
+      const gallery = document.querySelector('.portfolio-gallery');
+      if (gallery) {
+        const cards = Array.from(gallery.children);
+        for (let i = cards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+        cards.forEach(card => gallery.appendChild(card));
+      }
+
       // Portfolio-Filter with URL persistence
   const filterBtns = document.querySelectorAll('.filter-btn');
   const items = document.querySelectorAll('.portfolio-item');
