@@ -8,6 +8,7 @@
   min-width: 0;
   padding: 0;
   box-sizing: border-box;
+  align-items: stretch;
 }
 
 @media (max-width: 1200px) {
@@ -44,7 +45,9 @@
   background: #fff;
   box-shadow: 0 6px 32px rgba(0,0,0,0.10);
   transition: box-shadow 0.2s, transform 0.2s;
-  height: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
   margin: 0 auto;
   max-width: 100%;
@@ -54,6 +57,16 @@
 .portfolio-item:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 12px 48px rgba(0,0,0,0.16);
+}
+
+.portfolio-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.2rem 1rem;
+  background: #fff;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 
 @media (hover: none) {
