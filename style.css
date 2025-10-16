@@ -1922,8 +1922,8 @@ main {
 
   /* Make the mobile menu cover the full viewport width and start under the X */
   nav ul {
-    right: 0 !important;           /* neutralize per-page right:-100% */
-    left: auto !important;
+    left: 0 !important;            /* anchor to left edge */
+    right: auto !important;        /* neutralize per-page right:-100% */
     width: 100vw !important;       /* full width overlay */
     height: 100vh !important;
     background: #9ba89c !important;
