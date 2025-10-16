@@ -464,6 +464,23 @@
     @media (max-width: 600px) {
       main > section.full-bleed { padding-left: 0 !important; padding-right: 0 !important; }
     }
+
+    /* Desktop: feste 80px Seitenabstände und volle Breite (außer Full-bleed) */
+    @media (min-width: 1024px) {
+      main > section,
+      main#main-content > section,
+      section.contact#contact,
+      section.cta-section {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+      }
+      /* Full-bleed bleibt randlos auch auf Desktop */
+      main > section.full-bleed,
+      section.full-bleed {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
   </style>
   <style>
     a {
@@ -551,7 +568,7 @@
            decoding="async">
     </section>
         <!-- Konzept Abschnitt -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;">
+  <section style="background:#fff;padding:2.5rem 0 1.5rem 0;">
             <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
                 <div style="flex:1 1 0;min-width:280px;max-width:100%;display:flex;align-items:stretch;height:100%;">
                   <div class="mobile-full-bleed" style="width:100%;">
@@ -575,7 +592,7 @@
             </div>
         </section>
         <!-- Empfang/Lobby -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;">
+  <section style="background:#fff;padding:2.5rem 0 1.5rem 0;">
             <div style="margin-bottom:2.5rem;width:100%;position:relative;border-radius:1.2rem;overflow:hidden;">
                 <img src="../../img/IA/Weserkoje/Ansicht_theke.png" 
                      alt="Empfangsbereich der weserkoje mit goldenem Thekenelement" 
@@ -593,7 +610,7 @@
             </div>
         </section>
         <!-- Herzstück/Detail -->
-        <section style="background:#fff;padding:2.5rem 0 1.5rem 0;max-width:1200px;margin:0 auto;">
+  <section style="background:#fff;padding:2.5rem 0 1.5rem 0;">
             <div style="margin-bottom:2.5rem;width:100%;position:relative;border-radius:1.2rem;overflow:hidden;">
                 <img src="../../img/IA/Weserkoje/4_rgb.jpg" 
                      alt="Lobby-Bereich mit Sitzgruppen und fließenden Formen" 
