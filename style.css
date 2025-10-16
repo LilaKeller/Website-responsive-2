@@ -101,6 +101,35 @@ main#main-content > .full-bleed {
 /* Helper to strip any residual shadow from elements */
 .no-shadow { box-shadow: none !important; filter: none !important; }
 
+/* Mobile-only full-bleed helper for media inside constrained sections */
+@media (max-width: 600px) {
+  .mobile-full-bleed {
+    position: relative;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    /* Robust centering against padded containers */
+    left: auto;
+    right: auto;
+    transform: none;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .mobile-full-bleed > img,
+  .mobile-full-bleed > picture,
+  .mobile-full-bleed > video,
+  .mobile-full-bleed > canvas {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
 /* Performance optimizations */
 @media (prefers-reduced-motion: reduce) {
   *,
