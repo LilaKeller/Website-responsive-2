@@ -305,32 +305,32 @@
     /* Responsive Design für Projektseiten */
     @media (max-width: 1200px) {
       /* Große Tablets */
-      section[style*="padding:5rem 80px"],
-      section[style*="padding: 5rem 80px"] {
+      section[style*="padding:5rem 80px"]:not(.project-facts),
+      section[style*="padding: 5rem 80px"]:not(.project-facts) {
         padding: 4rem 0 !important;
       }
-      section[style*="padding:3rem 80px"],
-      section[style*="padding: 3rem 80px"] {
+      section[style*="padding:3rem 80px"]:not(.project-facts),
+      section[style*="padding: 3rem 80px"]:not(.project-facts) {
         padding: 3rem 0 !important;
       }
-      section[style*="padding:1rem 80px"],
-      section[style*="padding: 1rem 80px"] {
+      section[style*="padding:1rem 80px"]:not(.project-facts),
+      section[style*="padding: 1rem 80px"]:not(.project-facts) {
         padding: 1rem 0 !important;
       }
     }
     
     @media (max-width: 900px) {
       /* Tablets */
-      section[style*="padding:5rem 80px"],
-      section[style*="padding: 5rem 80px"],
-      section[style*="padding:5rem 60px"],
-      section[style*="padding: 5rem 60px"] {
+      section[style*="padding:5rem 80px"]:not(.project-facts),
+      section[style*="padding: 5rem 80px"]:not(.project-facts),
+      section[style*="padding:5rem 60px"]:not(.project-facts),
+      section[style*="padding: 5rem 60px"]:not(.project-facts) {
         padding: 3rem 0 !important;
       }
-      section[style*="padding:3rem 80px"],
-      section[style*="padding: 3rem 80px"],
-      section[style*="padding:3rem 60px"],
-      section[style*="padding: 3rem 60px"] {
+      section[style*="padding:3rem 80px"]:not(.project-facts),
+      section[style*="padding: 3rem 80px"]:not(.project-facts),
+      section[style*="padding:3rem 60px"]:not(.project-facts),
+      section[style*="padding: 3rem 60px"]:not(.project-facts) {
         padding: 2.5rem 0 !important;
       }
       section[style*="padding:1rem 80px"],
@@ -351,16 +351,16 @@
     
     @media (max-width: 768px) {
       /* Mobile Landscape */
-      section[style*="padding:5rem"],
-      section[style*="padding: 5rem"],
-      section[style*="padding:4rem"],
-      section[style*="padding: 4rem"],
-      section[style*="padding:3rem"],
-      section[style*="padding: 3rem"] {
+      section[style*="padding:5rem"]:not(.project-facts),
+      section[style*="padding: 5rem"]:not(.project-facts),
+      section[style*="padding:4rem"]:not(.project-facts),
+      section[style*="padding: 4rem"]:not(.project-facts),
+      section[style*="padding:3rem"]:not(.project-facts),
+      section[style*="padding: 3rem"]:not(.project-facts) {
         padding: 2rem 0 !important;
       }
-      section[style*="padding:1rem"],
-      section[style*="padding: 1rem"] {
+      section[style*="padding:1rem"]:not(.project-facts),
+      section[style*="padding: 1rem"]:not(.project-facts) {
         padding: 1rem 0 !important;
       }
       
@@ -384,7 +384,7 @@
     
     @media (max-width: 480px) {
       /* Mobile Portrait */
-      section[style*="padding"] { padding: 1.5rem 0 !important; }
+      section[style*="padding"]:not(.project-facts) { padding: 1.5rem 0 !important; }
       
       .hero-content[style*="padding:3.5rem"],
       .hero-content[style*="padding:2.5rem"] {
@@ -419,7 +419,7 @@
     
     @media (max-width: 360px) {
       /* Very Small Mobile */
-      section[style*="padding"] {
+      section[style*="padding"]:not(.project-facts) {
         padding: 1rem 15px !important;
       }
       
@@ -434,16 +434,16 @@
   .hero-weserkoje .hero-content h2 { font-size: 1.3rem !important; }
     }
     
-    /* Modern responsive padding für alle Inhalte unter dem Hero */
-    main > section {
+    /* Modern responsive padding für alle Inhalte unter dem Hero (außer project-facts) */
+    main > section:not(.project-facts) {
       padding-left: clamp(20px, 4vw, 80px) !important;
       padding-right: clamp(20px, 4vw, 80px) !important;
       box-sizing: border-box !important;
       width: 100%;
     }
     
-    /* Höhere Spezifität für inline-styled Sektionen */
-    main#main-content > section {
+    /* Höhere Spezifität für inline-styled Sektionen (außer project-facts) */
+    main#main-content > section:not(.project-facts) {
       padding-left: clamp(20px, 4vw, 80px) !important;
       padding-right: clamp(20px, 4vw, 80px) !important;
     }
