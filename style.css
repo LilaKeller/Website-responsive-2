@@ -1925,6 +1925,30 @@ main {
     padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
   }
 
+  /* High-specificity header spacing + controls parity (beats page-local styles) */
+  body .main-header nav {
+    padding: 0.75rem clamp(2.5rem, 7vw, 3.5rem) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+  body .main-header .logo {
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body .main-header .mobile-nav-toggle {
+    width: 48px !important;
+    height: 48px !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
   /* Make the mobile menu cover the full viewport width and start under the X */
   /* Low-specificity baseline (still helpful if pages remove locals) */
   nav ul {
