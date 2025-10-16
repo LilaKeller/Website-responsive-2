@@ -465,6 +465,22 @@
       main > section.full-bleed { padding-left: 0 !important; padding-right: 0 !important; }
     }
 
+    /* Mobile: responsive side paddings für facts section (iPhone SE/8 Plus) */
+    @media (max-width: 768px) {
+      main#main-content > section.project-facts {
+        padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+    }
+    @media (max-width: 480px) {
+      main#main-content > section.project-facts {
+        padding-left: 2.25rem !important;
+        padding-right: 2.25rem !important;
+      }
+    }
+
     /* Desktop: feste 80px Seitenabstände und volle Breite (außer Full-bleed) */
     @media (min-width: 1024px) {
       main > section,
@@ -481,19 +497,6 @@
         padding-right: 0 !important;
       }
     }
-        /* Force consistent mobile side paddings for facts section (match index/projekte) */
-        @media (max-width: 768px) {
-          main#main-content > section.u-mobile-sidepad.project-facts {
-            padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
-            padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
-          }
-        }
-        @media (max-width: 480px) {
-          main#main-content > section.u-mobile-sidepad.project-facts {
-            padding-left: 2.25rem !important;
-            padding-right: 2.25rem !important;
-          }
-        }
   </style>
   <style>
     a {
@@ -527,7 +530,7 @@
     </section>
   <main id="main-content">
         <!-- Projektinfos -->
-  <section class="project-facts u-mobile-sidepad" style="background:#fff;padding:3rem 0;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
+  <section class="project-facts u-mobile-sidepad" style="background:#fff;padding:3rem 80px;display:flex;flex-wrap:wrap;gap:2.5rem 3.5rem;justify-content:flex-start;box-sizing:border-box;">
             <div style="flex:1 1 0;min-width:180px;">
                 <div style="font-size:14px;color:#888;margin-bottom:0.9em;letter-spacing:0.03em;">MEINE ROLLE</div>
                 <div style="height:2px;width:100%;background:#e0e0e0;margin-bottom:0.9em;"></div>
