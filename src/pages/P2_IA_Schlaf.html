@@ -429,9 +429,12 @@
     </div>
   </div>
 </section>
-<!-- Grundriss-Bild vor Gestaltung -->
-<div style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding:3.5rem clamp(20px, 4vw, 80px);box-sizing:border-box;">
-<img src="../../img/IA/Schlaf/A1.png" alt="Grundriss Ausstellung Schlaf" style="width:100%;display:block;border-radius:1.2rem;box-shadow:0 4px 24px rgba(0,0,0,0.07);" loading="lazy">
+<!-- Grundriss-Bild vor Gestaltung (full-bleed über gesamte Bildschirmbreite) -->
+<div style="position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;box-sizing:border-box;padding:0;margin:3.5rem 0;">
+  <img src="../../img/IA/Schlaf/A1.png"
+       alt="Grundriss Ausstellung Schlaf"
+       style="display:block;width:100vw;max-width:100vw;height:auto;margin:0;border-radius:0;box-shadow:none;"
+       loading="lazy" decoding="async">
 </div>
 <section style="padding:4rem 0 4rem 0;max-width:1200px;margin:0 auto;">
   <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
@@ -883,8 +886,8 @@
     
 
   <script src="../scripts/main.js"></script>
-  <script src="../scripts/mobile-nav.js"></script>
-  <script src="../scripts/header-loader.js"></script>
+  <script src="../scripts/mobile-nav.js" defer></script>
+  <script src="../scripts/header-loader.js" defer></script>
   
 </body>
 </html>
