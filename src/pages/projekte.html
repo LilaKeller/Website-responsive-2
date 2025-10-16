@@ -10,34 +10,6 @@
   .filter-btn { min-height: 44px; padding: 0.7rem 1.1rem; border-radius: 999px; font-weight:700; font-size:0.95rem; }
         .portfolio-gallery { gap: 1.25rem !important; }
       }
-      /* iPhone 8 Plus (414px) — Two rows: first full width, next two split */
-      @media (min-width: 400px) and (max-width: 430px) {
-        .work-filter {
-          flex-wrap: wrap !important;
-          overflow-x: visible !important;
-          scroll-snap-type: none !important;
-          justify-content: flex-start !important;
-          gap: 0.75rem !important;
-          /* Match card container padding */
-          padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
-          padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
-        }
-        .work-filter .filter-btn:first-child {
-          flex: 0 0 100% !important;
-          width: 100% !important;
-          text-align: center !important;
-          justify-content: center !important;
-        }
-        .work-filter .filter-btn:nth-child(2),
-        .work-filter .filter-btn:nth-child(3) {
-          flex: 0 0 calc(50% - 0.375rem) !important;
-          width: calc(50% - 0.375rem) !important;
-        }
-        .filter-status {
-          padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
-          padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
-        }
-      }
       @media (max-width: 480px) {
         .projects-title { font-size: 1.9rem !important; margin-bottom: 0.4rem !important; }
         .work-filter { margin-top: 0.4rem !important; }
@@ -177,6 +149,17 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(255,184,0,0.15);
           }
+        }
+      }
+      
+      /* iPhone 8 Plus (414px) — Override mobile rules for proper two-row layout */
+      @media (min-width: 400px) and (max-width: 430px) {
+        .projects-title { 
+          font-size: 2rem !important; 
+          margin-bottom: 0.5rem !important; 
+        }
+        .work-filter { 
+          margin-top: 0.5rem !important; 
         }
       }
             .main-footer {
