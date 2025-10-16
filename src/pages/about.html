@@ -403,6 +403,45 @@
         padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
       }
     }
+    
+    /* iPhone 8 Plus and similar devices (414px) - Force single column layout */
+    @media (max-width: 414px) {
+      /* Force all sections to single column */
+      .intro-section > div {
+        flex-direction: column !important;
+        gap: 2rem !important;
+      }
+      
+      .intro-section > div > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+      }
+      
+      /* All image grids: stack vertically */
+      .intro-section > div > div > div[style*="grid-template-columns"],
+      .intro-section > div > div > div[style*="display: grid"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+      }
+      
+      /* Header: hamburger menu right aligned */
+      .main-header nav {
+        justify-content: space-between !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+      }
+      
+      .main-header .logo {
+        margin-right: auto !important;
+      }
+      
+      .main-header .mobile-nav-toggle {
+        margin-left: auto !important;
+      }
+    }
+    
     @media (max-width: 480px) {
       .intro-section,
       section.contact#contact {
