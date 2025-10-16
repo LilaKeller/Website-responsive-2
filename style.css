@@ -1255,7 +1255,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.82);
+  background: transparent;
   z-index: 0;
 }
 .contact-container {
@@ -1301,7 +1301,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   border: 1px solid #ccc;
   border-radius: 0.7rem;
   font-size: 1rem;
-  background: #f9f9f9;
+  background: #fffbf0;
   resize: none;
 }
 .contact-form input:focus,
