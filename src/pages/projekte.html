@@ -10,6 +10,23 @@
   .filter-btn { min-height: 44px; padding: 0.7rem 1.1rem; border-radius: 999px; font-weight:700; font-size:0.95rem; }
         .portfolio-gallery { gap: 1.25rem !important; }
       }
+      /* iPhone 8 Plus (414px) — Filter in 2 Zeilen: oben 'Alle Projekte', darunter die zwei übrigen */
+      @media (min-width: 400px) and (max-width: 430px) {
+        .work-filter {
+          flex-wrap: wrap !important;
+          overflow-x: visible !important;
+          scroll-snap-type: none !important;
+          justify-content: flex-start !important;
+          gap: 0.6rem !important;
+        }
+        /* Alle drei Buttons gleiche Breite (volle Zeile) */
+        .work-filter .filter-btn {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+          text-align: center !important;
+          justify-content: center !important;
+        }
+      }
       @media (max-width: 480px) {
         .projects-title { font-size: 1.9rem !important; }
       }
@@ -24,6 +41,8 @@
           padding-bottom: 0.25rem;
           z-index: 50;
           box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+          display: flex;
+          flex-wrap: nowrap;
         }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
