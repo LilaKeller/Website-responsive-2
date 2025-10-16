@@ -54,6 +54,15 @@
   width: 100%;
 }
 
+.portfolio-item > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
 .portfolio-item:hover {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 12px 48px rgba(0,0,0,0.16);
@@ -85,6 +94,7 @@
   border-radius: 1.5rem 1.5rem 0 0;
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 }
 
 @media (max-width: 700px) {
