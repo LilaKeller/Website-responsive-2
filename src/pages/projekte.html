@@ -10,7 +10,7 @@
   .filter-btn { min-height: 44px; padding: 0.7rem 1.1rem; border-radius: 999px; font-weight:700; font-size:0.95rem; }
         .portfolio-gallery { gap: 1.25rem !important; }
       }
-      /* iPhone 8 Plus (414px) — Filter in 2 Zeilen: oben 'Alle Projekte', darunter die zwei übrigen */
+      /* iPhone 8 Plus (414px) — Two rows: first full width, next two split */
       @media (min-width: 400px) and (max-width: 430px) {
         .work-filter {
           flex-wrap: wrap !important;
@@ -19,18 +19,22 @@
           justify-content: flex-start !important;
           gap: 0.6rem !important;
         }
-        /* Alle drei Buttons gleiche Breite (volle Zeile) */
-        .work-filter .filter-btn {
+        .work-filter .filter-btn:first-child {
           flex: 0 0 100% !important;
           width: 100% !important;
           text-align: center !important;
           justify-content: center !important;
         }
+        .work-filter .filter-btn:nth-child(2),
+        .work-filter .filter-btn:nth-child(3) {
+          flex: 0 0 calc(50% - 0.3rem) !important;
+          width: calc(50% - 0.3rem) !important;
+        }
       }
       @media (max-width: 480px) {
         .projects-title { font-size: 1.9rem !important; }
       }
-      /* Mobile filter buttons — projekte: only active = yellow */
+      /* Mobile filter buttons — two rows with full-bleed container */
       @media (max-width: 768px) {
         /* Keep filter bar visible while scrolling */
         .work-filter {
@@ -42,9 +46,9 @@
           z-index: 50;
           box-shadow: 0 1px 0 rgba(0,0,0,0.06);
           display: flex;
-          flex-direction: column;
+          flex-direction: row; /* row to allow side-by-side buttons */
           align-items: stretch;
-          flex-wrap: nowrap;
+          flex-wrap: wrap; /* wrap to make two rows */
           overflow-x: visible !important;
           scroll-snap-type: none !important;
           /* Full-bleed look */
@@ -56,6 +60,7 @@
           margin-right: -50vw;
           padding-left: clamp(1.25rem, 5vw, 2rem);
           padding-right: clamp(1.25rem, 5vw, 2rem);
+          gap: 0.75rem !important; /* ensure consistent gap */
         }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
@@ -72,9 +77,20 @@
           letter-spacing:0.01em !important;
           min-height:44px !important;
           padding:0.7rem 1.1rem !important;
-          width: 100% !important;
+          width: 100% !important; /* default full width */
           justify-content: center !important;
           text-align: center !important;
+        }
+        /* First button full width */
+        .work-filter .filter-btn:first-child {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+        }
+        /* Second and third split the row (~50% incl. gap) */
+        .work-filter .filter-btn:nth-child(2),
+        .work-filter .filter-btn:nth-child(3) {
+          flex: 0 0 calc(50% - 0.375rem) !important; /* 0.375rem = half of 0.75rem gap */
+          width: calc(50% - 0.375rem) !important;
         }
         .filter-btn:hover { background:#efefef !important; color:#333 !important; box-shadow:0 2px 10px rgba(0,0,0,0.08) !important; }
         .filter-btn:active { background:#e9e9e9 !important; color:#333 !important; }
