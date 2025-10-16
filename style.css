@@ -1269,7 +1269,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   width: 100%;
   background: #fff;
   border-radius: 2rem;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  box-shadow: none;
   padding: 2.5rem 2rem;
 }
 .contact-left {
