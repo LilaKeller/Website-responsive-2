@@ -47,6 +47,15 @@
           flex-wrap: nowrap;
           overflow-x: visible !important;
           scroll-snap-type: none !important;
+          /* Full-bleed look */
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          padding-left: clamp(1.25rem, 5vw, 2rem);
+          padding-right: clamp(1.25rem, 5vw, 2rem);
         }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
