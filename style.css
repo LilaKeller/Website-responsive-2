@@ -1884,6 +1884,11 @@ main {
     animation: fadeIn 0.3s ease;
   }
 
+  /* Ensure the header/menu sits above the dim overlay when open */
+  body.mobile-menu-active .main-header { z-index: 2001 !important; }
+  body.mobile-menu-active .main-header nav ul { z-index: 2002 !important; }
+  body.mobile-menu-active .main-header .mobile-nav-toggle { z-index: 2003 !important; }
+
   /* Hide the Back-to-Top button when the mobile menu is open */
   body.mobile-menu-active .back-to-top {
     opacity: 0 !important;
