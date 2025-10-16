@@ -56,6 +56,35 @@ img {
   display: block;
 }
 
+/* Full-bleed utility: centers a 100vw-wide block within any container */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure contained media fills the bleed area without extra styles */
+.full-bleed > img,
+.full-bleed > picture,
+.full-bleed > video,
+.full-bleed > canvas {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Helper to strip any residual shadow from elements */
+.no-shadow { box-shadow: none !important; filter: none !important; }
+
 /* Performance optimizations */
 @media (prefers-reduced-motion: reduce) {
   *,
