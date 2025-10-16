@@ -41,8 +41,8 @@
           position: sticky;
           top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px));
           background: #fff;
-          padding-top: 0.25rem;
-          padding-bottom: 0.5rem; /* extra padding to separate from cards */
+          padding-top: 0.5rem;
+          padding-bottom: 1rem; /* extra padding to separate from cards */
           z-index: 50;
           box-shadow: 0 1px 0 rgba(0,0,0,0.06);
           display: flex;
@@ -61,10 +61,12 @@
           padding-left: clamp(1.25rem, 5vw, 2rem);
           padding-right: clamp(1.25rem, 5vw, 2rem);
           gap: 0.75rem !important; /* ensure consistent gap */
-          margin-bottom: 0.75rem !important; /* ensure space before first card */
+          margin-bottom: 0 !important; /* reset; let status handle spacing */
         }
+        /* Ensure status and gallery have spacing */
+        .filter-status { margin-top: 1rem !important; margin-bottom: 1.5rem !important; }
         /* Ensure gallery starts below sticky filter area */
-        .portfolio-gallery { margin-top: 0.25rem !important; }
+        .portfolio-gallery { margin-top: 0 !important; }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
           left: 1rem !important;
@@ -1127,12 +1129,12 @@
   <div class="projects-container u-mobile-sidepad" style="box-sizing: border-box; width: 100%; max-width: 100%; margin: 0 auto;">
       <h1 class="projects-title" style="font-family:'Poppins',sans-serif;font-size:2.3rem;font-weight:800;color:#9ba89c;letter-spacing:0.01em;margin-bottom:2.2rem;text-align:left;margin-top:0;">PROJEKTE</h1>
       <a href="#filters" class="skip-to-filters" style="position:absolute;left:-9999px;z-index:999;padding:0.75rem 1rem;background:#ffb800;color:#fff;text-decoration:none;font-weight:700;border-radius:0.5rem;">Zu den Filtern springen</a>
-      <div id="filters" class="work-filter" style="display:flex;gap:1rem;margin-bottom:0.5rem;width:100%;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;padding-bottom:0.25rem;" role="tablist" aria-label="Projektfilter">
+      <div id="filters" class="work-filter" style="display:flex;gap:1rem;width:100%;box-sizing:border-box;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;" role="tablist" aria-label="Projektfilter">
         <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-selected="true" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">Alle Projekte</button>
         <button class="filter-btn" data-filter="innenarchitektur" aria-pressed="false" aria-selected="false" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">Innenarchitektur</button>
         <button class="filter-btn" data-filter="uxui" aria-pressed="false" aria-selected="false" role="tab" aria-controls="projects-list" style="scroll-snap-align:start;">UX/UI Design</button>
       </div>
-      <div id="filter-status" class="filter-status" role="status" aria-live="polite" style="font:600 0.95rem/1.6 'Nunito', Arial, sans-serif;color:#666;margin:0 0 1rem 0;">Alle Projekte – 7 Ergebnisse</div>
+      <div id="filter-status" class="filter-status" role="status" aria-live="polite" style="font:600 0.95rem/1.6 'Nunito', Arial, sans-serif;color:#666;margin:0 0 1.5rem 0;">Alle Projekte – 7 Ergebnisse</div>
       <div id="projects-list" class="portfolio-gallery" aria-live="polite" aria-busy="false">
                             <div class="portfolio-item" data-type="innenarchitektur">
                               <a href="../../src/pages/P4_IA_KlosterHolzen.html" style="display:block;width:100%;height:100%;text-decoration:none;color:inherit;" aria-label="Projekt: Festsaal im Klostergasthof - Veranstaltungsgastronomie für Hochzeiten und Events">
