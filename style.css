@@ -1926,6 +1926,7 @@ main {
   }
 
   /* Make the mobile menu cover the full viewport width and start under the X */
+  /* Low-specificity baseline (still helpful if pages remove locals) */
   nav ul {
     left: 0 !important;            /* anchor to left edge */
     right: auto !important;        /* neutralize per-page right:-100% */
@@ -1942,14 +1943,36 @@ main {
     display: flex !important;      /* never display:none */
   }
 
+  /* High-specificity override to beat page-level rules (contact/legal/P1–P8) */
+  body .main-header nav ul {
+    left: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #9ba89c !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 72px 0 20px 0 !important;
+    margin: 0 !important;
+    transform: translateX(100%) !important;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25) !important;
+    display: flex !important;
+  }
+
   /* Open state */
-  nav ul.mobile-menu-open {
+  nav ul.mobile-menu-open,
+  nav ul.active,
+  body .main-header nav ul.mobile-menu-open,
+  body .main-header nav ul.active {
     transform: translateX(0) !important;
   }
 
   /* Make each item fully clickable across the width */
-  nav ul li { width: 100% !important; }
-  nav ul li a {
+  nav ul li,
+  body .main-header nav ul li { width: 100% !important; }
+  nav ul li a,
+  body .main-header nav ul li a {
     display: block !important;
     width: 100% !important;
     padding: 1.2rem 2rem !important;
