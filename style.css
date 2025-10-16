@@ -1943,6 +1943,24 @@ main {
     display: flex !important;      /* never display:none */
   }
 
+  /* Runtime-enforced full-width overlay class from JS to beat local page CSS */
+  body .main-header nav ul.global-menu-fullwidth,
+  body nav ul.global-menu-fullwidth {
+    left: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 72px 0 20px 0 !important;
+    transform: translateX(100%) !important;
+    display: flex !important;
+  }
+  body .main-header nav ul.global-menu-fullwidth.mobile-menu-open,
+  body nav ul.global-menu-fullwidth.mobile-menu-open,
+  body .main-header nav ul.global-menu-fullwidth.active,
+  body nav ul.global-menu-fullwidth.active {
+    transform: translateX(0) !important;
+  }
+
   /* High-specificity override to beat page-level rules (contact/legal/P1–P8) */
   body .main-header nav ul {
     left: 0 !important;

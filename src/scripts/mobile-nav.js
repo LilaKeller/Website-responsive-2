@@ -8,6 +8,8 @@
   
   // Constants
   const MOBILE_BREAKPOINT = 768;
+  const IP8PLUS_MIN = 376;
+  const IP8PLUS_MAX = 430;
   
   // Create hamburger menu button
   function createHamburgerButton() {
@@ -47,12 +49,26 @@
       console.log('Hamburger already exists, using existing one');
     }
     
+    // Helper: ensure full-width overlay for iPhone 8 Plus width
+    function applyFullWidthIfNeeded() {
+      const w = window.innerWidth;
+      if (w >= IP8PLUS_MIN && w <= IP8PLUS_MAX) {
+        navList.classList.add('global-menu-fullwidth');
+      } else {
+        navList.classList.remove('global-menu-fullwidth');
+      }
+    }
+
+    // Initial pass for full-width requirement
+    applyFullWidthIfNeeded();
+
     // Toggle menu
     function openMenuUI() {
       hamburger.setAttribute('aria-expanded', 'true');
       hamburger.classList.add('active');
       navList.classList.add('mobile-menu-open');
       document.body.classList.add('mobile-menu-active');
+      applyFullWidthIfNeeded();
     }
 
     function closeMenuUI() {
@@ -100,6 +116,7 @@
     window.addEventListener('resize', function() {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function() {
+        applyFullWidthIfNeeded();
         if (window.innerWidth > MOBILE_BREAKPOINT) {
           closeMenuUI();
         }
