@@ -406,26 +406,33 @@
     
     /* iPhone 8 Plus and similar devices (414px) - Force single column layout */
     @media (max-width: 414px) {
-      /* Force all sections to single column */
-      .intro-section > div {
+      /* Only target sections that explicitly use a flex wrapper
+         (prevents unintended effects on the testimonial carousel) */
+      .intro-section > div[style*="display: flex"] {
+        display: flex !important;
         flex-direction: column !important;
         gap: 2rem !important;
       }
-      
-      .intro-section > div > div {
+
+      .intro-section > div[style*="display: flex"] > div {
         width: 100% !important;
         max-width: 100% !important;
         flex: none !important;
       }
-      
-      /* All image grids: stack vertically */
+
+      /* Keep image grids stacking on mobile */
       .intro-section > div > div > div[style*="grid-template-columns"],
       .intro-section > div > div > div[style*="display: grid"] {
         display: flex !important;
         flex-direction: column !important;
         gap: 0.5rem !important;
       }
-      
+
+      /* Ensure testimonial carousel keeps its wide track */
+      .intro-section .testimonials-carousel {
+        width: 600% !important;
+      }
+
       /* Header: hamburger menu right aligned */
       .main-header nav {
         justify-content: space-between !important;
