@@ -390,14 +390,17 @@
                 }
                 
         .work-filter {
+          position: sticky !important;
+          top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px)) !important;
           display: flex !important;
           flex-direction: row !important;
           flex-wrap: wrap !important;
           gap: 0.75rem !important;
-          margin-bottom: 0 !important;
+          margin-bottom: 1rem !important;
+          background: #fff !important;
+          z-index: 50 !important;
           /* NO full-bleed — match card container */
           width: 100% !important;
-          position: relative !important;
           left: 0 !important;
           right: 0 !important;
           margin-left: 0 !important;
@@ -435,8 +438,10 @@
         .filter-status {
           padding-left: 0 !important;
           padding-right: 0 !important;
-          padding-bottom: 2rem !important;
+          padding-bottom: 1.5rem !important;
           width: 100% !important;
+          position: relative !important;
+          background: transparent !important;
         }                .filter-row {
                     display: flex;
                     gap: 0.5rem;
