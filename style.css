@@ -1297,12 +1297,14 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
 }
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
   padding: 0.7rem 1rem;
   border: 1px solid #ccc;
   border-radius: 0.7rem;
   font-size: 1rem;
   background: #fff4d6;
   resize: none;
+  box-sizing: border-box;
 }
 .contact-form input:focus,
  .contact-form textarea:focus {
