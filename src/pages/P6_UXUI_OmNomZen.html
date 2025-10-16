@@ -322,6 +322,12 @@
       .hamburger-line { background-color: #fff; transition: background-color 0.25s; }
       .main-header.scrolled .hamburger-line { background-color: #222; }
       
+      /* Full-width image containers: adjust negative margins for mobile padding */
+      div[style*="margin-left:-80px"] {
+        margin-left: calc(-1 * clamp(20px, 4vw, 80px)) !important;
+        margin-right: calc(-1 * clamp(20px, 4vw, 80px)) !important;
+      }
+      
       /* Vertical padding only, horizontal handled by clamp() */
       section[style*="padding:5rem"], section[style*="padding:4rem"], section[style*="padding:3rem"] { padding-top: 3rem !important; padding-bottom: 3rem !important; }
       section[style*="gap:2.5rem 3.5rem"], section[style*="gap:3rem 4rem"] { gap: 2rem 2.5rem !important; }
