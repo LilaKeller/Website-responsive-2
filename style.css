@@ -54,6 +54,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  /* Remove any image shadow globally */
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 /* Full-bleed utility: centers a 100vw-wide block within any container */
