@@ -49,7 +49,7 @@
           top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px));
           background: #fff;
           padding-top: 0.75rem;
-          padding-bottom: 0.75rem; /* reduced; status inside will add space */
+          padding-bottom: 1.25rem; /* more space below buttons */
           z-index: 50;
           box-shadow: 0 2px 4px rgba(0,0,0,0.04);
           display: flex;
@@ -65,9 +65,9 @@
           right: 50%;
           margin-left: -50vw;
           margin-right: -50vw;
-          /* Match card container padding exactly */
-          padding-left: clamp(2.5rem, 7vw, 3.5rem);
-          padding-right: clamp(2.5rem, 7vw, 3.5rem);
+          /* Match card container padding exactly — use same clamp as .u-mobile-sidepad */
+          padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+          padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
           gap: 0.75rem !important; /* ensure consistent gap */
           margin-bottom: 0 !important;
         }
@@ -78,7 +78,7 @@
           background: #fff !important;
           z-index: 49 !important;
           padding-top: 0.5rem !important;
-          padding-bottom: 0.75rem !important;
+          padding-bottom: 1.5rem !important; /* more space before gallery */
           margin: 0 !important;
           width: 100vw;
           margin-left: -50vw !important;
@@ -89,7 +89,7 @@
           padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
         }
         /* Ensure gallery starts below sticky filter + status area */
-        .portfolio-gallery { margin-top: 0.5rem !important; }
+        .portfolio-gallery { margin-top: 1rem !important; }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
           left: 1rem !important;
@@ -419,11 +419,11 @@
           right: 50% !important;
           margin-left: -50vw !important;
           margin-right: -50vw !important;
-          /* Match card container padding for iPhone SE */
-          padding-left: clamp(2.25rem, 7vw, 2.5rem) !important;
-          padding-right: clamp(2.25rem, 7vw, 2.5rem) !important;
+          /* Match card container padding for iPhone SE — use same as .u-mobile-sidepad @480px */
+          padding-left: 2.25rem !important;
+          padding-right: 2.25rem !important;
           padding-top: 0.75rem !important;
-          padding-bottom: 0.75rem !important;
+          padding-bottom: 1.25rem !important; /* increased for spacing */
         }
         
         .filter-btn {
@@ -451,8 +451,9 @@
         }
         
         .filter-status {
-          padding-left: clamp(2.25rem, 7vw, 2.5rem) !important;
-          padding-right: clamp(2.25rem, 7vw, 2.5rem) !important;
+          padding-left: 2.25rem !important;
+          padding-right: 2.25rem !important;
+          padding-bottom: 1.5rem !important; /* more space before gallery */
         }                .filter-row {
                     display: flex;
                     gap: 0.5rem;
