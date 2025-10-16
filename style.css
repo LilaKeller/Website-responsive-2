@@ -2011,6 +2011,17 @@ main {
     transform: translateX(0) !important;
   }
 
+  /* When the menu is open, overrule all page-local widths using the body state */
+  body.mobile-menu-active .main-header nav ul,
+  body.mobile-menu-active nav ul {
+    left: 0 !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: none !important;
+    transform: translateX(0) !important;
+    display: flex !important;
+  }
+
   /* Make each item fully clickable across the width */
   nav ul li,
   body .main-header nav ul li { width: 100% !important; }
