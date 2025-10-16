@@ -312,6 +312,26 @@
       padding-left: clamp(20px, 4vw, 80px) !important;
       padding-right: clamp(20px, 4vw, 80px) !important;
     }
+
+    /* Desktop: feste 80px Seitenabstände, volle Breite (außer Full-bleed) */
+    @media (min-width: 1024px) {
+      main > section,
+      main > div[style*="padding"],
+      section[style*="padding"],
+      section.contact#contact,
+      section[style*="background:#c6b79e"],
+      .projekt-nav-row {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+      }
+      /* Full-bleed bleibt randlos */
+      main > section.full-bleed,
+      section.full-bleed,
+      .full-bleed {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
     
     /* Responsive Design für Projektseiten */
     @media (max-width: 768px) {
@@ -409,7 +429,7 @@
                 </div>
             </section>
             <!-- Problem & Lösung & Gestaltung als 2-Spalten-Layout -->
-<section style="padding:4rem 0 4rem 0;max-width:1200px;margin:0 auto;">
+<section style="padding:4rem 0 4rem 0;">
   <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
     <div style="flex:1 1 0;min-width:220px;max-width:100%;">
       <h2 style="font-size:2rem;font-weight:800;margin-bottom:0.7em;text-align:left;">Problem</h2>
@@ -419,7 +439,7 @@
     </div>
   </div>
 </section>
-<section style="padding:4rem 0 4rem 0;max-width:1200px;margin:0 auto;">
+<section style="padding:4rem 0 4rem 0;">
   <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
     <div style="flex:1 1 0;min-width:220px;max-width:100%;">
       <h2 style="font-size:2rem;font-weight:800;margin:2.5em 0 0.7em 0;text-align:left;">Lösung</h2>
@@ -436,7 +456,7 @@
        class="no-shadow"
        loading="lazy" decoding="async">
 </div>
-<section style="padding:4rem 0 4rem 0;max-width:1200px;margin:0 auto;">
+<section style="padding:4rem 0 4rem 0;">
   <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
     <div style="flex:1 1 0;min-width:220px;max-width:100%;">
       <h2 style="font-size:2rem;font-weight:800;margin-bottom:0.7em;text-align:left;">Gestaltung</h2>
@@ -447,7 +467,7 @@
   </div>
 </section>
             <!-- Stationen -->
-            <section style="padding:4rem 0 4rem 0;max-width:1200px;margin:0 auto;">
+            <section style="padding:4rem 0 4rem 0;">
   <!-- Stationen als 2-Spalten-Layout -->
   <div style="display:flex;flex-direction:column;gap:2.5rem;">
     <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;">
