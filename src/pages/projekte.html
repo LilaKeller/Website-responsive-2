@@ -22,47 +22,47 @@
           top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px));
           background: #fff;
           padding-top: 0.75rem;
-          padding-bottom: 1.25rem; /* more space below buttons */
+          padding-bottom: 1.5rem; /* more space below buttons */
           z-index: 50;
           box-shadow: 0 2px 4px rgba(0,0,0,0.04);
           display: flex;
-          flex-direction: row; /* row to allow side-by-side buttons */
+          flex-direction: row;
           align-items: stretch;
-          flex-wrap: wrap; /* wrap to make two rows */
+          flex-wrap: wrap;
           overflow-x: visible !important;
           scroll-snap-type: none !important;
-          /* Full-bleed look */
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-          /* Match card container padding exactly — use same clamp as .u-mobile-sidepad */
-          padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
-          padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
-          gap: 0.75rem !important; /* ensure consistent gap */
+          /* NO full-bleed — match card container width exactly */
+          width: 100% !important;
+          position: relative !important;
+          left: 0 !important;
+          right: 0 !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          /* Remove side padding — rely on parent .u-mobile-sidepad */
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          gap: 0.75rem !important;
           margin-bottom: 0 !important;
         }
         /* Move status INSIDE sticky zone so it stays with buttons */
         .filter-status { 
-          position: sticky !important;
-          top: calc(var(--header-offset, 0px) + env(safe-area-inset-top, 0px) + 7rem) !important; /* below filter buttons */
+          position: relative !important;
+          top: 0 !important;
           background: #fff !important;
           z-index: 49 !important;
           padding-top: 0.5rem !important;
-          padding-bottom: 1.5rem !important; /* more space before gallery */
+          padding-bottom: 2rem !important; /* more space before gallery */
           margin: 0 !important;
-          width: 100vw;
-          margin-left: -50vw !important;
-          margin-right: -50vw !important;
-          left: 50% !important;
-          right: 50% !important;
-          padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
-          padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+          width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
         }
         /* Ensure gallery starts below sticky filter + status area */
-        .portfolio-gallery { margin-top: 1rem !important; }
+        .portfolio-gallery { margin-top: 0 !important; }
         /* Skip links visible on focus */
         .skip-to-main:focus, .skip-to-filters:focus {
           left: 1rem !important;
@@ -392,22 +392,21 @@
                 
         .work-filter {
           display: flex !important;
-          flex-direction: row !important; /* allow side-by-side */
-          flex-wrap: wrap !important;      /* two rows */
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
           gap: 0.75rem !important;
-          margin-bottom: 1.8rem !important;
-          /* Keep full-bleed on very small screens too */
-          width: 100vw !important;
+          margin-bottom: 0 !important;
+          /* NO full-bleed — match card container */
+          width: 100% !important;
           position: relative !important;
-          left: 50% !important;
-          right: 50% !important;
-          margin-left: -50vw !important;
-          margin-right: -50vw !important;
-          /* Match card container padding for iPhone SE — use same as .u-mobile-sidepad @480px */
-          padding-left: 2.25rem !important;
-          padding-right: 2.25rem !important;
+          left: 0 !important;
+          right: 0 !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
           padding-top: 0.75rem !important;
-          padding-bottom: 1.25rem !important; /* increased for spacing */
+          padding-bottom: 1.5rem !important;
         }
         
         .filter-btn {
@@ -418,7 +417,7 @@
           box-sizing: border-box;
           white-space: nowrap;
           line-height: 1.2;
-          width: 100%; /* default full width; overridden below for 2/3 */
+          width: 100%;
           min-height: 46px !important;
         }
         
@@ -435,9 +434,10 @@
         }
         
         .filter-status {
-          padding-left: 2.25rem !important;
-          padding-right: 2.25rem !important;
-          padding-bottom: 1.5rem !important; /* more space before gallery */
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 2rem !important;
+          width: 100% !important;
         }                .filter-row {
                     display: flex;
                     gap: 0.5rem;
