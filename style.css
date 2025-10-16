@@ -1768,7 +1768,7 @@ main {
     display: flex !important;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 0; /* keep anchored to the right by default */
     width: min(280px, 75vw);
     height: 100vh;
     /* Footer green background */
@@ -1909,6 +1909,48 @@ main {
   /* When menu is open, force hamburger lines to white for contrast on green */
   body.mobile-menu-active .main-header .mobile-nav-toggle .hamburger-line {
     background-color: #fff !important;
+  }
+}
+
+/* iPhone 8 Plus and similar widths: force full-width overlay and override page-specific styles */
+@media (min-width: 376px) and (max-width: 430px) {
+  /* Ensure header gutters remain consistent */
+  .main-header nav {
+    padding-left: clamp(2.5rem, 7vw, 3.5rem) !important;
+    padding-right: clamp(2.5rem, 7vw, 3.5rem) !important;
+  }
+
+  /* Make the mobile menu cover the full viewport width and start under the X */
+  nav ul {
+    right: 0 !important;           /* neutralize per-page right:-100% */
+    left: auto !important;
+    width: 100vw !important;       /* full width overlay */
+    height: 100vh !important;
+    background: #9ba89c !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 72px 0 20px 0 !important; /* items start directly under the X */
+    margin: 0 !important;
+    transform: translateX(100%) !important; /* hidden by default */
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.25) !important;
+    display: flex !important;      /* never display:none */
+  }
+
+  /* Open state */
+  nav ul.mobile-menu-open {
+    transform: translateX(0) !important;
+  }
+
+  /* Make each item fully clickable across the width */
+  nav ul li { width: 100% !important; }
+  nav ul li a {
+    display: block !important;
+    width: 100% !important;
+    padding: 1.2rem 2rem !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important; /* Safari */
+    text-align: left !important;
   }
 }
 
