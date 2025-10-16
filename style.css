@@ -1198,11 +1198,11 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
 }
 .all-details-block {
   width: 100%;
-  background: #f7f6fb;
+  background: transparent;
   border-radius: 1rem;
   padding: 1.2rem 1rem;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(182,161,230,0.07);
+  box-shadow: none;
   margin-top: 1.5rem;
   line-height: 1.5;
 }
@@ -1247,7 +1247,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   justify-content: center;
   align-items: flex-start;
   padding: 3rem 1rem 2rem 1rem;
-  background: url("../img/anika-warncke.jpg") center center/cover no-repeat;
+  background: #fff;
   min-height: 100vh;
 }
 
@@ -1301,7 +1301,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
   border: 1px solid #ccc;
   border-radius: 0.7rem;
   font-size: 1rem;
-  background: #fffbf0;
+  background: #fff4d6;
   resize: none;
 }
 .contact-form input:focus,
