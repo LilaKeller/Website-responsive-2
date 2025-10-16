@@ -112,7 +112,7 @@ img {
 }
 .contact {
   margin-bottom: 0 !important;
-  background: #f7f7f7;
+  background: #fff;
 }
 .main-footer {
   margin-top: 0 !important;
@@ -1491,7 +1491,7 @@ h1, h2, h3, .contact-headline, .portfolio-info h3, .main-header .logo {
 body {
   font-family: 'Nunito', Arial, sans-serif;
   margin: 0;
-  background: #f7f7f7;
+  background: #fff;
   color: #333;
 }
 
