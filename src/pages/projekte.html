@@ -323,7 +323,7 @@
             
             /* iPhone SE specific optimizations */
             @media (max-width: 375px) {
-                .footer-block {
+        .footer-block {
                     gap: 0 !important;
                     display: flex !important;
                     flex-direction: column !important;
@@ -362,7 +362,7 @@
                     line-height: 1 !important;
                 }
                 
-                /* Main content optimizations for iPhone SE */
+        /* Main content optimizations for iPhone SE */
                 .projects-container {
                     padding-left: 1rem !important;
                     padding-right: 1rem !important;
@@ -375,13 +375,22 @@
                     overflow-wrap: break-word;
                 }
                 
-                .work-filter {
-                    display: flex !important;
-                    flex-direction: column !important;
-                    gap: 0.6rem !important;
-                    margin-bottom: 1.8rem !important;
-                    width: 100% !important;
-                }
+        .work-filter {
+          display: flex !important;
+          flex-direction: row !important; /* allow side-by-side */
+          flex-wrap: wrap !important;      /* two rows */
+          gap: 0.6rem !important;
+          margin-bottom: 1.8rem !important;
+          /* Keep full-bleed on very small screens too */
+          width: 100vw !important;
+          position: relative !important;
+          left: 50% !important;
+          right: 50% !important;
+          margin-left: -50vw !important;
+          margin-right: -50vw !important;
+          padding-left: clamp(1rem, 5vw, 1.5rem) !important;
+          padding-right: clamp(1rem, 5vw, 1.5rem) !important;
+        }
                 
                 .filter-btn {
                     padding: 0.7rem 1rem;
@@ -391,13 +400,20 @@
                     box-sizing: border-box;
                     white-space: nowrap;
                     line-height: 1.2;
-                    width: 100%;
+          width: 100%; /* default full width; overridden below for 2/3 */
                 }
                 
-                .filter-btn[data-filter="all"] {
-                    width: 100%;
-                    margin-bottom: 0.2rem;
-                }
+        /* first button full width */
+        .work-filter .filter-btn:first-child {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+        }
+        /* second and third share row (account for 0.6rem gap) */
+        .work-filter .filter-btn:nth-child(2),
+        .work-filter .filter-btn:nth-child(3) {
+          flex: 0 0 calc(50% - 0.3rem) !important;
+          width: calc(50% - 0.3rem) !important;
+        }
                 
                 .filter-row {
                     display: flex;
